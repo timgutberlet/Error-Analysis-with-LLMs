@@ -38,8 +38,6 @@ prompt_2_zeroshot = PromptTemplate(
 
 prompt_3_zeroshot_single_term = PromptTemplate(
     input_variables=["input_text", "entity"],
-    template="""
-    {input_text}
+    template="""{input_text}
 
-    What is the sentiment on {entity}? Only respond with "positive", "negative" or "neutral" as one word. 
-    """)
+    What is the sentiment on '{entity}'? Only respond with "positive", "negative" or "neutral" as one word.""")
