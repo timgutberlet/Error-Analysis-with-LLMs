@@ -1,1 +1,5 @@
-1. Welches Datenset für die GPT API Abfragen - hier gibt es ja nichts zu trainieren / brauche ich trainings / validation set dann überhaupt? Abfragen mache ich nur mit dem Testset?
+1. Welches Datenset für die GPT API Abfragen - hier gibt es ja nichts zu trainieren. Brauche ich trainings / validation set dann überhaupt? Abfragen mache ich nur mit dem Testset?
+
+2. Maximal vorgegebene Größe der Testsets nutzen? Bei Sentiment Analyse und Schema Matching jeweils über 1300 abfragen - hohe kosten, vor allem bei GPT-4 - ggf. die größe der Sets einschränken?
+
+3. Bzgl. Car Price Prediction: F1 geht ja hier nicht, also würde ich MSE, MAE, R-Squared hier als zielmetriken errechnen?
