@@ -1,0 +1,1 @@
+1. Welches Datenset für die GPT API Abfragen - hier gibt es ja nichts zu trainieren / brauche ich trainings / validation set dann überhaupt? Abfragen mache ich nur mit dem Testset?
