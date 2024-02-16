@@ -8,9 +8,9 @@ the performance of solving these tasks with LLMs.
 ## Instructions
 - Create .env in Main directory
 - Add important API Keys in the following format:
-OPENAI_API_KEY="..."
-LANGFUSE_PUBLIC_KEY="..."
-LANGFUSE_SECRET_KEY="..."
-LANGFUSE_HOST="https://cloud.langfuse.com"
+  - OPENAI_API_KEY="..."
+  - LANGFUSE_PUBLIC_KEY="..."
+  - LANGFUSE_SECRET_KEY="..."
+  - LANGFUSE_HOST="https://cloud.langfuse.com"
 
  
