@@ -3,10 +3,10 @@ from langchain.prompts.chat import ChatPromptTemplate
 
 #TODO: Quelle!! - https://webdatacommons.org/structureddata/smb/
 zero_shot_general_prompt = ChatPromptTemplate.from_messages([
-    ("system", """Description: Please identify the matching columns between Table A and Table B. For each column in Table A, specify the corresponding column in Table B. If a column in A has no corresponding column in Table B, you can map it to None. Represent each column mapping using a pair of column headers in a list, i.e., [Table A Column, Table B column or None]. Provide the mapping for each column in Table A and return all mappings in a list. Return the final result as JSON in the format {{"column_mappings": "<a list of column pairs>"}}."""),
+    ("system", """Description: Please identify the matching columns between Table A and Table B. For each column in Table A, specify the corresponding column in Table B. If a column in A has no corresponding column in Table B, you can map it to "None". Represent each column mapping using a pair of column headers in a list, i.e., [Table A Column, Table B column or None]. Provide the mapping for each column in Table A and return all mappings in a list. Return the final result as JSON in the format {{"column_mappings": "<a list of column pairs>"}}."""),
     ("user", """Question:
 Table A:
-{Tabel_A}
+{Table_A}
 
 Table B:
 {Table_B}
@@ -26,7 +26,7 @@ A pair of matching columns fulfills the following rules:
 - The values in both columns have the same datatype and value range."""),
     ("user", """Below, you are given Table A and Table B:
 Table A:
-{Tabel_A}
+{Table_A}
 
 Table B:
 {Table_B}

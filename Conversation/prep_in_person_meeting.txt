@@ -1,0 +1,8 @@
+Findings:
+
+Sentiment Analysis:
+- alle terms des Satzes bei der sentiment analysis in einem prompt erzeugt wesentlich bessere Ergebnisse,
+als immer nur nach einem einzelnen Term zu suchen
+
+- Bei der single-term Abfrage performt GPT-4 fast genau so schlecht wie GPT-3.5
+- Neutral ist hier offensichtlich die Hauptfehlerquelle
