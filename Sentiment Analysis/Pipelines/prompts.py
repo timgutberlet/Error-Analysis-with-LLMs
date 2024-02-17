@@ -36,4 +36,20 @@ prompt_single_term_zeroshot = PromptTemplate(
     input_variables=["input_text", "entity"],
     template="""{input_text}
 
-    What is the sentiment in the text towards '{entity}'? Only respond with "positive", "negative" or "neutral" as one word.""")
+What is the sentiment of the text towards '{entity}'? Only respond with "positive", "negative" or "neutral" as one word.""")
+
+prompt_single_term_fewshot = PromptTemplate(
+input_variables=["input_text", "entity"],
+template=
+"""Example 1:
+{example_1}
+
+Example 2:
+{example_2}
+
+Example 3
+{example_3}
+    
+Task:
+Input: {input_text}
+Prompt: What is the sentiment in the text towards '{entity}'? Only respond with "positive", "negative" or "neutral" as one word.""")
