@@ -1,7 +1,7 @@
 from langchain.prompts import PromptTemplate
 
 prompt_multi_term_zeroshot = PromptTemplate(
-    input_variables=["terms",  "entities"],
+    input_variables=["input_text",  "terms"],
     template="""Task: Analyze the sentiment of specific terms mentioned in a sentence. 
 You are required to evaluate whether the sentiment towards each term is 'positive', 'negative', or 'neutral'.
 
@@ -14,6 +14,25 @@ Return the final result as JSON in the format {{"term_sentiments": "<a list of [
 ONLY return the JSON.
 Answer:""")
 
+prompt_multi_term_fewshot = PromptTemplate(
+    input_variables=["example_1", "example_2", "example_3", "input_text",  "terms"],
+    template="""Example 1:
+{example_1}
+
+Example 2:
+{example_2}
+
+Example 3
+{example_3}
+    
+Task:
+Input: {input_text}
+Terms: 
+{terms}
+Prompt: Analyze the sentiment of specific terms mentioned in a sentence. 
+You are required to evaluate whether the sentiment towards each term is 'positive', 'negative', or 'neutral'. 
+Return the final result as JSON in the format {{"term_sentiments": "<a list of [term, sentiment] pairs>"}}.
+ONLY return the JSON.""")
 
 prompt_multi_term_zeroshot_instructions = PromptTemplate(
     input_variables=["terms",  "entities"],
@@ -39,7 +58,7 @@ prompt_single_term_zeroshot = PromptTemplate(
 What is the sentiment of the text towards '{entity}'? Only respond with "positive", "negative" or "neutral" as one word.""")
 
 prompt_single_term_fewshot = PromptTemplate(
-input_variables=["input_text", "entity"],
+input_variables=["example_1", "example_2", "example_3","input_text", "entity"],
 template=
 """Example 1:
 {example_1}
