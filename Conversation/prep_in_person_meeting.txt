@@ -1,5 +1,47 @@
 Findings:
 
+Car_Price Prediction:
+
+few_shot_pipeline_3.5-turbo :
+Mean Absolute Error (MAE): 65557.495
+Mean Squared Error (MSE): 22055967680.05
+Root Mean Squared Error (RMSE): 148512.51691372684
+R-squared (R2) score: 0.9573614556131819 (only important for regression problems)
+None
+
+
+regression :
+Mean Absolute Error (MAE): 205091.46308141088
+Mean Squared Error (MSE): 102227548422.98286
+Root Mean Squared Error (RMSE): 319730.43086791545
+R-squared (R2) score: 0.8048301047122098 (only important for regression problems)
+
+
+zero_shot_pipeline_4-turbo-preview :
+Mean Absolute Error (MAE): 86124.99
+Mean Squared Error (MSE): 27711918630.045
+Root Mean Squared Error (RMSE): 166468.97197389367
+R-squared (R2) score: 0.9464273846565417 (only important for regression problems)
+None
+
+
+zero_shot_pipeline_3.5-turbo :
+Mean Absolute Error (MAE): 102472.48
+Mean Squared Error (MSE): 53579280930.045
+Root Mean Squared Error (RMSE): 231471.9873549389
+R-squared (R2) score: 0.8964206612337426 (only important for regression problems)
+None
+
+
+few_shot_pipeline_4-turbo-preview :
+Mean Absolute Error (MAE): 60372.49
+Mean Squared Error (MSE): 12884017255.045
+Root Mean Squared Error (RMSE): 113507.78499752781
+R-squared (R2) score: 0.9750926484124898 (only important for regression problems)
+None
+
+
+
 Sentiment Analysis:
 - alle terms des Satzes bei der sentiment analysis in einem prompt erzeugt wesentlich bessere Ergebnisse,
 als immer nur nach einem einzelnen Term zu suchen
