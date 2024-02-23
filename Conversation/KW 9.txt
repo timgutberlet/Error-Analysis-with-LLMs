@@ -1,0 +1,37 @@
+
+Auf Antworten von Ralph warten:
+- Wie soll der Machine Learning Classifier bei Sentiment Analysis aussehen
+- Wie soll die Analyse bezüglich Schema Matching aussehen (vor allem im Bezug darauf, dass man bei 
+einem LLM immer nur einzelne Tables matched)
+- Welchen ML nimmt man für Regression (bzgl. darstellbarkeit des Reasonings)
+
+
+Vorschläge für Error Analysis:
+Speziell für Sentiment Analysis:
+- Confidence Analysis 
+- unstructured Analysis --> Qualitative Auswertung der Prompts verschiedener Models meiner Seits (nicht viel Value / nicht vergleichbar)
+- structured Analysis --> 
+- Accuracy: Measure the accuracy of GPT-4 in correctly identifying sentiment analysis errors.
+
+
+Speziell für Regression Analysis:
+- Confidence Analysis --> Vergleichen für false/correct prediction (False: >20% deviation von Price)
+- unstructured Analysis --> Qualitative Auswertung der Prompts verschiedener Models meiner Seits (nicht viel Value / nicht vergleichbar)
+- structured Analysis --> LLM Fragen, welche Features des Autos wichtig für Prediction waren und importance score geben lassen
+    - Auswertung: Count der Features, Average Importance, Var Importance bzw. Std. Importance
+
+- Error Klassen geben lassen: 
+    - Input: Prompt, Prediction, {Structured / Unstructured Analysis}, Actual Price
+    - Output: 3 Error Klassen und Anzahl des Auftretens
+
+- Accuracy: 
+- Advanced LLM (z.B: GPT-4) Fragen ob eine Prediction von GTP-3.5 Falsch ist (Deviation >20%) und messen wie gut es hier in der Erkennung ist
+(vllt auch interessant ob zu hoch/zu niedrig)
+--> Schauen ob es für Werte die schon von GPT-4 generiert werden, insgesamt weniger als Fehler erkennt (Bei der Fehleranalyse also konsistent mit den eigenen Predictions ist)
+
+- Advanced LLM (z.B. GPT-4) Fragen ob eine Prediction von ML Regressor Falsch ist (Deviation >20%) und messen wie gut es hier in der Erkennung ist
+(vllt auch interessant ob zu hoch/zu niedrig)
+
+--> Hier kann man sich dann theoretisch wieder F1 Values geben lassen
+
+(könnte man auch für Sentiment Analysis usw. machen)

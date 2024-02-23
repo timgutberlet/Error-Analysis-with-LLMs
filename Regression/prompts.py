@@ -3,9 +3,9 @@ from langchain.prompts import PromptTemplate
 zero_shot = PromptTemplate(
 input_variables=[],
 template=
-"""System: Based on the provided features of a used car listed below, please predict its selling price in Indian Rupees in the Indian market. The predicted price should be expressed solely as a number followed by the currency "INR".
+"""System: Based on the provided attributes of a used car listed below, please predict its selling price in Indian Rupees in the Indian market. The predicted price should be expressed solely as a number followed by the currency "INR".
 Ensure that the output contains no additional text or characters beyond this specified format.
-Features:
+Attributes:
 name: {name},
 year: {year},
 km_driven: {km_driven},
@@ -36,9 +36,9 @@ Example 2:
 Example 3:
 {example_3}
 
-System: Based on the provided features of a used car listed below, please predict its selling price in Indian Rupees in the Indian market. The predicted price should be expressed solely as a number followed by the currency "INR".
+System: Based on the provided attributes of a used car listed below, please predict its selling price in Indian Rupees in the Indian market. The predicted price should be expressed solely as a number followed by the currency "INR".
 Ensure that the output contains no additional text or characters beyond this specified format.
-Features:
+Attributes:
 name: {name},
 year: {year},
 km_driven: {km_driven},
