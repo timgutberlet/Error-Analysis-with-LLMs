@@ -1,0 +1,840 @@
+table_index,table_name,column_index_left,column_index_right,y_true,y_pred,prompt_name,prompt,column_table_A,column_table_B,table_A,table_B
+0,29021592_3_2299138476894681059,0,0,True,,,,Domitian | Hadrian | Nerva | Titus | Trajan,Marcus Silius Messala | Titus | Hadrian | Vespasian | Nerva,"| Column A-0   | Column A-1        |   Column A-2 | Column A-3                        | Column A-4   |
+|:-------------|:------------------|-------------:|:----------------------------------|:-------------|
+| Domitian     | son of Vespasian  |          nan | Titus Flavius Domitianus          | 81-96        |
+| Nerva        | nan               |          nan | Marcus Cocceius Nerva             | 96-8         |
+| Hadrian      | Kinsman of Trajan |          nan | Publius Aelius Hadrianus          | 117-8        |
+| Trajan       | nan               |          nan | Marcus Ulpius Trajanus            | 98-117       |
+| Titus        | son of Vespasian  |          nan | Titus Flavius Sabinus Vespasianus | 79-81        |","| Column B-0            |   Column B-1 | Column B-2                                          | Column B-3                                  | Column B-4                | Column B-5                 |
+|:----------------------|-------------:|:----------------------------------------------------|:--------------------------------------------|:--------------------------|:---------------------------|
+| Trajan                |         9811 | nan                                                 | Imperator Caesar Nerva Traianus Augustus    | Marcia (mother of Trajan) | Hispania Baetica, Italica, |
+| Titus                 |         1979 | Titus Flavius Vespasianus, Titus Caesar Vespasianus | Imperator Titus Caesar Vespasianus Augustus | Domitilla the Elder       | Roman Italy, Rome          |
+| Marcus Silius Messala |          nan | nan                                                 | nan                                         | nan                       | nan                        |
+| Vespasian             |         1969 | Titus Flavius Vespasianus                           | Imperator Caesar Vespasianus Augustus       | Vespasia Polla            | Roman Italy, Falacrina     |
+| Nerva                 |         1996 | nan                                                 | Imperator Nerva Caesar Augustus             | Sergia Plautilla          | Roman Italy, Narni         |"
+1,29021592_3_2299138476894681059,3,0,False,,,,Titus Flavius Domitianus | Publius Aelius Hadrianus | Marcus Cocceius Nerva | Titus Flavius Sabinus Vespasianus | Marcus Ulpius Trajanus,Marcus Silius Messala | Titus | Hadrian | Vespasian | Nerva,,
+2,29021592_3_2299138476894681059,4,0,False,,,,81-96 | 117-8 | 96-8 | 79-81 | 98-117,Marcus Silius Messala | Titus | Hadrian | Vespasian | Nerva,,
+3,29021592_3_2299138476894681059,2,0,False,,,,nan | nan | nan | nan | nan,Marcus Silius Messala | Titus | Hadrian | Vespasian | Nerva,,
+4,29021592_3_2299138476894681059,0,3,False,,,,Domitian | Hadrian | Nerva | Titus | Trajan,nan | Imperator Titus Caesar Vespasianus Augustus | Imperator Caesar Traianus Hadrianus Augustus | Imperator Caesar Vespasianus Augustus | Imperator Nerva Caesar Augustus,,
+5,29021592_3_2299138476894681059,3,3,False,,,,Titus Flavius Domitianus | Publius Aelius Hadrianus | Marcus Cocceius Nerva | Titus Flavius Sabinus Vespasianus | Marcus Ulpius Trajanus,nan | Imperator Titus Caesar Vespasianus Augustus | Imperator Caesar Traianus Hadrianus Augustus | Imperator Caesar Vespasianus Augustus | Imperator Nerva Caesar Augustus,,
+6,29021592_3_2299138476894681059,0,2,False,,,,Domitian | Hadrian | Nerva | Titus | Trajan,"nan | Titus Flavius Vespasianus, Titus Caesar Vespasianus | nan | Titus Flavius Vespasianus | nan",,
+7,29021592_3_2299138476894681059,3,2,True,,,,Titus Flavius Domitianus | Publius Aelius Hadrianus | Marcus Cocceius Nerva | Titus Flavius Sabinus Vespasianus | Marcus Ulpius Trajanus,"nan | Titus Flavius Vespasianus, Titus Caesar Vespasianus | nan | Titus Flavius Vespasianus | nan",,
+8,29021592_3_2299138476894681059,4,2,False,,,,81-96 | 117-8 | 96-8 | 79-81 | 98-117,"nan | Titus Flavius Vespasianus, Titus Caesar Vespasianus | nan | Titus Flavius Vespasianus | nan",,
+9,29021592_3_2299138476894681059,3,1,False,,,,Titus Flavius Domitianus | Publius Aelius Hadrianus | Marcus Cocceius Nerva | Titus Flavius Sabinus Vespasianus | Marcus Ulpius Trajanus,nan | 1979.0 | 117.0 | 1969.0 | 1996.0,,
+10,29021592_3_2299138476894681059,4,1,False,,,,81-96 | 117-8 | 96-8 | 79-81 | 98-117,nan | 1979.0 | 117.0 | 1969.0 | 1996.0,,
+11,29021592_3_2299138476894681059,2,5,False,,,,nan | nan | nan | nan | nan,"nan | Roman Italy, Rome | Italica, Hispania Baetica  or Rome, Italia | Roman Italy, Falacrina | Roman Italy, Narni",,
+12,34899692_0_6530393048033763438,0,0,True,,,,Honduras | Chile | Latvia | Portugal | United States,Lebanon | Bahrain | Third Hellenic Republic | Mali | Antigua and Barbuda,"| Column A-0     | Column A-1    |   Column A-2 | Column A-3    |
+|:---------------|:--------------|-------------:|:--------------|
+| Spain          | Refer to Euro |      0.00675 | Peseta (ESP)  |
+| Taiwan         | 0.03751       |      0.02775 | Dollar (TWD)  |
+| Czech Republic | 0.05870       |      0.04714 | Koruna (CZK)  |
+| Venezuela      | nan           |    nan       | Bolivar (VEB) |
+| New Zealand    | 0.8866        |      0.7849  | Dollar (NZD)  |","| Column B-0       | Column B-1                               |   Column B-2 | Column B-3                                                                                                        | Column B-4             | Column B-5   |
+|:-----------------|:-----------------------------------------|-------------:|:------------------------------------------------------------------------------------------------------------------|:-----------------------|:-------------|
+| Bulgaria         | National Assembly (Bulgaria)             |   8.6e+10    | nan                                                                                                               | Bulgarian lev          | decrease     |
+| Papua New Guinea | National Parliament of Papua New Guinea  |   2.1543e+10 | Related articles, UNESCO Science Report: towards 2030                                                             | Papua New Guinean kina | increase     |
+| Sudan            | Transitional Legislative Council (Sudan) |   3.0808e+10 | nan                                                                                                               | Sudanese pound         | increase     |
+| Croatia          | Sabor                                    |   6.938e+10  | nan                                                                                                               | Croatian kuna          | increase     |
+| Aruba            | nan                                      |   3.4e+09    | Geographic locale, International membership and history, Languages in Aruba, National origins, Religions of Aruba | nan                    | nan          |"
+13,34899692_0_6530393048033763438,3,0,False,,,,Lempira (HNL) | Peso (CLP) | Lats (LVL) | Escudo (PTE) | Dollar (USD),Lebanon | Bahrain | Third Hellenic Republic | Mali | Antigua and Barbuda,,
+14,34899692_0_6530393048033763438,2,0,False,,,,0.0481 | 0.001844 | 1.6560 | nan | 0.9660,Lebanon | Bahrain | Third Hellenic Republic | Mali | Antigua and Barbuda,,
+15,34899692_0_6530393048033763438,0,3,False,,,,Honduras | Chile | Latvia | Portugal | United States,"Related articles | Related articles, UNESCO Science Report: towards 2030 | nan | Religion in Mali, Mother Tongues in Mali, Spoken Languages in Mali | Related articles",,
+16,34899692_0_6530393048033763438,3,3,False,,,,Lempira (HNL) | Peso (CLP) | Lats (LVL) | Escudo (PTE) | Dollar (USD),"Related articles | Related articles, UNESCO Science Report: towards 2030 | nan | Religion in Mali, Mother Tongues in Mali, Spoken Languages in Mali | Related articles",,
+17,34899692_0_6530393048033763438,0,1,False,,,,Honduras | Chile | Latvia | Portugal | United States,Parliament of Lebanon | National Assembly of Bahrain | Hellenic Parliament | National Assembly (Mali) | Parliament of Antigua and Barbuda,,
+18,34899692_0_6530393048033763438,3,1,False,,,,Lempira (HNL) | Peso (CLP) | Lats (LVL) | Escudo (PTE) | Dollar (USD),Parliament of Lebanon | National Assembly of Bahrain | Hellenic Parliament | National Assembly (Mali) | Parliament of Antigua and Barbuda,,
+19,34899692_0_6530393048033763438,1,1,False,,,,0.0575 | 0.002255 | 2.1000 | Refer to Euro | 1.0178,Parliament of Lebanon | National Assembly of Bahrain | Hellenic Parliament | National Assembly (Mali) | Parliament of Antigua and Barbuda,,
+20,34899692_0_6530393048033763438,0,2,False,,,,Honduras | Chile | Latvia | Portugal | United States,"1.9008E10 | 4.4169E10,  | 2.24033E11 | 1.7407E10 | 1.717E9",,
+21,34899692_0_6530393048033763438,1,2,False,,,,0.0575 | 0.002255 | 2.1000 | Refer to Euro | 1.0178,"1.9008E10 | 4.4169E10,  | 2.24033E11 | 1.7407E10 | 1.717E9",,
+22,34899692_0_6530393048033763438,0,4,False,,,,Honduras | Chile | Latvia | Portugal | United States,Lebanese pound | Bahraini dinar | Euro | West African CFA franc | East Caribbean dollar,,
+23,34899692_0_6530393048033763438,3,4,True,,,,Lempira (HNL) | Peso (CLP) | Lats (LVL) | Escudo (PTE) | Dollar (USD),Lebanese pound | Bahraini dinar | Euro | West African CFA franc | East Caribbean dollar,,
+24,34899692_0_6530393048033763438,2,4,False,,,,0.0481 | 0.001844 | 1.6560 | nan | 0.9660,Lebanese pound | Bahraini dinar | Euro | West African CFA franc | East Caribbean dollar,,
+25,34899692_0_6530393048033763438,2,5,False,,,,0.0481 | 0.001844 | 1.6560 | nan | 0.9660,decrease | increase | increase | increase | increase,,
+26,55961337_0_6548713781034932742,5,0,True,,,,Pound | Djibouti Franc | East Caribbean Dollar | Danish Krone | Ethiopian Birr,Emergency circulating notes | Cuban peso | Georgian maneti | New Zealand pound | AM-Franc,"| Column A-0                        | Column A-1   |   Column A-2 | Column A-3     | Column A-4   | Column A-5         |
+|:----------------------------------|:-------------|-------------:|:---------------|:-------------|:-------------------|
+| Congo, The Democratic Republic Of | nan          |          976 | 100 centimes   | CDF          | Franc Congolais    |
+| French Southern Territories       |               |          978 | 100 euro-cents | EUR          | Euro               |
+| Cocos (Keeling) Islands           | A$           |           36 | 100 cents      | AUD          | Australian Dollar  |
+| Cook Islands                      | NZ$          |          554 | 100 cents      | NZD          | New Zealand Dollar |
+| Chile                             | Ch$          |          152 | 100 centavos   | CLP          | Chilean Peso       |","| Column B-0        | Column B-1                                                                                                                                                                | Column B-2                                                                                                                                                       | Column B-3   | Column B-4           | Column B-5                                                      |
+|:------------------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------|:-------------|:---------------------|:----------------------------------------------------------------|
+| Swiss franc       | Campione d'Italia, Liechtenstein, Switzerland                                                                                                                             | , Campione d'Italia, Italy                                                                                                                                       | CHF          | nan                  | Schweizer Franken, franc suisse, franc svizzer, franco svizzero |
+| Czech koruna      | Czech Republic                                                                                                                                                            | nan                                                                                                                                                              | CZK          | haléřa               | koruna česká                                                    |
+| Unidad de Fomento | Chile                                                                                                                                                                     | nan                                                                                                                                                              | CLF          | nan                  | nan                                                             |
+| Maltese scudo     | Hospitaller Malta, Hospitaller Rhodes, Crown Colony of Malta, French occupation of Malta, Gozo (independent state), Malta Protectorate, Sovereign Military Order of Malta | Crown Colony of Malta, Sovereign Military Order of Malta, Hospitaller Malta, Previously:, Malta Protectorate, Hospitaller Rhodes, French Malta, Independent Gozo | none         | Tarì, piccolo, grano | Scudo maltese, Skud Malti                                       |
+| Cambodian riel    | Cambodia                                                                                                                                                                  | nan                                                                                                                                                              | KHR          | kak, sen             | រៀលកម្ពុជា/រៀលខ្មែរ                                                    |"
+27,55961337_0_6548713781034932742,0,0,False,,,,Falkland Islands (Malvinas) | Djibouti | Dominica | Faeroe Islands | Ethiopia,Emergency circulating notes | Cuban peso | Georgian maneti | New Zealand pound | AM-Franc,,
+28,55961337_0_6548713781034932742,4,0,False,,,,FKP | DJF | XCD | DKK | ETB,Emergency circulating notes | Cuban peso | Georgian maneti | New Zealand pound | AM-Franc,,
+29,55961337_0_6548713781034932742,3,0,False,,,,100 pence | 100 centimes | 100 cents | 100 øre | 100 cents,Emergency circulating notes | Cuban peso | Georgian maneti | New Zealand pound | AM-Franc,,
+30,55961337_0_6548713781034932742,1,0,False,,,,£F | DF | EC$ | Dkr | Br,Emergency circulating notes | Cuban peso | Georgian maneti | New Zealand pound | AM-Franc,,
+31,55961337_0_6548713781034932742,5,5,False,,,,Pound | Djibouti Franc | East Caribbean Dollar | Danish Krone | Ethiopian Birr,nan | peso cubano | მანეთი | nan | nan,,
+32,55961337_0_6548713781034932742,1,5,False,,,,£F | DF | EC$ | Dkr | Br,nan | peso cubano | მანეთი | nan | nan,,
+33,55961337_0_6548713781034932742,2,5,False,,,,238 | 262 | 951 | 208 | 230,nan | peso cubano | მანეთი | nan | nan,,
+34,55961337_0_6548713781034932742,5,3,False,,,,Pound | Djibouti Franc | East Caribbean Dollar | Danish Krone | Ethiopian Birr,nan | CUP | nan | nan | nan,,
+35,55961337_0_6548713781034932742,0,3,False,,,,Falkland Islands (Malvinas) | Djibouti | Dominica | Faeroe Islands | Ethiopia,nan | CUP | nan | nan | nan,,
+36,55961337_0_6548713781034932742,4,3,True,,,,FKP | DJF | XCD | DKK | ETB,nan | CUP | nan | nan | nan,,
+37,55961337_0_6548713781034932742,1,3,False,,,,£F | DF | EC$ | Dkr | Br,nan | CUP | nan | nan | nan,,
+38,55961337_0_6548713781034932742,2,3,False,,,,238 | 262 | 951 | 208 | 230,nan | CUP | nan | nan | nan,,
+39,55961337_0_6548713781034932742,5,1,False,,,,Pound | Djibouti Franc | East Caribbean Dollar | Danish Krone | Ethiopian Birr,"Commonwealth of the Philippines | Cuba | Democratic Republic of Georgia | Cook Islands, Tokelau, Niue, Pitcairn Islands, New Zealand | Allies of World War II, France",,
+40,55961337_0_6548713781034932742,0,1,True,,,,Falkland Islands (Malvinas) | Djibouti | Dominica | Faeroe Islands | Ethiopia,"Commonwealth of the Philippines | Cuba | Democratic Republic of Georgia | Cook Islands, Tokelau, Niue, Pitcairn Islands, New Zealand | Allies of World War II, France",,
+41,55961337_0_6548713781034932742,1,1,False,,,,£F | DF | EC$ | Dkr | Br,"Commonwealth of the Philippines | Cuba | Democratic Republic of Georgia | Cook Islands, Tokelau, Niue, Pitcairn Islands, New Zealand | Allies of World War II, France",,
+42,55961337_0_6548713781034932742,5,4,False,,,,Pound | Djibouti Franc | East Caribbean Dollar | Danish Krone | Ethiopian Birr,"Centavos | centavo | kopeck | Penny, Shilling | nan",,
+43,55961337_0_6548713781034932742,4,4,False,,,,FKP | DJF | XCD | DKK | ETB,"Centavos | centavo | kopeck | Penny, Shilling | nan",,
+44,55961337_0_6548713781034932742,3,4,True,,,,100 pence | 100 centimes | 100 cents | 100 øre | 100 cents,"Centavos | centavo | kopeck | Penny, Shilling | nan",,
+45,55961337_0_6548713781034932742,2,4,False,,,,238 | 262 | 951 | 208 | 230,"Centavos | centavo | kopeck | Penny, Shilling | nan",,
+46,55961337_0_6548713781034932742,0,2,False,,,,Falkland Islands (Malvinas) | Djibouti | Dominica | Faeroe Islands | Ethiopia,"25 | nan | Democratic Republic of Georgia | Cook Islands, Tokelau, Niue, Pitcairn Islands, New Zealand | France, under allied-occupation",,
+47,55961337_0_6548713781034932742,4,2,False,,,,FKP | DJF | XCD | DKK | ETB,"25 | nan | Democratic Republic of Georgia | Cook Islands, Tokelau, Niue, Pitcairn Islands, New Zealand | France, under allied-occupation",,
+48,55961337_0_6548713781034932742,3,2,False,,,,100 pence | 100 centimes | 100 cents | 100 øre | 100 cents,"25 | nan | Democratic Republic of Georgia | Cook Islands, Tokelau, Niue, Pitcairn Islands, New Zealand | France, under allied-occupation",,
+49,55961337_0_6548713781034932742,1,2,False,,,,£F | DF | EC$ | Dkr | Br,"25 | nan | Democratic Republic of Georgia | Cook Islands, Tokelau, Niue, Pitcairn Islands, New Zealand | France, under allied-occupation",,
+50,14380604_4_3329235705746762392,7,0,True,,,,Citigroup | Barclays | Berkshire Hathaway | Bank of America | UBS,Cummins | Newfield Exploration | AT&T | Pioneer Natural Resources | Energen,"|   Column A-0 |   Column A-1 |   Column A-2 | Column A-3   | Column A-4   |   Column A-5 | Column A-6   | Column A-7           |
+|-------------:|-------------:|-------------:|:-------------|:-------------|-------------:|:-------------|:---------------------|
+|           11 |       265.91 |        22.29 | UK           | Oil and gas  |       198.14 | 217.60       | BP                   |
+|           12 |       179.02 |        11.68 | Japan        | Automotive   |       217.69 | 243.60       | Toyota               |
+|           15 |       125.33 |         8.81 | Germany      | Insurance    |        87.22 | 1,380.88     | Allianz              |
+|            7 |       335.09 |        39.5  | USA          | Oil and gas  |       410.65 | 223.95       | ExxonMobil           |
+|            5 |        99.3  |        14.44 | USA          | Banking      |       170.97 | 1,351.52     | JPMorgan Chase & Co. |","| Column B-0        | Column B-1   | Column B-2                         |   Column B-3 |   Column B-4 | Column B-5                                                              | Column B-6         | Column B-7   |
+|:------------------|:-------------|:-----------------------------------|-------------:|-------------:|:------------------------------------------------------------------------|:-------------------|:-------------|
+| Mallinckrodt      | MNKKQ        | nan                                |   3.162e+09  |   1.0338e+10 | Blanchardstown, Missouri, St Louis, Staines-upon-Thames, Dublin, Surrey | Pharmaceutical     | MNKKQ        |
+| PulteGroup        | 822416       | CEO, CFO, Executive Vice-President |   1.3927e+10 |   1.3353e+10 | Atlanta, Georgia                                                        | Home construction  | PHM          |
+| Crown Holdings    | 1219601      | CEO, CFO                           |   1.15e+10   |   7.5e+09    | Yardley, Pennsylvania                                                   | Packaging          | CCK          |
+| EOG Resources     | EOG          | CEO, CFO                           |   1.1032e+10 |   3.5804e+10 | Houston, United States, Heritage Plaza                                  | Petroleum industry | EOG          |
+| Denbury Resources | DEN          | President (corporate title), CFO   |   1.258e+09  |   1.902e+09  | Plano, Texas                                                            | Petroleum industry | DEN          |"
+51,14380604_4_3329235705746762392,3,0,False,,,,USA | UK | USA | USA | Switzerland,Cummins | Newfield Exploration | AT&T | Pioneer Natural Resources | Energen,,
+52,14380604_4_3329235705746762392,1,0,False,,,,146.56 | 67.71 | 98.54 | 116.57 | 105.59,Cummins | Newfield Exploration | AT&T | Pioneer Natural Resources | Energen,,
+53,14380604_4_3329235705746762392,0,0,False,,,,1 | 18 | 16 | 2 | 9,Cummins | Newfield Exploration | AT&T | Pioneer Natural Resources | Energen,,
+54,14380604_4_3329235705746762392,2,0,False,,,,21.54 | 8.95 | 11.02 | 21.13 | 9.78,Cummins | Newfield Exploration | AT&T | Pioneer Natural Resources | Energen,,
+55,14380604_4_3329235705746762392,7,7,False,,,,Citigroup | Barclays | Berkshire Hathaway | Bank of America | UBS,CMI | nan | T | PXD | nan,,
+56,14380604_4_3329235705746762392,6,7,False,,,,"1,884.32 | 1,949.17 | 248.44 | 1,459.74 | 1,776.89",CMI | nan | T | PXD | nan,,
+57,14380604_4_3329235705746762392,7,2,False,,,,Citigroup | Barclays | Berkshire Hathaway | Bank of America | UBS,"nan | Chief financial officer, Chief operating officer, CEO, Chairman | nan | Scott D. Sheffield, President (corporate title), CFO | CEO, CFO",,
+58,14380604_4_3329235705746762392,4,2,False,,,,Banking | Banking | Diversified Financials | Banking | Diversified Financials,"nan | Chief financial officer, Chief operating officer, CEO, Chairman | nan | Scott D. Sheffield, President (corporate title), CFO | CEO, CFO",,
+59,14380604_4_3329235705746762392,3,2,False,,,,USA | UK | USA | USA | Switzerland,"nan | Chief financial officer, Chief operating officer, CEO, Chairman | nan | Scott D. Sheffield, President (corporate title), CFO | CEO, CFO",,
+60,14380604_4_3329235705746762392,7,1,False,,,,Citigroup | Barclays | Berkshire Hathaway | Bank of America | UBS,CMI | nan | 732717 | PXD | nan,,
+61,14380604_4_3329235705746762392,4,1,False,,,,Banking | Banking | Diversified Financials | Banking | Diversified Financials,CMI | nan | 732717 | PXD | nan,,
+62,14380604_4_3329235705746762392,1,1,False,,,,146.56 | 67.71 | 98.54 | 116.57 | 105.59,CMI | nan | 732717 | PXD | nan,,
+63,14380604_4_3329235705746762392,6,1,False,,,,"1,884.32 | 1,949.17 | 248.44 | 1,459.74 | 1,776.89",CMI | nan | 732717 | PXD | nan,,
+64,14380604_4_3329235705746762392,5,1,False,,,,247.42 | 94.79 | 163.79 | 226.61 | 116.84,CMI | nan | 732717 | PXD | nan,,
+65,14380604_4_3329235705746762392,2,1,False,,,,21.54 | 8.95 | 11.02 | 21.13 | 9.78,CMI | nan | 732717 | PXD | nan,,
+66,14380604_4_3329235705746762392,7,6,False,,,,Citigroup | Barclays | Berkshire Hathaway | Bank of America | UBS,"Automotive industry, Heavy equipment (construction) | Petroleum industry | Telecommunications industry, Technology company | Petroleum industry | Petroleum industry",,
+67,14380604_4_3329235705746762392,4,6,True,,,,Banking | Banking | Diversified Financials | Banking | Diversified Financials,"Automotive industry, Heavy equipment (construction) | Petroleum industry | Telecommunications industry, Technology company | Petroleum industry | Petroleum industry",,
+68,14380604_4_3329235705746762392,1,6,False,,,,146.56 | 67.71 | 98.54 | 116.57 | 105.59,"Automotive industry, Heavy equipment (construction) | Petroleum industry | Telecommunications industry, Technology company | Petroleum industry | Petroleum industry",,
+69,14380604_4_3329235705746762392,7,5,False,,,,Citigroup | Barclays | Berkshire Hathaway | Bank of America | UBS,"Columbus, Indiana, Cummins Corporate Office Building | Houston | Whitacre Tower | Irving, Texas | Birmingham, Alabama",,
+70,14380604_4_3329235705746762392,3,5,True,,,,USA | UK | USA | USA | Switzerland,"Columbus, Indiana, Cummins Corporate Office Building | Houston | Whitacre Tower | Irving, Texas | Birmingham, Alabama",,
+71,14380604_4_3329235705746762392,1,5,False,,,,146.56 | 67.71 | 98.54 | 116.57 | 105.59,"Columbus, Indiana, Cummins Corporate Office Building | Houston | Whitacre Tower | Irving, Texas | Birmingham, Alabama",,
+72,14380604_4_3329235705746762392,6,5,False,,,,"1,884.32 | 1,949.17 | 248.44 | 1,459.74 | 1,776.89","Columbus, Indiana, Cummins Corporate Office Building | Houston | Whitacre Tower | Irving, Texas | Birmingham, Alabama",,
+73,14380604_4_3329235705746762392,0,5,False,,,,1 | 18 | 16 | 2 | 9,"Columbus, Indiana, Cummins Corporate Office Building | Houston | Whitacre Tower | Irving, Texas | Birmingham, Alabama",,
+74,14380604_4_3329235705746762392,4,4,False,,,,Banking | Banking | Diversified Financials | Banking | Diversified Financials,23710000000.0 | 4961000000.0 | 551.62 | 36811000000.0 | 4614000000.0,,
+75,14380604_4_3329235705746762392,3,4,False,,,,USA | UK | USA | USA | Switzerland,23710000000.0 | 4961000000.0 | 551.62 | 36811000000.0 | 4614000000.0,,
+76,14380604_4_3329235705746762392,1,4,False,,,,146.56 | 67.71 | 98.54 | 116.57 | 105.59,23710000000.0 | 4961000000.0 | 551.62 | 36811000000.0 | 4614000000.0,,
+77,14380604_4_3329235705746762392,6,4,True,,,,"1,884.32 | 1,949.17 | 248.44 | 1,459.74 | 1,776.89",23710000000.0 | 4961000000.0 | 551.62 | 36811000000.0 | 4614000000.0,,
+78,14380604_4_3329235705746762392,5,4,False,,,,247.42 | 94.79 | 163.79 | 226.61 | 116.84,23710000000.0 | 4961000000.0 | 551.62 | 36811000000.0 | 4614000000.0,,
+79,14380604_4_3329235705746762392,3,3,False,,,,USA | UK | USA | USA | Switzerland,24020000000.0 | 1767000000.0 | 168.86 | 14643000000.0 | 878000000.0,,
+80,14380604_4_3329235705746762392,1,3,True,,,,146.56 | 67.71 | 98.54 | 116.57 | 105.59,24020000000.0 | 1767000000.0 | 168.86 | 14643000000.0 | 878000000.0,,
+81,14380604_4_3329235705746762392,6,3,False,,,,"1,884.32 | 1,949.17 | 248.44 | 1,459.74 | 1,776.89",24020000000.0 | 1767000000.0 | 168.86 | 14643000000.0 | 878000000.0,,
+82,66009064_0_9148652238372261251,0,0,True,,,,John Reilly | John Mayberry | Jeff Kent | Bob Fothergill | Alex Ochoa,Sam Thompson | Yunior Marte | Freddy Tarnok | Dwight Evans | Tom Burns (baseball),"| Column A-0      |   Column A-1 | Column A-2   | Column A-3   | Column A-4   | Column A-5   |
+|:----------------|-------------:|:-------------|:-------------|:-------------|:-------------|
+| Tom Burns       |         1890 | 08-01        | .            | Brooklyn     | ?m?k         |
+| Cal Ripken, Jr. |         1984 | 05-06        | .            | Orioles      | ?`?k         |
+| Stan Musial     |         1949 | 07-24        | .            | Cardinals    | ?m?k         |
+| Jeff Kent       |         1999 | 05-03        | .            | Giants       | ?m?k         |
+| George Brett    |         1990 | 07-25        | 2            | Royals       | ?`?k         |","| Column B-0     | Column B-1              | Column B-2          |
+|:---------------|:------------------------|:--------------------|
+| Harold Greiner | *Fort Wayne Daisies     | nan                 |
+| Jack Rowe      | *Buffalo Bisons (NL)    | Buffalo Bisons      |
+|                | *Detroit Wolverines     |                     |
+|                | *Pittsburgh Alleghenys  |                     |
+|                | *Buffalo Bisons (PL)    |                     |
+| Jang Si-hwan   | * Hyundai Unicorns      | Hyundai Unicorns    |
+|                | * Nexen Heroes          |                     |
+|                | * KT Wiz                |                     |
+|                | * Lotte Giants          |                     |
+|                | * Hanwha Eagles         |                     |
+| Robin Yount    | * Milwaukee Brewers     | Milwaukee Brewers   |
+| Kyle Regnault  | * Hiroshima Toyo Carp   | Hiroshima Toyo Carp |"
+83,66009064_0_9148652238372261251,4,0,False,,,,Cincinnati | Royals | Giants | Tigers | Mets,Sam Thompson | Yunior Marte | Freddy Tarnok | Dwight Evans | Tom Burns (baseball),,
+84,66009064_0_9148652238372261251,1,0,False,,,,1890 | 1977 | 1999 | 1926 | 1996,Sam Thompson | Yunior Marte | Freddy Tarnok | Dwight Evans | Tom Burns (baseball),,
+85,66009064_0_9148652238372261251,0,2,False,,,,John Reilly | John Mayberry | Jeff Kent | Bob Fothergill | Alex Ochoa,Detroit Wolverines | San Francisco Giants | Atlanta Braves | nan | Chicago White Stockings,,
+86,66009064_0_9148652238372261251,4,2,False,,,,Cincinnati | Royals | Giants | Tigers | Mets,Detroit Wolverines | San Francisco Giants | Atlanta Braves | nan | Chicago White Stockings,,
+87,66009064_0_9148652238372261251,5,2,False,,,,?m?k | ?`?k | ?m?k | ?`?k | ?m?k,Detroit Wolverines | San Francisco Giants | Atlanta Braves | nan | Chicago White Stockings,,
+88,66009064_0_9148652238372261251,3,2,False,,,,. | . | . | . | .,Detroit Wolverines | San Francisco Giants | Atlanta Braves | nan | Chicago White Stockings,,
+89,66009064_0_9148652238372261251,0,1,False,,,,John Reilly | John Mayberry | Jeff Kent | Bob Fothergill | Alex Ochoa,"* Detroit Wolverines 
+* Philadelphia Quakers / Phillies 
+* Detroit Tigers | * San Francisco Giants | *Atlanta Braves | nan | As player
+* Chicago White Stockings/Colts 
+* Pittsburgh Pirates 
+As manager
+* Pittsburgh Pirates 
+* Chicago Orphans",,
+90,66009064_0_9148652238372261251,4,1,True,,,,Cincinnati | Royals | Giants | Tigers | Mets,"* Detroit Wolverines 
+* Philadelphia Quakers / Phillies 
+* Detroit Tigers | * San Francisco Giants | *Atlanta Braves | nan | As player
+* Chicago White Stockings/Colts 
+* Pittsburgh Pirates 
+As manager
+* Pittsburgh Pirates 
+* Chicago Orphans",,
+91,66009064_0_9148652238372261251,1,1,False,,,,1890 | 1977 | 1999 | 1926 | 1996,"* Detroit Wolverines 
+* Philadelphia Quakers / Phillies 
+* Detroit Tigers | * San Francisco Giants | *Atlanta Braves | nan | As player
+* Chicago White Stockings/Colts 
+* Pittsburgh Pirates 
+As manager
+* Pittsburgh Pirates 
+* Chicago Orphans",,
+92,66009064_0_9148652238372261251,5,1,False,,,,?m?k | ?`?k | ?m?k | ?`?k | ?m?k,"* Detroit Wolverines 
+* Philadelphia Quakers / Phillies 
+* Detroit Tigers | * San Francisco Giants | *Atlanta Braves | nan | As player
+* Chicago White Stockings/Colts 
+* Pittsburgh Pirates 
+As manager
+* Pittsburgh Pirates 
+* Chicago Orphans",,
+93,66009064_0_9148652238372261251,2,1,False,,,,08-06 | 08-05 | 05-03 | 09-26 | 07-03,"* Detroit Wolverines 
+* Philadelphia Quakers / Phillies 
+* Detroit Tigers | * San Francisco Giants | *Atlanta Braves | nan | As player
+* Chicago White Stockings/Colts 
+* Pittsburgh Pirates 
+As manager
+* Pittsburgh Pirates 
+* Chicago Orphans",,
+94,84548468_0_5955155464119382182,4,0,True,,,,Easy Rider | Dead Man Walking | From Dusk Till Dawn | City Lights | The Fugitive,"Ferris Bueller's Day Off | Eager Lips | Fanny and Alexander | Crouching Tiger, Hidden Dragon | Do the Right Thing","|   Column A-0 | Column A-1                                                                                                                                           |   Column A-2 |   Column A-3 | Column A-4           |
+|-------------:|:-----------------------------------------------------------------------------------------------------------------------------------------------------|-------------:|-------------:|:---------------------|
+|          209 | Peter Weir                                                                                                                                           |          384 |         1989 | Dead Poets Society   |
+|          423 | Sergio Leone                                                                                                                                         |          653 |         1964 | A Fistful of Dollars |
+|           26 | Joel Coen                                                                                                                                            |           49 |         1996 | Fargo                |
+|          172 | Martin Scorsese                                                                                                                                      |          488 |         1995 | Casino               |
+|          185 | James Algar, Samuel Armstrong, Ford Beebe, Norman Ferguson, Jim Handley, T. Hee, Wilfred Jackson, Hamilton Luske, Bill Roberts, and Paul Satterfield |          199 |         1940 | Fantasia             |","| Column B-0            | Column B-1      | Column B-2   | Column B-3              | Column B-4   |
+|:----------------------|:----------------|:-------------|:------------------------|:-------------|
+| Dark City (1998 film) | Alex Proyas     | nan          | Trevor Jones (composer) | 100.0        |
+| Doctor Zhivago (film) | David Lean      | nan          | Maurice Jarre           | 193.0, 200.0 |
+| Devil on Horseback    | Cyril Frankel   | 1954-03-17   | Malcolm Arnold          | 88.0         |
+| Chariots of Fire      | Hugh Hudson     | nan          | Vangelis                | 124.0        |
+| Duty's Reward         | Bertram Bracken | 1927-06-10   | nan                     | 60.0         |"
+95,84548468_0_5955155464119382182,3,0,False,,,,1969 | 1995 | 1996 | 1931 | 1993,"Ferris Bueller's Day Off | Eager Lips | Fanny and Alexander | Crouching Tiger, Hidden Dragon | Do the Right Thing",,
+96,84548468_0_5955155464119382182,1,0,False,,,,Dennis Hopper | Tim Robbins | Robert Rodriguez | Charles Chaplin | Andrew Davis,"Ferris Bueller's Day Off | Eager Lips | Fanny and Alexander | Crouching Tiger, Hidden Dragon | Do the Right Thing",,
+97,84548468_0_5955155464119382182,0,0,False,,,,268 | 360 | 503 | 106 | 182,"Ferris Bueller's Day Off | Eager Lips | Fanny and Alexander | Crouching Tiger, Hidden Dragon | Do the Right Thing",,
+98,84548468_0_5955155464119382182,2,0,False,,,,160 | 757 | 1222 | 68 | 496,"Ferris Bueller's Day Off | Eager Lips | Fanny and Alexander | Crouching Tiger, Hidden Dragon | Do the Right Thing",,
+99,84548468_0_5955155464119382182,4,1,False,,,,Easy Rider | Dead Man Walking | From Dusk Till Dawn | City Lights | The Fugitive,John Hughes (filmmaker) | Wilfred Noy | Ingmar Bergman | Ang Lee | Spike Lee,,
+100,84548468_0_5955155464119382182,1,1,True,,,,Dennis Hopper | Tim Robbins | Robert Rodriguez | Charles Chaplin | Andrew Davis,John Hughes (filmmaker) | Wilfred Noy | Ingmar Bergman | Ang Lee | Spike Lee,,
+101,84548468_0_5955155464119382182,0,1,False,,,,268 | 360 | 503 | 106 | 182,John Hughes (filmmaker) | Wilfred Noy | Ingmar Bergman | Ang Lee | Spike Lee,,
+102,84548468_0_5955155464119382182,4,2,False,,,,Easy Rider | Dead Man Walking | From Dusk Till Dawn | City Lights | The Fugitive,nan | 1927-07-15 | nan | nan | nan,,
+103,84548468_0_5955155464119382182,3,2,True,,,,1969 | 1995 | 1996 | 1931 | 1993,nan | 1927-07-15 | nan | nan | nan,,
+104,84548468_0_5955155464119382182,1,2,False,,,,Dennis Hopper | Tim Robbins | Robert Rodriguez | Charles Chaplin | Andrew Davis,nan | 1927-07-15 | nan | nan | nan,,
+105,84548468_0_5955155464119382182,0,2,False,,,,268 | 360 | 503 | 106 | 182,nan | 1927-07-15 | nan | nan | nan,,
+106,84548468_0_5955155464119382182,2,2,False,,,,160 | 757 | 1222 | 68 | 496,nan | 1927-07-15 | nan | nan | nan,,
+107,84548468_0_5955155464119382182,4,3,False,,,,Easy Rider | Dead Man Walking | From Dusk Till Dawn | City Lights | The Fugitive,Ira Newborn | nan | nan | Tan Dun | Bill Lee (musician),,
+108,84548468_0_5955155464119382182,3,3,False,,,,1969 | 1995 | 1996 | 1931 | 1993,Ira Newborn | nan | nan | Tan Dun | Bill Lee (musician),,
+109,84548468_0_5955155464119382182,1,3,False,,,,Dennis Hopper | Tim Robbins | Robert Rodriguez | Charles Chaplin | Andrew Davis,Ira Newborn | nan | nan | Tan Dun | Bill Lee (musician),,
+110,84548468_0_5955155464119382182,1,4,False,,,,Dennis Hopper | Tim Robbins | Robert Rodriguez | Charles Chaplin | Andrew Davis,"103.0 | nan | 188.0, 312.0 | 120.0 | 120.0",,
+111,99070098_0_2074872741302696997,7,0,True,,,,Catstye Cam | Fellbarrow | Robinson | Binsey | Grey Crag,"Britland Edge Hill | Beacon Hill, Monmouthshire | Pumiri | Watts Hill | Wild Boar Fell","|   Column A-0 | Column A-1   | Column A-2   |   Column A-3 |   Column A-4 | Column A-5   |   Column A-6 | Column A-7      |
+|-------------:|:-------------|:-------------|-------------:|-------------:|:-------------|-------------:|:----------------|
+|          195 | NY440182     | Far E Fells  |         1417 |          432 | -            |            1 | Steel Knotts    |
+|           68 | NY286089     | C Fells      |         2415 |          736 | 123          |            4 | Sergeant Man    |
+|           39 | NY442128     | Far E Fells  |         2598 |          792 | 1234         |            6 | Rampsgill Head  |
+|          143 | NY414148     | Far E Fells  |         1860 |          567 | -            |            1 | Angletarn Pikes |
+|          125 | NY411118     | Far E Fells  |         2028 |          618 | -            |            2 | Hartsop Dodd    |","| Column B-0            |   Column B-1 | Column B-2        | Column B-3                           | Column B-4                            |   Column B-5 | Column B-6   | Column B-7                                |
+|:----------------------|-------------:|:------------------|:-------------------------------------|:--------------------------------------|-------------:|:-------------|:------------------------------------------|
+| Campgaw Mountain      |       229.21 | USGS Ramsey       | nan                                  | Bergen County, New Jersey, New Jersey |     41.0543  | nan          | nan                                       |
+| Cascade Peaks         |       nan    | nan               | Pyrenees                             | France &mdash; Spain                  |     42.6867  | nan          | List of Pyrenean three-thousanders        |
+| Punta Baretti         |      4013    | nan               | Mont Blanc massif                    | Val d'Aosta,                          |     45.8144  | nan          | nan                                       |
+| Puracé                |      4646    | nan               | Cordillera Central (Colombia), Andes | Cauca Department                      |      2.31389 | nan          | nan                                       |
+| Pilot Hill, Hampshire |       286    | OS Landranger 174 | North Hampshire Downs                | England, Hampshire                    |     51.3386  | SU398601     | List of English counties by highest point |"
+112,99070098_0_2074872741302696997,4,0,False,,,,890 | 416 | 737 | 447 | 638,"Britland Edge Hill | Beacon Hill, Monmouthshire | Pumiri | Watts Hill | Wild Boar Fell",,
+113,99070098_0_2074872741302696997,1,0,False,,,,NY348158 | NY132242 | NY201168 | NY225355 | NY497072,"Britland Edge Hill | Beacon Hill, Monmouthshire | Pumiri | Watts Hill | Wild Boar Fell",,
+114,99070098_0_2074872741302696997,2,0,False,,,,E Fells | W Fells | NW Fells | N Fells | Far E Fells,"Britland Edge Hill | Beacon Hill, Monmouthshire | Pumiri | Watts Hill | Wild Boar Fell",,
+115,99070098_0_2074872741302696997,7,7,False,,,,Catstye Cam | Fellbarrow | Robinson | Binsey | Grey Crag,"none | nan | nan | nan | Hewitt (hill), Marilyn (hill), Nuttall (hill)",,
+116,99070098_0_2074872741302696997,1,7,False,,,,NY348158 | NY132242 | NY201168 | NY225355 | NY497072,"none | nan | nan | nan | Hewitt (hill), Marilyn (hill), Nuttall (hill)",,
+117,99070098_0_2074872741302696997,2,7,False,,,,E Fells | W Fells | NW Fells | N Fells | Far E Fells,"none | nan | nan | nan | Hewitt (hill), Marilyn (hill), Nuttall (hill)",,
+118,99070098_0_2074872741302696997,7,2,False,,,,Catstye Cam | Fellbarrow | Robinson | Binsey | Grey Crag,"OS Landranger 110; OL1W | nan | nan | OS Landranger 194, Explorer No. 117 | OS Landranger 98",,
+119,99070098_0_2074872741302696997,4,2,False,,,,890 | 416 | 737 | 447 | 638,"OS Landranger 110; OL1W | nan | nan | OS Landranger 194, Explorer No. 117 | OS Landranger 98",,
+120,99070098_0_2074872741302696997,3,2,False,,,,2920 | 1365 | 2418 | 1467 | 2093,"OS Landranger 110; OL1W | nan | nan | OS Landranger 194, Explorer No. 117 | OS Landranger 98",,
+121,99070098_0_2074872741302696997,7,5,False,,,,Catstye Cam | Fellbarrow | Robinson | Binsey | Grey Crag,53.5188 | 51.745 | -19.0 | 50.8317 | 54.3841,,
+122,99070098_0_2074872741302696997,4,5,False,,,,890 | 416 | 737 | 447 | 638,53.5188 | 51.745 | -19.0 | 50.8317 | 54.3841,,
+123,99070098_0_2074872741302696997,1,5,False,,,,NY348158 | NY132242 | NY201168 | NY225355 | NY497072,53.5188 | 51.745 | -19.0 | 50.8317 | 54.3841,,
+124,99070098_0_2074872741302696997,2,5,False,,,,E Fells | W Fells | NW Fells | N Fells | Far E Fells,53.5188 | 51.745 | -19.0 | 50.8317 | 54.3841,,
+125,99070098_0_2074872741302696997,7,3,False,,,,Catstye Cam | Fellbarrow | Robinson | Binsey | Grey Crag,Peak District | nan | Andes | Dorset Downs | Pennines,,
+126,99070098_0_2074872741302696997,4,3,False,,,,890 | 416 | 737 | 447 | 638,Peak District | nan | Andes | Dorset Downs | Pennines,,
+127,99070098_0_2074872741302696997,2,3,True,,,,E Fells | W Fells | NW Fells | N Fells | Far E Fells,Peak District | nan | Andes | Dorset Downs | Pennines,,
+128,99070098_0_2074872741302696997,7,1,False,,,,Catstye Cam | Fellbarrow | Robinson | Binsey | Grey Crag,523.0 | nan | 4862.0 | 262.0 | 708.05,,
+129,99070098_0_2074872741302696997,4,1,True,,,,890 | 416 | 737 | 447 | 638,523.0 | nan | 4862.0 | 262.0 | 708.05,,
+130,99070098_0_2074872741302696997,1,1,False,,,,NY348158 | NY132242 | NY201168 | NY225355 | NY497072,523.0 | nan | 4862.0 | 262.0 | 708.05,,
+131,99070098_0_2074872741302696997,2,1,False,,,,E Fells | W Fells | NW Fells | N Fells | Far E Fells,523.0 | nan | 4862.0 | 262.0 | 708.05,,
+132,99070098_0_2074872741302696997,0,1,False,,,,10 | 198 | 67 | 192 | 118,523.0 | nan | 4862.0 | 262.0 | 708.05,,
+133,99070098_0_2074872741302696997,4,6,False,,,,890 | 416 | 737 | 447 | 638,SE106027 | nan | nan | ST673036 | SD757988,,
+134,99070098_0_2074872741302696997,1,6,True,,,,NY348158 | NY132242 | NY201168 | NY225355 | NY497072,SE106027 | nan | nan | ST673036 | SD757988,,
+135,99070098_0_2074872741302696997,0,6,False,,,,10 | 198 | 67 | 192 | 118,SE106027 | nan | nan | ST673036 | SD757988,,
+136,99070098_0_2074872741302696997,4,4,False,,,,890 | 416 | 737 | 447 | 638,"Derbyshire, England, UK | nan | Bolivia, Sabaya Province, Oruro Department | Dorset, England | England, Cumbria, North Yorkshire",,
+137,86747932_0_7532457067740920052,3,0,True,,,,Air Italy | Aeroflot Russian Airlines | Qantas Airways | China Southern Airlines | Lufthansa,British Airways World Cargo | Airworld | Malaysia–Singapore Airlines | SkyBahamas Airlines | Link Airs,"| Column A-0   | Column A-1   | Column A-2   | Column A-3            |
+|:-------------|:-------------|:-------------|:----------------------|
+| EY           | Reisegepäck  | WebCheckIn   | Etihad Airways        |
+| DL           | Reisegepäck  | WebCheckIn   | Delta Air Lines       |
+| DY           | Reisegepäck  | WebCheckIn   | Norwegian Air Shuttle |
+| FL           | Reisegepäck  | WebCheckIn   | AirTran Airways       |
+| VX           | Reisegepäck  | WebCheckIn   | Virgin America        |","| Column B-0           | Column B-1   | Column B-2                                                                                          | Column B-3   | Column B-4                                                                   |
+|:---------------------|:-------------|:----------------------------------------------------------------------------------------------------|:-------------|:-----------------------------------------------------------------------------|
+| Trans World Airlines | TWA          | Mount Kisco, New York, Fort Worth, Texas, Kansas City, Missouri, New York City, St. Louis, Missouri | TW           | nan                                                                          |
+| East African Air     | nan          | United Kingdom, London                                                                              | 5H           | Mwanza, Kilimanjaro, Mtwara, Nairobi, Johannesburg, Dubai and London Gatwick |
+| JetSmart Perú        | JAP          | Peru, Lima                                                                                          | JZ           | 10                                                                           |
+| Qantas Freight       | QFA          | Sydney                                                                                              | QF           | 130                                                                          |
+| Aviolet              | ASL          | Belgrade, Serbia                                                                                    | JU           | 26                                                                           |"
+138,86747932_0_7532457067740920052,0,0,False,,,,I9 | SU | QF | CZ | LH,British Airways World Cargo | Airworld | Malaysia–Singapore Airlines | SkyBahamas Airlines | Link Airs,,
+139,86747932_0_7532457067740920052,2,0,False,,,,WebCheckIn | WebCheckIn | WebCheckIn | WebCheckIn | WebCheckIn,British Airways World Cargo | Airworld | Malaysia–Singapore Airlines | SkyBahamas Airlines | Link Airs,,
+140,86747932_0_7532457067740920052,3,2,False,,,,Air Italy | Aeroflot Russian Airlines | Qantas Airways | China Southern Airlines | Lufthansa,"England, London, UK | Gatwick Airport | Singapore, Raffles Place | Nassau, Bahamas | Hakata-ku, Fukuoka, Japan",,
+141,86747932_0_7532457067740920052,0,2,False,,,,I9 | SU | QF | CZ | LH,"England, London, UK | Gatwick Airport | Singapore, Raffles Place | Nassau, Bahamas | Hakata-ku, Fukuoka, Japan",,
+142,86747932_0_7532457067740920052,3,4,False,,,,Air Italy | Aeroflot Russian Airlines | Qantas Airways | China Southern Airlines | Lufthansa,nan | nan | nan | 11 | 0,,
+143,86747932_0_7532457067740920052,0,4,False,,,,I9 | SU | QF | CZ | LH,nan | nan | nan | 11 | 0,,
+144,86747932_0_7532457067740920052,3,3,False,,,,Air Italy | Aeroflot Russian Airlines | Qantas Airways | China Southern Airlines | Lufthansa,BA | RL | ML | Q7 | -,,
+145,86747932_0_7532457067740920052,0,3,True,,,,I9 | SU | QF | CZ | LH,BA | RL | ML | Q7 | -,,
+146,86747932_0_7532457067740920052,2,3,False,,,,WebCheckIn | WebCheckIn | WebCheckIn | WebCheckIn | WebCheckIn,BA | RL | ML | Q7 | -,,
+147,86747932_0_7532457067740920052,1,3,False,,,,Reisegepäck | Reisegepäck | Reisegepäck | Reisegepäck | Reisegepäck,BA | RL | ML | Q7 | -,,
+148,86747932_0_7532457067740920052,0,1,False,,,,I9 | SU | QF | CZ | LH,- | AWD | MSA | SBM | -,,
+149,48944826_0_2321751364268052533,3,0,True,,,,"Gran Turismo 4 (Platinum) | Assassins Creed - Brotherhood (D1 Edition) | Halo 3: ODST | Gran Turismo 3 | Borderlands (AT, uncut)",Betrayer (video game) | Ghostbusters: The Video Game | California Games | Guitar Hero World Tour | Prototype (video game),"|   Column A-0 |   Column A-1 | Column A-2                      | Column A-3                              | Column A-4   | Column A-5   |   Column A-6 |   Column A-7 |
+|-------------:|-------------:|:--------------------------------|:----------------------------------------|:-------------|:-------------|-------------:|-------------:|
+|          nan |           18 | nan                             | Medal of Honor Airborne                 | Shooter      | XBox 360     |          nan |          nan |
+|          nan |           12 | nan                             | Ghostbusters (englische Version)        | Action       | XBox 360     |          nan |          nan |
+|          nan |           18 | nan                             | Rainbow Six Vegas 2 (AT, uncut)         | Shooter      | XBox 360     |          nan |          nan |
+|          nan |           18 | nan                             | God of War Collection                   | Action       | PS3          |          nan |          nan |
+|          nan |           18 | Destruction Derby l?sst gr?ssen | Flatout - Ultimate Carnage (UK Version) | Racing       | XBox 360     |          nan |          nan |","| Column B-0               | Column B-1              | Column B-2   | Column B-3        | Column B-4          | Column B-5                          |
+|:-------------------------|:------------------------|:-------------|:------------------|:--------------------|:------------------------------------|
+| Project Gotham Racing 4  | Project Gotham Racing 4 | 2007-10-02   | Xbox 360          | Xbox Game Studios   | Racing game                         |
+| World Rally Championship | nan                     | nan          | nan               | nan                 | nan                                 |
+| Betrayer (video game)    | Betrayer                | nan          | Microsoft Windows | nan                 | Stealth game, Action-adventure game |
+| Fable II                 | Fable II                | 2008-10-21   | Xbox 360          | Xbox Game Studios   | Action role-playing game            |
+| Pro Moves Soccer         | Pro Moves Soccer        | nan          | Sega Genesis      | ASCII Entertainment | Sports game                         |"
+150,48944826_0_2321751364268052533,4,0,False,,,,Racing | Action | Shooter | Racing | Shooter,Betrayer (video game) | Ghostbusters: The Video Game | California Games | Guitar Hero World Tour | Prototype (video game),,
+151,48944826_0_2321751364268052533,2,0,False,,,,nan | nan | nan | nan | nan,Betrayer (video game) | Ghostbusters: The Video Game | California Games | Guitar Hero World Tour | Prototype (video game),,
+152,48944826_0_2321751364268052533,1,0,False,,,,0 | 16 | 18 | 0 | 18,Betrayer (video game) | Ghostbusters: The Video Game | California Games | Guitar Hero World Tour | Prototype (video game),,
+153,48944826_0_2321751364268052533,3,4,False,,,,"Gran Turismo 4 (Platinum) | Assassins Creed - Brotherhood (D1 Edition) | Halo 3: ODST | Gran Turismo 3 | Borderlands (AT, uncut)",nan | Atari Interactive | nan | Activision | Activision,,
+154,48944826_0_2321751364268052533,5,4,False,,,,PS2 | XBox 360 | XBox 360 | PS2 | XBox 360,nan | Atari Interactive | nan | Activision | Activision,,
+155,48944826_0_2321751364268052533,2,4,False,,,,nan | nan | nan | nan | nan,nan | Atari Interactive | nan | Activision | Activision,,
+156,48944826_0_2321751364268052533,3,3,False,,,,"Gran Turismo 4 (Platinum) | Assassins Creed - Brotherhood (D1 Edition) | Halo 3: ODST | Gran Turismo 3 | Borderlands (AT, uncut)","Microsoft Windows | Wii, Nintendo Switch, PlayStation 2, PlayStation 3, PlayStation 4, PlayStation Portable, Microsoft Windows, Xbox 360, Xbox One | Commodore 64, Master System, Apple IIGS, Apple II series, MSX, ZX Spectrum, Amiga, Amstrad CPC, DOS, Nintendo Entertainment System, Atari 2600, Atari Lynx, Atari ST, Sega Genesis | Wii, PlayStation 2, PlayStation 3, Microsoft Windows, OS X, Xbox 360 | PlayStation 3, PlayStation 4, Microsoft Windows, Xbox 360, Xbox One",,
+157,48944826_0_2321751364268052533,4,3,False,,,,Racing | Action | Shooter | Racing | Shooter,"Microsoft Windows | Wii, Nintendo Switch, PlayStation 2, PlayStation 3, PlayStation 4, PlayStation Portable, Microsoft Windows, Xbox 360, Xbox One | Commodore 64, Master System, Apple IIGS, Apple II series, MSX, ZX Spectrum, Amiga, Amstrad CPC, DOS, Nintendo Entertainment System, Atari 2600, Atari Lynx, Atari ST, Sega Genesis | Wii, PlayStation 2, PlayStation 3, Microsoft Windows, OS X, Xbox 360 | PlayStation 3, PlayStation 4, Microsoft Windows, Xbox 360, Xbox One",,
+158,48944826_0_2321751364268052533,5,3,True,,,,PS2 | XBox 360 | XBox 360 | PS2 | XBox 360,"Microsoft Windows | Wii, Nintendo Switch, PlayStation 2, PlayStation 3, PlayStation 4, PlayStation Portable, Microsoft Windows, Xbox 360, Xbox One | Commodore 64, Master System, Apple IIGS, Apple II series, MSX, ZX Spectrum, Amiga, Amstrad CPC, DOS, Nintendo Entertainment System, Atari 2600, Atari Lynx, Atari ST, Sega Genesis | Wii, PlayStation 2, PlayStation 3, Microsoft Windows, OS X, Xbox 360 | PlayStation 3, PlayStation 4, Microsoft Windows, Xbox 360, Xbox One",,
+159,48944826_0_2321751364268052533,0,3,False,,,,nan | nan | nan | nan | nan,"Microsoft Windows | Wii, Nintendo Switch, PlayStation 2, PlayStation 3, PlayStation 4, PlayStation Portable, Microsoft Windows, Xbox 360, Xbox One | Commodore 64, Master System, Apple IIGS, Apple II series, MSX, ZX Spectrum, Amiga, Amstrad CPC, DOS, Nintendo Entertainment System, Atari 2600, Atari Lynx, Atari ST, Sega Genesis | Wii, PlayStation 2, PlayStation 3, Microsoft Windows, OS X, Xbox 360 | PlayStation 3, PlayStation 4, Microsoft Windows, Xbox 360, Xbox One",,
+160,48944826_0_2321751364268052533,3,5,False,,,,"Gran Turismo 4 (Platinum) | Assassins Creed - Brotherhood (D1 Edition) | Halo 3: ODST | Gran Turismo 3 | Borderlands (AT, uncut)","Stealth game, Action-adventure game | Action-adventure game | Sports game | Music video game, Rhythm game | Action-adventure game",,
+161,48944826_0_2321751364268052533,4,5,True,,,,Racing | Action | Shooter | Racing | Shooter,"Stealth game, Action-adventure game | Action-adventure game | Sports game | Music video game, Rhythm game | Action-adventure game",,
+162,48944826_0_2321751364268052533,1,5,False,,,,0 | 16 | 18 | 0 | 18,"Stealth game, Action-adventure game | Action-adventure game | Sports game | Music video game, Rhythm game | Action-adventure game",,
+163,48944826_0_2321751364268052533,0,5,False,,,,nan | nan | nan | nan | nan,"Stealth game, Action-adventure game | Action-adventure game | Sports game | Music video game, Rhythm game | Action-adventure game",,
+164,48944826_0_2321751364268052533,4,2,False,,,,Racing | Action | Shooter | Racing | Shooter,"nan | 2009-06-16, 2009-10-30, 2019-10-04 | nan | 2008-10-26 | 2009-06-09",,
+165,48944826_0_2321751364268052533,1,2,False,,,,0 | 16 | 18 | 0 | 18,"nan | 2009-06-16, 2009-10-30, 2019-10-04 | nan | 2008-10-26 | 2009-06-09",,
+166,48944826_0_2321751364268052533,7,2,False,,,,nan | nan | nan | nan | nan,"nan | 2009-06-16, 2009-10-30, 2019-10-04 | nan | 2008-10-26 | 2009-06-09",,
+167,48944826_0_2321751364268052533,5,1,False,,,,PS2 | XBox 360 | XBox 360 | PS2 | XBox 360,"Betrayer | Ghostbusters: The Video Game | California Games | Reviews, Guitar Hero World Tour | Prototype",,
+168,36039980_4_4283009829602711082,4,0,True,,,,Cima della Valletta Mottone della Tappa | Filo di Remia | Pizzo del Ramulazz | Motto di Levén | Monte Generoso,Rocher du Midi | Gazzirola | Schlüechtli | Schnebelhorn | Mottone di Cava,"|   Column A-0 | Column A-1   | Column A-2   |   Column A-3 | Column A-4           |
+|-------------:|:-------------|:-------------|-------------:|:---------------------|
+|        189   | GR           | 19.03 km     |         2578 | Forcel               |
+|        190.1 | GR/TI        | 15.44 km     |         2739 | Motton               |
+|        191.8 | GR/TI        | 15.59 km     |         2899 | Piz da Termin        |
+|        184.7 | TI/I         | 41.09 km     |         2116 | Gazzirola            |
+|        184   | TI/I         | 41.94 km     |         2076 | Prato della Bascióta |","| Column B-0     |   Column B-1 |   Column B-2 | Column B-3                            | Column B-4                    |
+|:---------------|-------------:|-------------:|:--------------------------------------|:------------------------------|
+| Schilt         |           58 |         2299 | Glarus Alps                           | Canton of Glarus, Switzerland |
+| Scheuchzerhorn |          116 |         3456 | Bernese Alps                          | Canton of Bern, Switzerland   |
+| Punta Baretti  |          nan |         4013 | Mont Blanc massif                     | Italy, Val d'Aosta            |
+| Rocher du Midi |          240 |         2097 | Bernese Alps                          | Vaud, Switzerland             |
+| Rossbodenstock |          nan |         2836 | Saint-Gotthard Massif, Lepontine Alps | Canton of Uri, Graubünden     |"
+169,36039980_4_4283009829602711082,3,0,False,,,,2130 | 2939 | 2914 | 2023 | 1701,Rocher du Midi | Gazzirola | Schlüechtli | Schnebelhorn | Mottone di Cava,,
+170,36039980_4_4283009829602711082,1,0,False,,,,TI/I | GR/TI | GR/TI | TI | TI,Rocher du Midi | Gazzirola | Schlüechtli | Schnebelhorn | Mottone di Cava,,
+171,36039980_4_4283009829602711082,0,0,False,,,,181.3 | 194.0 | 193.0 | 181.5 | 186.5,Rocher du Midi | Gazzirola | Schlüechtli | Schnebelhorn | Mottone di Cava,,
+172,36039980_4_4283009829602711082,4,2,False,,,,Cima della Valletta Mottone della Tappa | Filo di Remia | Pizzo del Ramulazz | Motto di Levén | Monte Generoso,2097.0 | 2116.0 | 2283.0 | 1291.9 | 2374.0,,
+173,36039980_4_4283009829602711082,3,2,True,,,,2130 | 2939 | 2914 | 2023 | 1701,2097.0 | 2116.0 | 2283.0 | 1291.9 | 2374.0,,
+174,36039980_4_4283009829602711082,1,2,False,,,,TI/I | GR/TI | GR/TI | TI | TI,2097.0 | 2116.0 | 2283.0 | 1291.9 | 2374.0,,
+175,36039980_4_4283009829602711082,0,2,False,,,,181.3 | 194.0 | 193.0 | 181.5 | 186.5,2097.0 | 2116.0 | 2283.0 | 1291.9 | 2374.0,,
+176,36039980_4_4283009829602711082,4,3,False,,,,Cima della Valletta Mottone della Tappa | Filo di Remia | Pizzo del Ramulazz | Motto di Levén | Monte Generoso,Bernese Alps | Lugano Prealps | Lepontine Alps | Appenzell Alps | Lepontine Alps,,
+177,36039980_4_4283009829602711082,3,3,False,,,,2130 | 2939 | 2914 | 2023 | 1701,Bernese Alps | Lugano Prealps | Lepontine Alps | Appenzell Alps | Lepontine Alps,,
+178,36039980_4_4283009829602711082,1,3,False,,,,TI/I | GR/TI | GR/TI | TI | TI,Bernese Alps | Lugano Prealps | Lepontine Alps | Appenzell Alps | Lepontine Alps,,
+179,36039980_4_4283009829602711082,4,1,False,,,,Cima della Valletta Mottone della Tappa | Filo di Remia | Pizzo del Ramulazz | Motto di Levén | Monte Generoso,240.0 | 56.0 | 83.0 | 112.0 | 118.0,,
+180,36039980_4_4283009829602711082,2,1,False,,,,39.33 km | 10.21 km | 9.81 km | 38.77 km | 62.23 km,240.0 | 56.0 | 83.0 | 112.0 | 118.0,,
+181,36039980_4_4283009829602711082,4,4,False,,,,Cima della Valletta Mottone della Tappa | Filo di Remia | Pizzo del Ramulazz | Motto di Levén | Monte Generoso,"Vaud, Switzerland | Lombardy, Ticino, Italy, Switzerland | Graubünden, Switzerland | Canton of St. Gallen, Canton of Zurich, Switzerland | Ticino, Switzerland",,
+182,36039980_4_4283009829602711082,3,4,False,,,,2130 | 2939 | 2914 | 2023 | 1701,"Vaud, Switzerland | Lombardy, Ticino, Italy, Switzerland | Graubünden, Switzerland | Canton of St. Gallen, Canton of Zurich, Switzerland | Ticino, Switzerland",,
+183,36039980_4_4283009829602711082,1,4,True,,,,TI/I | GR/TI | GR/TI | TI | TI,"Vaud, Switzerland | Lombardy, Ticino, Italy, Switzerland | Graubünden, Switzerland | Canton of St. Gallen, Canton of Zurich, Switzerland | Ticino, Switzerland",,
+184,36039980_4_4283009829602711082,0,4,False,,,,181.3 | 194.0 | 193.0 | 181.5 | 186.5,"Vaud, Switzerland | Lombardy, Ticino, Italy, Switzerland | Graubünden, Switzerland | Canton of St. Gallen, Canton of Zurich, Switzerland | Ticino, Switzerland",,
+185,48456557_0_3760853481322708783,0,0,True,,,,Striped skunk | Spothanded crayfish | Virginia rail | Wilson's warbler | Tundra swan,Dacalana anysis | Nupserha homeyeri | Sparganothoides lentiginosana | Praxis porphyretica | Epichoristodes pylora,"| Column A-0         | Column A-1   | Column A-2              |
+|:-------------------|:-------------|:------------------------|
+| Spotted salamander | Amphibian    | Ambystoma maculatum     |
+| Softshell turtles  | Reptile      | Trionyx spp.            |
+| Ornate box turtle  | Reptile      | Terrapene ornata ornata |
+| Caspian tern       | Bird         | Sterna caspia           |
+| Red-eyed vireo     | Bird         | Vireo olivaceus         |","| Column B-0                 | Column B-1   | Column B-2     | Column B-3                                                                                          | Column B-4                 |
+|:---------------------------|:-------------|:---------------|:----------------------------------------------------------------------------------------------------|:---------------------------|
+| Tetramorium tonganum       | Insect       | T. tonganum    | *Tetramorium magitae (Forel, 1911)                                                                  | Tetramorium tonganum       |
+| Cylindromyrmex             | Insect       | nan            | Holcoponera (Cameron, 1891), Hypocylindromyrmex (Wheeler, 1924), Metacylindromyrmex (Wheeler, 1924) | nan                        |
+| Dysgonia erectata          | Insect       | D. erectata    | *Parallelia erectata                                                                                | Dysgonia erectata          |
+|                            |              |                | *Ophiusa erectata (Hampson, 1902)                                                                   |                            |
+| Pseudostegania yargongaria | Insect       | P. yargongaria | *Asthena yargongaria (Oberthür, 1916)                                                               | Pseudostegania yargongaria |
+| Vexillum obeliscus         | Gastropoda   | V. obeliscus   | * Costellaria obeliscus                                                                             | Vexillum  obeliscus        |
+|                            |              |                | * Mitra obeliscus Reeve, 1844                                                                       |                            |
+|                            |              |                | * Vexillum  subtruncatum Sowerby, G.B. II & III, 1874                                               |                            |
+|                            |              |                | * Vexillum andamanica Nevill, G. & H. Nevill, 1875                                                  |                            |
+|                            |              |                | * Turricula quasillus Iredale, T., 1929                                                             |                            |"
+186,48456557_0_3760853481322708783,2,0,False,,,,Mephitis mephitis | Orconectes punctimanus | Rallus limicola | Wilsonia pusilla | Cygnus columbianus,Dacalana anysis | Nupserha homeyeri | Sparganothoides lentiginosana | Praxis porphyretica | Epichoristodes pylora,,
+187,48456557_0_3760853481322708783,1,0,False,,,,Mammal | Crustacean | Bird | Bird | Bird,Dacalana anysis | Nupserha homeyeri | Sparganothoides lentiginosana | Praxis porphyretica | Epichoristodes pylora,,
+188,48456557_0_3760853481322708783,0,2,False,,,,Striped skunk | Spothanded crayfish | Virginia rail | Wilson's warbler | Tundra swan,D. anysis | N. homeyeri | S. lentiginosana | P. porphyretica | E. pylora,,
+189,48456557_0_3760853481322708783,2,2,False,,,,Mephitis mephitis | Orconectes punctimanus | Rallus limicola | Wilsonia pusilla | Cygnus columbianus,D. anysis | N. homeyeri | S. lentiginosana | P. porphyretica | E. pylora,,
+190,48456557_0_3760853481322708783,0,3,False,,,,Striped skunk | Spothanded crayfish | Virginia rail | Wilson's warbler | Tundra swan,"*Iolaus anysis (Hewitson, 1865)
+*Jolaus cervinus (Röber, 1887) | * Nupserha homeyeri m. postconjuncta (Breuning, 1974)
+* Nupserha homeyeri insulana (Lepesme & Breuning, 1953) | *Capua lentiginosana (Walsingham, 1879)
+*Sparganothis lentiginosana | *Praxis inordinata | *Capua pylora (Meyrick, 1938)",,
+191,48456557_0_3760853481322708783,1,3,False,,,,Mammal | Crustacean | Bird | Bird | Bird,"*Iolaus anysis (Hewitson, 1865)
+*Jolaus cervinus (Röber, 1887) | * Nupserha homeyeri m. postconjuncta (Breuning, 1974)
+* Nupserha homeyeri insulana (Lepesme & Breuning, 1953) | *Capua lentiginosana (Walsingham, 1879)
+*Sparganothis lentiginosana | *Praxis inordinata | *Capua pylora (Meyrick, 1938)",,
+192,48456557_0_3760853481322708783,0,4,False,,,,Striped skunk | Spothanded crayfish | Virginia rail | Wilson's warbler | Tundra swan,Dacalana anysis | Nupserha homeyeri | Sparganothoides lentiginosana | Praxis porphyretica | Epichoristodes pylora,,
+193,48456557_0_3760853481322708783,2,4,True,,,,Mephitis mephitis | Orconectes punctimanus | Rallus limicola | Wilsonia pusilla | Cygnus columbianus,Dacalana anysis | Nupserha homeyeri | Sparganothoides lentiginosana | Praxis porphyretica | Epichoristodes pylora,,
+194,48456557_0_3760853481322708783,1,4,False,,,,Mammal | Crustacean | Bird | Bird | Bird,Dacalana anysis | Nupserha homeyeri | Sparganothoides lentiginosana | Praxis porphyretica | Epichoristodes pylora,,
+195,48456557_0_3760853481322708783,0,1,False,,,,Striped skunk | Spothanded crayfish | Virginia rail | Wilson's warbler | Tundra swan,Insect | Insect | Insect | Insect | Insect,,
+196,48456557_0_3760853481322708783,2,1,False,,,,Mephitis mephitis | Orconectes punctimanus | Rallus limicola | Wilsonia pusilla | Cygnus columbianus,Insect | Insect | Insect | Insect | Insect,,
+197,48456557_0_3760853481322708783,1,1,True,,,,Mammal | Crustacean | Bird | Bird | Bird,Insect | Insect | Insect | Insect | Insect,,
+198,86297395_0_6919201319699354263,0,0,True,,,,Lebanon | Croatia | Australia | Belize | New Zealand,Mauritius | Monaco | Niger | Senegal | Chile,"| Column A-0             | Column A-1   | Column A-2                                                              | Column A-3   | Column A-4   | Column A-5         | Column A-6   |
+|:-----------------------|:-------------|:------------------------------------------------------------------------|:-------------|:-------------|:-------------------|:-------------|
+| Romania                | 22,276,056   | democracy                                                               | $256,900     | $10,661      | No (ended in 2007) | 238,392      |
+| Luxembourg             | 480,222      | constitutional monarchy                                                 | $34,530      | $71,904.24   | No                 | 2,586        |
+| Albania                | 3,600,523    | emerging democracy                                                      | $9,306       | $2,584.63    | Yes                | 27,398       |
+| Macedonia, Republic of | 2,055,915    | parliamentary democracy                                                 | $6,225       | $3,027.85    | No                 | 24,856       |
+| Switzerland            | 7,508,700    | formally a confederation but similar in structure to a federal republic | $386,100     | $51,107.52   | Yes                | 41,285       |","| Column B-0           | Column B-1                  | Column B-2                      |       Column B-3 |   Column B-4 |   Column B-5 | Column B-6                    |   Column B-7 |   Column B-8 | Column B-9                                                                                |
+|:---------------------|:----------------------------|:--------------------------------|-----------------:|-------------:|-------------:|:------------------------------|-------------:|-------------:|:------------------------------------------------------------------------------------------|
+| United States        | United States dollar        | Federalism in the United States |      3.31894e+08 |         46.9 |  2.5035e+13  | 9833516.638013326             |  2.5035e+13  |        75180 | John Roberts, Nancy Pelosi, Joe Biden, Kamala Harris                                      |
+| Saint Lucia          | East Caribbean dollar       | Unitary state                   | 184961           |         51.2 |  2.48e+09    | 617.0, 617.0128675253453      |  1.77e+09    |         9780 | Errol Charles, Charles III, Philip J. Pierre                                              |
+| Sudan                | Sudanese pound              | Federalism                      |      4.79589e+07 |         34.2 |  2.0304e+11  | 1886068.0, 1886068.1917683303 |  3.0808e+10  |          674 | Mohamed Hamdan Dagalo, Abdel Fattah al-Burhan, Osman Hussein                              |
+| Equatorial Guinea    | Central African CFA franc   | Unitary state                   |      1.67917e+06 |        nan   |  2.7959e+10  | 28049.57123493888, 28050.0    |  1.6012e+10  |         8462 | Francisco Pascual Obama Asue, Teodoro Nguema Obiang Mangue, Teodoro Obiang Nguema Mbasogo |
+| United Arab Emirates | United Arab Emirates dirham | Federal monarchy                |      9.28241e+06 |         26   |  7.79234e+11 | 83599.63622542542, 83600.0    |  5.01354e+11 |        50349 | Mohamed bin Zayed Al Nahyan, Mohammed bin Rashid Al Maktoum                               |"
+199,86297395_0_6919201319699354263,6,0,False,,,,"10,230 | 56,414 | 7,617,930 | 22,806 | 268,021",Mauritius | Monaco | Niger | Senegal | Chile,,
+200,86297395_0_6919201319699354263,4,0,False,,,,"$5,066.87 | $7,863.44 | $31,550.09 | $3,875.88 | $23,079.36",Mauritius | Monaco | Niger | Senegal | Chile,,
+201,86297395_0_6919201319699354263,2,0,False,,,,republic | presidential/parliamentary democracy | federal parliamentary democracy | parliamentary democracy | parliamentary democracy,Mauritius | Monaco | Niger | Senegal | Chile,,
+202,86297395_0_6919201319699354263,0,1,False,,,,Lebanon | Croatia | Australia | Belize | New Zealand,Mauritian rupee | Euro | West African CFA franc | West African CFA franc | Chilean peso,,
+203,86297395_0_6919201319699354263,1,1,False,,,,"3,925,502 | 4,443,350 | 20,434,176 | 294,385 | 4,098,900",Mauritian rupee | Euro | West African CFA franc | West African CFA franc | Chilean peso,,
+204,86297395_0_6919201319699354263,3,1,False,,,,"$19,890 | $37,420 | $644,700 | $1,141 | $98,390",Mauritian rupee | Euro | West African CFA franc | West African CFA franc | Chilean peso,,
+205,86297395_0_6919201319699354263,4,1,False,,,,"$5,066.87 | $7,863.44 | $31,550.09 | $3,875.88 | $23,079.36",Mauritian rupee | Euro | West African CFA franc | West African CFA franc | Chilean peso,,
+206,86297395_0_6919201319699354263,0,5,False,,,,Lebanon | Croatia | Australia | Belize | New Zealand,3.172E10 | 7.672E9 | 2.3475E10 | 7.2703E10 | 5.68319E11,,
+207,86297395_0_6919201319699354263,2,5,False,,,,republic | presidential/parliamentary democracy | federal parliamentary democracy | parliamentary democracy | parliamentary democracy,3.172E10 | 7.672E9 | 2.3475E10 | 7.2703E10 | 5.68319E11,,
+208,86297395_0_6919201319699354263,0,3,False,,,,Lebanon | Croatia | Australia | Belize | New Zealand,1265475.0 | 38300.0 | 24484587.0 | 17196308.0 | 18430408.0,,
+209,86297395_0_6919201319699354263,1,3,True,,,,"3,925,502 | 4,443,350 | 20,434,176 | 294,385 | 4,098,900",1265475.0 | 38300.0 | 24484587.0 | 17196308.0 | 18430408.0,,
+210,86297395_0_6919201319699354263,3,3,False,,,,"$19,890 | $37,420 | $644,700 | $1,141 | $98,390",1265475.0 | 38300.0 | 24484587.0 | 17196308.0 | 18430408.0,,
+211,86297395_0_6919201319699354263,4,3,False,,,,"$5,066.87 | $7,863.44 | $31,550.09 | $3,875.88 | $23,079.36",1265475.0 | 38300.0 | 24484587.0 | 17196308.0 | 18430408.0,,
+212,86297395_0_6919201319699354263,0,2,False,,,,Lebanon | Croatia | Australia | Belize | New Zealand,Unitary parliamentary republic | Unitary state | Unitary state | Unitary state | Unitary state,,
+213,86297395_0_6919201319699354263,1,2,False,,,,"3,925,502 | 4,443,350 | 20,434,176 | 294,385 | 4,098,900",Unitary parliamentary republic | Unitary state | Unitary state | Unitary state | Unitary state,,
+214,86297395_0_6919201319699354263,4,2,False,,,,"$5,066.87 | $7,863.44 | $31,550.09 | $3,875.88 | $23,079.36",Unitary parliamentary republic | Unitary state | Unitary state | Unitary state | Unitary state,,
+215,86297395_0_6919201319699354263,2,2,True,,,,republic | presidential/parliamentary democracy | federal parliamentary democracy | parliamentary democracy | parliamentary democracy,Unitary parliamentary republic | Unitary state | Unitary state | Unitary state | Unitary state,,
+216,86297395_0_6919201319699354263,0,7,False,,,,Lebanon | Croatia | Australia | Belize | New Zealand,1.1263E10 | 7.424E9 | 9.869E9 | 2.7542E10 | 3.17594E11,,
+217,86297395_0_6919201319699354263,1,7,False,,,,"3,925,502 | 4,443,350 | 20,434,176 | 294,385 | 4,098,900",1.1263E10 | 7.424E9 | 9.869E9 | 2.7542E10 | 3.17594E11,,
+218,86297395_0_6919201319699354263,6,7,False,,,,"10,230 | 56,414 | 7,617,930 | 22,806 | 268,021",1.1263E10 | 7.424E9 | 9.869E9 | 2.7542E10 | 3.17594E11,,
+219,86297395_0_6919201319699354263,3,7,True,,,,"$19,890 | $37,420 | $644,700 | $1,141 | $98,390",1.1263E10 | 7.424E9 | 9.869E9 | 2.7542E10 | 3.17594E11,,
+220,86297395_0_6919201319699354263,4,7,False,,,,"$5,066.87 | $7,863.44 | $31,550.09 | $3,875.88 | $23,079.36",1.1263E10 | 7.424E9 | 9.869E9 | 2.7542E10 | 3.17594E11,,
+221,86297395_0_6919201319699354263,2,7,False,,,,republic | presidential/parliamentary democracy | federal parliamentary democracy | parliamentary democracy | parliamentary democracy,1.1263E10 | 7.424E9 | 9.869E9 | 2.7542E10 | 3.17594E11,,
+222,86297395_0_6919201319699354263,1,6,False,,,,"3,925,502 | 4,443,350 | 20,434,176 | 294,385 | 4,098,900","2040.0 | 2.02, 3.26338501902336 | 1267000.0, 1268260.1978931117 | 196712.0, 196839.096385536 | 756096.2650456326, 756096.3",,
+223,86297395_0_6919201319699354263,6,6,True,,,,"10,230 | 56,414 | 7,617,930 | 22,806 | 268,021","2040.0 | 2.02, 3.26338501902336 | 1267000.0, 1268260.1978931117 | 196712.0, 196839.096385536 | 756096.2650456326, 756096.3",,
+224,86297395_0_6919201319699354263,3,6,False,,,,"$19,890 | $37,420 | $644,700 | $1,141 | $98,390","2040.0 | 2.02, 3.26338501902336 | 1267000.0, 1268260.1978931117 | 196712.0, 196839.096385536 | 756096.2650456326, 756096.3",,
+225,86297395_0_6919201319699354263,2,6,False,,,,republic | presidential/parliamentary democracy | federal parliamentary democracy | parliamentary democracy | parliamentary democracy,"2040.0 | 2.02, 3.26338501902336 | 1267000.0, 1268260.1978931117 | 196712.0, 196839.096385536 | 756096.2650456326, 756096.3",,
+226,86297395_0_6919201319699354263,1,4,False,,,,"3,925,502 | 4,443,350 | 20,434,176 | 294,385 | 4,098,900",36.8 | nan | 34.0 | 40.3 | 46.0,,
+227,86297395_0_6919201319699354263,6,4,False,,,,"10,230 | 56,414 | 7,617,930 | 22,806 | 268,021",36.8 | nan | 34.0 | 40.3 | 46.0,,
+228,86297395_0_6919201319699354263,3,4,False,,,,"$19,890 | $37,420 | $644,700 | $1,141 | $98,390",36.8 | nan | 34.0 | 40.3 | 46.0,,
+229,86297395_0_6919201319699354263,4,4,False,,,,"$5,066.87 | $7,863.44 | $31,550.09 | $3,875.88 | $23,079.36",36.8 | nan | 34.0 | 40.3 | 46.0,,
+230,86297395_0_6919201319699354263,5,4,False,,,,"No (abolished in 2007) | No (abolished by law in 2008) | No (banned as enshrined by parliament in 1972 | Legal, not practiced | No",36.8 | nan | 34.0 | 40.3 | 46.0,,
+231,86297395_0_6919201319699354263,1,8,False,,,,"3,925,502 | 4,443,350 | 20,434,176 | 294,385 | 4,098,900",8892.0 | 190513.0 | 510.0 | 1558.0 | 15941.0,,
+232,86297395_0_6919201319699354263,6,8,False,,,,"10,230 | 56,414 | 7,617,930 | 22,806 | 268,021",8892.0 | 190513.0 | 510.0 | 1558.0 | 15941.0,,
+233,86297395_0_6919201319699354263,3,8,False,,,,"$19,890 | $37,420 | $644,700 | $1,141 | $98,390",8892.0 | 190513.0 | 510.0 | 1558.0 | 15941.0,,
+234,86297395_0_6919201319699354263,4,8,True,,,,"$5,066.87 | $7,863.44 | $31,550.09 | $3,875.88 | $23,079.36",8892.0 | 190513.0 | 510.0 | 1558.0 | 15941.0,,
+235,61121469_0_6337620713408906340,0,0,True,,,,"Man, Isle of | Midway Islands | Macau | Mozambique | Mauritania",Mac William Íochtar | Mecklenburg-Güstrow | March of Ancona | Magadha | Misl,"| Column A-0   | Column A-1              | Column A-2     |
+|:-------------|:------------------------|:---------------|
+| Maldives     | Geography of Maldives   | Male           |
+| Mongolia     | Geography of Mongolia   | Ulaanbaatar    |
+| Mexico       | Geography of Mexico     | Mexico         |
+| Martinique   | Geography of Martinique | Fort-de-France |
+| Malta        | Geography of Malta      | Valletta       |","| Column B-0                 | Column B-1    |
+|:---------------------------|:--------------|
+| Mutasarrifate of Jerusalem | Jerusalem     |
+| Marquisate of Finale       | Finale Ligure |
+| Mughan Soviet Republic     | Lankaran      |
+| Mecklenburg-Güstrow        | Güstrow       |
+| Mamluk Sultanate           | Cairo         |"
+236,61121469_0_6337620713408906340,2,0,False,,,,"Douglas | none; administered from Washington, DC | Macau | Maputo | Nouakchott",Mac William Íochtar | Mecklenburg-Güstrow | March of Ancona | Magadha | Misl,,
+237,61121469_0_6337620713408906340,1,0,False,,,,Geography of Isle of Man | Geography of Midway Islands | Geography of Macau | Geography of Mozambique | Geography of Mauritania,Mac William Íochtar | Mecklenburg-Güstrow | March of Ancona | Magadha | Misl,,
+238,61121469_0_6337620713408906340,0,1,False,,,,"Man, Isle of | Midway Islands | Macau | Mozambique | Mauritania","Kilmaine | Güstrow | Macerata, Ancona, Fermo | Pataliputra, Rajgir | Amritsar",,
+239,61121469_0_6337620713408906340,2,1,True,,,,"Douglas | none; administered from Washington, DC | Macau | Maputo | Nouakchott","Kilmaine | Güstrow | Macerata, Ancona, Fermo | Pataliputra, Rajgir | Amritsar",,
+240,61121469_0_6337620713408906340,1,1,False,,,,Geography of Isle of Man | Geography of Midway Islands | Geography of Macau | Geography of Mozambique | Geography of Mauritania,"Kilmaine | Güstrow | Macerata, Ancona, Fermo | Pataliputra, Rajgir | Amritsar",,
+241,46646666_0_5802598112171303204,0,0,True,,,,KNBR | KRKC | KJDX | KNBR | KESP,KLLE | KSRH | KAPU-LP | KTDE | KCNO,"| Column A-0   | Column A-1   | Column A-2   |
+|:-------------|:-------------|:-------------|
+| KCTC         | Sacramento   | 1320 AM      |
+| KBLF         | Red Bluff    | 1490 AM      |
+| KJDX         | Susanville   | 93.3 FM      |
+| KEZK         | Medford, OR  | 730 AM       |
+| KATA         | Eureka, CA   | 1340 AM      |","| Column B-0   | Column B-1                                                      | Column B-2                |   Column B-3 |   Column B-4 |
+|:-------------|:----------------------------------------------------------------|:--------------------------|-------------:|-------------:|
+| KEWB (FM)    | Corning, California, Red Bluff, California, Redding, California | Anderson, California      |          477 |     9.47e+07 |
+| KKHK         | Santa Cruz, California, Salinas, California, Monterey           | Carmel, California        |          192 |     9.55e+07 |
+| KDSC         | Ventura County, California                                      | Thousand Oaks, California |          390 |     9.11e+07 |
+| KMRJ         | Palm Springs, California                                        | Rancho Mirage, California |          100 |     9.95e+07 |
+| KCLB-FM      | Palm Springs, California                                        | Coachella, California     |          197 |     9.37e+07 |"
+242,46646666_0_5802598112171303204,1,0,False,,,,"San Francisco, San Jose, Oakland, CA | King City | Susanville | San Francisco, San Jose, Oakland, CA | Modesto",KLLE | KSRH | KAPU-LP | KTDE | KCNO,,
+243,46646666_0_5802598112171303204,2,0,False,,,,680 AM | 1490 AM | 93.3 FM | 1050 AM | 970 AM,KLLE | KSRH | KAPU-LP | KTDE | KCNO,,
+244,46646666_0_5802598112171303204,0,3,False,,,,KNBR | KRKC | KJDX | KNBR | KESP,374.0 | 20.0 | 41.5 | 204.0 | -59.0,,
+245,46646666_0_5802598112171303204,1,3,False,,,,"San Francisco, San Jose, Oakland, CA | King City | Susanville | San Francisco, San Jose, Oakland, CA | Modesto",374.0 | 20.0 | 41.5 | 204.0 | -59.0,,
+246,46646666_0_5802598112171303204,2,3,False,,,,680 AM | 1490 AM | 93.3 FM | 1050 AM | 970 AM,374.0 | 20.0 | 41.5 | 204.0 | -59.0,,
+247,46646666_0_5802598112171303204,0,4,False,,,,KNBR | KRKC | KJDX | KNBR | KESP,107900000.0 | 88100000.0 | 104700000.0 | 100500000.0 | 94500000.0,,
+248,46646666_0_5802598112171303204,1,4,False,,,,"San Francisco, San Jose, Oakland, CA | King City | Susanville | San Francisco, San Jose, Oakland, CA | Modesto",107900000.0 | 88100000.0 | 104700000.0 | 100500000.0 | 94500000.0,,
+249,46646666_0_5802598112171303204,2,4,True,,,,680 AM | 1490 AM | 93.3 FM | 1050 AM | 970 AM,107900000.0 | 88100000.0 | 104700000.0 | 100500000.0 | 94500000.0,,
+250,46646666_0_5802598112171303204,0,2,False,,,,KNBR | KRKC | KJDX | KNBR | KESP,"North Fork, California | San Rafael, California | Watsonville, California | Gualala, California | California, Alturas, California",,
+251,46646666_0_5802598112171303204,1,2,True,,,,"San Francisco, San Jose, Oakland, CA | King City | Susanville | San Francisco, San Jose, Oakland, CA | Modesto","North Fork, California | San Rafael, California | Watsonville, California | Gualala, California | California, Alturas, California",,
+252,46646666_0_5802598112171303204,2,2,False,,,,680 AM | 1490 AM | 93.3 FM | 1050 AM | 970 AM,"North Fork, California | San Rafael, California | Watsonville, California | Gualala, California | California, Alturas, California",,
+253,46646666_0_5802598112171303204,0,1,False,,,,KNBR | KRKC | KJDX | KNBR | KESP,"Fresno, California | San Francisco Bay Area | nan | nan | nan",,
+254,46646666_0_5802598112171303204,1,1,False,,,,"San Francisco, San Jose, Oakland, CA | King City | Susanville | San Francisco, San Jose, Oakland, CA | Modesto","Fresno, California | San Francisco Bay Area | nan | nan | nan",,
+255,46646666_0_5802598112171303204,2,1,False,,,,680 AM | 1490 AM | 93.3 FM | 1050 AM | 970 AM,"Fresno, California | San Francisco Bay Area | nan | nan | nan",,
+256,22864497_0_8632623712684511496,0,0,True,,,,"Sega Rally Revo | Raiden Fighters Aces | Rayman Raving Rabbids | First Templar, TheThe First Templar | Bully: Scholarship Edition",UDraw Pictionary | Vampire Rain | The Secret of Monkey Island | Gotham City Impostors | Sonic & All-Stars Racing Transformed,"| Column A-0                                           | Column A-1                  | Column A-2   | Column A-3                  | Column A-4                  | Column A-5   | Column A-6                 |
+|:-----------------------------------------------------|:----------------------------|:-------------|:----------------------------|:----------------------------|:-------------|:---------------------------|
+| Battlefield: Bad Company 2                           | 2012-01-17January 17, 2012  | $19.99US     | 2010-12-14December 14, 2010 | 2010-12-14December 14, 2010 | 4.88 GB      | Electronic Arts            |
+| Senko no Ronde: DUO                                  | 2011-04-26April 26, 2011    | ?2,940JP     | nan                         | nan                         | 2.3 GB       | G.rev                      |
+| Cabela's Outdoor Adventures                          | nan                         | $39.99US     | 2012-01-31January 31, 2012  | nan                         | 3.23 GB      | Activision                 |
+| Disney Sing It! ? High School Musical 3: Senior Year | nan                         | $29.99US     | 2010-08-10August 10, 2010   | 2010-08-10August 10, 2010   | 6.59 GB      | Disney Interactive Studios |
+| Tom Clancy's Ghost Recon Advanced Warfighter (GRAW)  | 2009-09-01September 1, 2009 | $19.99US     | 2009-09-01September 1, 2009 | 2009-09-01September 1, 2009 | 4.78 GB      | Ubisoft                    |","| Column B-0              | Column B-1        | Column B-2                                     | Column B-3              | Column B-4                                       |
+|:------------------------|:------------------|:-----------------------------------------------|:------------------------|:-------------------------------------------------|
+| Tiger Woods PGA Tour 11 | EA Sports         | 2010-06-08                                     | Tiger Woods PGA Tour 11 | Multiplayer video game, Single-player video game |
+| NBA Live 06             | EA Sports         | 2005-09-26, 2005-10-04, 2005-10-11, 2005-11-22 | NBA Live 06             | Single-player, Multiplayer video game            |
+| Battlefield 3           | Electronic Arts   | 2011-10-25                                     | Battlefield 3           | Multiplayer video game, Single-player video game |
+| MotoGP '06              | THQ               | 2006-06-09                                     | MotoGP '06              | Multiplayer video game, Single-player video game |
+| LocoCycle               | Microsoft Studios | 2013-11-22, 2014-02-14                         | LocoCycle               | Multiplayer video game, Single-player video game |"
+257,22864497_0_8632623712684511496,4,0,False,,,,"2009-08-11August 11, 2009 | nan | 2010-11-09November 9, 2010 | 2012-01-31January 31, 2012 | 2010-09-01September 1, 2010",UDraw Pictionary | Vampire Rain | The Secret of Monkey Island | Gotham City Impostors | Sonic & All-Stars Racing Transformed,,
+258,22864497_0_8632623712684511496,6,0,False,,,,Sega | Valcon Games (NA) Success (JP) | Ubisoft | Kalypso Media | Rockstar Games,UDraw Pictionary | Vampire Rain | The Secret of Monkey Island | Gotham City Impostors | Sonic & All-Stars Racing Transformed,,
+259,22864497_0_8632623712684511496,1,0,False,,,,"nan | 2009-11-17November 17, 2009 | nan | nan | nan",UDraw Pictionary | Vampire Rain | The Secret of Monkey Island | Gotham City Impostors | Sonic & All-Stars Racing Transformed,,
+260,22864497_0_8632623712684511496,3,0,False,,,,"2010-06-22June 22, 2010 | 2010-05-11May 11, 2010 | 2010-11-09November 9, 2010 | 2012-01-31January 31, 2012 | 2010-09-01September 1, 2010",UDraw Pictionary | Vampire Rain | The Secret of Monkey Island | Gotham City Impostors | Sonic & All-Stars Racing Transformed,,
+261,22864497_0_8632623712684511496,0,3,False,,,,"Sega Rally Revo | Raiden Fighters Aces | Rayman Raving Rabbids | First Templar, TheThe First Templar | Bully: Scholarship Edition","uDraw Pictionary | nan | The Secret of Monkey Island | Gotham City Impostors | Related games, Sonic & All-Stars Racing Transformed",,
+262,22864497_0_8632623712684511496,0,4,False,,,,"Sega Rally Revo | Raiden Fighters Aces | Rayman Raving Rabbids | First Templar, TheThe First Templar | Bully: Scholarship Edition","Coloring Pages, Painting | Single-player, Multiplayer video game | Single-player video game | Multiplayer video game | Multiplayer video game, Single-player video game",,
+263,22864497_0_8632623712684511496,4,4,False,,,,"2009-08-11August 11, 2009 | nan | 2010-11-09November 9, 2010 | 2012-01-31January 31, 2012 | 2010-09-01September 1, 2010","Coloring Pages, Painting | Single-player, Multiplayer video game | Single-player video game | Multiplayer video game | Multiplayer video game, Single-player video game",,
+264,22864497_0_8632623712684511496,6,4,False,,,,Sega | Valcon Games (NA) Success (JP) | Ubisoft | Kalypso Media | Rockstar Games,"Coloring Pages, Painting | Single-player, Multiplayer video game | Single-player video game | Multiplayer video game | Multiplayer video game, Single-player video game",,
+265,22864497_0_8632623712684511496,0,2,False,,,,"Sega Rally Revo | Raiden Fighters Aces | Rayman Raving Rabbids | First Templar, TheThe First Templar | Bully: Scholarship Edition","2010-11-14 | 2007-01-25, 2008-08-21 | 2009-07-15 | 2012-02-07, 2012-02-08, 2012-08-30 | 2012-11-16, 2012-11-18",,
+266,22864497_0_8632623712684511496,4,2,True,,,,"2009-08-11August 11, 2009 | nan | 2010-11-09November 9, 2010 | 2012-01-31January 31, 2012 | 2010-09-01September 1, 2010","2010-11-14 | 2007-01-25, 2008-08-21 | 2009-07-15 | 2012-02-07, 2012-02-08, 2012-08-30 | 2012-11-16, 2012-11-18",,
+267,22864497_0_8632623712684511496,3,2,False,,,,"2010-06-22June 22, 2010 | 2010-05-11May 11, 2010 | 2010-11-09November 9, 2010 | 2012-01-31January 31, 2012 | 2010-09-01September 1, 2010","2010-11-14 | 2007-01-25, 2008-08-21 | 2009-07-15 | 2012-02-07, 2012-02-08, 2012-08-30 | 2012-11-16, 2012-11-18",,
+268,22864497_0_8632623712684511496,5,2,False,,,,4 GB | 484.34 MB | 4.5 GB | 3.43 GB | 2.96 GB,"2010-11-14 | 2007-01-25, 2008-08-21 | 2009-07-15 | 2012-02-07, 2012-02-08, 2012-08-30 | 2012-11-16, 2012-11-18",,
+269,22864497_0_8632623712684511496,0,1,False,,,,"Sega Rally Revo | Raiden Fighters Aces | Rayman Raving Rabbids | First Templar, TheThe First Templar | Bully: Scholarship Edition","THQ | AQ Interactive, Ignition Entertainment | The Software Toolworks | Warner Bros. Interactive Entertainment | Sega",,
+270,22864497_0_8632623712684511496,4,1,False,,,,"2009-08-11August 11, 2009 | nan | 2010-11-09November 9, 2010 | 2012-01-31January 31, 2012 | 2010-09-01September 1, 2010","THQ | AQ Interactive, Ignition Entertainment | The Software Toolworks | Warner Bros. Interactive Entertainment | Sega",,
+271,22864497_0_8632623712684511496,6,1,True,,,,Sega | Valcon Games (NA) Success (JP) | Ubisoft | Kalypso Media | Rockstar Games,"THQ | AQ Interactive, Ignition Entertainment | The Software Toolworks | Warner Bros. Interactive Entertainment | Sega",,
+272,22864497_0_8632623712684511496,1,1,False,,,,"nan | 2009-11-17November 17, 2009 | nan | nan | nan","THQ | AQ Interactive, Ignition Entertainment | The Software Toolworks | Warner Bros. Interactive Entertainment | Sega",,
+273,22864497_0_8632623712684511496,3,1,False,,,,"2010-06-22June 22, 2010 | 2010-05-11May 11, 2010 | 2010-11-09November 9, 2010 | 2012-01-31January 31, 2012 | 2010-09-01September 1, 2010","THQ | AQ Interactive, Ignition Entertainment | The Software Toolworks | Warner Bros. Interactive Entertainment | Sega",,
+274,3917335_0_7791699395300625164,0,0,True,,,,Falkland Islands (Islas Malvinas) | Singapore | Saint Vincent and the Grenadines | Armenia | Maldives,Congo Free State | Mohegan Tribe | Uzbek Soviet Socialist Republic | Belgium | British Virgin Islands,"| Column A-0    | Column A-1   | Column A-2   | Column A-3   |
+|:--------------|:-------------|:-------------|:-------------|
+| Bulgaria      | 7,262,675    | 110,910      | Sofia        |
+| Palau         | 21,093       | 458          | Melekeok     |
+| Ukraine       | 45,994,288   | 603,700      | Kiev         |
+| Cocos Islands | 596          | 14           | West Island  |
+| Armenia       | 2,968,586    | 29,800       | Yerevan      |","| Column B-0                  | Column B-1                                                                                                                          |    Column B-2 | Column B-3        | Column B-4                  |   Column B-5 |
+|:----------------------------|:------------------------------------------------------------------------------------------------------------------------------------|--------------:|:------------------|:----------------------------|-------------:|
+| Burundi                     | Constitution of Burundi, Kingdom of Burundi, Republic, Independence from Belgium, Part of German East Africa, Part of Ruanda-Urundi |   1.18658e+07 | Gitega, Bujumbura | 27834.0                     |          nan |
+| South West State of Somalia | nan                                                                                                                                 |   2.26824e+06 | Baidoa, Barawe    | 98863.0                     |          nan |
+| Arab Federation             | nan                                                                                                                                 | nan           | Baghdad           | 533314.0                    |          nan |
+| Palau                       | Compact of Free Association, Trust Territory of the Pacific Islands, Constitution, Establishment of the Republic of Palau           | nan           | Ngerulmud         | 459.0, 458.427895529472     |          177 |
+| Jamaica                     | Granted                                                                                                                             |   2.8186e+06  | Kingston, Jamaica | 10991.0, 10991.909540265984 |         4244 |"
+275,3917335_0_7791699395300625164,1,0,False,,,,"3,140 | 4,608,167 | 118,432 | 2,968,586 | 385,925",Congo Free State | Mohegan Tribe | Uzbek Soviet Socialist Republic | Belgium | British Virgin Islands,,
+276,3917335_0_7791699395300625164,3,0,False,,,,Stanley | Singapore | Kingstown | Yerevan | Male,Congo Free State | Mohegan Tribe | Uzbek Soviet Socialist Republic | Belgium | British Virgin Islands,,
+277,3917335_0_7791699395300625164,2,0,False,,,,"12,173 | 693 | 389 | 29,800 | 300",Congo Free State | Mohegan Tribe | Uzbek Soviet Socialist Republic | Belgium | British Virgin Islands,,
+278,3917335_0_7791699395300625164,0,3,False,,,,Falkland Islands (Islas Malvinas) | Singapore | Saint Vincent and the Grenadines | Armenia | Maldives,"Boma, Democratic Republic of the Congo, Vivi, Democratic Republic of the Congo | Uncasville, Connecticut | Samarkand, Bukhara, Tashkent | City of Brussels | nan",,
+279,3917335_0_7791699395300625164,3,3,True,,,,Stanley | Singapore | Kingstown | Yerevan | Male,"Boma, Democratic Republic of the Congo, Vivi, Democratic Republic of the Congo | Uncasville, Connecticut | Samarkand, Bukhara, Tashkent | City of Brussels | nan",,
+280,3917335_0_7791699395300625164,2,3,False,,,,"12,173 | 693 | 389 | 29,800 | 300","Boma, Democratic Republic of the Congo, Vivi, Democratic Republic of the Congo | Uncasville, Connecticut | Samarkand, Bukhara, Tashkent | City of Brussels | nan",,
+281,3917335_0_7791699395300625164,0,1,False,,,,Falkland Islands (Islas Malvinas) | Singapore | Saint Vincent and the Grenadines | Armenia | Maldives,"nan | Treaty of Hartford (1638), Mohegan Indians v. Connecticut | nan | Treaty of London (1839), Declared | nan",,
+282,3917335_0_7791699395300625164,3,1,False,,,,Stanley | Singapore | Kingstown | Yerevan | Male,"nan | Treaty of Hartford (1638), Mohegan Indians v. Connecticut | nan | Treaty of London (1839), Declared | nan",,
+283,3917335_0_7791699395300625164,2,1,False,,,,"12,173 | 693 | 389 | 29,800 | 300","nan | Treaty of Hartford (1638), Mohegan Indians v. Connecticut | nan | Treaty of London (1839), Declared | nan",,
+284,3917335_0_7791699395300625164,0,2,False,,,,Falkland Islands (Islas Malvinas) | Singapore | Saint Vincent and the Grenadines | Armenia | Maldives,9130000.0 | 1920.0 | nan | 11584008.0 | nan,,
+285,3917335_0_7791699395300625164,1,2,True,,,,"3,140 | 4,608,167 | 118,432 | 2,968,586 | 385,925",9130000.0 | 1920.0 | nan | 11584008.0 | nan,,
+286,3917335_0_7791699395300625164,2,2,False,,,,"12,173 | 693 | 389 | 29,800 | 300",9130000.0 | 1920.0 | nan | 11584008.0 | nan,,
+287,3917335_0_7791699395300625164,0,4,False,,,,Falkland Islands (Islas Malvinas) | Singapore | Saint Vincent and the Grenadines | Armenia | Maldives,"2345409.0 | 2.04609060716544, 2.05 | 447400.0 | 30528.0 | nan",,
+288,3917335_0_7791699395300625164,1,4,False,,,,"3,140 | 4,608,167 | 118,432 | 2,968,586 | 385,925","2345409.0 | 2.04609060716544, 2.05 | 447400.0 | 30528.0 | nan",,
+289,3917335_0_7791699395300625164,3,4,False,,,,Stanley | Singapore | Kingstown | Yerevan | Male,"2345409.0 | 2.04609060716544, 2.05 | 447400.0 | 30528.0 | nan",,
+290,3917335_0_7791699395300625164,2,4,True,,,,"12,173 | 693 | 389 | 29,800 | 300","2345409.0 | 2.04609060716544, 2.05 | 447400.0 | 30528.0 | nan",,
+291,3917335_0_7791699395300625164,1,5,False,,,,"3,140 | 4,608,167 | 118,432 | 2,968,586 | 385,925",nan | 0.79 | nan | nan | 59,,
+292,3917335_0_7791699395300625164,3,5,False,,,,Stanley | Singapore | Kingstown | Yerevan | Male,nan | 0.79 | nan | nan | 59,,
+293,3917335_0_7791699395300625164,2,5,False,,,,"12,173 | 693 | 389 | 29,800 | 300",nan | 0.79 | nan | nan | 59,,
+294,39173938_0_7916056990138658530,4,0,True,,,,Playtime | The Sting | A Fish Called Wanda | Mary Poppins | To Be or Not to Be,Bark! | Sau Crore | Cairo (1942 film) | A Bridge Too Far (film) | Munro (film),"|   Column A-0 | Column A-1         |   Column A-2 |   Column A-3 | Column A-4                   |
+|-------------:|:-------------------|-------------:|-------------:|:-----------------------------|
+|           43 | Ernst Lubitsch     |          229 |         1939 | Ninotchka                    |
+|           95 | Amy Heckerling     |          424 |         1982 | Fast Times at Ridgemont High |
+|           38 | Giuseppe Tornatore |          192 |         1988 | Cinema Paradiso              |
+|            7 | Howard Hawks       |           52 |         1938 | Bringing Up Baby             |
+|           80 | Charles Chaplin    |          369 |         1940 | The Great Dictator           |","| Column B-0          | Column B-1             | Column B-2           | Column B-3      |
+|:--------------------|:-----------------------|:---------------------|:----------------|
+| Sands of the Desert | 1960-09-08             | John Paddy Carstairs | nan             |
+| El Sur (film)       | 1983-05-19, 1988-01-15 | Víctor Erice         | Elías Querejeta |
+| In the Last Stride  | 1915-11-22, 1916-05-01 | Martyn Keith         | nan             |
+| Meendum Vazhven     | 1971-04-23             | T. N. Balu           | nan             |
+| Prey (2009 film)    | 2009-05-05             | George T. Miller     | nan             |"
+295,39173938_0_7916056990138658530,3,0,False,,,,1967 | 1973 | 1988 | 1964 | 1942,Bark! | Sau Crore | Cairo (1942 film) | A Bridge Too Far (film) | Munro (film),,
+296,39173938_0_7916056990138658530,1,0,False,,,,Jacques Tati | George Roy Hill | Charles Crichton | Robert Stevenson | Ernst Lubitsch,Bark! | Sau Crore | Cairo (1942 film) | A Bridge Too Far (film) | Munro (film),,
+297,39173938_0_7916056990138658530,0,0,False,,,,84 | 54 | 71 | 46 | 45,Bark! | Sau Crore | Cairo (1942 film) | A Bridge Too Far (film) | Munro (film),,
+298,39173938_0_7916056990138658530,2,0,False,,,,378 | 281 | 334 | 252 | 248,Bark! | Sau Crore | Cairo (1942 film) | A Bridge Too Far (film) | Munro (film),,
+299,39173938_0_7916056990138658530,4,2,False,,,,Playtime | The Sting | A Fish Called Wanda | Mary Poppins | To Be or Not to Be,Katarzyna Adamik | Dev Anand | W. S. Van Dyke | Richard Attenborough | Gene Deitch,,
+300,39173938_0_7916056990138658530,3,2,False,,,,1967 | 1973 | 1988 | 1964 | 1942,Katarzyna Adamik | Dev Anand | W. S. Van Dyke | Richard Attenborough | Gene Deitch,,
+301,39173938_0_7916056990138658530,1,2,True,,,,Jacques Tati | George Roy Hill | Charles Crichton | Robert Stevenson | Ernst Lubitsch,Katarzyna Adamik | Dev Anand | W. S. Van Dyke | Richard Attenborough | Gene Deitch,,
+302,39173938_0_7916056990138658530,0,2,False,,,,84 | 54 | 71 | 46 | 45,Katarzyna Adamik | Dev Anand | W. S. Van Dyke | Richard Attenborough | Gene Deitch,,
+303,39173938_0_7916056990138658530,4,1,False,,,,Playtime | The Sting | A Fish Called Wanda | Mary Poppins | To Be or Not to Be,2002-01-11 | 1991-12-20 | 1942-08-17 | 1977-06-15 | 1961-10-05,,
+304,39173938_0_7916056990138658530,3,1,True,,,,1967 | 1973 | 1988 | 1964 | 1942,2002-01-11 | 1991-12-20 | 1942-08-17 | 1977-06-15 | 1961-10-05,,
+305,39173938_0_7916056990138658530,1,1,False,,,,Jacques Tati | George Roy Hill | Charles Crichton | Robert Stevenson | Ernst Lubitsch,2002-01-11 | 1991-12-20 | 1942-08-17 | 1977-06-15 | 1961-10-05,,
+306,39173938_0_7916056990138658530,0,1,False,,,,84 | 54 | 71 | 46 | 45,2002-01-11 | 1991-12-20 | 1942-08-17 | 1977-06-15 | 1961-10-05,,
+307,39173938_0_7916056990138658530,1,3,False,,,,Jacques Tati | George Roy Hill | Charles Crichton | Robert Stevenson | Ernst Lubitsch,nan | Dev Anand | Joseph L. Mankiewicz | Joseph E. Levine | William L. Snyder,,
+308,39173938_0_7916056990138658530,2,3,False,,,,378 | 281 | 334 | 252 | 248,nan | Dev Anand | Joseph L. Mankiewicz | Joseph E. Levine | William L. Snyder,,
+309,40844462_1_6230938203735169234,4,0,True,,,,Limitless | Burlesque | An Inconvenient Truth | Geronimo | Clueless,We're Going to Be Rich | The Years Between (film) | To Dorothy a Son | Management (film) | Cab Calloway's Hi-De-Ho,"|   Column A-0 | Column A-1     |   Column A-2 |   Column A-3 | Column A-4               |
+|-------------:|:---------------|-------------:|-------------:|:-------------------------|
+|          nan | Cahill, Mike   |  2.00803e+07 |         2007 | King of California       |
+|          nan | Kazan, Elia    |  2.00902e+07 |         1945 | A Tree Grows in Brooklyn |
+|          nan | Scott, Ridley  |  2.01101e+07 |         2010 | Robin Hood               |
+|          nan | Dabis, Cherien |  2.01002e+07 |         2009 | Amreeka                  |
+|          nan | Atchison, Doug |  2.00908e+07 |         2006 | Akeelah and the Bee      |","| Column B-0                   | Column B-1   | Column B-2              | Column B-3                                                 |
+|:-----------------------------|:-------------|:------------------------|:-----------------------------------------------------------|
+| Huckleberry Finn (1975 film) | 1975-03-25   | Robert Totten           | nan                                                        |
+| The White Ribbon             | nan          | Michael Haneke          | nan                                                        |
+| Upswept Hare                 | 1953-03-14   | Robert McKimson         | Edward Selzer                                              |
+| Mission: Impossible III      | nan          | J. J. Abrams            | Paula Wagner, Tom Cruise                                   |
+| Win Win (film)               | nan          | Tom McCarthy (director) | Michael London, Tom McCarthy (director), Mary Jane Skalski |"
+310,40844462_1_6230938203735169234,3,0,False,,,,2011.0 | 2010.0 | 2006.0 | 1993.0 | 1995.0,We're Going to Be Rich | The Years Between (film) | To Dorothy a Son | Management (film) | Cab Calloway's Hi-De-Ho,,
+311,40844462_1_6230938203735169234,1,0,False,,,,"Burger, Neil | Antin, Steve | Gore, Al | Hill, Walter | Heckerling, Amy",We're Going to Be Rich | The Years Between (film) | To Dorothy a Son | Management (film) | Cab Calloway's Hi-De-Ho,,
+312,40844462_1_6230938203735169234,0,0,False,,,,nan | nan | nan | nan | nan,We're Going to Be Rich | The Years Between (film) | To Dorothy a Son | Management (film) | Cab Calloway's Hi-De-Ho,,
+313,40844462_1_6230938203735169234,4,3,False,,,,Limitless | Burlesque | An Inconvenient Truth | Geronimo | Clueless,"Samuel G. Engel | Sydney Box, Betty E. Box | Peter Rogers | Sidney Kimmel, Jennifer Aniston, Wyck Godfrey | Adolph Zukor",,
+314,40844462_1_6230938203735169234,1,3,False,,,,"Burger, Neil | Antin, Steve | Gore, Al | Hill, Walter | Heckerling, Amy","Samuel G. Engel | Sydney Box, Betty E. Box | Peter Rogers | Sidney Kimmel, Jennifer Aniston, Wyck Godfrey | Adolph Zukor",,
+315,40844462_1_6230938203735169234,0,3,False,,,,nan | nan | nan | nan | nan,"Samuel G. Engel | Sydney Box, Betty E. Box | Peter Rogers | Sidney Kimmel, Jennifer Aniston, Wyck Godfrey | Adolph Zukor",,
+316,40844462_1_6230938203735169234,4,1,False,,,,Limitless | Burlesque | An Inconvenient Truth | Geronimo | Clueless,1938-07-03 | 1946-04-03 | 1954-11-29 | nan | 1934-08-24,,
+317,40844462_1_6230938203735169234,3,1,True,,,,2011.0 | 2010.0 | 2006.0 | 1993.0 | 1995.0,1938-07-03 | 1946-04-03 | 1954-11-29 | nan | 1934-08-24,,
+318,40844462_1_6230938203735169234,0,1,False,,,,nan | nan | nan | nan | nan,1938-07-03 | 1946-04-03 | 1954-11-29 | nan | 1934-08-24,,
+319,40844462_1_6230938203735169234,2,1,False,,,,20120111.0 | 20120118.0 | 20061210.0 | 20100623.0 | 20090917.0,1938-07-03 | 1946-04-03 | 1954-11-29 | nan | 1934-08-24,,
+320,40844462_1_6230938203735169234,4,2,False,,,,Limitless | Burlesque | An Inconvenient Truth | Geronimo | Clueless,Monty Banks | Compton Bennett | Muriel Box | Stephen Belber | Fred Waller,,
+321,40844462_1_6230938203735169234,3,2,False,,,,2011.0 | 2010.0 | 2006.0 | 1993.0 | 1995.0,Monty Banks | Compton Bennett | Muriel Box | Stephen Belber | Fred Waller,,
+322,40844462_1_6230938203735169234,1,2,True,,,,"Burger, Neil | Antin, Steve | Gore, Al | Hill, Walter | Heckerling, Amy",Monty Banks | Compton Bennett | Muriel Box | Stephen Belber | Fred Waller,,
+323,40844462_1_6230938203735169234,0,2,False,,,,nan | nan | nan | nan | nan,Monty Banks | Compton Bennett | Muriel Box | Stephen Belber | Fred Waller,,
+324,14311244_0_7604843865524657408,0,0,True,,,,Zemu Gap Peak | Annapurna II | Nanda Devi | Cyachug Kang | Nanga Parbat,"Pyramid Peak (Pierce County, Washington) | Prusik Peak | Rote Wand | Cashmere Mountain | Electric Peak","| Column A-0       | Column A-1    | Column A-2   | Column A-3   |
+|:-----------------|:--------------|:-------------|:-------------|
+| Broad Peak I     | June 9, 1957  | Karakoram    | 8,047        |
+| Kamet            | June 21, 1931 | Himalayas    | 7,756        |
+| Gasherbrum I     | July 5, 1958  | Karakoram    | 8,068        |
+| Nanda Devi       | Aug 29, 1936  | Himalayas    | 7,816        |
+| Batura Muztagh I | July 30, 1976 | Karakoram    | 7,785        |","| Column B-0             |   Column B-1 | Column B-2                                                                   | Column B-3                       |   Column B-4 |   Column B-5 |   Column B-6 |
+|:-----------------------|-------------:|:-----------------------------------------------------------------------------|:---------------------------------|-------------:|-------------:|-------------:|
+| Vordere Ölgrubenspitze |      46.9081 | Austria, Tyrol (state)                                                       | Ötztal Alps                      |          229 |         1876 |      3456    |
+| Croce Rossa            |      45.2667 | Savoie, France, Italy, Piedmont                                              | Graian Alps                      |          495 |         1857 |      3566    |
+| Calzada (mountain)     |     -15.9325 | Bolivia, La Paz Department (Bolivia), Larecaja Province, Sorata Municipality | Cordillera Real (Bolivia), Andes |          nan |            1 |      5874    |
+| Colchuck Balanced Rock |      47.4915 | Washington (U.S. state), Chelan County, Washington                           | Cascade Range, Stuart Range      |          nan |         1958 |      2499.36 |
+| Jongsong Peak          |      27.8833 | China                                                                        | Himalayas                        |         1256 |         1930 |      7462    |"
+325,14311244_0_7604843865524657408,3,0,False,,,,"7,780 | 7,937 | 7,816 | 7,921 | 8,124","Pyramid Peak (Pierce County, Washington) | Prusik Peak | Rote Wand | Cashmere Mountain | Electric Peak",,
+326,14311244_0_7604843865524657408,2,0,False,,,,Himalayas | Himalayas | Himalayas | Himalayas | Himalayas,"Pyramid Peak (Pierce County, Washington) | Prusik Peak | Rote Wand | Cashmere Mountain | Electric Peak",,
+327,14311244_0_7604843865524657408,1,0,False,,,,"Unclimbed | May 17, 1960 | Aug 29, 1936 | Apr 10, 1964 | July 3, 1953","Pyramid Peak (Pierce County, Washington) | Prusik Peak | Rote Wand | Cashmere Mountain | Electric Peak",,
+328,14311244_0_7604843865524657408,0,3,False,,,,Zemu Gap Peak | Annapurna II | Nanda Devi | Cyachug Kang | Nanga Parbat,Cascade Range | Cascade Range | Lechquellen Mountains | Cascade Range | Gallatin Range,,
+329,14311244_0_7604843865524657408,3,3,False,,,,"7,780 | 7,937 | 7,816 | 7,921 | 8,124",Cascade Range | Cascade Range | Lechquellen Mountains | Cascade Range | Gallatin Range,,
+330,14311244_0_7604843865524657408,2,3,True,,,,Himalayas | Himalayas | Himalayas | Himalayas | Himalayas,Cascade Range | Cascade Range | Lechquellen Mountains | Cascade Range | Gallatin Range,,
+331,14311244_0_7604843865524657408,0,2,False,,,,Zemu Gap Peak | Annapurna II | Nanda Devi | Cyachug Kang | Nanga Parbat,"United States, Mount Rainier National Park, Washington (U.S. state), Pierce County, Washington | Washington (U.S. state), Chelan County, Washington | Vorarlberg, Austria | Washington (U.S. state), Chelan County, Washington | United States, Park County, Montana, Yellowstone National Park",,
+332,14311244_0_7604843865524657408,3,2,False,,,,"7,780 | 7,937 | 7,816 | 7,921 | 8,124","United States, Mount Rainier National Park, Washington (U.S. state), Pierce County, Washington | Washington (U.S. state), Chelan County, Washington | Vorarlberg, Austria | Washington (U.S. state), Chelan County, Washington | United States, Park County, Montana, Yellowstone National Park",,
+333,14311244_0_7604843865524657408,2,2,False,,,,Himalayas | Himalayas | Himalayas | Himalayas | Himalayas,"United States, Mount Rainier National Park, Washington (U.S. state), Pierce County, Washington | Washington (U.S. state), Chelan County, Washington | Vorarlberg, Austria | Washington (U.S. state), Chelan County, Washington | United States, Park County, Montana, Yellowstone National Park",,
+334,14311244_0_7604843865524657408,1,2,False,,,,"Unclimbed | May 17, 1960 | Aug 29, 1936 | Apr 10, 1964 | July 3, 1953","United States, Mount Rainier National Park, Washington (U.S. state), Pierce County, Washington | Washington (U.S. state), Chelan County, Washington | Vorarlberg, Austria | Washington (U.S. state), Chelan County, Washington | United States, Park County, Montana, Yellowstone National Park",,
+335,14311244_0_7604843865524657408,0,6,False,,,,Zemu Gap Peak | Annapurna II | Nanda Devi | Cyachug Kang | Nanga Parbat,2114.4 | 2438.4 | 2704.0 | 2591.1 | 3343.35,,
+336,14311244_0_7604843865524657408,3,6,True,,,,"7,780 | 7,937 | 7,816 | 7,921 | 8,124",2114.4 | 2438.4 | 2704.0 | 2591.1 | 3343.35,,
+337,14311244_0_7604843865524657408,1,6,False,,,,"Unclimbed | May 17, 1960 | Aug 29, 1936 | Apr 10, 1964 | July 3, 1953",2114.4 | 2438.4 | 2704.0 | 2591.1 | 3343.35,,
+338,14311244_0_7604843865524657408,0,5,False,,,,Zemu Gap Peak | Annapurna II | Nanda Devi | Cyachug Kang | Nanga Parbat,1915 | 1948 | 1867 | 1900 | 1872,,
+339,14311244_0_7604843865524657408,3,5,False,,,,"7,780 | 7,937 | 7,816 | 7,921 | 8,124",1915 | 1948 | 1867 | 1900 | 1872,,
+340,14311244_0_7604843865524657408,2,5,False,,,,Himalayas | Himalayas | Himalayas | Himalayas | Himalayas,1915 | 1948 | 1867 | 1900 | 1872,,
+341,14311244_0_7604843865524657408,1,5,True,,,,"Unclimbed | May 17, 1960 | Aug 29, 1936 | Apr 10, 1964 | July 3, 1953",1915 | 1948 | 1867 | 1900 | 1872,,
+342,14311244_0_7604843865524657408,3,4,False,,,,"7,780 | 7,937 | 7,816 | 7,921 | 8,124",nan | nan | 877.0 | nan | nan,,
+343,14311244_0_7604843865524657408,2,4,False,,,,Himalayas | Himalayas | Himalayas | Himalayas | Himalayas,nan | nan | 877.0 | nan | nan,,
+344,14311244_0_7604843865524657408,2,1,False,,,,Himalayas | Himalayas | Himalayas | Himalayas | Himalayas,46.8068 | 47.4874 | 47.1861 | 47.5587 | 45.0053,,
+345,14311244_0_7604843865524657408,1,1,False,,,,"Unclimbed | May 17, 1960 | Aug 29, 1936 | Apr 10, 1964 | July 3, 1953",46.8068 | 47.4874 | 47.1861 | 47.5587 | 45.0053,,
+346,98929678_0_3700213490979945526,0,0,True,,,,Lago di Mergozzo | Moosehead Lake | Devils Lake | Tegernsee | Lake Orta /Lago d?Orta /Cusio,"Cove Lake | Lake Sils | Trasona Reservoir | Dal Lake | Silver Lake (Cook County, Minnesota)","| Column A-0          | Column A-1                        | Column A-2    | Column A-3             |
+|:--------------------|:----------------------------------|:--------------|:-----------------------|
+| Lake Balaton        | 0000002.0002 years                | Hungary       | Hungary                |
+| M?rtsj?n            | 000000.900< 1 year                | Sweden        | nan                    |
+| Lake Zug / Zugersee | 0000014.70014.7 years             | Switzerland   | nan                    |
+| Lakes Qaban         | 0002000.000several thousand years | Russia        | nan                    |
+| Lake Monona         | 0000001.1001.1 years              | United States | Dane County, Wisconsin |","| Column B-0                  | Column B-1      |   Column B-2 |   Column B-3 | Column B-4                                                  |
+|:----------------------------|:----------------|-------------:|-------------:|:------------------------------------------------------------|
+| Veerplas                    | Netherlands     |        nan   |      4.67667 | Haarlem, Netherlands                                        |
+| Halfway Lake (Pennsylvania) | United States   |        nan   |    -77.19    | United States, Hartley Township, Union County, Pennsylvania |
+| Himayat Sagar               | nan             |        nan   |     78.35    | Telangana, India, Ranga Reddy District                      |
+| Lake Päijänne               | Finland         |         95.3 |     25.5     | nan                                                         |
+| Akhurian Reservoir          | Turkey, Armenia |         59   |     43.6545  | Shirak Province                                             |"
+347,98929678_0_3700213490979945526,3,0,False,,,,"Piedmont | Maine | Lincoln County, Oregon | Bavaria | Piedmont","Cove Lake | Lake Sils | Trasona Reservoir | Dal Lake | Silver Lake (Cook County, Minnesota)",,
+348,98929678_0_3700213490979945526,2,0,False,,,,Italy | United States | United States | Germany | Italy,"Cove Lake | Lake Sils | Trasona Reservoir | Dal Lake | Silver Lake (Cook County, Minnesota)",,
+349,98929678_0_3700213490979945526,1,0,False,,,,0000006.0006 years | 0000003.1003.1 years | 000000.1500.15 years | 0000001.2801.28 years | 0000008.9008.9 years,"Cove Lake | Lake Sils | Trasona Reservoir | Dal Lake | Silver Lake (Cook County, Minnesota)",,
+350,98929678_0_3700213490979945526,0,4,False,,,,Lago di Mergozzo | Moosehead Lake | Devils Lake | Tegernsee | Lake Orta /Lago d?Orta /Cusio,"Custer County, Idaho, Idaho | Engadin, Grisons | Corvera de Asturias, Trasona, Asturias | Jammu and Kashmir (union territory), Srinagar, India | United States, Cook County, Minnesota, Minnesota",,
+351,98929678_0_3700213490979945526,3,4,True,,,,"Piedmont | Maine | Lincoln County, Oregon | Bavaria | Piedmont","Custer County, Idaho, Idaho | Engadin, Grisons | Corvera de Asturias, Trasona, Asturias | Jammu and Kashmir (union territory), Srinagar, India | United States, Cook County, Minnesota, Minnesota",,
+352,98929678_0_3700213490979945526,2,4,False,,,,Italy | United States | United States | Germany | Italy,"Custer County, Idaho, Idaho | Engadin, Grisons | Corvera de Asturias, Trasona, Asturias | Jammu and Kashmir (union territory), Srinagar, India | United States, Cook County, Minnesota, Minnesota",,
+353,98929678_0_3700213490979945526,1,4,False,,,,0000006.0006 years | 0000003.1003.1 years | 000000.1500.15 years | 0000001.2801.28 years | 0000008.9008.9 years,"Custer County, Idaho, Idaho | Engadin, Grisons | Corvera de Asturias, Trasona, Asturias | Jammu and Kashmir (union territory), Srinagar, India | United States, Cook County, Minnesota, Minnesota",,
+354,98929678_0_3700213490979945526,0,2,False,,,,Lago di Mergozzo | Moosehead Lake | Devils Lake | Tegernsee | Lake Orta /Lago d?Orta /Cusio,nan | 71.0 | nan | 6.0 | nan,,
+355,98929678_0_3700213490979945526,2,2,False,,,,Italy | United States | United States | Germany | Italy,nan | 71.0 | nan | 6.0 | nan,,
+356,98929678_0_3700213490979945526,0,1,False,,,,Lago di Mergozzo | Moosehead Lake | Devils Lake | Tegernsee | Lake Orta /Lago d?Orta /Cusio,United States | Switzerland | nan | India | United States,,
+357,98929678_0_3700213490979945526,3,1,False,,,,"Piedmont | Maine | Lincoln County, Oregon | Bavaria | Piedmont",United States | Switzerland | nan | India | United States,,
+358,98929678_0_3700213490979945526,2,1,True,,,,Italy | United States | United States | Germany | Italy,United States | Switzerland | nan | India | United States,,
+359,98929678_0_3700213490979945526,3,3,False,,,,"Piedmont | Maine | Lincoln County, Oregon | Bavaria | Piedmont",-114.609 | 9.73083 | -5.87833 | 74.8667 | -90.7633,,
+360,13395751_3_369722706637560735,1,2,True,,,,184 | 177 | 323 | 371 | 275,nan | 174.955 | 246.0 | 183.401 | 173.431,"| Column A-0     |   Column A-1 | Column A-2   | Column A-3   |
+|:---------------|-------------:|:-------------|:-------------|
+| Lake Nipissing |          196 | 832          | 822          |
+| Lake Abitibi   |          265 | 931          | 903          |
+| Lac Seul       |          357 | 1 657        | 1 373        |
+| Lake Simcoe    |          219 | 744          | 723          |
+| Lake Nipigon   |          260 | 4 848        | 4 510        |","| Column B-0                              |   Column B-1 |   Column B-2 | Column B-3                                                                                              |
+|:----------------------------------------|-------------:|-------------:|:--------------------------------------------------------------------------------------------------------|
+| Lake Nipigon                            |    4.848e+09 |          260 | Namewaminikan River, Whitesand River (Lake Nipigon), Gull River (Lake Nipigon)                          |
+| Trout Lake (Ontario)                    |  nan         |          202 | nan                                                                                                     |
+| Lake Muskoka                            |    1.2e+08   |          225 | Muskoka River, Indian River (Muskoka District)                                                          |
+| Pigeon Lake (Ontario)                   |    5.344e+07 |          246 | Bobcaygeon, Sturgeon Lake (Ontario)                                                                     |
+| Sand Lake (Patterson Township, Ontario) |  nan         |          230 | http://dbpedia.org/resource/Sand_Creek_(Ontario), http://dbpedia.org/resource/Beaudry_Creek_(Sand_Lake) |"
+361,13395751_3_369722706637560735,2,2,False,,,,28 700* | 36 000* | 3 150 | 493 | 527,nan | 174.955 | 246.0 | 183.401 | 173.431,,
+362,13395751_3_369722706637560735,3,2,False,,,,not available | not available | 2 458 | 459 | 507,nan | 174.955 | 246.0 | 183.401 | 173.431,,
+363,13395751_3_369722706637560735,0,2,False,,,,Lake Superior | Lake Huron | Lake of the Woods | St. Joseph Lake | Sandy Lake,nan | 174.955 | 246.0 | 183.401 | 173.431,,
+364,13395751_3_369722706637560735,1,0,False,,,,184 | 177 | 323 | 371 | 275,Sandy Lake (Ontario) | Lake St. Clair | Pigeon Lake (Ontario) | Lake Superior | Lake Erie,,
+365,13395751_3_369722706637560735,2,0,False,,,,28 700* | 36 000* | 3 150 | 493 | 527,Sandy Lake (Ontario) | Lake St. Clair | Pigeon Lake (Ontario) | Lake Superior | Lake Erie,,
+366,13395751_3_369722706637560735,1,3,False,,,,184 | 177 | 323 | 371 | 275,"nan | Pine River (Michigan), Clinton River, Thames River (Ontario), St. Clair River, Sydenham River | Bobcaygeon, Sturgeon Lake (Ontario) | Saint Louis River (Lake Superior tributary), White River (Ontario), Nipigon River, Kaministiquia River, Tahquamenon River, Pic River, Michipicoten River, Ontonagon River, Pigeon River (Minnesota-Ontario) | Detroit River",,
+367,13395751_3_369722706637560735,0,3,False,,,,Lake Superior | Lake Huron | Lake of the Woods | St. Joseph Lake | Sandy Lake,"nan | Pine River (Michigan), Clinton River, Thames River (Ontario), St. Clair River, Sydenham River | Bobcaygeon, Sturgeon Lake (Ontario) | Saint Louis River (Lake Superior tributary), White River (Ontario), Nipigon River, Kaministiquia River, Tahquamenon River, Pic River, Michipicoten River, Ontonagon River, Pigeon River (Minnesota-Ontario) | Detroit River",,
+368,13395751_3_369722706637560735,1,1,False,,,,184 | 177 | 323 | 371 | 275,nan | 1113690000.0 | 53440000.0 | 82102600000.0 | 25666800000.0,,
+369,13395751_3_369722706637560735,2,1,True,,,,28 700* | 36 000* | 3 150 | 493 | 527,nan | 1113690000.0 | 53440000.0 | 82102600000.0 | 25666800000.0,,
+370,13395751_3_369722706637560735,3,1,False,,,,not available | not available | 2 458 | 459 | 507,nan | 1113690000.0 | 53440000.0 | 82102600000.0 | 25666800000.0,,
+371,13395751_3_369722706637560735,0,1,False,,,,Lake Superior | Lake Huron | Lake of the Woods | St. Joseph Lake | Sandy Lake,nan | 1113690000.0 | 53440000.0 | 82102600000.0 | 25666800000.0,,
+372,28036255_0_5705563063166785494,6,1,True,,,,2506 | 2786 | 3048 | 2124 | 3313,1560.0 | 3389.0 | 2441.0 | 1968.0 | 2628.0,"| Column A-0    | Column A-1   | Column A-2   | Column A-3   | Column A-4      |   Column A-5 |   Column A-6 |
+|:--------------|:-------------|:-------------|:-------------|:----------------|-------------:|-------------:|
+| Br?nnelistock | T1           | 08.05.2011   | SZ           | Bergwandern     |          nan |         1594 |
+| Tw?riberg     | WS+          | 27.12.2010   | SZ           | Skitour         |          nan |         2117 |
+| H?ch Hund     | S            | 31.12.2010   | SZ           | Skitour         |          nan |         2215 |
+| Fluebrig      | SS+          | 16.12.2007   | SZ           | Skitour         |          nan |         2093 |
+| F?isc         | ZS+          | 01.01.2009   | TI           | Schneeschuhtour |          nan |         2208 |","| Column B-0                 |   Column B-1 | Column B-2                                |   Column B-3 |
+|:---------------------------|-------------:|:------------------------------------------|-------------:|
+| Wistätthorn                |         2362 | Canton of Bern, Switzerland               |          370 |
+| Geißhorn                   |         2366 | Bavaria, Germany                          |          nan |
+| Ewigschneehorn             |         3329 | Canton of Bern, Switzerland               |           93 |
+| Mürtschenstock             |         2441 | Canton of Glarus                          |          601 |
+| Le Cheval Blanc (mountain) |         2831 | Valais, France, Haute-Savoie, Switzerland |          140 |"
+373,28036255_0_5705563063166785494,2,1,False,,,,27.03.2007 | 11.04.2009 | 14.03.2009 | 10.06.2011 | 17.02.2008,1560.0 | 3389.0 | 2441.0 | 1968.0 | 2628.0,,
+374,28036255_0_5705563063166785494,4,1,False,,,,Skitour | Skitour | Skitour | Bergwandern | Alpine Skitour,1560.0 | 3389.0 | 2441.0 | 1968.0 | 2628.0,,
+375,28036255_0_5705563063166785494,0,1,False,,,,Hoch Fulen | Schwarzhorn | Lorenzhorn | Fronalpstock | Stucklistock,1560.0 | 3389.0 | 2441.0 | 1968.0 | 2628.0,,
+376,28036255_0_5705563063166785494,6,3,False,,,,2506 | 2786 | 3048 | 2124 | 3313,484.0 | 308.0 | 601.0 | 28.0 | 283.0,,
+377,28036255_0_5705563063166785494,3,3,False,,,,UR | BE | GR | GL | UR,484.0 | 308.0 | 601.0 | 28.0 | 283.0,,
+378,28036255_0_5705563063166785494,4,3,False,,,,Skitour | Skitour | Skitour | Bergwandern | Alpine Skitour,484.0 | 308.0 | 601.0 | 28.0 | 283.0,,
+379,28036255_0_5705563063166785494,6,0,False,,,,2506 | 2786 | 3048 | 2124 | 3313,Monte Salmone | Diechterhorn | Mürtschenstock | Mußkopf | Wiss Platte,,
+380,28036255_0_5705563063166785494,3,0,False,,,,UR | BE | GR | GL | UR,Monte Salmone | Diechterhorn | Mürtschenstock | Mußkopf | Wiss Platte,,
+381,28036255_0_5705563063166785494,3,2,True,,,,UR | BE | GR | GL | UR,"Ticino, Switzerland | Canton of Bern, Switzerland | Canton of Glarus | Bavaria, Germany | Vorarlberg, Graubünden, Austria, Switzerland",,
+382,28036255_0_5705563063166785494,0,2,False,,,,Hoch Fulen | Schwarzhorn | Lorenzhorn | Fronalpstock | Stucklistock,"Ticino, Switzerland | Canton of Bern, Switzerland | Canton of Glarus | Bavaria, Germany | Vorarlberg, Graubünden, Austria, Switzerland",,
+383,28036255_0_5705563063166785494,1,2,False,,,,ZS | WS+ | WS+ | T4 I | SS+ II,"Ticino, Switzerland | Canton of Bern, Switzerland | Canton of Glarus | Bavaria, Germany | Vorarlberg, Graubünden, Austria, Switzerland",,
+384,69381058_0_984708047398578866,3,3,True,,,,6.38 | 6.395 | 4.399 | 3.812 | 5.45,2738.0 | 859.0 | 2651.0 | 57.0 | 1620.93,"| Column A-0   | Column A-1    | Column A-2   |   Column A-3 |
+|:-------------|:--------------|:-------------|-------------:|
+| Bietschhorn  | Europe        | Switzerland  |        3.934 |
+| Mt Massive   | North America | Colorado     |        4.396 |
+| Kerintji     | Oceania       | Indonesia    |        3.809 |
+| Mt St Elias  | North America | Canada       |        5.49  |
+| Mt Delano    | North America | Utah         |        3.711 |","| Column B-0         |   Column B-1 | Column B-2                                         |   Column B-3 |
+|:-------------------|-------------:|:---------------------------------------------------|-------------:|
+| Cronin Peak        |          nan | United States, Colorado, Chaffee County, Colorado  |      4229.71 |
+| Cracker Creek Cone |         1895 | British Columbia, British Columbia Interior        |      1895    |
+| Monte Buckland     |         1746 | Chile                                              |      1746    |
+| Crested Butte      |          nan | United States, Colorado, Gunnison County, Colorado |      3708.81 |
+| Creag Meagaidh     |         1130 | Scotland, Glen Spean                               |      1130    |"
+385,69381058_0_984708047398578866,2,3,False,,,,Argentina/Chile | Peru | Colorado | California | Peru,2738.0 | 859.0 | 2651.0 | 57.0 | 1620.93,,
+386,69381058_0_984708047398578866,0,3,False,,,,El Toro | Huantsan | Mt Elbert | Mt Simmons | Cerro Burro,2738.0 | 859.0 | 2651.0 | 57.0 | 1620.93,,
+387,69381058_0_984708047398578866,1,3,False,,,,South America | South America | North America | North America | South America,2738.0 | 859.0 | 2651.0 | 57.0 | 1620.93,,
+388,69381058_0_984708047398578866,3,1,False,,,,6.38 | 6.395 | 4.399 | 3.812 | 5.45,2738 | 859 | 2651 | 57 | nan,,
+389,69381058_0_984708047398578866,3,0,False,,,,6.38 | 6.395 | 4.399 | 3.812 | 5.45,Monte Prosa | Caisteal Abhail | Peskovi | Mjuken | Mount Alice (Alaska),,
+390,69381058_0_984708047398578866,2,0,False,,,,Argentina/Chile | Peru | Colorado | California | Peru,Monte Prosa | Caisteal Abhail | Peskovi | Mjuken | Mount Alice (Alaska),,
+391,69381058_0_984708047398578866,3,2,False,,,,6.38 | 6.395 | 4.399 | 3.812 | 5.45,"Ticino, Switzerland | Scotland, Isle of Arran | Kosovo | Vestland, Norway | United States, Chugach National Forest, Alaska, Kenai Peninsula Borough, Alaska",,
+392,69381058_0_984708047398578866,2,2,True,,,,Argentina/Chile | Peru | Colorado | California | Peru,"Ticino, Switzerland | Scotland, Isle of Arran | Kosovo | Vestland, Norway | United States, Chugach National Forest, Alaska, Kenai Peninsula Borough, Alaska",,
+393,69381058_0_984708047398578866,0,2,False,,,,El Toro | Huantsan | Mt Elbert | Mt Simmons | Cerro Burro,"Ticino, Switzerland | Scotland, Isle of Arran | Kosovo | Vestland, Norway | United States, Chugach National Forest, Alaska, Kenai Peninsula Borough, Alaska",,
+394,69381058_0_984708047398578866,1,2,False,,,,South America | South America | North America | North America | South America,"Ticino, Switzerland | Scotland, Isle of Arran | Kosovo | Vestland, Norway | United States, Chugach National Forest, Alaska, Kenai Peninsula Borough, Alaska",,
+395,28993628_1_6072768612274729703,3,1,True,,,,2282 | 2802 | 1876 | 2422 | 2093,2380.0 | 3419.0 | 2836.0 | 1569.0 | 2262.0,"|   Column A-0 | Column A-1   | Column A-2   |   Column A-3 | Column A-4             |
+|-------------:|:-------------|:-------------|-------------:|:-----------------------|
+|        175.1 | GL/UR        | 60.83 km     |         3268 | Clariden               |
+|        160.7 | ZH           | 5.00 km      |          864 | Ebnerberg              |
+|        162.5 | SZ           | 32.41 km     |         1489 | Brüschstockbügel       |
+|        170.4 | SZ           | 36.96 km     |         2069 | Turner                 |
+|        170.8 | SZ           | 44.41 km     |         2319 | Silberen Twärenen-Räui |","| Column B-0     |   Column B-1 | Column B-2                            | Column B-3                                          | Column B-4                            |   Column B-5 |
+|:---------------|-------------:|:--------------------------------------|:----------------------------------------------------|:--------------------------------------|-------------:|
+| Zindlenspitz   |       2097   | Schwyzer Alps                         | Canton of Glarus, Canton of Schwyz, Switzerland     | Schwyzer Alps                         |      8.96    |
+| Rheinwaldhorn  |       3402   | Lepontine Alps                        | Graubünden, Ticino, Switzerland                     | Lepontine Alps                        |      9.04    |
+| Schnebelhorn   |       1291.9 | Appenzell Alps                        | Canton of St. Gallen, Canton of Zurich, Switzerland | Appenzell Alps                        |      8.97964 |
+| Rossbodenstock |       2836   | Saint-Gotthard Massif, Lepontine Alps | Canton of Uri, Graubünden                           | Saint-Gotthard Massif, Lepontine Alps |      8.65094 |
+| Bös Fulen      |       2802   | Schwyz Alps                           | Canton of Glarus, Canton of Schwyz                  | Schwyz Alps                           |      8.94583 |"
+396,28993628_1_6072768612274729703,0,1,False,,,,155.0 | 167.1 | 158.1 | 153.4 | 171.1,2380.0 | 3419.0 | 2836.0 | 1569.0 | 2262.0,,
+397,28993628_1_6072768612274729703,4,1,False,,,,Wiggis | Bös Fulen | Chöpfenberg | Charenstock | Diethelm Fluebrig,2380.0 | 3419.0 | 2836.0 | 1569.0 | 2262.0,,
+398,28993628_1_6072768612274729703,3,5,False,,,,2282 | 2802 | 1876 | 2422 | 2093,8.80833 | 8.9575 | 8.65094 | 12.25 | 9.31278,,
+399,28993628_1_6072768612274729703,0,5,False,,,,155.0 | 167.1 | 158.1 | 153.4 | 171.1,8.80833 | 8.9575 | 8.65094 | 12.25 | 9.31278,,
+400,28993628_1_6072768612274729703,3,3,False,,,,2282 | 2802 | 1876 | 2422 | 2093,"Canton of Uri, Switzerland | nan | Canton of Uri, Graubünden | Bavaria, Germany | Canton of St. Gallen, Switzerland",,
+401,28993628_1_6072768612274729703,1,3,True,,,,GL | GL/SZ | GL/SZ | GL | SZ,"Canton of Uri, Switzerland | nan | Canton of Uri, Graubünden | Bavaria, Germany | Canton of St. Gallen, Switzerland",,
+402,28993628_1_6072768612274729703,0,3,False,,,,155.0 | 167.1 | 158.1 | 153.4 | 171.1,"Canton of Uri, Switzerland | nan | Canton of Uri, Graubünden | Bavaria, Germany | Canton of St. Gallen, Switzerland",,
+403,28993628_1_6072768612274729703,4,3,False,,,,Wiggis | Bös Fulen | Chöpfenberg | Charenstock | Diethelm Fluebrig,"Canton of Uri, Switzerland | nan | Canton of Uri, Graubünden | Bavaria, Germany | Canton of St. Gallen, Switzerland",,
+404,28993628_1_6072768612274729703,1,2,False,,,,GL | GL/SZ | GL/SZ | GL | SZ,"Glarus Alps | nan | Saint-Gotthard Massif, Lepontine Alps | nan | Churfirsten",,
+405,28993628_1_6072768612274729703,1,0,False,,,,GL | GL/SZ | GL/SZ | GL | SZ,Alpler Horn | Bifertenstock | Rossbodenstock | Hochries | Chäserrugg,,
+406,28993628_1_6072768612274729703,0,4,False,,,,155.0 | 167.1 | 158.1 | 153.4 | 171.1,"Glarus Alps | nan | Saint-Gotthard Massif, Lepontine Alps | nan | Churfirsten",,
+407,28993628_1_6072768612274729703,4,4,False,,,,Wiggis | Bös Fulen | Chöpfenberg | Charenstock | Diethelm Fluebrig,"Glarus Alps | nan | Saint-Gotthard Massif, Lepontine Alps | nan | Churfirsten",,
+408,49801939_0_6964113429298874283,3,3,True,,,,"7,780 | 7,937 | 7,816 | 7,921 | 8,124",8091.0 | 6578.0 | nan | 2551.0 | 2241.19,"| Column A-0       | Column A-1    | Column A-2   | Column A-3   |
+|:-----------------|:--------------|:-------------|:-------------|
+| Broad Peak I     | June 9, 1957  | Karakoram    | 8,047        |
+| Kamet            | June 21, 1931 | Himalayas    | 7,756        |
+| Gasherbrum I     | July 5, 1958  | Karakoram    | 8,068        |
+| Nanda Devi       | Aug 29, 1936  | Himalayas    | 7,816        |
+| Batura Muztagh I | July 30, 1976 | Karakoram    | 7,785        |","| Column B-0         | Column B-1                  | Column B-2   |   Column B-3 | Column B-4                                                                                                      |   Column B-5 |
+|:-------------------|:----------------------------|:-------------|-------------:|:----------------------------------------------------------------------------------------------------------------|-------------:|
+| Mount Everest      | nan                         | 1953         |          nan | Province No. 1, Tibet Autonomous Region, Tingri County, China, Solukhumbu District, Nepal, Xigazê               |          nan |
+| Bojohagur Duanasir | Karakoram, Batura           | 1984         |         7329 | Hunza Valley, Gilgit-Baltistan, Pakistan                                                                        |         7329 |
+| Botzer             | Stubai Alps                 | 0016         |         3250 | Italy, South Tyrol                                                                                              |         3250 |
+| Zemu Gap Peak      | Himalayas                   | nan          |         7780 | Sikkim, India                                                                                                   |         7780 |
+| Lhotse             | Mahalangur Himal, Himalayas | 1956, 1988   |         8516 | Sagarmatha Zone, Tibet Autonomous Region, Tingri County, China, Solukhumbu District, Nepal, Shigatse Prefecture |         8516 |"
+409,49801939_0_6964113429298874283,1,3,False,,,,"Unclimbed | May 17, 1960 | Aug 29, 1936 | Apr 10, 1964 | July 3, 1953",8091.0 | 6578.0 | nan | 2551.0 | 2241.19,,
+410,49801939_0_6964113429298874283,0,3,False,,,,Zemu Gap Peak | Annapurna II | Nanda Devi | Cyachug Kang | Nanga Parbat,8091.0 | 6578.0 | nan | 2551.0 | 2241.19,,
+411,49801939_0_6964113429298874283,3,5,False,,,,"7,780 | 7,937 | 7,816 | 7,921 | 8,124",8091.0 | 6578.0 | nan | 2551.0 | nan,,
+412,49801939_0_6964113429298874283,2,5,False,,,,Himalayas | Himalayas | Himalayas | Himalayas | Himalayas,8091.0 | 6578.0 | nan | 2551.0 | nan,,
+413,49801939_0_6964113429298874283,1,5,False,,,,"Unclimbed | May 17, 1960 | Aug 29, 1936 | Apr 10, 1964 | July 3, 1953",8091.0 | 6578.0 | nan | 2551.0 | nan,,
+414,49801939_0_6964113429298874283,3,1,False,,,,"7,780 | 7,937 | 7,816 | 7,921 | 8,124","Annapurna (mountain range) | Garhwal Himalaya | nan | Pacific Ranges | Colorado Plateau, Kaibab Plateau",,
+415,49801939_0_6964113429298874283,2,1,True,,,,Himalayas | Himalayas | Himalayas | Himalayas | Himalayas,"Annapurna (mountain range) | Garhwal Himalaya | nan | Pacific Ranges | Colorado Plateau, Kaibab Plateau",,
+416,49801939_0_6964113429298874283,1,1,False,,,,"Unclimbed | May 17, 1960 | Aug 29, 1936 | Apr 10, 1964 | July 3, 1953","Annapurna (mountain range) | Garhwal Himalaya | nan | Pacific Ranges | Colorado Plateau, Kaibab Plateau",,
+417,49801939_0_6964113429298874283,0,1,False,,,,Zemu Gap Peak | Annapurna II | Nanda Devi | Cyachug Kang | Nanga Parbat,"Annapurna (mountain range) | Garhwal Himalaya | nan | Pacific Ranges | Colorado Plateau, Kaibab Plateau",,
+418,49801939_0_6964113429298874283,3,4,False,,,,"7,780 | 7,937 | 7,816 | 7,921 | 8,124","Gandaki Province, Nepal | Uttarakhand, India | nan | British Columbia | Coconino County, Arizona, Grand Canyon National Park, Arizona",,
+419,49801939_0_6964113429298874283,2,4,False,,,,Himalayas | Himalayas | Himalayas | Himalayas | Himalayas,"Gandaki Province, Nepal | Uttarakhand, India | nan | British Columbia | Coconino County, Arizona, Grand Canyon National Park, Arizona",,
+420,49801939_0_6964113429298874283,1,4,False,,,,"Unclimbed | May 17, 1960 | Aug 29, 1936 | Apr 10, 1964 | July 3, 1953","Gandaki Province, Nepal | Uttarakhand, India | nan | British Columbia | Coconino County, Arizona, Grand Canyon National Park, Arizona",,
+421,49801939_0_6964113429298874283,3,2,False,,,,"7,780 | 7,937 | 7,816 | 7,921 | 8,124","1950, 1987 | 1975 | 1954 | 1931 | 1959",,
+422,49801939_0_6964113429298874283,1,2,True,,,,"Unclimbed | May 17, 1960 | Aug 29, 1936 | Apr 10, 1964 | July 3, 1953","1950, 1987 | 1975 | 1954 | 1931 | 1959",,
+423,49801939_0_6964113429298874283,0,2,False,,,,Zemu Gap Peak | Annapurna II | Nanda Devi | Cyachug Kang | Nanga Parbat,"1950, 1987 | 1975 | 1954 | 1931 | 1959",,
+424,49801939_0_6964113429298874283,2,0,False,,,,Himalayas | Himalayas | Himalayas | Himalayas | Himalayas,Annapurna | Bhartekunta | K2 | Capricorn Mountain | Deva Temple,,
+425,19361188_0_1640726405141876003,5,2,True,,,,665m | 800m | 713m | 663m | 734m,700.0 | 5000.0 | 822.0 | 672.0 | 702.0,"| Column A-0      | Column A-1   | Column A-2   |   Column A-3 | Column A-4   | Column A-5   |
+|:----------------|:-------------|:-------------|-------------:|:-------------|:-------------|
+| Pen yr Helgi Du | 01/06/2010   | SH698630     |          nan | 2733ft       | 833m         |
+| Yr Aran         | nan          | SH604515     |          nan | 2451ft       | 747m         |
+| Mynydd Moel     | 26/08/2007   | SH727137     |          nan | 2831ft       | 863m         |
+| Pumlumon Fawr   | nan          | SN790870     |          nan | 2467ft       | 752m         |
+| Craiglwyn       | nan          | SH730608     |          nan | 2044ft       | 623m         |","| Column B-0     | Column B-1                          |   Column B-2 | Column B-3                                                                       | Column B-4                         |
+|:---------------|:------------------------------------|-------------:|:---------------------------------------------------------------------------------|:-----------------------------------|
+| Wether Fell    | North Yorkshire, Wensleydale        |          614 | Hawes and Wether Fell                                                            | nan                                |
+| Great Coum     | South Lakeland, Cumbria, England    |          687 | Looking north along the boundary wall towards the rocky outcrop below the summit | nan                                |
+| Grisedale Pike | Cumbria, England                    |          791 | Grisedale Pike seen from the fell, of Barrow, 3 km to the east                   | North Western Fells, Lake District |
+| Carrigvore     | Republic of Ireland, County Wicklow |          682 | Gravale  with Carrigvore  from SE                                                | Wicklow Mountains                  |
+| Wandope        | Cumbria, England                    |          772 | Whiteless Edge & Wandope from Whiteless Pike                                     | North Western Fells, Lake District |"
+426,19361188_0_1640726405141876003,2,2,False,,,,SJ048294 | SH659637 | SO211334 | SN913184 | SN970193,700.0 | 5000.0 | 822.0 | 672.0 | 702.0,,
+427,19361188_0_1640726405141876003,1,2,False,,,,nan | 31/05/2010 | 20/09/2008 | 21/09/2008 | 18/09/2008,700.0 | 5000.0 | 822.0 | 672.0 | 702.0,,
+428,19361188_0_1640726405141876003,3,2,False,,,,nan | nan | nan | nan | nan,700.0 | 5000.0 | 822.0 | 672.0 | 702.0,,
+429,19361188_0_1640726405141876003,5,0,False,,,,665m | 800m | 713m | 663m | 734m,Pavey Ark | Pucara (Lari) | Hart Crag | Rogan's Seat | Bowscale Fell,,
+430,19361188_0_1640726405141876003,5,3,False,,,,665m | 800m | 713m | 663m | 734m,"Pavey Ark, seen from the shores of Stickle Tarn | nan | Hart Crag, with a cloud-covered Fairfield behind. | The moorland from the summit with Mickle Fell in the background | The Tongue, Bowscale Fell from Mungrisdale",,
+431,19361188_0_1640726405141876003,2,1,False,,,,SJ048294 | SH659637 | SO211334 | SN913184 | SN970193,"England, Cumbria | Arequipa Region, Peru, Caylloma Province | England, Cumbria | England, North Yorkshire | England, Cumbria",,
+432,90593344_0_8311455501234425088,1,1,True,,,,468 | 865 | 710 | 762 | 891,747.0 | 489.0 | 535.0 | 357.0 | 344.0,"|   Column A-0 |   Column A-1 | Column A-2     |   Column A-3 |   Column A-4 |   Column A-5 |   Column A-6 |   Column A-7 |   Column A-8 | Column A-9       |   Column A-10 |
+|-------------:|-------------:|:---------------|-------------:|-------------:|-------------:|-------------:|-------------:|-------------:|:-----------------|--------------:|
+|          208 |          535 | NY 15135 03447 |         1755 |          nan |          nan |          nan |          nan |          nan | Whin Rigg        |           nan |
+|           87 |          736 | NY 28180 07393 |         2415 |          nan |          nan |          nan |          nan |          nan | Harrison Stickle |           nan |
+|          156 |          792 | NY 44332 12861 |         2598 |          nan |          nan |          nan |          nan |          nan | Rampsgill Head   |           nan |
+|           46 |          753 | NY 22301 15324 |         2470 |          nan |          nan |          nan |          nan |          nan | Dale Head        |           nan |
+|          204 |          487 | NY 40370 05267 |         1598 |          nan |          nan |          nan |          nan |          nan | Wansfell         |           nan |","| Column B-0               |   Column B-1 | Column B-2   |
+|:-------------------------|-------------:|:-------------|
+| Watch Hill (Cockermouth) |          254 | NY159318     |
+| Cold Pike                |          701 | NY262035     |
+| Gregory Chapel           |          695 | NY802003     |
+| Cringle Moor             |          434 | NZ537029     |
+| Gun (Staffordshire)      |          385 | SJ970615     |"
+433,90593344_0_8311455501234425088,2,1,False,,,,NY 21467 26740 | NY 26679 27785 | NY 29622 32985 | NY 28820 01108 | NY 34408 14154,747.0 | 489.0 | 535.0 | 357.0 | 344.0,,
+434,90593344_0_8311455501234425088,0,1,False,,,,9.0 | 184.0 | 120.0 | 207.0 | 148.0,747.0 | 489.0 | 535.0 | 357.0 | 344.0,,
+435,90593344_0_8311455501234425088,6,1,False,,,,nan | nan | nan | nan | nan,747.0 | 489.0 | 535.0 | 357.0 | 344.0,,
+436,90593344_0_8311455501234425088,8,1,False,,,,nan | nan | nan | nan | nan,747.0 | 489.0 | 535.0 | 357.0 | 344.0,,
+437,90593344_0_8311455501234425088,1,2,False,,,,468 | 865 | 710 | 762 | 891,NY785375 | SJ994737 | NY151034 | SD959552 | NY299407,,
+438,90593344_0_8311455501234425088,2,2,True,,,,NY 21467 26740 | NY 26679 27785 | NY 29622 32985 | NY 28820 01108 | NY 34408 14154,NY785375 | SJ994737 | NY151034 | SD959552 | NY299407,,
+439,90593344_0_8311455501234425088,0,2,False,,,,9.0 | 184.0 | 120.0 | 207.0 | 148.0,NY785375 | SJ994737 | NY151034 | SD959552 | NY299407,,
+440,90593344_0_8311455501234425088,6,2,False,,,,nan | nan | nan | nan | nan,NY785375 | SJ994737 | NY151034 | SD959552 | NY299407,,
+441,90593344_0_8311455501234425088,5,2,False,,,,nan | nan | nan | nan | nan,NY785375 | SJ994737 | NY151034 | SD959552 | NY299407,,
+442,90593344_0_8311455501234425088,1,0,False,,,,468 | 865 | 710 | 762 | 891,Burnhope Seat | Merryton Low | Whin Rigg | Sharp Haw | Faulds Brow,,
+443,90593344_0_8311455501234425088,2,0,False,,,,NY 21467 26740 | NY 26679 27785 | NY 29622 32985 | NY 28820 01108 | NY 34408 14154,Burnhope Seat | Merryton Low | Whin Rigg | Sharp Haw | Faulds Brow,,
+444,90593344_0_8311455501234425088,8,0,False,,,,nan | nan | nan | nan | nan,Burnhope Seat | Merryton Low | Whin Rigg | Sharp Haw | Faulds Brow,,
+445,3389822_6_374624044314151266,3,2,True,,,,3432 | 2174 | 3084 | 3256 | 2849,2283.0 | 1569.0 | 2481.0 | 2299.0 | 2836.0,"|   Column A-0 | Column A-1   | Column A-2   |   Column A-3 | Column A-4          |
+|-------------:|:-------------|:-------------|-------------:|:--------------------|
+|        307   | SG           | 30.12 km     |         2579 | Plattenspitz        |
+|        280.5 | GR           | 32.37 km     |         2264 | Crap Sogn Gion      |
+|        270.1 | GR/UR        | 60.92 km     |         3256 | Gross Düssi Piz Git |
+|        298.8 | GR/SG        | 27.29 km     |         3114 | Piz da Sterls       |
+|        278.9 | GR           | 34.25 km     |         2412 | Crest da Tiarms     |","| Column B-0             | Column B-1                                |   Column B-2 |
+|:-----------------------|:------------------------------------------|-------------:|
+| Dent de Nendaz         | Valais, Switzerland                       |         2463 |
+| Vordere Ölgrubenspitze | Austria, Tyrol (state)                    |         3456 |
+| Cima di Gagnone        | Ticino, Switzerland                       |         2518 |
+| Dent du Vélan          | Valais, France, Haute-Savoie, Switzerland |         2059 |
+| Chrüz                  | Graubünden, Switzerland                   |         2196 |"
+446,3389822_6_374624044314151266,1,2,False,,,,GL/GR | GR | GL | GR/UR | GL/GR,2283.0 | 1569.0 | 2481.0 | 2299.0 | 2836.0,,
+447,3389822_6_374624044314151266,0,2,False,,,,271.6 | 285.0 | 273.8 | 270.1 | 292.0,2283.0 | 1569.0 | 2481.0 | 2299.0 | 2836.0,,
+448,3389822_6_374624044314151266,4,2,False,,,,Piz Dado | Furggabüel | Hinter Schiben | Gross Düssi Piz Git | Tschingelhoren,2283.0 | 1569.0 | 2481.0 | 2299.0 | 2836.0,,
+449,3389822_6_374624044314151266,3,0,False,,,,3432 | 2174 | 3084 | 3256 | 2849,Schlüechtli | Hochries | Hochstollen | Schilt | Rossbodenstock,,

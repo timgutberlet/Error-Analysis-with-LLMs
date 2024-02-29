@@ -1,0 +1,3467 @@
+Prompt_Name,Prompt,Model,Database,Answer,Context
+error_class_LLM,"In the following I will give you a few price prediction tasks together with a prediction decision, details about the decision and the actual price.
+A wrong prediction is a prediction that deviates by more than 20 percent from the actual price. The Prediction was made by an LLM.
+Can you please group the wrong decisions into 3 fault categories? Please also indicate how often each one occurs.
+There are also some correct decisions (deviation of less than 20 percent) in the examples. Please just use them as a reference and don't categorize them.
+False Predictions:
+Task 1:
+Prompt: System: Based on the provided attributes of a used car listed below, please predict its selling price in Indian Rupees in the Indian market. The predicted price should be expressed solely as a number followed by the currency ""INR"".
+Ensure that the output contains no additional text or characters beyond this specified format.
+Attributes:
+name: Maruti 800 Std,
+year: 1999,
+km_driven: 40000,
+fuel: Petrol,
+seller_type: Individual,
+transmission: Manual,
+owner: Second Owner,
+mileage: 16.1 kmpl,
+engine: 796 CC,
+max_power: 37 bhp,
+torque: 59Nm@ 2500rpm,
+seats: 4.0
+
+Required Output:
+""price"": <predicted price> INR
+
+Please provide the prediction strictly adhering to the above instructions.
+Prediction: 60000
+Explanation: [
+{""attribute"":""year"",""importance"":""0.30"",""value"":""1999""},
+{""attribute"":""km_driven"",""importance"":""0.25"",""value"":""40000""},
+{""attribute"":""fuel"",""importance"":""0.20"",""value"":""Petrol""},
+{""attribute"":""owner"",""importance"":""0.15"",""value"":""Second Owner""},
+{""attribute"":""max_power"",""importance"":""0.10"",""value"":""37 bhp""}
+]
+Actual Price: 40000
+Task 2:
+Prompt: System: Based on the provided attributes of a used car listed below, please predict its selling price in Indian Rupees in the Indian market. The predicted price should be expressed solely as a number followed by the currency ""INR"".
+Ensure that the output contains no additional text or characters beyond this specified format.
+Attributes:
+name: Hyundai EON Era Plus,
+year: 2012,
+km_driven: 43755,
+fuel: Petrol,
+seller_type: Dealer,
+transmission: Manual,
+owner: Second Owner,
+mileage: 21.1 kmpl,
+engine: 814 CC,
+max_power: 55.2 bhp,
+torque: 74.5Nm@ 4000rpm,
+seats: 5.0
+
+Required Output:
+""price"": <predicted price> INR
+
+Please provide the prediction strictly adhering to the above instructions.
+Prediction: 180000
+Explanation: [
+{""attribute"":""year"",""importance"":""0.25"",""value"":""2012""},
+{""attribute"":""km_driven"",""importance"":""0.35"",""value"":""43755""},
+{""attribute"":""fuel"",""importance"":""0.15"",""value"":""Petrol""},
+{""attribute"":""owner"",""importance"":""0.10"",""value"":""Second Owner""},
+{""attribute"":""engine"",""importance"":""0.10"",""value"":""814 CC""},
+{""attribute"":""max_power"",""importance"":""0.05"",""value"":""55.2 bhp""}
+]
+Actual Price: 270000
+Task 3:
+Prompt: System: Based on the provided attributes of a used car listed below, please predict its selling price in Indian Rupees in the Indian market. The predicted price should be expressed solely as a number followed by the currency ""INR"".
+Ensure that the output contains no additional text or characters beyond this specified format.
+Attributes:
+name: Chevrolet Optra Magnum 2.0 LT,
+year: 2008,
+km_driven: 90000,
+fuel: Diesel,
+seller_type: Individual,
+transmission: Manual,
+owner: Fourth & Above Owner,
+mileage: 16.52 kmpl,
+engine: 1991 CC,
+max_power: 123.7 bhp,
+torque: 305Nm@ 2000rpm,
+seats: 5.0
+
+Required Output:
+""price"": <predicted price> INR
+
+Please provide the prediction strictly adhering to the above instructions.
+Prediction: 150000
+Explanation: [
+{""attribute"":""year"",""importance"":""0.20"",""value"":""2008""},
+{""attribute"":""km_driven"",""importance"":""0.30"",""value"":""90000""},
+{""attribute"":""fuel"",""importance"":""0.15"",""value"":""Diesel""},
+{""attribute"":""owner"",""importance"":""0.10"",""value"":""Fourth & Above Owner""},
+{""attribute"":""engine"",""importance"":""0.15"",""value"":""1991 CC""},
+{""attribute"":""max_power"",""importance"":""0.10"",""value"":""123.7 bhp""}
+]
+Actual Price: 210000
+Task 4:
+Prompt: System: Based on the provided attributes of a used car listed below, please predict its selling price in Indian Rupees in the Indian market. The predicted price should be expressed solely as a number followed by the currency ""INR"".
+Ensure that the output contains no additional text or characters beyond this specified format.
+Attributes:
+name: Hyundai i20 1.4 CRDi Asta,
+year: 2012,
+km_driven: 53000,
+fuel: Diesel,
+seller_type: Individual,
+transmission: Manual,
+owner: Second Owner,
+mileage: 23.0 kmpl,
+engine: 1396 CC,
+max_power: 90 bhp,
+torque: 22.4 kgm at 1750-2750rpm,
+seats: 5.0
+
+Required Output:
+""price"": <predicted price> INR
+
+Please provide the prediction strictly adhering to the above instructions.
+Prediction: 350000
+Explanation: [
+{""attribute"":""year"",""importance"":""0.25"",""value"":""2012""},
+{""attribute"":""km_driven"",""importance"":""0.20"",""value"":""53000""},
+{""attribute"":""fuel"",""importance"":""0.15"",""value"":""Diesel""},
+{""attribute"":""transmission"",""importance"":""0.15"",""value"":""Manual""},
+{""attribute"":""owner"",""importance"":""0.10"",""value"":""Second Owner""},
+{""attribute"":""engine"",""importance"":""0.10"",""value"":""1396 CC""},
+{""attribute"":""max_power"",""importance"":""0.05"",""value"":""90 bhp""}
+]
+Actual Price: 500000
+Task 5:
+Prompt: System: Based on the provided attributes of a used car listed below, please predict its selling price in Indian Rupees in the Indian market. The predicted price should be expressed solely as a number followed by the currency ""INR"".
+Ensure that the output contains no additional text or characters beyond this specified format.
+Attributes:
+name: Toyota Innova 2.5 G (Diesel) 7 Seater BS IV,
+year: 2008,
+km_driven: 193623,
+fuel: Diesel,
+seller_type: Individual,
+transmission: Manual,
+owner: Second Owner,
+mileage: 12.8 kmpl,
+engine: 2494 CC,
+max_power: 102 bhp,
+torque: 20.4@ 1400-3400(kgm@ rpm),
+seats: 8.0
+
+Required Output:
+""price"": <predicted price> INR
+
+Please provide the prediction strictly adhering to the above instructions.
+Prediction: 450000
+Explanation: [
+{""attribute"":""year"",""importance"":""0.30"",""value"":""2008""},
+{""attribute"":""km_driven"",""importance"":""0.40"",""value"":""193623""},
+{""attribute"":""fuel"",""importance"":""0.15"",""value"":""Diesel""},
+{""attribute"":""transmission"",""importance"":""0.10"",""value"":""Manual""},
+{""attribute"":""owner"",""importance"":""0.05"",""value"":""Second Owner""}
+]
+Actual Price: 330000
+Task 6:
+Prompt: System: Based on the provided attributes of a used car listed below, please predict its selling price in Indian Rupees in the Indian market. The predicted price should be expressed solely as a number followed by the currency ""INR"".
+Ensure that the output contains no additional text or characters beyond this specified format.
+Attributes:
+name: Toyota Yaris V BSIV,
+year: 2018,
+km_driven: 5229,
+fuel: Petrol,
+seller_type: Trustmark Dealer,
+transmission: Manual,
+owner: First Owner,
+mileage: 17.1 kmpl,
+engine: 1496 CC,
+max_power: 105.5 bhp,
+torque: 140Nm@ 4200rpm,
+seats: 5.0
+
+Required Output:
+""price"": <predicted price> INR
+
+Please provide the prediction strictly adhering to the above instructions.
+Prediction: 750000
+Explanation: [
+{""attribute"":""year"",""importance"":""0.30"",""value"":""2018""},
+{""attribute"":""km_driven"",""importance"":""0.25"",""value"":""5229""},
+{""attribute"":""fuel"",""importance"":""0.15"",""value"":""Petrol""},
+{""attribute"":""transmission"",""importance"":""0.10"",""value"":""Manual""},
+{""attribute"":""max_power"",""importance"":""0.10"",""value"":""105.5 bhp""},
+{""attribute"":""engine"",""importance"":""0.10"",""value"":""1496 CC""}
+]
+Actual Price: 1000000
+Task 7:
+Prompt: System: Based on the provided attributes of a used car listed below, please predict its selling price in Indian Rupees in the Indian market. The predicted price should be expressed solely as a number followed by the currency ""INR"".
+Ensure that the output contains no additional text or characters beyond this specified format.
+Attributes:
+name: Ford EcoSport 1.5 Petrol Titanium Plus BSIV,
+year: 2018,
+km_driven: 90000,
+fuel: Petrol,
+seller_type: Individual,
+transmission: Manual,
+owner: First Owner,
+mileage: 17.0 kmpl,
+engine: 1497 CC,
+max_power: 121.36 bhp,
+torque: 150Nm@ 4500rpm,
+seats: 5.0
+
+Required Output:
+""price"": <predicted price> INR
+
+Please provide the prediction strictly adhering to the above instructions.
+Prediction: 650000
+Explanation: [
+{""attribute"":""year"",""importance"":""0.20"",""value"":""2018""},
+{""attribute"":""km_driven"",""importance"":""0.30"",""value"":""90000""},
+{""attribute"":""fuel"",""importance"":""0.15"",""value"":""Petrol""},
+{""attribute"":""transmission"",""importance"":""0.15"",""value"":""Manual""},
+{""attribute"":""owner"",""importance"":""0.10"",""value"":""First Owner""},
+{""attribute"":""engine"",""importance"":""0.10"",""value"":""1497 CC""}
+]
+Actual Price: 850000
+Task 8:
+Prompt: System: Based on the provided attributes of a used car listed below, please predict its selling price in Indian Rupees in the Indian market. The predicted price should be expressed solely as a number followed by the currency ""INR"".
+Ensure that the output contains no additional text or characters beyond this specified format.
+Attributes:
+name: Honda City 2017-2020 GXi,
+year: 2006,
+km_driven: 70000,
+fuel: Petrol,
+seller_type: Individual,
+transmission: Manual,
+owner: Second Owner,
+mileage: 17.7 kmpl,
+engine: 1497 CC,
+max_power: 78 bhp,
+torque: 12.7@ 2,700(kgm@ rpm),
+seats: 5.0
+
+Required Output:
+""price"": <predicted price> INR
+
+Please provide the prediction strictly adhering to the above instructions.
+Prediction: 200000
+Explanation: [
+{""attribute"":""year"",""importance"":""0.20"",""value"":""2006""},
+{""attribute"":""km_driven"",""importance"":""0.30"",""value"":""70000""},
+{""attribute"":""fuel"",""importance"":""0.15"",""value"":""Petrol""},
+{""attribute"":""owner"",""importance"":""0.10"",""value"":""Second Owner""},
+{""attribute"":""mileage"",""importance"":""0.10"",""value"":""17.7 kmpl""},
+{""attribute"":""engine"",""importance"":""0.15"",""value"":""1497 CC""}
+]
+Actual Price: 270000
+Task 9:
+Prompt: System: Based on the provided attributes of a used car listed below, please predict its selling price in Indian Rupees in the Indian market. The predicted price should be expressed solely as a number followed by the currency ""INR"".
+Ensure that the output contains no additional text or characters beyond this specified format.
+Attributes:
+name: Maruti Wagon R LXI,
+year: 2005,
+km_driven: 90000,
+fuel: Petrol,
+seller_type: Individual,
+transmission: Manual,
+owner: Second Owner,
+mileage: 18.9 kmpl,
+engine: 998 CC,
+max_power: 67.1 bhp,
+torque: 90Nm@ 3500rpm,
+seats: 5.0
+
+Required Output:
+""price"": <predicted price> INR
+
+Please provide the prediction strictly adhering to the above instructions.
+Prediction: 100000
+Explanation: [
+{""attribute"":""year"",""importance"":""0.20"",""value"":""2005""},
+{""attribute"":""km_driven"",""importance"":""0.30"",""value"":""90000""},
+{""attribute"":""fuel"",""importance"":""0.15"",""value"":""Petrol""},
+{""attribute"":""transmission"",""importance"":""0.15"",""value"":""Manual""},
+{""attribute"":""owner"",""importance"":""0.10"",""value"":""Second Owner""},
+{""attribute"":""engine"",""importance"":""0.10"",""value"":""998 CC""}
+]
+Actual Price: 65000
+Task 10:
+Prompt: System: Based on the provided attributes of a used car listed below, please predict its selling price in Indian Rupees in the Indian market. The predicted price should be expressed solely as a number followed by the currency ""INR"".
+Ensure that the output contains no additional text or characters beyond this specified format.
+Attributes:
+name: Toyota Fortuner 3.0 Diesel,
+year: 2010,
+km_driven: 100000,
+fuel: Diesel,
+seller_type: Individual,
+transmission: Manual,
+owner: First Owner,
+mileage: 11.5 kmpl,
+engine: 2982 CC,
+max_power: 171 bhp,
+torque: 343Nm@ 1400-3400rpm,
+seats: 7.0
+
+Required Output:
+""price"": <predicted price> INR
+
+Please provide the prediction strictly adhering to the above instructions.
+Prediction: 900000
+Explanation: [
+{""attribute"":""year"",""importance"":""0.25"",""value"":""2010""},
+{""attribute"":""km_driven"",""importance"":""0.20"",""value"":""100000""},
+{""attribute"":""fuel"",""importance"":""0.15"",""value"":""Diesel""},
+{""attribute"":""transmission"",""importance"":""0.15"",""value"":""Manual""},
+{""attribute"":""owner"",""importance"":""0.10"",""value"":""First Owner""},
+{""attribute"":""engine"",""importance"":""0.10"",""value"":""2982 CC""},
+{""attribute"":""max_power"",""importance"":""0.05"",""value"":""171 bhp""}
+]
+Actual Price: 1200000
+
+Correct Predictions (Only as a reference):
+Task 11:
+Prompt: System: Based on the provided attributes of a used car listed below, please predict its selling price in Indian Rupees in the Indian market. The predicted price should be expressed solely as a number followed by the currency ""INR"".
+Ensure that the output contains no additional text or characters beyond this specified format.
+Attributes:
+name: Tata Hexa XM,
+year: 2017,
+km_driven: 30000,
+fuel: Diesel,
+seller_type: Individual,
+transmission: Manual,
+owner: First Owner,
+mileage: 17.6 kmpl,
+engine: 2179 CC,
+max_power: 153.86 bhp,
+torque: 400Nm@ 1750-2500rpm,
+seats: 7.0
+
+Required Output:
+""price"": <predicted price> INR
+
+Please provide the prediction strictly adhering to the above instructions.
+Prediction: 1200000
+Explanation: [
+{""attribute"":""year"",""importance"":""0.25"",""value"":""2017""},
+{""attribute"":""km_driven"",""importance"":""0.35"",""value"":""30000""},
+{""attribute"":""fuel"",""importance"":""0.15"",""value"":""Diesel""},
+{""attribute"":""transmission"",""importance"":""0.15"",""value"":""Manual""},
+{""attribute"":""max_power"",""importance"":""0.10"",""value"":""153.86 bhp""}
+]
+Actual Price: 1200000
+Task 12:
+Prompt: System: Based on the provided attributes of a used car listed below, please predict its selling price in Indian Rupees in the Indian market. The predicted price should be expressed solely as a number followed by the currency ""INR"".
+Ensure that the output contains no additional text or characters beyond this specified format.
+Attributes:
+name: Maruti Wagon R VXI Plus,
+year: 2018,
+km_driven: 30000,
+fuel: Petrol,
+seller_type: Individual,
+transmission: Manual,
+owner: First Owner,
+mileage: 20.51 kmpl,
+engine: 998 CC,
+max_power: 67.04 bhp,
+torque: 90Nm@ 3500rpm,
+seats: 5.0
+
+Required Output:
+""price"": <predicted price> INR
+
+Please provide the prediction strictly adhering to the above instructions.
+Prediction: 400000
+Explanation: [
+{""attribute"":""year"",""importance"":""0.30"",""value"":""2018""},
+{""attribute"":""km_driven"",""importance"":""0.25"",""value"":""30000""},
+{""attribute"":""fuel"",""importance"":""0.15"",""value"":""Petrol""},
+{""attribute"":""transmission"",""importance"":""0.10"",""value"":""Manual""},
+{""attribute"":""owner"",""importance"":""0.10"",""value"":""First Owner""},
+{""attribute"":""max_power"",""importance"":""0.10"",""value"":""67.04 bhp""}
+]
+Actual Price: 465000
+
+",gpt-3.5-turbo,structured_unstructured_zero_shot_pipeline_3.5-turbo,"Fault Categories:
+1. Overestimation of Price:
+   - Task 2: Prediction deviates by 50% from the actual price.
+   - Task 3: Prediction deviates by 40% from the actual price.
+   - Task 4: Prediction deviates by 30% from the actual price.
+   - Task 5: Prediction deviates by 36.36% from the actual price.
+   - Task 6: Prediction deviates by 25% from the actual price.
+   - Task 7: Prediction deviates by 23.53% from the actual price.
+   - Task 8: Prediction deviates by 25.93% from the actual price.
+   - Task 9: Prediction deviates by 53.85% from the actual price.
+   - Task 10: Prediction deviates by 25% from the actual price.
+
+2. Underestimation of Price:
+   - Task 1: Prediction deviates by 50% from the actual price.
+
+3. Inconsistent Weighting of Attributes:
+   - None in the given examples.",structured_analysis
+error_class_LLM,"In the following I will give you a few price prediction tasks together with a prediction decision, details about the decision and the actual price.
+A wrong prediction is a prediction that deviates by more than 20 percent from the actual price. The Prediction was made by an LLM.
+Can you please group the wrong decisions into 3 fault categories? Please also indicate how often each one occurs.
+There are also some correct decisions (deviation of less than 20 percent) in the examples. Please just use them as a reference and don't categorize them.
+False Predictions:
+Task 1:
+Prompt: System: Based on the provided attributes of a used car listed below, please predict its selling price in Indian Rupees in the Indian market. The predicted price should be expressed solely as a number followed by the currency ""INR"".
+Ensure that the output contains no additional text or characters beyond this specified format.
+Attributes:
+name: Maruti 800 Std,
+year: 1999,
+km_driven: 40000,
+fuel: Petrol,
+seller_type: Individual,
+transmission: Manual,
+owner: Second Owner,
+mileage: 16.1 kmpl,
+engine: 796 CC,
+max_power: 37 bhp,
+torque: 59Nm@ 2500rpm,
+seats: 4.0
+
+Required Output:
+""price"": <predicted price> INR
+
+Please provide the prediction strictly adhering to the above instructions.
+Prediction: 60000
+Explanation: [
+{""attribute"":""year"",""importance"":""0.30"",""value"":""1999""},
+{""attribute"":""km_driven"",""importance"":""0.25"",""value"":""40000""},
+{""attribute"":""fuel"",""importance"":""0.20"",""value"":""Petrol""},
+{""attribute"":""owner"",""importance"":""0.15"",""value"":""Second Owner""},
+{""attribute"":""max_power"",""importance"":""0.10"",""value"":""37 bhp""}
+]
+Actual Price: 40000
+Task 2:
+Prompt: System: Based on the provided attributes of a used car listed below, please predict its selling price in Indian Rupees in the Indian market. The predicted price should be expressed solely as a number followed by the currency ""INR"".
+Ensure that the output contains no additional text or characters beyond this specified format.
+Attributes:
+name: Hyundai EON Era Plus,
+year: 2012,
+km_driven: 43755,
+fuel: Petrol,
+seller_type: Dealer,
+transmission: Manual,
+owner: Second Owner,
+mileage: 21.1 kmpl,
+engine: 814 CC,
+max_power: 55.2 bhp,
+torque: 74.5Nm@ 4000rpm,
+seats: 5.0
+
+Required Output:
+""price"": <predicted price> INR
+
+Please provide the prediction strictly adhering to the above instructions.
+Prediction: 180000
+Explanation: [
+{""attribute"":""year"",""importance"":""0.25"",""value"":""2012""},
+{""attribute"":""km_driven"",""importance"":""0.35"",""value"":""43755""},
+{""attribute"":""fuel"",""importance"":""0.15"",""value"":""Petrol""},
+{""attribute"":""owner"",""importance"":""0.10"",""value"":""Second Owner""},
+{""attribute"":""engine"",""importance"":""0.10"",""value"":""814 CC""},
+{""attribute"":""max_power"",""importance"":""0.05"",""value"":""55.2 bhp""}
+]
+Actual Price: 270000
+Task 3:
+Prompt: System: Based on the provided attributes of a used car listed below, please predict its selling price in Indian Rupees in the Indian market. The predicted price should be expressed solely as a number followed by the currency ""INR"".
+Ensure that the output contains no additional text or characters beyond this specified format.
+Attributes:
+name: Chevrolet Optra Magnum 2.0 LT,
+year: 2008,
+km_driven: 90000,
+fuel: Diesel,
+seller_type: Individual,
+transmission: Manual,
+owner: Fourth & Above Owner,
+mileage: 16.52 kmpl,
+engine: 1991 CC,
+max_power: 123.7 bhp,
+torque: 305Nm@ 2000rpm,
+seats: 5.0
+
+Required Output:
+""price"": <predicted price> INR
+
+Please provide the prediction strictly adhering to the above instructions.
+Prediction: 150000
+Explanation: [
+{""attribute"":""year"",""importance"":""0.20"",""value"":""2008""},
+{""attribute"":""km_driven"",""importance"":""0.30"",""value"":""90000""},
+{""attribute"":""fuel"",""importance"":""0.15"",""value"":""Diesel""},
+{""attribute"":""owner"",""importance"":""0.10"",""value"":""Fourth & Above Owner""},
+{""attribute"":""engine"",""importance"":""0.15"",""value"":""1991 CC""},
+{""attribute"":""max_power"",""importance"":""0.10"",""value"":""123.7 bhp""}
+]
+Actual Price: 210000
+Task 4:
+Prompt: System: Based on the provided attributes of a used car listed below, please predict its selling price in Indian Rupees in the Indian market. The predicted price should be expressed solely as a number followed by the currency ""INR"".
+Ensure that the output contains no additional text or characters beyond this specified format.
+Attributes:
+name: Hyundai i20 1.4 CRDi Asta,
+year: 2012,
+km_driven: 53000,
+fuel: Diesel,
+seller_type: Individual,
+transmission: Manual,
+owner: Second Owner,
+mileage: 23.0 kmpl,
+engine: 1396 CC,
+max_power: 90 bhp,
+torque: 22.4 kgm at 1750-2750rpm,
+seats: 5.0
+
+Required Output:
+""price"": <predicted price> INR
+
+Please provide the prediction strictly adhering to the above instructions.
+Prediction: 350000
+Explanation: [
+{""attribute"":""year"",""importance"":""0.25"",""value"":""2012""},
+{""attribute"":""km_driven"",""importance"":""0.20"",""value"":""53000""},
+{""attribute"":""fuel"",""importance"":""0.15"",""value"":""Diesel""},
+{""attribute"":""transmission"",""importance"":""0.15"",""value"":""Manual""},
+{""attribute"":""owner"",""importance"":""0.10"",""value"":""Second Owner""},
+{""attribute"":""engine"",""importance"":""0.10"",""value"":""1396 CC""},
+{""attribute"":""max_power"",""importance"":""0.05"",""value"":""90 bhp""}
+]
+Actual Price: 500000
+Task 5:
+Prompt: System: Based on the provided attributes of a used car listed below, please predict its selling price in Indian Rupees in the Indian market. The predicted price should be expressed solely as a number followed by the currency ""INR"".
+Ensure that the output contains no additional text or characters beyond this specified format.
+Attributes:
+name: Toyota Innova 2.5 G (Diesel) 7 Seater BS IV,
+year: 2008,
+km_driven: 193623,
+fuel: Diesel,
+seller_type: Individual,
+transmission: Manual,
+owner: Second Owner,
+mileage: 12.8 kmpl,
+engine: 2494 CC,
+max_power: 102 bhp,
+torque: 20.4@ 1400-3400(kgm@ rpm),
+seats: 8.0
+
+Required Output:
+""price"": <predicted price> INR
+
+Please provide the prediction strictly adhering to the above instructions.
+Prediction: 450000
+Explanation: [
+{""attribute"":""year"",""importance"":""0.30"",""value"":""2008""},
+{""attribute"":""km_driven"",""importance"":""0.40"",""value"":""193623""},
+{""attribute"":""fuel"",""importance"":""0.15"",""value"":""Diesel""},
+{""attribute"":""transmission"",""importance"":""0.10"",""value"":""Manual""},
+{""attribute"":""owner"",""importance"":""0.05"",""value"":""Second Owner""}
+]
+Actual Price: 330000
+Task 6:
+Prompt: System: Based on the provided attributes of a used car listed below, please predict its selling price in Indian Rupees in the Indian market. The predicted price should be expressed solely as a number followed by the currency ""INR"".
+Ensure that the output contains no additional text or characters beyond this specified format.
+Attributes:
+name: Toyota Yaris V BSIV,
+year: 2018,
+km_driven: 5229,
+fuel: Petrol,
+seller_type: Trustmark Dealer,
+transmission: Manual,
+owner: First Owner,
+mileage: 17.1 kmpl,
+engine: 1496 CC,
+max_power: 105.5 bhp,
+torque: 140Nm@ 4200rpm,
+seats: 5.0
+
+Required Output:
+""price"": <predicted price> INR
+
+Please provide the prediction strictly adhering to the above instructions.
+Prediction: 750000
+Explanation: [
+{""attribute"":""year"",""importance"":""0.30"",""value"":""2018""},
+{""attribute"":""km_driven"",""importance"":""0.25"",""value"":""5229""},
+{""attribute"":""fuel"",""importance"":""0.15"",""value"":""Petrol""},
+{""attribute"":""transmission"",""importance"":""0.10"",""value"":""Manual""},
+{""attribute"":""max_power"",""importance"":""0.10"",""value"":""105.5 bhp""},
+{""attribute"":""engine"",""importance"":""0.10"",""value"":""1496 CC""}
+]
+Actual Price: 1000000
+Task 7:
+Prompt: System: Based on the provided attributes of a used car listed below, please predict its selling price in Indian Rupees in the Indian market. The predicted price should be expressed solely as a number followed by the currency ""INR"".
+Ensure that the output contains no additional text or characters beyond this specified format.
+Attributes:
+name: Ford EcoSport 1.5 Petrol Titanium Plus BSIV,
+year: 2018,
+km_driven: 90000,
+fuel: Petrol,
+seller_type: Individual,
+transmission: Manual,
+owner: First Owner,
+mileage: 17.0 kmpl,
+engine: 1497 CC,
+max_power: 121.36 bhp,
+torque: 150Nm@ 4500rpm,
+seats: 5.0
+
+Required Output:
+""price"": <predicted price> INR
+
+Please provide the prediction strictly adhering to the above instructions.
+Prediction: 650000
+Explanation: [
+{""attribute"":""year"",""importance"":""0.20"",""value"":""2018""},
+{""attribute"":""km_driven"",""importance"":""0.30"",""value"":""90000""},
+{""attribute"":""fuel"",""importance"":""0.15"",""value"":""Petrol""},
+{""attribute"":""transmission"",""importance"":""0.15"",""value"":""Manual""},
+{""attribute"":""owner"",""importance"":""0.10"",""value"":""First Owner""},
+{""attribute"":""engine"",""importance"":""0.10"",""value"":""1497 CC""}
+]
+Actual Price: 850000
+Task 8:
+Prompt: System: Based on the provided attributes of a used car listed below, please predict its selling price in Indian Rupees in the Indian market. The predicted price should be expressed solely as a number followed by the currency ""INR"".
+Ensure that the output contains no additional text or characters beyond this specified format.
+Attributes:
+name: Honda City 2017-2020 GXi,
+year: 2006,
+km_driven: 70000,
+fuel: Petrol,
+seller_type: Individual,
+transmission: Manual,
+owner: Second Owner,
+mileage: 17.7 kmpl,
+engine: 1497 CC,
+max_power: 78 bhp,
+torque: 12.7@ 2,700(kgm@ rpm),
+seats: 5.0
+
+Required Output:
+""price"": <predicted price> INR
+
+Please provide the prediction strictly adhering to the above instructions.
+Prediction: 200000
+Explanation: [
+{""attribute"":""year"",""importance"":""0.20"",""value"":""2006""},
+{""attribute"":""km_driven"",""importance"":""0.30"",""value"":""70000""},
+{""attribute"":""fuel"",""importance"":""0.15"",""value"":""Petrol""},
+{""attribute"":""owner"",""importance"":""0.10"",""value"":""Second Owner""},
+{""attribute"":""mileage"",""importance"":""0.10"",""value"":""17.7 kmpl""},
+{""attribute"":""engine"",""importance"":""0.15"",""value"":""1497 CC""}
+]
+Actual Price: 270000
+Task 9:
+Prompt: System: Based on the provided attributes of a used car listed below, please predict its selling price in Indian Rupees in the Indian market. The predicted price should be expressed solely as a number followed by the currency ""INR"".
+Ensure that the output contains no additional text or characters beyond this specified format.
+Attributes:
+name: Maruti Wagon R LXI,
+year: 2005,
+km_driven: 90000,
+fuel: Petrol,
+seller_type: Individual,
+transmission: Manual,
+owner: Second Owner,
+mileage: 18.9 kmpl,
+engine: 998 CC,
+max_power: 67.1 bhp,
+torque: 90Nm@ 3500rpm,
+seats: 5.0
+
+Required Output:
+""price"": <predicted price> INR
+
+Please provide the prediction strictly adhering to the above instructions.
+Prediction: 100000
+Explanation: [
+{""attribute"":""year"",""importance"":""0.20"",""value"":""2005""},
+{""attribute"":""km_driven"",""importance"":""0.30"",""value"":""90000""},
+{""attribute"":""fuel"",""importance"":""0.15"",""value"":""Petrol""},
+{""attribute"":""transmission"",""importance"":""0.15"",""value"":""Manual""},
+{""attribute"":""owner"",""importance"":""0.10"",""value"":""Second Owner""},
+{""attribute"":""engine"",""importance"":""0.10"",""value"":""998 CC""}
+]
+Actual Price: 65000
+Task 10:
+Prompt: System: Based on the provided attributes of a used car listed below, please predict its selling price in Indian Rupees in the Indian market. The predicted price should be expressed solely as a number followed by the currency ""INR"".
+Ensure that the output contains no additional text or characters beyond this specified format.
+Attributes:
+name: Toyota Fortuner 3.0 Diesel,
+year: 2010,
+km_driven: 100000,
+fuel: Diesel,
+seller_type: Individual,
+transmission: Manual,
+owner: First Owner,
+mileage: 11.5 kmpl,
+engine: 2982 CC,
+max_power: 171 bhp,
+torque: 343Nm@ 1400-3400rpm,
+seats: 7.0
+
+Required Output:
+""price"": <predicted price> INR
+
+Please provide the prediction strictly adhering to the above instructions.
+Prediction: 900000
+Explanation: [
+{""attribute"":""year"",""importance"":""0.25"",""value"":""2010""},
+{""attribute"":""km_driven"",""importance"":""0.20"",""value"":""100000""},
+{""attribute"":""fuel"",""importance"":""0.15"",""value"":""Diesel""},
+{""attribute"":""transmission"",""importance"":""0.15"",""value"":""Manual""},
+{""attribute"":""owner"",""importance"":""0.10"",""value"":""First Owner""},
+{""attribute"":""engine"",""importance"":""0.10"",""value"":""2982 CC""},
+{""attribute"":""max_power"",""importance"":""0.05"",""value"":""171 bhp""}
+]
+Actual Price: 1200000
+
+Correct Predictions (Only as a reference):
+Task 11:
+Prompt: System: Based on the provided attributes of a used car listed below, please predict its selling price in Indian Rupees in the Indian market. The predicted price should be expressed solely as a number followed by the currency ""INR"".
+Ensure that the output contains no additional text or characters beyond this specified format.
+Attributes:
+name: Tata Hexa XM,
+year: 2017,
+km_driven: 30000,
+fuel: Diesel,
+seller_type: Individual,
+transmission: Manual,
+owner: First Owner,
+mileage: 17.6 kmpl,
+engine: 2179 CC,
+max_power: 153.86 bhp,
+torque: 400Nm@ 1750-2500rpm,
+seats: 7.0
+
+Required Output:
+""price"": <predicted price> INR
+
+Please provide the prediction strictly adhering to the above instructions.
+Prediction: 1200000
+Explanation: [
+{""attribute"":""year"",""importance"":""0.25"",""value"":""2017""},
+{""attribute"":""km_driven"",""importance"":""0.35"",""value"":""30000""},
+{""attribute"":""fuel"",""importance"":""0.15"",""value"":""Diesel""},
+{""attribute"":""transmission"",""importance"":""0.15"",""value"":""Manual""},
+{""attribute"":""max_power"",""importance"":""0.10"",""value"":""153.86 bhp""}
+]
+Actual Price: 1200000
+Task 12:
+Prompt: System: Based on the provided attributes of a used car listed below, please predict its selling price in Indian Rupees in the Indian market. The predicted price should be expressed solely as a number followed by the currency ""INR"".
+Ensure that the output contains no additional text or characters beyond this specified format.
+Attributes:
+name: Maruti Wagon R VXI Plus,
+year: 2018,
+km_driven: 30000,
+fuel: Petrol,
+seller_type: Individual,
+transmission: Manual,
+owner: First Owner,
+mileage: 20.51 kmpl,
+engine: 998 CC,
+max_power: 67.04 bhp,
+torque: 90Nm@ 3500rpm,
+seats: 5.0
+
+Required Output:
+""price"": <predicted price> INR
+
+Please provide the prediction strictly adhering to the above instructions.
+Prediction: 400000
+Explanation: [
+{""attribute"":""year"",""importance"":""0.30"",""value"":""2018""},
+{""attribute"":""km_driven"",""importance"":""0.25"",""value"":""30000""},
+{""attribute"":""fuel"",""importance"":""0.15"",""value"":""Petrol""},
+{""attribute"":""transmission"",""importance"":""0.10"",""value"":""Manual""},
+{""attribute"":""owner"",""importance"":""0.10"",""value"":""First Owner""},
+{""attribute"":""max_power"",""importance"":""0.10"",""value"":""67.04 bhp""}
+]
+Actual Price: 465000
+
+",gpt-4-turbo-preview,structured_unstructured_zero_shot_pipeline_3.5-turbo,"Based on the provided examples, the wrong predictions can be grouped into three fault categories:
+
+1. **Underestimation of Market Value**:
+   - This occurs when the predicted price is significantly lower than the actual market price. 
+   - Examples: Task 2 (Prediction: 180000, Actual: 270000), Task 3 (Prediction: 150000, Actual: 210000), Task 4 (Prediction: 350000, Actual: 500000), Task 6 (Prediction: 750000, Actual: 1000000), Task 7 (Prediction: 650000, Actual: 850000), Task 8 (Prediction: 200000, Actual: 270000), Task 10 (Prediction: 900000, Actual: 1200000).
+   - Occurrences: 7
+
+2. **Overestimation of Market Value**:
+   - This occurs when the predicted price is significantly higher than the actual market price.
+   - Examples: Task 1 (Prediction: 60000, Actual: 40000), Task 5 (Prediction: 450000, Actual: 330000), Task 9 (Prediction: 100000, Actual: 65000).
+   - Occurrences: 3
+
+3. **Incorrect Valuation Due to Attribute Misinterpretation**:
+   - This category is a bit nuanced and could overlap with the first two, but it specifically refers to cases where the prediction might have gone wrong due to incorrect weighting or misunderstanding of the importance of certain attributes (e.g., overvaluing the impact of low mileage or undervaluing the impact of the car's age or condition based on the owner).
+   - However, based on the provided examples, all wrong predictions seem to stem from either overestimation or underestimation directly, without clear evidence of misinterpretation beyond these two reasons. Thus, this category might not be applicable without more detailed insight into how the LLM interpreted each attribute beyond the importance scores provided.
+
+Given the examples and explanations, it appears that all incorrect predictions fall into the first two categories: underestimation and overestimation of market value. There isn't explicit evidence in the provided data to categorize any errors as due to incorrect valuation from attribute misinterpretation beyond these two reasons.",structured_analysis
+error_class_LLM,"In the following I will give you a few price prediction tasks together with a prediction decision, details about the decision and the actual price.
+A wrong prediction is a prediction that deviates by more than 20 percent from the actual price. The Prediction was made by an LLM.
+Can you please group the wrong decisions into 3 fault categories? Please also indicate how often each one occurs.
+There are also some correct decisions (deviation of less than 20 percent) in the examples. Please just use them as a reference and don't categorize them.
+False Predictions:
+Task 1:
+Prompt: System: Based on the provided attributes of a used car listed below, please predict its selling price in Indian Rupees in the Indian market. The predicted price should be expressed solely as a number followed by the currency ""INR"".
+Ensure that the output contains no additional text or characters beyond this specified format.
+Attributes:
+name: Maruti 800 Std,
+year: 1999,
+km_driven: 40000,
+fuel: Petrol,
+seller_type: Individual,
+transmission: Manual,
+owner: Second Owner,
+mileage: 16.1 kmpl,
+engine: 796 CC,
+max_power: 37 bhp,
+torque: 59Nm@ 2500rpm,
+seats: 4.0
+
+Required Output:
+""price"": <predicted price> INR
+
+Please provide the prediction strictly adhering to the above instructions.
+Prediction: 60000
+Explanation: [
+{""attribute"":""year"",""importance"":""0.30"",""value"":""1999""},
+{""attribute"":""km_driven"",""importance"":""0.25"",""value"":""40000""},
+{""attribute"":""fuel"",""importance"":""0.20"",""value"":""Petrol""},
+{""attribute"":""owner"",""importance"":""0.15"",""value"":""Second Owner""},
+{""attribute"":""max_power"",""importance"":""0.10"",""value"":""37 bhp""}
+]
+Actual Price: 40000
+Task 2:
+Prompt: System: Based on the provided attributes of a used car listed below, please predict its selling price in Indian Rupees in the Indian market. The predicted price should be expressed solely as a number followed by the currency ""INR"".
+Ensure that the output contains no additional text or characters beyond this specified format.
+Attributes:
+name: Hyundai EON Era Plus,
+year: 2012,
+km_driven: 43755,
+fuel: Petrol,
+seller_type: Dealer,
+transmission: Manual,
+owner: Second Owner,
+mileage: 21.1 kmpl,
+engine: 814 CC,
+max_power: 55.2 bhp,
+torque: 74.5Nm@ 4000rpm,
+seats: 5.0
+
+Required Output:
+""price"": <predicted price> INR
+
+Please provide the prediction strictly adhering to the above instructions.
+Prediction: 180000
+Explanation: [
+{""attribute"":""year"",""importance"":""0.25"",""value"":""2012""},
+{""attribute"":""km_driven"",""importance"":""0.35"",""value"":""43755""},
+{""attribute"":""fuel"",""importance"":""0.15"",""value"":""Petrol""},
+{""attribute"":""owner"",""importance"":""0.10"",""value"":""Second Owner""},
+{""attribute"":""engine"",""importance"":""0.10"",""value"":""814 CC""},
+{""attribute"":""max_power"",""importance"":""0.05"",""value"":""55.2 bhp""}
+]
+Actual Price: 270000
+Task 3:
+Prompt: System: Based on the provided attributes of a used car listed below, please predict its selling price in Indian Rupees in the Indian market. The predicted price should be expressed solely as a number followed by the currency ""INR"".
+Ensure that the output contains no additional text or characters beyond this specified format.
+Attributes:
+name: Chevrolet Optra Magnum 2.0 LT,
+year: 2008,
+km_driven: 90000,
+fuel: Diesel,
+seller_type: Individual,
+transmission: Manual,
+owner: Fourth & Above Owner,
+mileage: 16.52 kmpl,
+engine: 1991 CC,
+max_power: 123.7 bhp,
+torque: 305Nm@ 2000rpm,
+seats: 5.0
+
+Required Output:
+""price"": <predicted price> INR
+
+Please provide the prediction strictly adhering to the above instructions.
+Prediction: 150000
+Explanation: [
+{""attribute"":""year"",""importance"":""0.20"",""value"":""2008""},
+{""attribute"":""km_driven"",""importance"":""0.30"",""value"":""90000""},
+{""attribute"":""fuel"",""importance"":""0.15"",""value"":""Diesel""},
+{""attribute"":""owner"",""importance"":""0.10"",""value"":""Fourth & Above Owner""},
+{""attribute"":""engine"",""importance"":""0.15"",""value"":""1991 CC""},
+{""attribute"":""max_power"",""importance"":""0.10"",""value"":""123.7 bhp""}
+]
+Actual Price: 210000
+Task 4:
+Prompt: System: Based on the provided attributes of a used car listed below, please predict its selling price in Indian Rupees in the Indian market. The predicted price should be expressed solely as a number followed by the currency ""INR"".
+Ensure that the output contains no additional text or characters beyond this specified format.
+Attributes:
+name: Hyundai i20 1.4 CRDi Asta,
+year: 2012,
+km_driven: 53000,
+fuel: Diesel,
+seller_type: Individual,
+transmission: Manual,
+owner: Second Owner,
+mileage: 23.0 kmpl,
+engine: 1396 CC,
+max_power: 90 bhp,
+torque: 22.4 kgm at 1750-2750rpm,
+seats: 5.0
+
+Required Output:
+""price"": <predicted price> INR
+
+Please provide the prediction strictly adhering to the above instructions.
+Prediction: 350000
+Explanation: [
+{""attribute"":""year"",""importance"":""0.25"",""value"":""2012""},
+{""attribute"":""km_driven"",""importance"":""0.20"",""value"":""53000""},
+{""attribute"":""fuel"",""importance"":""0.15"",""value"":""Diesel""},
+{""attribute"":""transmission"",""importance"":""0.15"",""value"":""Manual""},
+{""attribute"":""owner"",""importance"":""0.10"",""value"":""Second Owner""},
+{""attribute"":""engine"",""importance"":""0.10"",""value"":""1396 CC""},
+{""attribute"":""max_power"",""importance"":""0.05"",""value"":""90 bhp""}
+]
+Actual Price: 500000
+Task 5:
+Prompt: System: Based on the provided attributes of a used car listed below, please predict its selling price in Indian Rupees in the Indian market. The predicted price should be expressed solely as a number followed by the currency ""INR"".
+Ensure that the output contains no additional text or characters beyond this specified format.
+Attributes:
+name: Toyota Innova 2.5 G (Diesel) 7 Seater BS IV,
+year: 2008,
+km_driven: 193623,
+fuel: Diesel,
+seller_type: Individual,
+transmission: Manual,
+owner: Second Owner,
+mileage: 12.8 kmpl,
+engine: 2494 CC,
+max_power: 102 bhp,
+torque: 20.4@ 1400-3400(kgm@ rpm),
+seats: 8.0
+
+Required Output:
+""price"": <predicted price> INR
+
+Please provide the prediction strictly adhering to the above instructions.
+Prediction: 450000
+Explanation: [
+{""attribute"":""year"",""importance"":""0.30"",""value"":""2008""},
+{""attribute"":""km_driven"",""importance"":""0.40"",""value"":""193623""},
+{""attribute"":""fuel"",""importance"":""0.15"",""value"":""Diesel""},
+{""attribute"":""transmission"",""importance"":""0.10"",""value"":""Manual""},
+{""attribute"":""owner"",""importance"":""0.05"",""value"":""Second Owner""}
+]
+Actual Price: 330000
+Task 6:
+Prompt: System: Based on the provided attributes of a used car listed below, please predict its selling price in Indian Rupees in the Indian market. The predicted price should be expressed solely as a number followed by the currency ""INR"".
+Ensure that the output contains no additional text or characters beyond this specified format.
+Attributes:
+name: Toyota Yaris V BSIV,
+year: 2018,
+km_driven: 5229,
+fuel: Petrol,
+seller_type: Trustmark Dealer,
+transmission: Manual,
+owner: First Owner,
+mileage: 17.1 kmpl,
+engine: 1496 CC,
+max_power: 105.5 bhp,
+torque: 140Nm@ 4200rpm,
+seats: 5.0
+
+Required Output:
+""price"": <predicted price> INR
+
+Please provide the prediction strictly adhering to the above instructions.
+Prediction: 750000
+Explanation: [
+{""attribute"":""year"",""importance"":""0.30"",""value"":""2018""},
+{""attribute"":""km_driven"",""importance"":""0.25"",""value"":""5229""},
+{""attribute"":""fuel"",""importance"":""0.15"",""value"":""Petrol""},
+{""attribute"":""transmission"",""importance"":""0.10"",""value"":""Manual""},
+{""attribute"":""max_power"",""importance"":""0.10"",""value"":""105.5 bhp""},
+{""attribute"":""engine"",""importance"":""0.10"",""value"":""1496 CC""}
+]
+Actual Price: 1000000
+Task 7:
+Prompt: System: Based on the provided attributes of a used car listed below, please predict its selling price in Indian Rupees in the Indian market. The predicted price should be expressed solely as a number followed by the currency ""INR"".
+Ensure that the output contains no additional text or characters beyond this specified format.
+Attributes:
+name: Ford EcoSport 1.5 Petrol Titanium Plus BSIV,
+year: 2018,
+km_driven: 90000,
+fuel: Petrol,
+seller_type: Individual,
+transmission: Manual,
+owner: First Owner,
+mileage: 17.0 kmpl,
+engine: 1497 CC,
+max_power: 121.36 bhp,
+torque: 150Nm@ 4500rpm,
+seats: 5.0
+
+Required Output:
+""price"": <predicted price> INR
+
+Please provide the prediction strictly adhering to the above instructions.
+Prediction: 650000
+Explanation: [
+{""attribute"":""year"",""importance"":""0.20"",""value"":""2018""},
+{""attribute"":""km_driven"",""importance"":""0.30"",""value"":""90000""},
+{""attribute"":""fuel"",""importance"":""0.15"",""value"":""Petrol""},
+{""attribute"":""transmission"",""importance"":""0.15"",""value"":""Manual""},
+{""attribute"":""owner"",""importance"":""0.10"",""value"":""First Owner""},
+{""attribute"":""engine"",""importance"":""0.10"",""value"":""1497 CC""}
+]
+Actual Price: 850000
+Task 8:
+Prompt: System: Based on the provided attributes of a used car listed below, please predict its selling price in Indian Rupees in the Indian market. The predicted price should be expressed solely as a number followed by the currency ""INR"".
+Ensure that the output contains no additional text or characters beyond this specified format.
+Attributes:
+name: Honda City 2017-2020 GXi,
+year: 2006,
+km_driven: 70000,
+fuel: Petrol,
+seller_type: Individual,
+transmission: Manual,
+owner: Second Owner,
+mileage: 17.7 kmpl,
+engine: 1497 CC,
+max_power: 78 bhp,
+torque: 12.7@ 2,700(kgm@ rpm),
+seats: 5.0
+
+Required Output:
+""price"": <predicted price> INR
+
+Please provide the prediction strictly adhering to the above instructions.
+Prediction: 200000
+Explanation: [
+{""attribute"":""year"",""importance"":""0.20"",""value"":""2006""},
+{""attribute"":""km_driven"",""importance"":""0.30"",""value"":""70000""},
+{""attribute"":""fuel"",""importance"":""0.15"",""value"":""Petrol""},
+{""attribute"":""owner"",""importance"":""0.10"",""value"":""Second Owner""},
+{""attribute"":""mileage"",""importance"":""0.10"",""value"":""17.7 kmpl""},
+{""attribute"":""engine"",""importance"":""0.15"",""value"":""1497 CC""}
+]
+Actual Price: 270000
+Task 9:
+Prompt: System: Based on the provided attributes of a used car listed below, please predict its selling price in Indian Rupees in the Indian market. The predicted price should be expressed solely as a number followed by the currency ""INR"".
+Ensure that the output contains no additional text or characters beyond this specified format.
+Attributes:
+name: Maruti Wagon R LXI,
+year: 2005,
+km_driven: 90000,
+fuel: Petrol,
+seller_type: Individual,
+transmission: Manual,
+owner: Second Owner,
+mileage: 18.9 kmpl,
+engine: 998 CC,
+max_power: 67.1 bhp,
+torque: 90Nm@ 3500rpm,
+seats: 5.0
+
+Required Output:
+""price"": <predicted price> INR
+
+Please provide the prediction strictly adhering to the above instructions.
+Prediction: 100000
+Explanation: [
+{""attribute"":""year"",""importance"":""0.20"",""value"":""2005""},
+{""attribute"":""km_driven"",""importance"":""0.30"",""value"":""90000""},
+{""attribute"":""fuel"",""importance"":""0.15"",""value"":""Petrol""},
+{""attribute"":""transmission"",""importance"":""0.15"",""value"":""Manual""},
+{""attribute"":""owner"",""importance"":""0.10"",""value"":""Second Owner""},
+{""attribute"":""engine"",""importance"":""0.10"",""value"":""998 CC""}
+]
+Actual Price: 65000
+Task 10:
+Prompt: System: Based on the provided attributes of a used car listed below, please predict its selling price in Indian Rupees in the Indian market. The predicted price should be expressed solely as a number followed by the currency ""INR"".
+Ensure that the output contains no additional text or characters beyond this specified format.
+Attributes:
+name: Toyota Fortuner 3.0 Diesel,
+year: 2010,
+km_driven: 100000,
+fuel: Diesel,
+seller_type: Individual,
+transmission: Manual,
+owner: First Owner,
+mileage: 11.5 kmpl,
+engine: 2982 CC,
+max_power: 171 bhp,
+torque: 343Nm@ 1400-3400rpm,
+seats: 7.0
+
+Required Output:
+""price"": <predicted price> INR
+
+Please provide the prediction strictly adhering to the above instructions.
+Prediction: 900000
+Explanation: [
+{""attribute"":""year"",""importance"":""0.25"",""value"":""2010""},
+{""attribute"":""km_driven"",""importance"":""0.20"",""value"":""100000""},
+{""attribute"":""fuel"",""importance"":""0.15"",""value"":""Diesel""},
+{""attribute"":""transmission"",""importance"":""0.15"",""value"":""Manual""},
+{""attribute"":""owner"",""importance"":""0.10"",""value"":""First Owner""},
+{""attribute"":""engine"",""importance"":""0.10"",""value"":""2982 CC""},
+{""attribute"":""max_power"",""importance"":""0.05"",""value"":""171 bhp""}
+]
+Actual Price: 1200000
+
+Correct Predictions (Only as a reference):
+Task 11:
+Prompt: System: Based on the provided attributes of a used car listed below, please predict its selling price in Indian Rupees in the Indian market. The predicted price should be expressed solely as a number followed by the currency ""INR"".
+Ensure that the output contains no additional text or characters beyond this specified format.
+Attributes:
+name: Tata Hexa XM,
+year: 2017,
+km_driven: 30000,
+fuel: Diesel,
+seller_type: Individual,
+transmission: Manual,
+owner: First Owner,
+mileage: 17.6 kmpl,
+engine: 2179 CC,
+max_power: 153.86 bhp,
+torque: 400Nm@ 1750-2500rpm,
+seats: 7.0
+
+Required Output:
+""price"": <predicted price> INR
+
+Please provide the prediction strictly adhering to the above instructions.
+Prediction: 1200000
+Explanation: [
+{""attribute"":""year"",""importance"":""0.25"",""value"":""2017""},
+{""attribute"":""km_driven"",""importance"":""0.35"",""value"":""30000""},
+{""attribute"":""fuel"",""importance"":""0.15"",""value"":""Diesel""},
+{""attribute"":""transmission"",""importance"":""0.15"",""value"":""Manual""},
+{""attribute"":""max_power"",""importance"":""0.10"",""value"":""153.86 bhp""}
+]
+Actual Price: 1200000
+Task 12:
+Prompt: System: Based on the provided attributes of a used car listed below, please predict its selling price in Indian Rupees in the Indian market. The predicted price should be expressed solely as a number followed by the currency ""INR"".
+Ensure that the output contains no additional text or characters beyond this specified format.
+Attributes:
+name: Maruti Wagon R VXI Plus,
+year: 2018,
+km_driven: 30000,
+fuel: Petrol,
+seller_type: Individual,
+transmission: Manual,
+owner: First Owner,
+mileage: 20.51 kmpl,
+engine: 998 CC,
+max_power: 67.04 bhp,
+torque: 90Nm@ 3500rpm,
+seats: 5.0
+
+Required Output:
+""price"": <predicted price> INR
+
+Please provide the prediction strictly adhering to the above instructions.
+Prediction: 400000
+Explanation: [
+{""attribute"":""year"",""importance"":""0.30"",""value"":""2018""},
+{""attribute"":""km_driven"",""importance"":""0.25"",""value"":""30000""},
+{""attribute"":""fuel"",""importance"":""0.15"",""value"":""Petrol""},
+{""attribute"":""transmission"",""importance"":""0.10"",""value"":""Manual""},
+{""attribute"":""owner"",""importance"":""0.10"",""value"":""First Owner""},
+{""attribute"":""max_power"",""importance"":""0.10"",""value"":""67.04 bhp""}
+]
+Actual Price: 465000
+
+",gpt-4-turbo-preview,structured_unstructured_zero_shot_pipeline_3.5-turbo,"Based on the provided examples, the wrong predictions can be grouped into three fault categories:
+
+1. **Underestimation of Market Value**:
+   - This occurs when the predicted price is significantly lower than the actual market price. 
+   - Examples: Task 2 (Prediction: 180000, Actual: 270000), Task 3 (Prediction: 150000, Actual: 210000), Task 4 (Prediction: 350000, Actual: 500000), Task 6 (Prediction: 750000, Actual: 1000000), Task 7 (Prediction: 650000, Actual: 850000), Task 8 (Prediction: 200000, Actual: 270000), Task 10 (Prediction: 900000, Actual: 1200000).
+   - Occurrences: 7
+
+2. **Overestimation of Market Value**:
+   - This occurs when the predicted price is significantly higher than the actual market price.
+   - Examples: Task 1 (Prediction: 60000, Actual: 40000), Task 5 (Prediction: 450000, Actual: 330000), Task 9 (Prediction: 100000, Actual: 65000).
+   - Occurrences: 3
+
+3. **Incorrect Valuation Based on Attributes**:
+   - This category is for predictions that may not fit neatly into underestimation or overestimation but are incorrect due to a misinterpretation or incorrect weighting of the vehicle's attributes.
+   - However, based on the provided examples, all incorrect predictions can be clearly categorized into either underestimation or overestimation, so this category does not have specific examples in this case.
+   - Occurrences: 0
+
+Summary:
+- Underestimation of Market Value: 7 occurrences
+- Overestimation of Market Value: 3 occurrences
+- Incorrect Valuation Based on Attributes: 0 occurrences
+
+This analysis shows that the LLM tends to underestimate the market value more frequently than overestimating it, based on the given examples.",structured_analysis
+error_class_LLM_moreclasses,"In the following I will give you a few price prediction tasks together with a prediction decision, details about the decision and the actual price.
+A wrong prediction is a prediction that deviates by more than 20 percent from the actual price. The Prediction was made by an LLM.
+Can you please group the wrong decisions into 5 fault categories? Please also indicate how often each one occurs.
+There are also some correct decisions (deviation of less than 20 percent) in the examples. Please just use them as a reference and don't categorize them.
+False Predictions:
+Task 1:
+Prompt: System: Based on the provided attributes of a used car listed below, please predict its selling price in Indian Rupees in the Indian market. The predicted price should be expressed solely as a number followed by the currency ""INR"".
+Ensure that the output contains no additional text or characters beyond this specified format.
+Attributes:
+name: Maruti 800 Std,
+year: 1999,
+km_driven: 40000,
+fuel: Petrol,
+seller_type: Individual,
+transmission: Manual,
+owner: Second Owner,
+mileage: 16.1 kmpl,
+engine: 796 CC,
+max_power: 37 bhp,
+torque: 59Nm@ 2500rpm,
+seats: 4.0
+
+Required Output:
+""price"": <predicted price> INR
+
+Please provide the prediction strictly adhering to the above instructions.
+Prediction: 60000
+Explanation: [
+{""attribute"":""year"",""importance"":""0.30"",""value"":""1999""},
+{""attribute"":""km_driven"",""importance"":""0.25"",""value"":""40000""},
+{""attribute"":""fuel"",""importance"":""0.20"",""value"":""Petrol""},
+{""attribute"":""owner"",""importance"":""0.15"",""value"":""Second Owner""},
+{""attribute"":""max_power"",""importance"":""0.10"",""value"":""37 bhp""}
+]
+Actual Price: 40000
+Task 2:
+Prompt: System: Based on the provided attributes of a used car listed below, please predict its selling price in Indian Rupees in the Indian market. The predicted price should be expressed solely as a number followed by the currency ""INR"".
+Ensure that the output contains no additional text or characters beyond this specified format.
+Attributes:
+name: Hyundai EON Era Plus,
+year: 2012,
+km_driven: 43755,
+fuel: Petrol,
+seller_type: Dealer,
+transmission: Manual,
+owner: Second Owner,
+mileage: 21.1 kmpl,
+engine: 814 CC,
+max_power: 55.2 bhp,
+torque: 74.5Nm@ 4000rpm,
+seats: 5.0
+
+Required Output:
+""price"": <predicted price> INR
+
+Please provide the prediction strictly adhering to the above instructions.
+Prediction: 180000
+Explanation: [
+{""attribute"":""year"",""importance"":""0.25"",""value"":""2012""},
+{""attribute"":""km_driven"",""importance"":""0.35"",""value"":""43755""},
+{""attribute"":""fuel"",""importance"":""0.15"",""value"":""Petrol""},
+{""attribute"":""owner"",""importance"":""0.10"",""value"":""Second Owner""},
+{""attribute"":""engine"",""importance"":""0.10"",""value"":""814 CC""},
+{""attribute"":""max_power"",""importance"":""0.05"",""value"":""55.2 bhp""}
+]
+Actual Price: 270000
+Task 3:
+Prompt: System: Based on the provided attributes of a used car listed below, please predict its selling price in Indian Rupees in the Indian market. The predicted price should be expressed solely as a number followed by the currency ""INR"".
+Ensure that the output contains no additional text or characters beyond this specified format.
+Attributes:
+name: Chevrolet Optra Magnum 2.0 LT,
+year: 2008,
+km_driven: 90000,
+fuel: Diesel,
+seller_type: Individual,
+transmission: Manual,
+owner: Fourth & Above Owner,
+mileage: 16.52 kmpl,
+engine: 1991 CC,
+max_power: 123.7 bhp,
+torque: 305Nm@ 2000rpm,
+seats: 5.0
+
+Required Output:
+""price"": <predicted price> INR
+
+Please provide the prediction strictly adhering to the above instructions.
+Prediction: 150000
+Explanation: [
+{""attribute"":""year"",""importance"":""0.20"",""value"":""2008""},
+{""attribute"":""km_driven"",""importance"":""0.30"",""value"":""90000""},
+{""attribute"":""fuel"",""importance"":""0.15"",""value"":""Diesel""},
+{""attribute"":""owner"",""importance"":""0.10"",""value"":""Fourth & Above Owner""},
+{""attribute"":""engine"",""importance"":""0.15"",""value"":""1991 CC""},
+{""attribute"":""max_power"",""importance"":""0.10"",""value"":""123.7 bhp""}
+]
+Actual Price: 210000
+Task 4:
+Prompt: System: Based on the provided attributes of a used car listed below, please predict its selling price in Indian Rupees in the Indian market. The predicted price should be expressed solely as a number followed by the currency ""INR"".
+Ensure that the output contains no additional text or characters beyond this specified format.
+Attributes:
+name: Hyundai i20 1.4 CRDi Asta,
+year: 2012,
+km_driven: 53000,
+fuel: Diesel,
+seller_type: Individual,
+transmission: Manual,
+owner: Second Owner,
+mileage: 23.0 kmpl,
+engine: 1396 CC,
+max_power: 90 bhp,
+torque: 22.4 kgm at 1750-2750rpm,
+seats: 5.0
+
+Required Output:
+""price"": <predicted price> INR
+
+Please provide the prediction strictly adhering to the above instructions.
+Prediction: 350000
+Explanation: [
+{""attribute"":""year"",""importance"":""0.25"",""value"":""2012""},
+{""attribute"":""km_driven"",""importance"":""0.20"",""value"":""53000""},
+{""attribute"":""fuel"",""importance"":""0.15"",""value"":""Diesel""},
+{""attribute"":""transmission"",""importance"":""0.15"",""value"":""Manual""},
+{""attribute"":""owner"",""importance"":""0.10"",""value"":""Second Owner""},
+{""attribute"":""engine"",""importance"":""0.10"",""value"":""1396 CC""},
+{""attribute"":""max_power"",""importance"":""0.05"",""value"":""90 bhp""}
+]
+Actual Price: 500000
+Task 5:
+Prompt: System: Based on the provided attributes of a used car listed below, please predict its selling price in Indian Rupees in the Indian market. The predicted price should be expressed solely as a number followed by the currency ""INR"".
+Ensure that the output contains no additional text or characters beyond this specified format.
+Attributes:
+name: Toyota Innova 2.5 G (Diesel) 7 Seater BS IV,
+year: 2008,
+km_driven: 193623,
+fuel: Diesel,
+seller_type: Individual,
+transmission: Manual,
+owner: Second Owner,
+mileage: 12.8 kmpl,
+engine: 2494 CC,
+max_power: 102 bhp,
+torque: 20.4@ 1400-3400(kgm@ rpm),
+seats: 8.0
+
+Required Output:
+""price"": <predicted price> INR
+
+Please provide the prediction strictly adhering to the above instructions.
+Prediction: 450000
+Explanation: [
+{""attribute"":""year"",""importance"":""0.30"",""value"":""2008""},
+{""attribute"":""km_driven"",""importance"":""0.40"",""value"":""193623""},
+{""attribute"":""fuel"",""importance"":""0.15"",""value"":""Diesel""},
+{""attribute"":""transmission"",""importance"":""0.10"",""value"":""Manual""},
+{""attribute"":""owner"",""importance"":""0.05"",""value"":""Second Owner""}
+]
+Actual Price: 330000
+Task 6:
+Prompt: System: Based on the provided attributes of a used car listed below, please predict its selling price in Indian Rupees in the Indian market. The predicted price should be expressed solely as a number followed by the currency ""INR"".
+Ensure that the output contains no additional text or characters beyond this specified format.
+Attributes:
+name: Toyota Yaris V BSIV,
+year: 2018,
+km_driven: 5229,
+fuel: Petrol,
+seller_type: Trustmark Dealer,
+transmission: Manual,
+owner: First Owner,
+mileage: 17.1 kmpl,
+engine: 1496 CC,
+max_power: 105.5 bhp,
+torque: 140Nm@ 4200rpm,
+seats: 5.0
+
+Required Output:
+""price"": <predicted price> INR
+
+Please provide the prediction strictly adhering to the above instructions.
+Prediction: 750000
+Explanation: [
+{""attribute"":""year"",""importance"":""0.30"",""value"":""2018""},
+{""attribute"":""km_driven"",""importance"":""0.25"",""value"":""5229""},
+{""attribute"":""fuel"",""importance"":""0.15"",""value"":""Petrol""},
+{""attribute"":""transmission"",""importance"":""0.10"",""value"":""Manual""},
+{""attribute"":""max_power"",""importance"":""0.10"",""value"":""105.5 bhp""},
+{""attribute"":""engine"",""importance"":""0.10"",""value"":""1496 CC""}
+]
+Actual Price: 1000000
+Task 7:
+Prompt: System: Based on the provided attributes of a used car listed below, please predict its selling price in Indian Rupees in the Indian market. The predicted price should be expressed solely as a number followed by the currency ""INR"".
+Ensure that the output contains no additional text or characters beyond this specified format.
+Attributes:
+name: Ford EcoSport 1.5 Petrol Titanium Plus BSIV,
+year: 2018,
+km_driven: 90000,
+fuel: Petrol,
+seller_type: Individual,
+transmission: Manual,
+owner: First Owner,
+mileage: 17.0 kmpl,
+engine: 1497 CC,
+max_power: 121.36 bhp,
+torque: 150Nm@ 4500rpm,
+seats: 5.0
+
+Required Output:
+""price"": <predicted price> INR
+
+Please provide the prediction strictly adhering to the above instructions.
+Prediction: 650000
+Explanation: [
+{""attribute"":""year"",""importance"":""0.20"",""value"":""2018""},
+{""attribute"":""km_driven"",""importance"":""0.30"",""value"":""90000""},
+{""attribute"":""fuel"",""importance"":""0.15"",""value"":""Petrol""},
+{""attribute"":""transmission"",""importance"":""0.15"",""value"":""Manual""},
+{""attribute"":""owner"",""importance"":""0.10"",""value"":""First Owner""},
+{""attribute"":""engine"",""importance"":""0.10"",""value"":""1497 CC""}
+]
+Actual Price: 850000
+Task 8:
+Prompt: System: Based on the provided attributes of a used car listed below, please predict its selling price in Indian Rupees in the Indian market. The predicted price should be expressed solely as a number followed by the currency ""INR"".
+Ensure that the output contains no additional text or characters beyond this specified format.
+Attributes:
+name: Honda City 2017-2020 GXi,
+year: 2006,
+km_driven: 70000,
+fuel: Petrol,
+seller_type: Individual,
+transmission: Manual,
+owner: Second Owner,
+mileage: 17.7 kmpl,
+engine: 1497 CC,
+max_power: 78 bhp,
+torque: 12.7@ 2,700(kgm@ rpm),
+seats: 5.0
+
+Required Output:
+""price"": <predicted price> INR
+
+Please provide the prediction strictly adhering to the above instructions.
+Prediction: 200000
+Explanation: [
+{""attribute"":""year"",""importance"":""0.20"",""value"":""2006""},
+{""attribute"":""km_driven"",""importance"":""0.30"",""value"":""70000""},
+{""attribute"":""fuel"",""importance"":""0.15"",""value"":""Petrol""},
+{""attribute"":""owner"",""importance"":""0.10"",""value"":""Second Owner""},
+{""attribute"":""mileage"",""importance"":""0.10"",""value"":""17.7 kmpl""},
+{""attribute"":""engine"",""importance"":""0.15"",""value"":""1497 CC""}
+]
+Actual Price: 270000
+Task 9:
+Prompt: System: Based on the provided attributes of a used car listed below, please predict its selling price in Indian Rupees in the Indian market. The predicted price should be expressed solely as a number followed by the currency ""INR"".
+Ensure that the output contains no additional text or characters beyond this specified format.
+Attributes:
+name: Maruti Wagon R LXI,
+year: 2005,
+km_driven: 90000,
+fuel: Petrol,
+seller_type: Individual,
+transmission: Manual,
+owner: Second Owner,
+mileage: 18.9 kmpl,
+engine: 998 CC,
+max_power: 67.1 bhp,
+torque: 90Nm@ 3500rpm,
+seats: 5.0
+
+Required Output:
+""price"": <predicted price> INR
+
+Please provide the prediction strictly adhering to the above instructions.
+Prediction: 100000
+Explanation: [
+{""attribute"":""year"",""importance"":""0.20"",""value"":""2005""},
+{""attribute"":""km_driven"",""importance"":""0.30"",""value"":""90000""},
+{""attribute"":""fuel"",""importance"":""0.15"",""value"":""Petrol""},
+{""attribute"":""transmission"",""importance"":""0.15"",""value"":""Manual""},
+{""attribute"":""owner"",""importance"":""0.10"",""value"":""Second Owner""},
+{""attribute"":""engine"",""importance"":""0.10"",""value"":""998 CC""}
+]
+Actual Price: 65000
+Task 10:
+Prompt: System: Based on the provided attributes of a used car listed below, please predict its selling price in Indian Rupees in the Indian market. The predicted price should be expressed solely as a number followed by the currency ""INR"".
+Ensure that the output contains no additional text or characters beyond this specified format.
+Attributes:
+name: Toyota Fortuner 3.0 Diesel,
+year: 2010,
+km_driven: 100000,
+fuel: Diesel,
+seller_type: Individual,
+transmission: Manual,
+owner: First Owner,
+mileage: 11.5 kmpl,
+engine: 2982 CC,
+max_power: 171 bhp,
+torque: 343Nm@ 1400-3400rpm,
+seats: 7.0
+
+Required Output:
+""price"": <predicted price> INR
+
+Please provide the prediction strictly adhering to the above instructions.
+Prediction: 900000
+Explanation: [
+{""attribute"":""year"",""importance"":""0.25"",""value"":""2010""},
+{""attribute"":""km_driven"",""importance"":""0.20"",""value"":""100000""},
+{""attribute"":""fuel"",""importance"":""0.15"",""value"":""Diesel""},
+{""attribute"":""transmission"",""importance"":""0.15"",""value"":""Manual""},
+{""attribute"":""owner"",""importance"":""0.10"",""value"":""First Owner""},
+{""attribute"":""engine"",""importance"":""0.10"",""value"":""2982 CC""},
+{""attribute"":""max_power"",""importance"":""0.05"",""value"":""171 bhp""}
+]
+Actual Price: 1200000
+
+Correct Predictions (Only as a reference):
+Task 11:
+Prompt: System: Based on the provided attributes of a used car listed below, please predict its selling price in Indian Rupees in the Indian market. The predicted price should be expressed solely as a number followed by the currency ""INR"".
+Ensure that the output contains no additional text or characters beyond this specified format.
+Attributes:
+name: Tata Hexa XM,
+year: 2017,
+km_driven: 30000,
+fuel: Diesel,
+seller_type: Individual,
+transmission: Manual,
+owner: First Owner,
+mileage: 17.6 kmpl,
+engine: 2179 CC,
+max_power: 153.86 bhp,
+torque: 400Nm@ 1750-2500rpm,
+seats: 7.0
+
+Required Output:
+""price"": <predicted price> INR
+
+Please provide the prediction strictly adhering to the above instructions.
+Prediction: 1200000
+Explanation: [
+{""attribute"":""year"",""importance"":""0.25"",""value"":""2017""},
+{""attribute"":""km_driven"",""importance"":""0.35"",""value"":""30000""},
+{""attribute"":""fuel"",""importance"":""0.15"",""value"":""Diesel""},
+{""attribute"":""transmission"",""importance"":""0.15"",""value"":""Manual""},
+{""attribute"":""max_power"",""importance"":""0.10"",""value"":""153.86 bhp""}
+]
+Actual Price: 1200000
+Task 12:
+Prompt: System: Based on the provided attributes of a used car listed below, please predict its selling price in Indian Rupees in the Indian market. The predicted price should be expressed solely as a number followed by the currency ""INR"".
+Ensure that the output contains no additional text or characters beyond this specified format.
+Attributes:
+name: Maruti Wagon R VXI Plus,
+year: 2018,
+km_driven: 30000,
+fuel: Petrol,
+seller_type: Individual,
+transmission: Manual,
+owner: First Owner,
+mileage: 20.51 kmpl,
+engine: 998 CC,
+max_power: 67.04 bhp,
+torque: 90Nm@ 3500rpm,
+seats: 5.0
+
+Required Output:
+""price"": <predicted price> INR
+
+Please provide the prediction strictly adhering to the above instructions.
+Prediction: 400000
+Explanation: [
+{""attribute"":""year"",""importance"":""0.30"",""value"":""2018""},
+{""attribute"":""km_driven"",""importance"":""0.25"",""value"":""30000""},
+{""attribute"":""fuel"",""importance"":""0.15"",""value"":""Petrol""},
+{""attribute"":""transmission"",""importance"":""0.10"",""value"":""Manual""},
+{""attribute"":""owner"",""importance"":""0.10"",""value"":""First Owner""},
+{""attribute"":""max_power"",""importance"":""0.10"",""value"":""67.04 bhp""}
+]
+Actual Price: 465000
+
+",gpt-4-turbo-preview,structured_unstructured_zero_shot_pipeline_3.5-turbo,"Based on the provided examples of false predictions, we can categorize the faults into 5 categories:
+
+1. **Underestimation of Market Value**:
+   - Task 1: Predicted 60000 INR vs. Actual 40000 INR
+   - Task 9: Predicted 100000 INR vs. Actual 65000 INR
+   Occurrences: 2
+
+2. **Overestimation of Market Value**:
+   - Task 2: Predicted 180000 INR vs. Actual 270000 INR
+   - Task 3: Predicted 150000 INR vs. Actual 210000 INR
+   - Task 4: Predicted 350000 INR vs. Actual 500000 INR
+   - Task 5: Predicted 450000 INR vs. Actual 330000 INR
+   - Task 6: Predicted 750000 INR vs. Actual 1000000 INR
+   - Task 7: Predicted 650000 INR vs. Actual 850000 INR
+   - Task 8: Predicted 200000 INR vs. Actual 270000 INR
+   Occurrences: 8
+
+3. **Misjudgment of Vehicle Attributes**:
+   - Task 10: Predicted 900000 INR vs. Actual 1200000 INR (Possibly underestimated the impact of the vehicle's engine size and power)
+   Occurrences: 1
+
+4. **Incorrect Weighting of Attributes**:
+   - This category is not explicitly mentioned but can be inferred from the explanations where the importance given to certain attributes might not align well with their actual impact on the vehicle's market value. However, without specific knowledge of how these weights should ideally be distributed, it's challenging to pinpoint exact tasks under this category.
+
+5. **Overlooking Key Attributes**:
+   - Similar to Incorrect Weighting, this category would involve situations where the prediction model might have overlooked or failed to adequately consider key attributes that significantly affect a vehicle's price. Again, without explicit mention of missed attributes in the explanations, it's difficult to assign tasks to this category.
+
+Given the information, the primary fault categories with clear examples are Underestimation of Market Value and Overestimation of Market Value, with Overestimation being the most common fault. Misjudgment of Vehicle Attributes is also present but less frequent. The last two categories, Incorrect Weighting of Attributes and Overlooking Key Attributes, are implied possibilities based on the nature of the task but cannot be directly assigned to specific tasks without more detailed analysis or insight into the expected model behavior.",structured_analysis
+error_class_LLM_moreclasses,"In the following I will give you a few price prediction tasks together with a prediction decision, details about the decision and the actual price.
+A wrong prediction is a prediction that deviates by more than 20 percent from the actual price. The Prediction was made by an LLM.
+Can you please group the wrong decisions into 5 fault categories? Please also indicate how often each one occurs.
+There are also some correct decisions (deviation of less than 20 percent) in the examples. Please just use them as a reference and don't categorize them.
+False Predictions:
+Task 1:
+Prompt: System: Based on the provided attributes of a used car listed below, please predict its selling price in Indian Rupees in the Indian market. The predicted price should be expressed solely as a number followed by the currency ""INR"".
+Ensure that the output contains no additional text or characters beyond this specified format.
+Attributes:
+name: Maruti 800 Std,
+year: 1999,
+km_driven: 40000,
+fuel: Petrol,
+seller_type: Individual,
+transmission: Manual,
+owner: Second Owner,
+mileage: 16.1 kmpl,
+engine: 796 CC,
+max_power: 37 bhp,
+torque: 59Nm@ 2500rpm,
+seats: 4.0
+
+Required Output:
+""price"": <predicted price> INR
+
+Please provide the prediction strictly adhering to the above instructions.
+Prediction: 60000
+Explanation: [
+{""attribute"":""year"",""importance"":""0.30"",""value"":""1999""},
+{""attribute"":""km_driven"",""importance"":""0.25"",""value"":""40000""},
+{""attribute"":""fuel"",""importance"":""0.20"",""value"":""Petrol""},
+{""attribute"":""owner"",""importance"":""0.15"",""value"":""Second Owner""},
+{""attribute"":""max_power"",""importance"":""0.10"",""value"":""37 bhp""}
+]
+Actual Price: 40000
+Task 2:
+Prompt: System: Based on the provided attributes of a used car listed below, please predict its selling price in Indian Rupees in the Indian market. The predicted price should be expressed solely as a number followed by the currency ""INR"".
+Ensure that the output contains no additional text or characters beyond this specified format.
+Attributes:
+name: Hyundai EON Era Plus,
+year: 2012,
+km_driven: 43755,
+fuel: Petrol,
+seller_type: Dealer,
+transmission: Manual,
+owner: Second Owner,
+mileage: 21.1 kmpl,
+engine: 814 CC,
+max_power: 55.2 bhp,
+torque: 74.5Nm@ 4000rpm,
+seats: 5.0
+
+Required Output:
+""price"": <predicted price> INR
+
+Please provide the prediction strictly adhering to the above instructions.
+Prediction: 180000
+Explanation: [
+{""attribute"":""year"",""importance"":""0.25"",""value"":""2012""},
+{""attribute"":""km_driven"",""importance"":""0.35"",""value"":""43755""},
+{""attribute"":""fuel"",""importance"":""0.15"",""value"":""Petrol""},
+{""attribute"":""owner"",""importance"":""0.10"",""value"":""Second Owner""},
+{""attribute"":""engine"",""importance"":""0.10"",""value"":""814 CC""},
+{""attribute"":""max_power"",""importance"":""0.05"",""value"":""55.2 bhp""}
+]
+Actual Price: 270000
+Task 3:
+Prompt: System: Based on the provided attributes of a used car listed below, please predict its selling price in Indian Rupees in the Indian market. The predicted price should be expressed solely as a number followed by the currency ""INR"".
+Ensure that the output contains no additional text or characters beyond this specified format.
+Attributes:
+name: Chevrolet Optra Magnum 2.0 LT,
+year: 2008,
+km_driven: 90000,
+fuel: Diesel,
+seller_type: Individual,
+transmission: Manual,
+owner: Fourth & Above Owner,
+mileage: 16.52 kmpl,
+engine: 1991 CC,
+max_power: 123.7 bhp,
+torque: 305Nm@ 2000rpm,
+seats: 5.0
+
+Required Output:
+""price"": <predicted price> INR
+
+Please provide the prediction strictly adhering to the above instructions.
+Prediction: 150000
+Explanation: [
+{""attribute"":""year"",""importance"":""0.20"",""value"":""2008""},
+{""attribute"":""km_driven"",""importance"":""0.30"",""value"":""90000""},
+{""attribute"":""fuel"",""importance"":""0.15"",""value"":""Diesel""},
+{""attribute"":""owner"",""importance"":""0.10"",""value"":""Fourth & Above Owner""},
+{""attribute"":""engine"",""importance"":""0.15"",""value"":""1991 CC""},
+{""attribute"":""max_power"",""importance"":""0.10"",""value"":""123.7 bhp""}
+]
+Actual Price: 210000
+Task 4:
+Prompt: System: Based on the provided attributes of a used car listed below, please predict its selling price in Indian Rupees in the Indian market. The predicted price should be expressed solely as a number followed by the currency ""INR"".
+Ensure that the output contains no additional text or characters beyond this specified format.
+Attributes:
+name: Hyundai i20 1.4 CRDi Asta,
+year: 2012,
+km_driven: 53000,
+fuel: Diesel,
+seller_type: Individual,
+transmission: Manual,
+owner: Second Owner,
+mileage: 23.0 kmpl,
+engine: 1396 CC,
+max_power: 90 bhp,
+torque: 22.4 kgm at 1750-2750rpm,
+seats: 5.0
+
+Required Output:
+""price"": <predicted price> INR
+
+Please provide the prediction strictly adhering to the above instructions.
+Prediction: 350000
+Explanation: [
+{""attribute"":""year"",""importance"":""0.25"",""value"":""2012""},
+{""attribute"":""km_driven"",""importance"":""0.20"",""value"":""53000""},
+{""attribute"":""fuel"",""importance"":""0.15"",""value"":""Diesel""},
+{""attribute"":""transmission"",""importance"":""0.15"",""value"":""Manual""},
+{""attribute"":""owner"",""importance"":""0.10"",""value"":""Second Owner""},
+{""attribute"":""engine"",""importance"":""0.10"",""value"":""1396 CC""},
+{""attribute"":""max_power"",""importance"":""0.05"",""value"":""90 bhp""}
+]
+Actual Price: 500000
+Task 5:
+Prompt: System: Based on the provided attributes of a used car listed below, please predict its selling price in Indian Rupees in the Indian market. The predicted price should be expressed solely as a number followed by the currency ""INR"".
+Ensure that the output contains no additional text or characters beyond this specified format.
+Attributes:
+name: Toyota Innova 2.5 G (Diesel) 7 Seater BS IV,
+year: 2008,
+km_driven: 193623,
+fuel: Diesel,
+seller_type: Individual,
+transmission: Manual,
+owner: Second Owner,
+mileage: 12.8 kmpl,
+engine: 2494 CC,
+max_power: 102 bhp,
+torque: 20.4@ 1400-3400(kgm@ rpm),
+seats: 8.0
+
+Required Output:
+""price"": <predicted price> INR
+
+Please provide the prediction strictly adhering to the above instructions.
+Prediction: 450000
+Explanation: [
+{""attribute"":""year"",""importance"":""0.30"",""value"":""2008""},
+{""attribute"":""km_driven"",""importance"":""0.40"",""value"":""193623""},
+{""attribute"":""fuel"",""importance"":""0.15"",""value"":""Diesel""},
+{""attribute"":""transmission"",""importance"":""0.10"",""value"":""Manual""},
+{""attribute"":""owner"",""importance"":""0.05"",""value"":""Second Owner""}
+]
+Actual Price: 330000
+Task 6:
+Prompt: System: Based on the provided attributes of a used car listed below, please predict its selling price in Indian Rupees in the Indian market. The predicted price should be expressed solely as a number followed by the currency ""INR"".
+Ensure that the output contains no additional text or characters beyond this specified format.
+Attributes:
+name: Toyota Yaris V BSIV,
+year: 2018,
+km_driven: 5229,
+fuel: Petrol,
+seller_type: Trustmark Dealer,
+transmission: Manual,
+owner: First Owner,
+mileage: 17.1 kmpl,
+engine: 1496 CC,
+max_power: 105.5 bhp,
+torque: 140Nm@ 4200rpm,
+seats: 5.0
+
+Required Output:
+""price"": <predicted price> INR
+
+Please provide the prediction strictly adhering to the above instructions.
+Prediction: 750000
+Explanation: [
+{""attribute"":""year"",""importance"":""0.30"",""value"":""2018""},
+{""attribute"":""km_driven"",""importance"":""0.25"",""value"":""5229""},
+{""attribute"":""fuel"",""importance"":""0.15"",""value"":""Petrol""},
+{""attribute"":""transmission"",""importance"":""0.10"",""value"":""Manual""},
+{""attribute"":""max_power"",""importance"":""0.10"",""value"":""105.5 bhp""},
+{""attribute"":""engine"",""importance"":""0.10"",""value"":""1496 CC""}
+]
+Actual Price: 1000000
+Task 7:
+Prompt: System: Based on the provided attributes of a used car listed below, please predict its selling price in Indian Rupees in the Indian market. The predicted price should be expressed solely as a number followed by the currency ""INR"".
+Ensure that the output contains no additional text or characters beyond this specified format.
+Attributes:
+name: Ford EcoSport 1.5 Petrol Titanium Plus BSIV,
+year: 2018,
+km_driven: 90000,
+fuel: Petrol,
+seller_type: Individual,
+transmission: Manual,
+owner: First Owner,
+mileage: 17.0 kmpl,
+engine: 1497 CC,
+max_power: 121.36 bhp,
+torque: 150Nm@ 4500rpm,
+seats: 5.0
+
+Required Output:
+""price"": <predicted price> INR
+
+Please provide the prediction strictly adhering to the above instructions.
+Prediction: 650000
+Explanation: [
+{""attribute"":""year"",""importance"":""0.20"",""value"":""2018""},
+{""attribute"":""km_driven"",""importance"":""0.30"",""value"":""90000""},
+{""attribute"":""fuel"",""importance"":""0.15"",""value"":""Petrol""},
+{""attribute"":""transmission"",""importance"":""0.15"",""value"":""Manual""},
+{""attribute"":""owner"",""importance"":""0.10"",""value"":""First Owner""},
+{""attribute"":""engine"",""importance"":""0.10"",""value"":""1497 CC""}
+]
+Actual Price: 850000
+Task 8:
+Prompt: System: Based on the provided attributes of a used car listed below, please predict its selling price in Indian Rupees in the Indian market. The predicted price should be expressed solely as a number followed by the currency ""INR"".
+Ensure that the output contains no additional text or characters beyond this specified format.
+Attributes:
+name: Honda City 2017-2020 GXi,
+year: 2006,
+km_driven: 70000,
+fuel: Petrol,
+seller_type: Individual,
+transmission: Manual,
+owner: Second Owner,
+mileage: 17.7 kmpl,
+engine: 1497 CC,
+max_power: 78 bhp,
+torque: 12.7@ 2,700(kgm@ rpm),
+seats: 5.0
+
+Required Output:
+""price"": <predicted price> INR
+
+Please provide the prediction strictly adhering to the above instructions.
+Prediction: 200000
+Explanation: [
+{""attribute"":""year"",""importance"":""0.20"",""value"":""2006""},
+{""attribute"":""km_driven"",""importance"":""0.30"",""value"":""70000""},
+{""attribute"":""fuel"",""importance"":""0.15"",""value"":""Petrol""},
+{""attribute"":""owner"",""importance"":""0.10"",""value"":""Second Owner""},
+{""attribute"":""mileage"",""importance"":""0.10"",""value"":""17.7 kmpl""},
+{""attribute"":""engine"",""importance"":""0.15"",""value"":""1497 CC""}
+]
+Actual Price: 270000
+Task 9:
+Prompt: System: Based on the provided attributes of a used car listed below, please predict its selling price in Indian Rupees in the Indian market. The predicted price should be expressed solely as a number followed by the currency ""INR"".
+Ensure that the output contains no additional text or characters beyond this specified format.
+Attributes:
+name: Maruti Wagon R LXI,
+year: 2005,
+km_driven: 90000,
+fuel: Petrol,
+seller_type: Individual,
+transmission: Manual,
+owner: Second Owner,
+mileage: 18.9 kmpl,
+engine: 998 CC,
+max_power: 67.1 bhp,
+torque: 90Nm@ 3500rpm,
+seats: 5.0
+
+Required Output:
+""price"": <predicted price> INR
+
+Please provide the prediction strictly adhering to the above instructions.
+Prediction: 100000
+Explanation: [
+{""attribute"":""year"",""importance"":""0.20"",""value"":""2005""},
+{""attribute"":""km_driven"",""importance"":""0.30"",""value"":""90000""},
+{""attribute"":""fuel"",""importance"":""0.15"",""value"":""Petrol""},
+{""attribute"":""transmission"",""importance"":""0.15"",""value"":""Manual""},
+{""attribute"":""owner"",""importance"":""0.10"",""value"":""Second Owner""},
+{""attribute"":""engine"",""importance"":""0.10"",""value"":""998 CC""}
+]
+Actual Price: 65000
+Task 10:
+Prompt: System: Based on the provided attributes of a used car listed below, please predict its selling price in Indian Rupees in the Indian market. The predicted price should be expressed solely as a number followed by the currency ""INR"".
+Ensure that the output contains no additional text or characters beyond this specified format.
+Attributes:
+name: Toyota Fortuner 3.0 Diesel,
+year: 2010,
+km_driven: 100000,
+fuel: Diesel,
+seller_type: Individual,
+transmission: Manual,
+owner: First Owner,
+mileage: 11.5 kmpl,
+engine: 2982 CC,
+max_power: 171 bhp,
+torque: 343Nm@ 1400-3400rpm,
+seats: 7.0
+
+Required Output:
+""price"": <predicted price> INR
+
+Please provide the prediction strictly adhering to the above instructions.
+Prediction: 900000
+Explanation: [
+{""attribute"":""year"",""importance"":""0.25"",""value"":""2010""},
+{""attribute"":""km_driven"",""importance"":""0.20"",""value"":""100000""},
+{""attribute"":""fuel"",""importance"":""0.15"",""value"":""Diesel""},
+{""attribute"":""transmission"",""importance"":""0.15"",""value"":""Manual""},
+{""attribute"":""owner"",""importance"":""0.10"",""value"":""First Owner""},
+{""attribute"":""engine"",""importance"":""0.10"",""value"":""2982 CC""},
+{""attribute"":""max_power"",""importance"":""0.05"",""value"":""171 bhp""}
+]
+Actual Price: 1200000
+
+Correct Predictions (Only as a reference):
+Task 11:
+Prompt: System: Based on the provided attributes of a used car listed below, please predict its selling price in Indian Rupees in the Indian market. The predicted price should be expressed solely as a number followed by the currency ""INR"".
+Ensure that the output contains no additional text or characters beyond this specified format.
+Attributes:
+name: Tata Hexa XM,
+year: 2017,
+km_driven: 30000,
+fuel: Diesel,
+seller_type: Individual,
+transmission: Manual,
+owner: First Owner,
+mileage: 17.6 kmpl,
+engine: 2179 CC,
+max_power: 153.86 bhp,
+torque: 400Nm@ 1750-2500rpm,
+seats: 7.0
+
+Required Output:
+""price"": <predicted price> INR
+
+Please provide the prediction strictly adhering to the above instructions.
+Prediction: 1200000
+Explanation: [
+{""attribute"":""year"",""importance"":""0.25"",""value"":""2017""},
+{""attribute"":""km_driven"",""importance"":""0.35"",""value"":""30000""},
+{""attribute"":""fuel"",""importance"":""0.15"",""value"":""Diesel""},
+{""attribute"":""transmission"",""importance"":""0.15"",""value"":""Manual""},
+{""attribute"":""max_power"",""importance"":""0.10"",""value"":""153.86 bhp""}
+]
+Actual Price: 1200000
+Task 12:
+Prompt: System: Based on the provided attributes of a used car listed below, please predict its selling price in Indian Rupees in the Indian market. The predicted price should be expressed solely as a number followed by the currency ""INR"".
+Ensure that the output contains no additional text or characters beyond this specified format.
+Attributes:
+name: Maruti Wagon R VXI Plus,
+year: 2018,
+km_driven: 30000,
+fuel: Petrol,
+seller_type: Individual,
+transmission: Manual,
+owner: First Owner,
+mileage: 20.51 kmpl,
+engine: 998 CC,
+max_power: 67.04 bhp,
+torque: 90Nm@ 3500rpm,
+seats: 5.0
+
+Required Output:
+""price"": <predicted price> INR
+
+Please provide the prediction strictly adhering to the above instructions.
+Prediction: 400000
+Explanation: [
+{""attribute"":""year"",""importance"":""0.30"",""value"":""2018""},
+{""attribute"":""km_driven"",""importance"":""0.25"",""value"":""30000""},
+{""attribute"":""fuel"",""importance"":""0.15"",""value"":""Petrol""},
+{""attribute"":""transmission"",""importance"":""0.10"",""value"":""Manual""},
+{""attribute"":""owner"",""importance"":""0.10"",""value"":""First Owner""},
+{""attribute"":""max_power"",""importance"":""0.10"",""value"":""67.04 bhp""}
+]
+Actual Price: 465000
+
+",gpt-4-turbo-preview,structured_unstructured_zero_shot_pipeline_3.5-turbo,"Based on the provided examples of false predictions, we can categorize the wrong decisions into 5 fault categories as follows:
+
+1. **Underestimation of Market Value**:
+   - Task 2: Predicted 180000 INR vs. Actual 270000 INR
+   - Task 3: Predicted 150000 INR vs. Actual 210000 INR
+   - Task 4: Predicted 350000 INR vs. Actual 500000 INR
+   - Task 6: Predicted 750000 INR vs. Actual 1000000 INR
+   - Task 7: Predicted 650000 INR vs. Actual 850000 INR
+   - Task 8: Predicted 200000 INR vs. Actual 270000 INR
+   - Task 10: Predicted 900000 INR vs. Actual 1200000 INR
+   Occurrences: 7
+
+2. **Overestimation of Market Value**:
+   - Task 1: Predicted 60000 INR vs. Actual 40000 INR
+   - Task 5: Predicted 450000 INR vs. Actual 330000 INR
+   - Task 9: Predicted 100000 INR vs. Actual 65000 INR
+   Occurrences: 3
+
+3. **Misjudgment of Vehicle Condition**:
+   - This category could potentially include any of the wrong predictions where the condition of the vehicle (e.g., km driven, year, owner) might have been misjudged, but without specific evidence in the explanations, it's hard to distinctly categorize any under this based solely on the provided data.
+
+4. **Incorrect Weighting of Attributes**:
+   - This could be inferred for most wrong predictions as the importance given to certain attributes might not align well with their actual impact on the market value. However, without a correct model to compare against, it's speculative to assign any specific task to this category based solely on the provided data.
+
+5. **Neglect of Critical Attributes**:
+   - Similar to the ""Incorrect Weighting of Attributes,"" this category would imply that some critical attributes were either overlooked or not given enough importance in the prediction process. Again, without a baseline for comparison, it's challenging to definitively place any task in this category based on the provided information.
+
+Given the nature of the explanations and the actual outcomes, most of the wrong decisions can be primarily grouped into ""Underestimation of Market Value"" and ""Overestimation of Market Value."" The other categories, such as ""Misjudgment of Vehicle Condition,"" ""Incorrect Weighting of Attributes,"" and ""Neglect of Critical Attributes,"" require a deeper analysis of the decision-making process and comparison with a correct model, which is not provided in the given data. Therefore, based on the explicit information available, we can only confidently categorize the errors into underestimation and overestimation of market value.",structured_analysis
+error_class_LLM_moreclasses,"In the following I will give you a few price prediction tasks together with a prediction decision, details about the decision and the actual price.
+A wrong prediction is a prediction that deviates by more than 20 percent from the actual price. The Prediction was made by an LLM.
+Can you please group the wrong decisions into 5 fault categories? Please also indicate how often each one occurs.
+There are also some correct decisions (deviation of less than 20 percent) in the examples. Please just use them as a reference and don't categorize them.
+False Predictions:
+Task 1:
+Prompt: System: Based on the provided attributes of a used car listed below, please predict its selling price in Indian Rupees in the Indian market. The predicted price should be expressed solely as a number followed by the currency ""INR"".
+Ensure that the output contains no additional text or characters beyond this specified format.
+Attributes:
+name: Maruti 800 Std,
+year: 1999,
+km_driven: 40000,
+fuel: Petrol,
+seller_type: Individual,
+transmission: Manual,
+owner: Second Owner,
+mileage: 16.1 kmpl,
+engine: 796 CC,
+max_power: 37 bhp,
+torque: 59Nm@ 2500rpm,
+seats: 4.0
+
+Required Output:
+""price"": <predicted price> INR
+
+Please provide the prediction strictly adhering to the above instructions.
+Prediction: 60000
+Explanation: I made the prediction based on the year of the car, the number of kilometers driven, and the car's make and model. These attributes have a high influence on the selling price of a used car.
+Actual Price: 40000
+Task 2:
+Prompt: System: Based on the provided attributes of a used car listed below, please predict its selling price in Indian Rupees in the Indian market. The predicted price should be expressed solely as a number followed by the currency ""INR"".
+Ensure that the output contains no additional text or characters beyond this specified format.
+Attributes:
+name: Hyundai EON Era Plus,
+year: 2012,
+km_driven: 43755,
+fuel: Petrol,
+seller_type: Dealer,
+transmission: Manual,
+owner: Second Owner,
+mileage: 21.1 kmpl,
+engine: 814 CC,
+max_power: 55.2 bhp,
+torque: 74.5Nm@ 4000rpm,
+seats: 5.0
+
+Required Output:
+""price"": <predicted price> INR
+
+Please provide the prediction strictly adhering to the above instructions.
+Prediction: 180000
+Explanation: I made the prediction based on the year of the car, its mileage, engine size, and the fact that it is a second-hand car being sold by a dealer. These attributes are crucial in determining the resale value of a used car in the Indian market.
+Actual Price: 270000
+Task 3:
+Prompt: System: Based on the provided attributes of a used car listed below, please predict its selling price in Indian Rupees in the Indian market. The predicted price should be expressed solely as a number followed by the currency ""INR"".
+Ensure that the output contains no additional text or characters beyond this specified format.
+Attributes:
+name: Chevrolet Optra Magnum 2.0 LT,
+year: 2008,
+km_driven: 90000,
+fuel: Diesel,
+seller_type: Individual,
+transmission: Manual,
+owner: Fourth & Above Owner,
+mileage: 16.52 kmpl,
+engine: 1991 CC,
+max_power: 123.7 bhp,
+torque: 305Nm@ 2000rpm,
+seats: 5.0
+
+Required Output:
+""price"": <predicted price> INR
+
+Please provide the prediction strictly adhering to the above instructions.
+Prediction: 150000
+Explanation: I made the prediction based on the year, kilometers driven, fuel type, and owner history of the car. These attributes are crucial in determining the depreciation and market value of a used car.
+Actual Price: 210000
+Task 4:
+Prompt: System: Based on the provided attributes of a used car listed below, please predict its selling price in Indian Rupees in the Indian market. The predicted price should be expressed solely as a number followed by the currency ""INR"".
+Ensure that the output contains no additional text or characters beyond this specified format.
+Attributes:
+name: Hyundai i20 1.4 CRDi Asta,
+year: 2012,
+km_driven: 53000,
+fuel: Diesel,
+seller_type: Individual,
+transmission: Manual,
+owner: Second Owner,
+mileage: 23.0 kmpl,
+engine: 1396 CC,
+max_power: 90 bhp,
+torque: 22.4 kgm at 1750-2750rpm,
+seats: 5.0
+
+Required Output:
+""price"": <predicted price> INR
+
+Please provide the prediction strictly adhering to the above instructions.
+Prediction: 350000
+Explanation: I made the prediction based on the year, mileage, fuel type, and condition of the car. The attributes that had a high influence on the decision were the year (2012), low mileage (53000 km), and the fact that it is a diesel car. These factors typically contribute to a higher selling price in the used car market.
+Actual Price: 500000
+Task 5:
+Prompt: System: Based on the provided attributes of a used car listed below, please predict its selling price in Indian Rupees in the Indian market. The predicted price should be expressed solely as a number followed by the currency ""INR"".
+Ensure that the output contains no additional text or characters beyond this specified format.
+Attributes:
+name: Toyota Innova 2.5 G (Diesel) 7 Seater BS IV,
+year: 2008,
+km_driven: 193623,
+fuel: Diesel,
+seller_type: Individual,
+transmission: Manual,
+owner: Second Owner,
+mileage: 12.8 kmpl,
+engine: 2494 CC,
+max_power: 102 bhp,
+torque: 20.4@ 1400-3400(kgm@ rpm),
+seats: 8.0
+
+Required Output:
+""price"": <predicted price> INR
+
+Please provide the prediction strictly adhering to the above instructions.
+Prediction: 450000
+Explanation: I made the prediction based on the year, high mileage, and the fact that it is a diesel car. These attributes typically result in a lower selling price for a used car.
+Actual Price: 330000
+Task 6:
+Prompt: System: Based on the provided attributes of a used car listed below, please predict its selling price in Indian Rupees in the Indian market. The predicted price should be expressed solely as a number followed by the currency ""INR"".
+Ensure that the output contains no additional text or characters beyond this specified format.
+Attributes:
+name: Toyota Yaris V BSIV,
+year: 2018,
+km_driven: 5229,
+fuel: Petrol,
+seller_type: Trustmark Dealer,
+transmission: Manual,
+owner: First Owner,
+mileage: 17.1 kmpl,
+engine: 1496 CC,
+max_power: 105.5 bhp,
+torque: 140Nm@ 4200rpm,
+seats: 5.0
+
+Required Output:
+""price"": <predicted price> INR
+
+Please provide the prediction strictly adhering to the above instructions.
+Prediction: 750000
+Explanation: I made the prediction based on the year, low mileage, fuel type, seller type, and the model of the car. These attributes are indicative of a well-maintained, relatively new car from a trusted dealer, which typically commands a higher price in the market.
+Actual Price: 1000000
+Task 7:
+Prompt: System: Based on the provided attributes of a used car listed below, please predict its selling price in Indian Rupees in the Indian market. The predicted price should be expressed solely as a number followed by the currency ""INR"".
+Ensure that the output contains no additional text or characters beyond this specified format.
+Attributes:
+name: Ford EcoSport 1.5 Petrol Titanium Plus BSIV,
+year: 2018,
+km_driven: 90000,
+fuel: Petrol,
+seller_type: Individual,
+transmission: Manual,
+owner: First Owner,
+mileage: 17.0 kmpl,
+engine: 1497 CC,
+max_power: 121.36 bhp,
+torque: 150Nm@ 4500rpm,
+seats: 5.0
+
+Required Output:
+""price"": <predicted price> INR
+
+Please provide the prediction strictly adhering to the above instructions.
+Prediction: 650000
+Explanation: The prediction was based on the year of the car (2018) and the high mileage (90000 km) which typically lower the selling price. These attributes had a significant influence on the predicted price of 650000 INR.
+Actual Price: 850000
+Task 8:
+Prompt: System: Based on the provided attributes of a used car listed below, please predict its selling price in Indian Rupees in the Indian market. The predicted price should be expressed solely as a number followed by the currency ""INR"".
+Ensure that the output contains no additional text or characters beyond this specified format.
+Attributes:
+name: Honda City 2017-2020 GXi,
+year: 2006,
+km_driven: 70000,
+fuel: Petrol,
+seller_type: Individual,
+transmission: Manual,
+owner: Second Owner,
+mileage: 17.7 kmpl,
+engine: 1497 CC,
+max_power: 78 bhp,
+torque: 12.7@ 2,700(kgm@ rpm),
+seats: 5.0
+
+Required Output:
+""price"": <predicted price> INR
+
+Please provide the prediction strictly adhering to the above instructions.
+Prediction: 200000
+Explanation: I made the prediction based on the year of the car, the kilometers driven, and the model specifications. The attributes that had a high influence on my decision were the year (2006) and the high mileage (70000 km), which typically result in a lower selling price.
+Actual Price: 270000
+Task 9:
+Prompt: System: Based on the provided attributes of a used car listed below, please predict its selling price in Indian Rupees in the Indian market. The predicted price should be expressed solely as a number followed by the currency ""INR"".
+Ensure that the output contains no additional text or characters beyond this specified format.
+Attributes:
+name: Maruti Wagon R LXI,
+year: 2005,
+km_driven: 90000,
+fuel: Petrol,
+seller_type: Individual,
+transmission: Manual,
+owner: Second Owner,
+mileage: 18.9 kmpl,
+engine: 998 CC,
+max_power: 67.1 bhp,
+torque: 90Nm@ 3500rpm,
+seats: 5.0
+
+Required Output:
+""price"": <predicted price> INR
+
+Please provide the prediction strictly adhering to the above instructions.
+Prediction: 100000
+Explanation: I made the prediction based on the year of the car, the kilometers driven, and the specific model. These attributes have a significant impact on the resale value of a used car.
+Actual Price: 65000
+Task 10:
+Prompt: System: Based on the provided attributes of a used car listed below, please predict its selling price in Indian Rupees in the Indian market. The predicted price should be expressed solely as a number followed by the currency ""INR"".
+Ensure that the output contains no additional text or characters beyond this specified format.
+Attributes:
+name: Toyota Fortuner 3.0 Diesel,
+year: 2010,
+km_driven: 100000,
+fuel: Diesel,
+seller_type: Individual,
+transmission: Manual,
+owner: First Owner,
+mileage: 11.5 kmpl,
+engine: 2982 CC,
+max_power: 171 bhp,
+torque: 343Nm@ 1400-3400rpm,
+seats: 7.0
+
+Required Output:
+""price"": <predicted price> INR
+
+Please provide the prediction strictly adhering to the above instructions.
+Prediction: 900000
+Explanation: I made the prediction based on the year of the car, the high mileage of 100,000 km, and the fact that it is a diesel vehicle. These attributes typically result in a lower selling price for a used car.
+Actual Price: 1200000
+
+Correct Predictions (Only as a reference):
+Task 11:
+Prompt: System: Based on the provided attributes of a used car listed below, please predict its selling price in Indian Rupees in the Indian market. The predicted price should be expressed solely as a number followed by the currency ""INR"".
+Ensure that the output contains no additional text or characters beyond this specified format.
+Attributes:
+name: Tata Hexa XM,
+year: 2017,
+km_driven: 30000,
+fuel: Diesel,
+seller_type: Individual,
+transmission: Manual,
+owner: First Owner,
+mileage: 17.6 kmpl,
+engine: 2179 CC,
+max_power: 153.86 bhp,
+torque: 400Nm@ 1750-2500rpm,
+seats: 7.0
+
+Required Output:
+""price"": <predicted price> INR
+
+Please provide the prediction strictly adhering to the above instructions.
+Prediction: 1200000
+Explanation: The prediction was based on the year, mileage, engine power, and seating capacity of the Tata Hexa XM. The year of manufacture (2017) and relatively low mileage (30000 km) for a diesel car positively influenced the price prediction. Additionally, the powerful engine (153.86 bhp) and 7-seater capacity also contributed to the higher predicted price.
+Actual Price: 1200000
+Task 12:
+Prompt: System: Based on the provided attributes of a used car listed below, please predict its selling price in Indian Rupees in the Indian market. The predicted price should be expressed solely as a number followed by the currency ""INR"".
+Ensure that the output contains no additional text or characters beyond this specified format.
+Attributes:
+name: Maruti Wagon R VXI Plus,
+year: 2018,
+km_driven: 30000,
+fuel: Petrol,
+seller_type: Individual,
+transmission: Manual,
+owner: First Owner,
+mileage: 20.51 kmpl,
+engine: 998 CC,
+max_power: 67.04 bhp,
+torque: 90Nm@ 3500rpm,
+seats: 5.0
+
+Required Output:
+""price"": <predicted price> INR
+
+Please provide the prediction strictly adhering to the above instructions.
+Prediction: 400000
+Explanation: I made the prediction based on the year, mileage, fuel type, and condition of the car. The attributes that had a high influence on the decision were the year (2018) and the relatively low mileage (30000 km) for a 2018 model car, which indicated a well-maintained vehicle with relatively low usage.
+Actual Price: 465000
+
+",gpt-4-turbo-preview,structured_unstructured_zero_shot_pipeline_3.5-turbo,"Based on the provided examples of false predictions, we can categorize the wrong decisions into five fault categories:
+
+1. **Underestimation of Market Value**:
+   - Task 2: Prediction significantly lower than actual price (180000 vs. 270000).
+   - Task 3: Prediction lower than actual price (150000 vs. 210000).
+   - Task 4: Prediction significantly lower than actual price (350000 vs. 500000).
+   - Task 6: Prediction lower than actual price (750000 vs. 1000000).
+   - Task 7: Prediction lower than actual price (650000 vs. 850000).
+   - Task 8: Prediction lower than actual price (200000 vs. 270000).
+   - Occurrences: 6
+
+2. **Overestimation of Market Value**:
+   - Task 1: Prediction higher than actual price (60000 vs. 40000).
+   - Task 5: Prediction significantly higher than actual price (450000 vs. 330000).
+   - Task 9: Prediction higher than actual price (100000 vs. 65000).
+   - Occurrences: 3
+
+3. **Misjudgment of Vehicle Condition Impact**:
+   - Task 5: Overestimated impact of high mileage on a diesel vehicle.
+   - Task 7: Failed to adequately account for the high mileage's impact on a relatively new car.
+   - Occurrences: 2
+
+4. **Misjudgment of Market Demand for Specific Models**:
+   - Task 10: Prediction significantly lower than actual price for a model with potentially high demand (900000 vs. 1200000).
+   - Occurrences: 1
+
+5. **Incorrect Assessment of Seller Type Influence**:
+   - Task 6: Underestimated the price premium associated with a Trustmark Dealer.
+   - Occurrences: 1
+
+Summary:
+- Underestimation of Market Value: 6 occurrences
+- Overestimation of Market Value: 3 occurrences
+- Misjudgment of Vehicle Condition Impact: 2 occurrences
+- Misjudgment of Market Demand for Specific Models: 1 occurrence
+- Incorrect Assessment of Seller Type Influence: 1 occurrence
+
+These categories highlight the challenges in accurately predicting used car prices based on various attributes, including the vehicle's condition, market demand for specific models, and the influence of the seller type.",unstructured_analysis
+error_class_LLM,"In the following I will give you a few price prediction tasks together with a prediction decision, details about the decision and the actual price.
+A wrong prediction is a prediction that deviates by more than 20 percent from the actual price. The Prediction was made by an LLM.
+Can you please group the wrong decisions into 3 fault categories? Please also indicate how often each one occurs.
+There are also some correct decisions (deviation of less than 20 percent) in the examples. Please just use them as a reference and don't categorize them.
+False Predictions:
+Task 1:
+Prompt: System: Based on the provided attributes of a used car listed below, please predict its selling price in Indian Rupees in the Indian market. The predicted price should be expressed solely as a number followed by the currency ""INR"".
+Ensure that the output contains no additional text or characters beyond this specified format.
+Attributes:
+name: Maruti 800 Std,
+year: 1999,
+km_driven: 40000,
+fuel: Petrol,
+seller_type: Individual,
+transmission: Manual,
+owner: Second Owner,
+mileage: 16.1 kmpl,
+engine: 796 CC,
+max_power: 37 bhp,
+torque: 59Nm@ 2500rpm,
+seats: 4.0
+
+Required Output:
+""price"": <predicted price> INR
+
+Please provide the prediction strictly adhering to the above instructions.
+Prediction: 60000
+Explanation: I made the prediction based on the year of the car, the number of kilometers driven, and the car's make and model. These attributes have a high influence on the selling price of a used car.
+Actual Price: 40000
+Task 2:
+Prompt: System: Based on the provided attributes of a used car listed below, please predict its selling price in Indian Rupees in the Indian market. The predicted price should be expressed solely as a number followed by the currency ""INR"".
+Ensure that the output contains no additional text or characters beyond this specified format.
+Attributes:
+name: Hyundai EON Era Plus,
+year: 2012,
+km_driven: 43755,
+fuel: Petrol,
+seller_type: Dealer,
+transmission: Manual,
+owner: Second Owner,
+mileage: 21.1 kmpl,
+engine: 814 CC,
+max_power: 55.2 bhp,
+torque: 74.5Nm@ 4000rpm,
+seats: 5.0
+
+Required Output:
+""price"": <predicted price> INR
+
+Please provide the prediction strictly adhering to the above instructions.
+Prediction: 180000
+Explanation: I made the prediction based on the year of the car, its mileage, engine size, and the fact that it is a second-hand car being sold by a dealer. These attributes are crucial in determining the resale value of a used car in the Indian market.
+Actual Price: 270000
+Task 3:
+Prompt: System: Based on the provided attributes of a used car listed below, please predict its selling price in Indian Rupees in the Indian market. The predicted price should be expressed solely as a number followed by the currency ""INR"".
+Ensure that the output contains no additional text or characters beyond this specified format.
+Attributes:
+name: Chevrolet Optra Magnum 2.0 LT,
+year: 2008,
+km_driven: 90000,
+fuel: Diesel,
+seller_type: Individual,
+transmission: Manual,
+owner: Fourth & Above Owner,
+mileage: 16.52 kmpl,
+engine: 1991 CC,
+max_power: 123.7 bhp,
+torque: 305Nm@ 2000rpm,
+seats: 5.0
+
+Required Output:
+""price"": <predicted price> INR
+
+Please provide the prediction strictly adhering to the above instructions.
+Prediction: 150000
+Explanation: I made the prediction based on the year, kilometers driven, fuel type, and owner history of the car. These attributes are crucial in determining the depreciation and market value of a used car.
+Actual Price: 210000
+Task 4:
+Prompt: System: Based on the provided attributes of a used car listed below, please predict its selling price in Indian Rupees in the Indian market. The predicted price should be expressed solely as a number followed by the currency ""INR"".
+Ensure that the output contains no additional text or characters beyond this specified format.
+Attributes:
+name: Hyundai i20 1.4 CRDi Asta,
+year: 2012,
+km_driven: 53000,
+fuel: Diesel,
+seller_type: Individual,
+transmission: Manual,
+owner: Second Owner,
+mileage: 23.0 kmpl,
+engine: 1396 CC,
+max_power: 90 bhp,
+torque: 22.4 kgm at 1750-2750rpm,
+seats: 5.0
+
+Required Output:
+""price"": <predicted price> INR
+
+Please provide the prediction strictly adhering to the above instructions.
+Prediction: 350000
+Explanation: I made the prediction based on the year, mileage, fuel type, and condition of the car. The attributes that had a high influence on the decision were the year (2012), low mileage (53000 km), and the fact that it is a diesel car. These factors typically contribute to a higher selling price in the used car market.
+Actual Price: 500000
+Task 5:
+Prompt: System: Based on the provided attributes of a used car listed below, please predict its selling price in Indian Rupees in the Indian market. The predicted price should be expressed solely as a number followed by the currency ""INR"".
+Ensure that the output contains no additional text or characters beyond this specified format.
+Attributes:
+name: Toyota Innova 2.5 G (Diesel) 7 Seater BS IV,
+year: 2008,
+km_driven: 193623,
+fuel: Diesel,
+seller_type: Individual,
+transmission: Manual,
+owner: Second Owner,
+mileage: 12.8 kmpl,
+engine: 2494 CC,
+max_power: 102 bhp,
+torque: 20.4@ 1400-3400(kgm@ rpm),
+seats: 8.0
+
+Required Output:
+""price"": <predicted price> INR
+
+Please provide the prediction strictly adhering to the above instructions.
+Prediction: 450000
+Explanation: I made the prediction based on the year, high mileage, and the fact that it is a diesel car. These attributes typically result in a lower selling price for a used car.
+Actual Price: 330000
+Task 6:
+Prompt: System: Based on the provided attributes of a used car listed below, please predict its selling price in Indian Rupees in the Indian market. The predicted price should be expressed solely as a number followed by the currency ""INR"".
+Ensure that the output contains no additional text or characters beyond this specified format.
+Attributes:
+name: Toyota Yaris V BSIV,
+year: 2018,
+km_driven: 5229,
+fuel: Petrol,
+seller_type: Trustmark Dealer,
+transmission: Manual,
+owner: First Owner,
+mileage: 17.1 kmpl,
+engine: 1496 CC,
+max_power: 105.5 bhp,
+torque: 140Nm@ 4200rpm,
+seats: 5.0
+
+Required Output:
+""price"": <predicted price> INR
+
+Please provide the prediction strictly adhering to the above instructions.
+Prediction: 750000
+Explanation: I made the prediction based on the year, low mileage, fuel type, seller type, and the model of the car. These attributes are indicative of a well-maintained, relatively new car from a trusted dealer, which typically commands a higher price in the market.
+Actual Price: 1000000
+Task 7:
+Prompt: System: Based on the provided attributes of a used car listed below, please predict its selling price in Indian Rupees in the Indian market. The predicted price should be expressed solely as a number followed by the currency ""INR"".
+Ensure that the output contains no additional text or characters beyond this specified format.
+Attributes:
+name: Ford EcoSport 1.5 Petrol Titanium Plus BSIV,
+year: 2018,
+km_driven: 90000,
+fuel: Petrol,
+seller_type: Individual,
+transmission: Manual,
+owner: First Owner,
+mileage: 17.0 kmpl,
+engine: 1497 CC,
+max_power: 121.36 bhp,
+torque: 150Nm@ 4500rpm,
+seats: 5.0
+
+Required Output:
+""price"": <predicted price> INR
+
+Please provide the prediction strictly adhering to the above instructions.
+Prediction: 650000
+Explanation: The prediction was based on the year of the car (2018) and the high mileage (90000 km) which typically lower the selling price. These attributes had a significant influence on the predicted price of 650000 INR.
+Actual Price: 850000
+Task 8:
+Prompt: System: Based on the provided attributes of a used car listed below, please predict its selling price in Indian Rupees in the Indian market. The predicted price should be expressed solely as a number followed by the currency ""INR"".
+Ensure that the output contains no additional text or characters beyond this specified format.
+Attributes:
+name: Honda City 2017-2020 GXi,
+year: 2006,
+km_driven: 70000,
+fuel: Petrol,
+seller_type: Individual,
+transmission: Manual,
+owner: Second Owner,
+mileage: 17.7 kmpl,
+engine: 1497 CC,
+max_power: 78 bhp,
+torque: 12.7@ 2,700(kgm@ rpm),
+seats: 5.0
+
+Required Output:
+""price"": <predicted price> INR
+
+Please provide the prediction strictly adhering to the above instructions.
+Prediction: 200000
+Explanation: I made the prediction based on the year of the car, the kilometers driven, and the model specifications. The attributes that had a high influence on my decision were the year (2006) and the high mileage (70000 km), which typically result in a lower selling price.
+Actual Price: 270000
+Task 9:
+Prompt: System: Based on the provided attributes of a used car listed below, please predict its selling price in Indian Rupees in the Indian market. The predicted price should be expressed solely as a number followed by the currency ""INR"".
+Ensure that the output contains no additional text or characters beyond this specified format.
+Attributes:
+name: Maruti Wagon R LXI,
+year: 2005,
+km_driven: 90000,
+fuel: Petrol,
+seller_type: Individual,
+transmission: Manual,
+owner: Second Owner,
+mileage: 18.9 kmpl,
+engine: 998 CC,
+max_power: 67.1 bhp,
+torque: 90Nm@ 3500rpm,
+seats: 5.0
+
+Required Output:
+""price"": <predicted price> INR
+
+Please provide the prediction strictly adhering to the above instructions.
+Prediction: 100000
+Explanation: I made the prediction based on the year of the car, the kilometers driven, and the specific model. These attributes have a significant impact on the resale value of a used car.
+Actual Price: 65000
+Task 10:
+Prompt: System: Based on the provided attributes of a used car listed below, please predict its selling price in Indian Rupees in the Indian market. The predicted price should be expressed solely as a number followed by the currency ""INR"".
+Ensure that the output contains no additional text or characters beyond this specified format.
+Attributes:
+name: Toyota Fortuner 3.0 Diesel,
+year: 2010,
+km_driven: 100000,
+fuel: Diesel,
+seller_type: Individual,
+transmission: Manual,
+owner: First Owner,
+mileage: 11.5 kmpl,
+engine: 2982 CC,
+max_power: 171 bhp,
+torque: 343Nm@ 1400-3400rpm,
+seats: 7.0
+
+Required Output:
+""price"": <predicted price> INR
+
+Please provide the prediction strictly adhering to the above instructions.
+Prediction: 900000
+Explanation: I made the prediction based on the year of the car, the high mileage of 100,000 km, and the fact that it is a diesel vehicle. These attributes typically result in a lower selling price for a used car.
+Actual Price: 1200000
+
+Correct Predictions (Only as a reference):
+Task 11:
+Prompt: System: Based on the provided attributes of a used car listed below, please predict its selling price in Indian Rupees in the Indian market. The predicted price should be expressed solely as a number followed by the currency ""INR"".
+Ensure that the output contains no additional text or characters beyond this specified format.
+Attributes:
+name: Tata Hexa XM,
+year: 2017,
+km_driven: 30000,
+fuel: Diesel,
+seller_type: Individual,
+transmission: Manual,
+owner: First Owner,
+mileage: 17.6 kmpl,
+engine: 2179 CC,
+max_power: 153.86 bhp,
+torque: 400Nm@ 1750-2500rpm,
+seats: 7.0
+
+Required Output:
+""price"": <predicted price> INR
+
+Please provide the prediction strictly adhering to the above instructions.
+Prediction: 1200000
+Explanation: The prediction was based on the year, mileage, engine power, and seating capacity of the Tata Hexa XM. The year of manufacture (2017) and relatively low mileage (30000 km) for a diesel car positively influenced the price prediction. Additionally, the powerful engine (153.86 bhp) and 7-seater capacity also contributed to the higher predicted price.
+Actual Price: 1200000
+Task 12:
+Prompt: System: Based on the provided attributes of a used car listed below, please predict its selling price in Indian Rupees in the Indian market. The predicted price should be expressed solely as a number followed by the currency ""INR"".
+Ensure that the output contains no additional text or characters beyond this specified format.
+Attributes:
+name: Maruti Wagon R VXI Plus,
+year: 2018,
+km_driven: 30000,
+fuel: Petrol,
+seller_type: Individual,
+transmission: Manual,
+owner: First Owner,
+mileage: 20.51 kmpl,
+engine: 998 CC,
+max_power: 67.04 bhp,
+torque: 90Nm@ 3500rpm,
+seats: 5.0
+
+Required Output:
+""price"": <predicted price> INR
+
+Please provide the prediction strictly adhering to the above instructions.
+Prediction: 400000
+Explanation: I made the prediction based on the year, mileage, fuel type, and condition of the car. The attributes that had a high influence on the decision were the year (2018) and the relatively low mileage (30000 km) for a 2018 model car, which indicated a well-maintained vehicle with relatively low usage.
+Actual Price: 465000
+
+",gpt-4-turbo-preview,structured_unstructured_zero_shot_pipeline_3.5-turbo,"Based on the provided examples of false predictions, we can categorize the wrong decisions into three fault categories:
+
+1. **Underestimation of Market Value**:
+   - This occurs when the predicted price is significantly lower than the actual selling price. It suggests that the model might not fully account for certain attributes that add value to the car or may underestimate the impact of positive attributes (e.g., low mileage, recent year of manufacture, desirable features).
+   - Examples: Task 2 (Prediction: 180000, Actual: 270000), Task 3 (Prediction: 150000, Actual: 210000), Task 4 (Prediction: 350000, Actual: 500000), Task 6 (Prediction: 750000, Actual: 1000000), Task 7 (Prediction: 650000, Actual: 850000), Task 8 (Prediction: 200000, Actual: 270000), Task 10 (Prediction: 900000, Actual: 1200000).
+   - Occurrences: 7
+
+2. **Overestimation of Depreciation**:
+   - This fault occurs when the predicted price is significantly higher than the actual selling price. It suggests that the model might overvalue certain attributes or not adequately consider factors that significantly depreciate the car's value (e.g., high mileage, older model years, less desirable features).
+   - Examples: Task 1 (Prediction: 60000, Actual: 40000), Task 5 (Prediction: 450000, Actual: 330000), Task 9 (Prediction: 100000, Actual: 65000).
+   - Occurrences: 3
+
+3. **Misinterpretation of Attributes**:
+   - This category is for predictions where the model might have misinterpreted or incorrectly weighted the importance of certain attributes, leading to a wrong prediction. This could be due to a misunderstanding of the market's valuation of specific car features, conditions, or a combination of attributes that the model did not accurately assess.
+   - However, based on the provided examples, all wrong decisions seem to fall clearly into the first two categories, with no distinct examples of misinterpretation of attributes as a separate fault category.
+
+In summary, the wrong decisions predominantly fall into two main categories: underestimation of market value (7 occurrences) and overestimation of depreciation (3 occurrences). There were no clear examples provided that would solely fall under misinterpretation of attributes without overlapping with the first two categories.",unstructured_analysis
+error_class_LLM_nounderover,"In the following I will give you a few price prediction tasks together with a prediction decision, details about the decision and the actual price.
+A wrong prediction is a prediction that deviates by more than 20 percent from the actual price. The Prediction was made by an LLM.
+Can you please group the wrong decisions into 3 fault categories? Please also indicate how often each one occurs.
+There are also some correct decisions (deviation of less than 20 percent) in the examples. Please just use them as a reference and don't categorize them.
+Please go deeper with your analysis and don't use Overestimation or Underestimation as categories.
+False Predictions:
+Task 1:
+Prompt: System: Based on the provided attributes of a used car listed below, please predict its selling price in Indian Rupees in the Indian market. The predicted price should be expressed solely as a number followed by the currency ""INR"".
+Ensure that the output contains no additional text or characters beyond this specified format.
+Attributes:
+name: Maruti 800 Std,
+year: 1999,
+km_driven: 40000,
+fuel: Petrol,
+seller_type: Individual,
+transmission: Manual,
+owner: Second Owner,
+mileage: 16.1 kmpl,
+engine: 796 CC,
+max_power: 37 bhp,
+torque: 59Nm@ 2500rpm,
+seats: 4.0
+
+Required Output:
+""price"": <predicted price> INR
+
+Please provide the prediction strictly adhering to the above instructions.
+Prediction: 60000
+Explanation: [
+{""attribute"":""year"",""importance"":""0.30"",""value"":""1999""},
+{""attribute"":""km_driven"",""importance"":""0.25"",""value"":""40000""},
+{""attribute"":""fuel"",""importance"":""0.20"",""value"":""Petrol""},
+{""attribute"":""owner"",""importance"":""0.15"",""value"":""Second Owner""},
+{""attribute"":""max_power"",""importance"":""0.10"",""value"":""37 bhp""}
+]
+Actual Price: 40000
+Task 2:
+Prompt: System: Based on the provided attributes of a used car listed below, please predict its selling price in Indian Rupees in the Indian market. The predicted price should be expressed solely as a number followed by the currency ""INR"".
+Ensure that the output contains no additional text or characters beyond this specified format.
+Attributes:
+name: Hyundai EON Era Plus,
+year: 2012,
+km_driven: 43755,
+fuel: Petrol,
+seller_type: Dealer,
+transmission: Manual,
+owner: Second Owner,
+mileage: 21.1 kmpl,
+engine: 814 CC,
+max_power: 55.2 bhp,
+torque: 74.5Nm@ 4000rpm,
+seats: 5.0
+
+Required Output:
+""price"": <predicted price> INR
+
+Please provide the prediction strictly adhering to the above instructions.
+Prediction: 180000
+Explanation: [
+{""attribute"":""year"",""importance"":""0.25"",""value"":""2012""},
+{""attribute"":""km_driven"",""importance"":""0.35"",""value"":""43755""},
+{""attribute"":""fuel"",""importance"":""0.15"",""value"":""Petrol""},
+{""attribute"":""owner"",""importance"":""0.10"",""value"":""Second Owner""},
+{""attribute"":""engine"",""importance"":""0.10"",""value"":""814 CC""},
+{""attribute"":""max_power"",""importance"":""0.05"",""value"":""55.2 bhp""}
+]
+Actual Price: 270000
+Task 3:
+Prompt: System: Based on the provided attributes of a used car listed below, please predict its selling price in Indian Rupees in the Indian market. The predicted price should be expressed solely as a number followed by the currency ""INR"".
+Ensure that the output contains no additional text or characters beyond this specified format.
+Attributes:
+name: Chevrolet Optra Magnum 2.0 LT,
+year: 2008,
+km_driven: 90000,
+fuel: Diesel,
+seller_type: Individual,
+transmission: Manual,
+owner: Fourth & Above Owner,
+mileage: 16.52 kmpl,
+engine: 1991 CC,
+max_power: 123.7 bhp,
+torque: 305Nm@ 2000rpm,
+seats: 5.0
+
+Required Output:
+""price"": <predicted price> INR
+
+Please provide the prediction strictly adhering to the above instructions.
+Prediction: 150000
+Explanation: [
+{""attribute"":""year"",""importance"":""0.20"",""value"":""2008""},
+{""attribute"":""km_driven"",""importance"":""0.30"",""value"":""90000""},
+{""attribute"":""fuel"",""importance"":""0.15"",""value"":""Diesel""},
+{""attribute"":""owner"",""importance"":""0.10"",""value"":""Fourth & Above Owner""},
+{""attribute"":""engine"",""importance"":""0.15"",""value"":""1991 CC""},
+{""attribute"":""max_power"",""importance"":""0.10"",""value"":""123.7 bhp""}
+]
+Actual Price: 210000
+Task 4:
+Prompt: System: Based on the provided attributes of a used car listed below, please predict its selling price in Indian Rupees in the Indian market. The predicted price should be expressed solely as a number followed by the currency ""INR"".
+Ensure that the output contains no additional text or characters beyond this specified format.
+Attributes:
+name: Hyundai i20 1.4 CRDi Asta,
+year: 2012,
+km_driven: 53000,
+fuel: Diesel,
+seller_type: Individual,
+transmission: Manual,
+owner: Second Owner,
+mileage: 23.0 kmpl,
+engine: 1396 CC,
+max_power: 90 bhp,
+torque: 22.4 kgm at 1750-2750rpm,
+seats: 5.0
+
+Required Output:
+""price"": <predicted price> INR
+
+Please provide the prediction strictly adhering to the above instructions.
+Prediction: 350000
+Explanation: [
+{""attribute"":""year"",""importance"":""0.25"",""value"":""2012""},
+{""attribute"":""km_driven"",""importance"":""0.20"",""value"":""53000""},
+{""attribute"":""fuel"",""importance"":""0.15"",""value"":""Diesel""},
+{""attribute"":""transmission"",""importance"":""0.15"",""value"":""Manual""},
+{""attribute"":""owner"",""importance"":""0.10"",""value"":""Second Owner""},
+{""attribute"":""engine"",""importance"":""0.10"",""value"":""1396 CC""},
+{""attribute"":""max_power"",""importance"":""0.05"",""value"":""90 bhp""}
+]
+Actual Price: 500000
+Task 5:
+Prompt: System: Based on the provided attributes of a used car listed below, please predict its selling price in Indian Rupees in the Indian market. The predicted price should be expressed solely as a number followed by the currency ""INR"".
+Ensure that the output contains no additional text or characters beyond this specified format.
+Attributes:
+name: Toyota Innova 2.5 G (Diesel) 7 Seater BS IV,
+year: 2008,
+km_driven: 193623,
+fuel: Diesel,
+seller_type: Individual,
+transmission: Manual,
+owner: Second Owner,
+mileage: 12.8 kmpl,
+engine: 2494 CC,
+max_power: 102 bhp,
+torque: 20.4@ 1400-3400(kgm@ rpm),
+seats: 8.0
+
+Required Output:
+""price"": <predicted price> INR
+
+Please provide the prediction strictly adhering to the above instructions.
+Prediction: 450000
+Explanation: [
+{""attribute"":""year"",""importance"":""0.30"",""value"":""2008""},
+{""attribute"":""km_driven"",""importance"":""0.40"",""value"":""193623""},
+{""attribute"":""fuel"",""importance"":""0.15"",""value"":""Diesel""},
+{""attribute"":""transmission"",""importance"":""0.10"",""value"":""Manual""},
+{""attribute"":""owner"",""importance"":""0.05"",""value"":""Second Owner""}
+]
+Actual Price: 330000
+Task 6:
+Prompt: System: Based on the provided attributes of a used car listed below, please predict its selling price in Indian Rupees in the Indian market. The predicted price should be expressed solely as a number followed by the currency ""INR"".
+Ensure that the output contains no additional text or characters beyond this specified format.
+Attributes:
+name: Toyota Yaris V BSIV,
+year: 2018,
+km_driven: 5229,
+fuel: Petrol,
+seller_type: Trustmark Dealer,
+transmission: Manual,
+owner: First Owner,
+mileage: 17.1 kmpl,
+engine: 1496 CC,
+max_power: 105.5 bhp,
+torque: 140Nm@ 4200rpm,
+seats: 5.0
+
+Required Output:
+""price"": <predicted price> INR
+
+Please provide the prediction strictly adhering to the above instructions.
+Prediction: 750000
+Explanation: [
+{""attribute"":""year"",""importance"":""0.30"",""value"":""2018""},
+{""attribute"":""km_driven"",""importance"":""0.25"",""value"":""5229""},
+{""attribute"":""fuel"",""importance"":""0.15"",""value"":""Petrol""},
+{""attribute"":""transmission"",""importance"":""0.10"",""value"":""Manual""},
+{""attribute"":""max_power"",""importance"":""0.10"",""value"":""105.5 bhp""},
+{""attribute"":""engine"",""importance"":""0.10"",""value"":""1496 CC""}
+]
+Actual Price: 1000000
+Task 7:
+Prompt: System: Based on the provided attributes of a used car listed below, please predict its selling price in Indian Rupees in the Indian market. The predicted price should be expressed solely as a number followed by the currency ""INR"".
+Ensure that the output contains no additional text or characters beyond this specified format.
+Attributes:
+name: Ford EcoSport 1.5 Petrol Titanium Plus BSIV,
+year: 2018,
+km_driven: 90000,
+fuel: Petrol,
+seller_type: Individual,
+transmission: Manual,
+owner: First Owner,
+mileage: 17.0 kmpl,
+engine: 1497 CC,
+max_power: 121.36 bhp,
+torque: 150Nm@ 4500rpm,
+seats: 5.0
+
+Required Output:
+""price"": <predicted price> INR
+
+Please provide the prediction strictly adhering to the above instructions.
+Prediction: 650000
+Explanation: [
+{""attribute"":""year"",""importance"":""0.20"",""value"":""2018""},
+{""attribute"":""km_driven"",""importance"":""0.30"",""value"":""90000""},
+{""attribute"":""fuel"",""importance"":""0.15"",""value"":""Petrol""},
+{""attribute"":""transmission"",""importance"":""0.15"",""value"":""Manual""},
+{""attribute"":""owner"",""importance"":""0.10"",""value"":""First Owner""},
+{""attribute"":""engine"",""importance"":""0.10"",""value"":""1497 CC""}
+]
+Actual Price: 850000
+Task 8:
+Prompt: System: Based on the provided attributes of a used car listed below, please predict its selling price in Indian Rupees in the Indian market. The predicted price should be expressed solely as a number followed by the currency ""INR"".
+Ensure that the output contains no additional text or characters beyond this specified format.
+Attributes:
+name: Honda City 2017-2020 GXi,
+year: 2006,
+km_driven: 70000,
+fuel: Petrol,
+seller_type: Individual,
+transmission: Manual,
+owner: Second Owner,
+mileage: 17.7 kmpl,
+engine: 1497 CC,
+max_power: 78 bhp,
+torque: 12.7@ 2,700(kgm@ rpm),
+seats: 5.0
+
+Required Output:
+""price"": <predicted price> INR
+
+Please provide the prediction strictly adhering to the above instructions.
+Prediction: 200000
+Explanation: [
+{""attribute"":""year"",""importance"":""0.20"",""value"":""2006""},
+{""attribute"":""km_driven"",""importance"":""0.30"",""value"":""70000""},
+{""attribute"":""fuel"",""importance"":""0.15"",""value"":""Petrol""},
+{""attribute"":""owner"",""importance"":""0.10"",""value"":""Second Owner""},
+{""attribute"":""mileage"",""importance"":""0.10"",""value"":""17.7 kmpl""},
+{""attribute"":""engine"",""importance"":""0.15"",""value"":""1497 CC""}
+]
+Actual Price: 270000
+Task 9:
+Prompt: System: Based on the provided attributes of a used car listed below, please predict its selling price in Indian Rupees in the Indian market. The predicted price should be expressed solely as a number followed by the currency ""INR"".
+Ensure that the output contains no additional text or characters beyond this specified format.
+Attributes:
+name: Maruti Wagon R LXI,
+year: 2005,
+km_driven: 90000,
+fuel: Petrol,
+seller_type: Individual,
+transmission: Manual,
+owner: Second Owner,
+mileage: 18.9 kmpl,
+engine: 998 CC,
+max_power: 67.1 bhp,
+torque: 90Nm@ 3500rpm,
+seats: 5.0
+
+Required Output:
+""price"": <predicted price> INR
+
+Please provide the prediction strictly adhering to the above instructions.
+Prediction: 100000
+Explanation: [
+{""attribute"":""year"",""importance"":""0.20"",""value"":""2005""},
+{""attribute"":""km_driven"",""importance"":""0.30"",""value"":""90000""},
+{""attribute"":""fuel"",""importance"":""0.15"",""value"":""Petrol""},
+{""attribute"":""transmission"",""importance"":""0.15"",""value"":""Manual""},
+{""attribute"":""owner"",""importance"":""0.10"",""value"":""Second Owner""},
+{""attribute"":""engine"",""importance"":""0.10"",""value"":""998 CC""}
+]
+Actual Price: 65000
+Task 10:
+Prompt: System: Based on the provided attributes of a used car listed below, please predict its selling price in Indian Rupees in the Indian market. The predicted price should be expressed solely as a number followed by the currency ""INR"".
+Ensure that the output contains no additional text or characters beyond this specified format.
+Attributes:
+name: Toyota Fortuner 3.0 Diesel,
+year: 2010,
+km_driven: 100000,
+fuel: Diesel,
+seller_type: Individual,
+transmission: Manual,
+owner: First Owner,
+mileage: 11.5 kmpl,
+engine: 2982 CC,
+max_power: 171 bhp,
+torque: 343Nm@ 1400-3400rpm,
+seats: 7.0
+
+Required Output:
+""price"": <predicted price> INR
+
+Please provide the prediction strictly adhering to the above instructions.
+Prediction: 900000
+Explanation: [
+{""attribute"":""year"",""importance"":""0.25"",""value"":""2010""},
+{""attribute"":""km_driven"",""importance"":""0.20"",""value"":""100000""},
+{""attribute"":""fuel"",""importance"":""0.15"",""value"":""Diesel""},
+{""attribute"":""transmission"",""importance"":""0.15"",""value"":""Manual""},
+{""attribute"":""owner"",""importance"":""0.10"",""value"":""First Owner""},
+{""attribute"":""engine"",""importance"":""0.10"",""value"":""2982 CC""},
+{""attribute"":""max_power"",""importance"":""0.05"",""value"":""171 bhp""}
+]
+Actual Price: 1200000
+
+Correct Predictions (Only as a reference):
+Task 11:
+Prompt: System: Based on the provided attributes of a used car listed below, please predict its selling price in Indian Rupees in the Indian market. The predicted price should be expressed solely as a number followed by the currency ""INR"".
+Ensure that the output contains no additional text or characters beyond this specified format.
+Attributes:
+name: Tata Hexa XM,
+year: 2017,
+km_driven: 30000,
+fuel: Diesel,
+seller_type: Individual,
+transmission: Manual,
+owner: First Owner,
+mileage: 17.6 kmpl,
+engine: 2179 CC,
+max_power: 153.86 bhp,
+torque: 400Nm@ 1750-2500rpm,
+seats: 7.0
+
+Required Output:
+""price"": <predicted price> INR
+
+Please provide the prediction strictly adhering to the above instructions.
+Prediction: 1200000
+Explanation: [
+{""attribute"":""year"",""importance"":""0.25"",""value"":""2017""},
+{""attribute"":""km_driven"",""importance"":""0.35"",""value"":""30000""},
+{""attribute"":""fuel"",""importance"":""0.15"",""value"":""Diesel""},
+{""attribute"":""transmission"",""importance"":""0.15"",""value"":""Manual""},
+{""attribute"":""max_power"",""importance"":""0.10"",""value"":""153.86 bhp""}
+]
+Actual Price: 1200000
+Task 12:
+Prompt: System: Based on the provided attributes of a used car listed below, please predict its selling price in Indian Rupees in the Indian market. The predicted price should be expressed solely as a number followed by the currency ""INR"".
+Ensure that the output contains no additional text or characters beyond this specified format.
+Attributes:
+name: Maruti Wagon R VXI Plus,
+year: 2018,
+km_driven: 30000,
+fuel: Petrol,
+seller_type: Individual,
+transmission: Manual,
+owner: First Owner,
+mileage: 20.51 kmpl,
+engine: 998 CC,
+max_power: 67.04 bhp,
+torque: 90Nm@ 3500rpm,
+seats: 5.0
+
+Required Output:
+""price"": <predicted price> INR
+
+Please provide the prediction strictly adhering to the above instructions.
+Prediction: 400000
+Explanation: [
+{""attribute"":""year"",""importance"":""0.30"",""value"":""2018""},
+{""attribute"":""km_driven"",""importance"":""0.25"",""value"":""30000""},
+{""attribute"":""fuel"",""importance"":""0.15"",""value"":""Petrol""},
+{""attribute"":""transmission"",""importance"":""0.10"",""value"":""Manual""},
+{""attribute"":""owner"",""importance"":""0.10"",""value"":""First Owner""},
+{""attribute"":""max_power"",""importance"":""0.10"",""value"":""67.04 bhp""}
+]
+Actual Price: 465000
+
+",gpt-4-turbo-preview,structured_unstructured_zero_shot_pipeline_3.5-turbo,"Analyzing the provided data, the wrong predictions can be grouped into three fault categories based on the nature of the errors made by the LLM. These categories are:
+
+1. **Misjudgment of Market Value**:
+   - This category includes predictions where the LLM seems to have inaccurately assessed the market value of the car based on its attributes. This could be due to a lack of understanding of how certain attributes like the car's brand, model, and specific features (e.g., engine size, max power) influence its price in the market.
+   - Occurrences: Task 2 (Hyundai EON Era Plus), Task 3 (Chevrolet Optra Magnum 2.0 LT), Task 4 (Hyundai i20 1.4 CRDi Asta), Task 6 (Toyota Yaris V BSIV), Task 7 (Ford EcoSport 1.5 Petrol Titanium Plus BSIV), Task 8 (Honda City 2017-2020 GXi), Task 10 (Toyota Fortuner 3.0 Diesel).
+
+2. **Overemphasis on Mileage and Engine Capacity**:
+   - In this category, the LLM's predictions seem to be overly influenced by the car's mileage and engine capacity, potentially at the expense of considering other crucial factors such as the car's age, condition, and market demand for the model.
+   - Occurrences: Task 5 (Toyota Innova 2.5 G (Diesel) 7 Seater BS IV).
+
+3. **Underestimation of Depreciation Impact**:
+   - Predictions in this category appear to underestimate the impact of depreciation, particularly for older models or cars with higher mileage. The LLM fails to account adequately for the significant loss in value that cars undergo as they age and as their mileage increases.
+   - Occurrences: Task 1 (Maruti 800 Std), Task 9 (Maruti Wagon R LXI).
+
+Summary of Occurrences:
+- Misjudgment of Market Value: 7 occurrences
+- Overemphasis on Mileage and Engine Capacity: 1 occurrence
+- Underestimation of Depreciation Impact: 2 occurrences
+
+This analysis suggests that the most common fault in the LLM's predictions is a misjudgment of the market value, indicating a potential area for improvement in understanding how various attributes contribute to a car's price in the market. Additionally, there's a need for better modeling of depreciation effects and a more balanced consideration of all relevant attributes beyond just mileage and engine capacity.",structured_analysis
+error_class_LLM_nounderover_more_classes,"In the following I will give you a few price prediction tasks together with a prediction decision, details about the decision and the actual price.
+A wrong prediction is a prediction that deviates by more than 20 percent from the actual price. The Prediction was made by an LLM.
+Can you please group the wrong decisions into 5 fault categories? Please also indicate how often each one occurs.
+There are also some correct decisions (deviation of less than 20 percent) in the examples. Please just use them as a reference and don't categorize them.
+Please go deeper with your analysis and don't use Overestimation or Underestimation as categories.
+False Predictions:
+Task 1:
+Prompt: System: Based on the provided attributes of a used car listed below, please predict its selling price in Indian Rupees in the Indian market. The predicted price should be expressed solely as a number followed by the currency ""INR"".
+Ensure that the output contains no additional text or characters beyond this specified format.
+Attributes:
+name: Maruti 800 Std,
+year: 1999,
+km_driven: 40000,
+fuel: Petrol,
+seller_type: Individual,
+transmission: Manual,
+owner: Second Owner,
+mileage: 16.1 kmpl,
+engine: 796 CC,
+max_power: 37 bhp,
+torque: 59Nm@ 2500rpm,
+seats: 4.0
+
+Required Output:
+""price"": <predicted price> INR
+
+Please provide the prediction strictly adhering to the above instructions.
+Prediction: 60000
+Explanation: [
+{""attribute"":""year"",""importance"":""0.30"",""value"":""1999""},
+{""attribute"":""km_driven"",""importance"":""0.25"",""value"":""40000""},
+{""attribute"":""fuel"",""importance"":""0.20"",""value"":""Petrol""},
+{""attribute"":""owner"",""importance"":""0.15"",""value"":""Second Owner""},
+{""attribute"":""max_power"",""importance"":""0.10"",""value"":""37 bhp""}
+]
+Actual Price: 40000
+Task 2:
+Prompt: System: Based on the provided attributes of a used car listed below, please predict its selling price in Indian Rupees in the Indian market. The predicted price should be expressed solely as a number followed by the currency ""INR"".
+Ensure that the output contains no additional text or characters beyond this specified format.
+Attributes:
+name: Hyundai EON Era Plus,
+year: 2012,
+km_driven: 43755,
+fuel: Petrol,
+seller_type: Dealer,
+transmission: Manual,
+owner: Second Owner,
+mileage: 21.1 kmpl,
+engine: 814 CC,
+max_power: 55.2 bhp,
+torque: 74.5Nm@ 4000rpm,
+seats: 5.0
+
+Required Output:
+""price"": <predicted price> INR
+
+Please provide the prediction strictly adhering to the above instructions.
+Prediction: 180000
+Explanation: [
+{""attribute"":""year"",""importance"":""0.25"",""value"":""2012""},
+{""attribute"":""km_driven"",""importance"":""0.35"",""value"":""43755""},
+{""attribute"":""fuel"",""importance"":""0.15"",""value"":""Petrol""},
+{""attribute"":""owner"",""importance"":""0.10"",""value"":""Second Owner""},
+{""attribute"":""engine"",""importance"":""0.10"",""value"":""814 CC""},
+{""attribute"":""max_power"",""importance"":""0.05"",""value"":""55.2 bhp""}
+]
+Actual Price: 270000
+Task 3:
+Prompt: System: Based on the provided attributes of a used car listed below, please predict its selling price in Indian Rupees in the Indian market. The predicted price should be expressed solely as a number followed by the currency ""INR"".
+Ensure that the output contains no additional text or characters beyond this specified format.
+Attributes:
+name: Chevrolet Optra Magnum 2.0 LT,
+year: 2008,
+km_driven: 90000,
+fuel: Diesel,
+seller_type: Individual,
+transmission: Manual,
+owner: Fourth & Above Owner,
+mileage: 16.52 kmpl,
+engine: 1991 CC,
+max_power: 123.7 bhp,
+torque: 305Nm@ 2000rpm,
+seats: 5.0
+
+Required Output:
+""price"": <predicted price> INR
+
+Please provide the prediction strictly adhering to the above instructions.
+Prediction: 150000
+Explanation: [
+{""attribute"":""year"",""importance"":""0.20"",""value"":""2008""},
+{""attribute"":""km_driven"",""importance"":""0.30"",""value"":""90000""},
+{""attribute"":""fuel"",""importance"":""0.15"",""value"":""Diesel""},
+{""attribute"":""owner"",""importance"":""0.10"",""value"":""Fourth & Above Owner""},
+{""attribute"":""engine"",""importance"":""0.15"",""value"":""1991 CC""},
+{""attribute"":""max_power"",""importance"":""0.10"",""value"":""123.7 bhp""}
+]
+Actual Price: 210000
+Task 4:
+Prompt: System: Based on the provided attributes of a used car listed below, please predict its selling price in Indian Rupees in the Indian market. The predicted price should be expressed solely as a number followed by the currency ""INR"".
+Ensure that the output contains no additional text or characters beyond this specified format.
+Attributes:
+name: Hyundai i20 1.4 CRDi Asta,
+year: 2012,
+km_driven: 53000,
+fuel: Diesel,
+seller_type: Individual,
+transmission: Manual,
+owner: Second Owner,
+mileage: 23.0 kmpl,
+engine: 1396 CC,
+max_power: 90 bhp,
+torque: 22.4 kgm at 1750-2750rpm,
+seats: 5.0
+
+Required Output:
+""price"": <predicted price> INR
+
+Please provide the prediction strictly adhering to the above instructions.
+Prediction: 350000
+Explanation: [
+{""attribute"":""year"",""importance"":""0.25"",""value"":""2012""},
+{""attribute"":""km_driven"",""importance"":""0.20"",""value"":""53000""},
+{""attribute"":""fuel"",""importance"":""0.15"",""value"":""Diesel""},
+{""attribute"":""transmission"",""importance"":""0.15"",""value"":""Manual""},
+{""attribute"":""owner"",""importance"":""0.10"",""value"":""Second Owner""},
+{""attribute"":""engine"",""importance"":""0.10"",""value"":""1396 CC""},
+{""attribute"":""max_power"",""importance"":""0.05"",""value"":""90 bhp""}
+]
+Actual Price: 500000
+Task 5:
+Prompt: System: Based on the provided attributes of a used car listed below, please predict its selling price in Indian Rupees in the Indian market. The predicted price should be expressed solely as a number followed by the currency ""INR"".
+Ensure that the output contains no additional text or characters beyond this specified format.
+Attributes:
+name: Toyota Innova 2.5 G (Diesel) 7 Seater BS IV,
+year: 2008,
+km_driven: 193623,
+fuel: Diesel,
+seller_type: Individual,
+transmission: Manual,
+owner: Second Owner,
+mileage: 12.8 kmpl,
+engine: 2494 CC,
+max_power: 102 bhp,
+torque: 20.4@ 1400-3400(kgm@ rpm),
+seats: 8.0
+
+Required Output:
+""price"": <predicted price> INR
+
+Please provide the prediction strictly adhering to the above instructions.
+Prediction: 450000
+Explanation: [
+{""attribute"":""year"",""importance"":""0.30"",""value"":""2008""},
+{""attribute"":""km_driven"",""importance"":""0.40"",""value"":""193623""},
+{""attribute"":""fuel"",""importance"":""0.15"",""value"":""Diesel""},
+{""attribute"":""transmission"",""importance"":""0.10"",""value"":""Manual""},
+{""attribute"":""owner"",""importance"":""0.05"",""value"":""Second Owner""}
+]
+Actual Price: 330000
+Task 6:
+Prompt: System: Based on the provided attributes of a used car listed below, please predict its selling price in Indian Rupees in the Indian market. The predicted price should be expressed solely as a number followed by the currency ""INR"".
+Ensure that the output contains no additional text or characters beyond this specified format.
+Attributes:
+name: Toyota Yaris V BSIV,
+year: 2018,
+km_driven: 5229,
+fuel: Petrol,
+seller_type: Trustmark Dealer,
+transmission: Manual,
+owner: First Owner,
+mileage: 17.1 kmpl,
+engine: 1496 CC,
+max_power: 105.5 bhp,
+torque: 140Nm@ 4200rpm,
+seats: 5.0
+
+Required Output:
+""price"": <predicted price> INR
+
+Please provide the prediction strictly adhering to the above instructions.
+Prediction: 750000
+Explanation: [
+{""attribute"":""year"",""importance"":""0.30"",""value"":""2018""},
+{""attribute"":""km_driven"",""importance"":""0.25"",""value"":""5229""},
+{""attribute"":""fuel"",""importance"":""0.15"",""value"":""Petrol""},
+{""attribute"":""transmission"",""importance"":""0.10"",""value"":""Manual""},
+{""attribute"":""max_power"",""importance"":""0.10"",""value"":""105.5 bhp""},
+{""attribute"":""engine"",""importance"":""0.10"",""value"":""1496 CC""}
+]
+Actual Price: 1000000
+Task 7:
+Prompt: System: Based on the provided attributes of a used car listed below, please predict its selling price in Indian Rupees in the Indian market. The predicted price should be expressed solely as a number followed by the currency ""INR"".
+Ensure that the output contains no additional text or characters beyond this specified format.
+Attributes:
+name: Ford EcoSport 1.5 Petrol Titanium Plus BSIV,
+year: 2018,
+km_driven: 90000,
+fuel: Petrol,
+seller_type: Individual,
+transmission: Manual,
+owner: First Owner,
+mileage: 17.0 kmpl,
+engine: 1497 CC,
+max_power: 121.36 bhp,
+torque: 150Nm@ 4500rpm,
+seats: 5.0
+
+Required Output:
+""price"": <predicted price> INR
+
+Please provide the prediction strictly adhering to the above instructions.
+Prediction: 650000
+Explanation: [
+{""attribute"":""year"",""importance"":""0.20"",""value"":""2018""},
+{""attribute"":""km_driven"",""importance"":""0.30"",""value"":""90000""},
+{""attribute"":""fuel"",""importance"":""0.15"",""value"":""Petrol""},
+{""attribute"":""transmission"",""importance"":""0.15"",""value"":""Manual""},
+{""attribute"":""owner"",""importance"":""0.10"",""value"":""First Owner""},
+{""attribute"":""engine"",""importance"":""0.10"",""value"":""1497 CC""}
+]
+Actual Price: 850000
+Task 8:
+Prompt: System: Based on the provided attributes of a used car listed below, please predict its selling price in Indian Rupees in the Indian market. The predicted price should be expressed solely as a number followed by the currency ""INR"".
+Ensure that the output contains no additional text or characters beyond this specified format.
+Attributes:
+name: Honda City 2017-2020 GXi,
+year: 2006,
+km_driven: 70000,
+fuel: Petrol,
+seller_type: Individual,
+transmission: Manual,
+owner: Second Owner,
+mileage: 17.7 kmpl,
+engine: 1497 CC,
+max_power: 78 bhp,
+torque: 12.7@ 2,700(kgm@ rpm),
+seats: 5.0
+
+Required Output:
+""price"": <predicted price> INR
+
+Please provide the prediction strictly adhering to the above instructions.
+Prediction: 200000
+Explanation: [
+{""attribute"":""year"",""importance"":""0.20"",""value"":""2006""},
+{""attribute"":""km_driven"",""importance"":""0.30"",""value"":""70000""},
+{""attribute"":""fuel"",""importance"":""0.15"",""value"":""Petrol""},
+{""attribute"":""owner"",""importance"":""0.10"",""value"":""Second Owner""},
+{""attribute"":""mileage"",""importance"":""0.10"",""value"":""17.7 kmpl""},
+{""attribute"":""engine"",""importance"":""0.15"",""value"":""1497 CC""}
+]
+Actual Price: 270000
+Task 9:
+Prompt: System: Based on the provided attributes of a used car listed below, please predict its selling price in Indian Rupees in the Indian market. The predicted price should be expressed solely as a number followed by the currency ""INR"".
+Ensure that the output contains no additional text or characters beyond this specified format.
+Attributes:
+name: Maruti Wagon R LXI,
+year: 2005,
+km_driven: 90000,
+fuel: Petrol,
+seller_type: Individual,
+transmission: Manual,
+owner: Second Owner,
+mileage: 18.9 kmpl,
+engine: 998 CC,
+max_power: 67.1 bhp,
+torque: 90Nm@ 3500rpm,
+seats: 5.0
+
+Required Output:
+""price"": <predicted price> INR
+
+Please provide the prediction strictly adhering to the above instructions.
+Prediction: 100000
+Explanation: [
+{""attribute"":""year"",""importance"":""0.20"",""value"":""2005""},
+{""attribute"":""km_driven"",""importance"":""0.30"",""value"":""90000""},
+{""attribute"":""fuel"",""importance"":""0.15"",""value"":""Petrol""},
+{""attribute"":""transmission"",""importance"":""0.15"",""value"":""Manual""},
+{""attribute"":""owner"",""importance"":""0.10"",""value"":""Second Owner""},
+{""attribute"":""engine"",""importance"":""0.10"",""value"":""998 CC""}
+]
+Actual Price: 65000
+Task 10:
+Prompt: System: Based on the provided attributes of a used car listed below, please predict its selling price in Indian Rupees in the Indian market. The predicted price should be expressed solely as a number followed by the currency ""INR"".
+Ensure that the output contains no additional text or characters beyond this specified format.
+Attributes:
+name: Toyota Fortuner 3.0 Diesel,
+year: 2010,
+km_driven: 100000,
+fuel: Diesel,
+seller_type: Individual,
+transmission: Manual,
+owner: First Owner,
+mileage: 11.5 kmpl,
+engine: 2982 CC,
+max_power: 171 bhp,
+torque: 343Nm@ 1400-3400rpm,
+seats: 7.0
+
+Required Output:
+""price"": <predicted price> INR
+
+Please provide the prediction strictly adhering to the above instructions.
+Prediction: 900000
+Explanation: [
+{""attribute"":""year"",""importance"":""0.25"",""value"":""2010""},
+{""attribute"":""km_driven"",""importance"":""0.20"",""value"":""100000""},
+{""attribute"":""fuel"",""importance"":""0.15"",""value"":""Diesel""},
+{""attribute"":""transmission"",""importance"":""0.15"",""value"":""Manual""},
+{""attribute"":""owner"",""importance"":""0.10"",""value"":""First Owner""},
+{""attribute"":""engine"",""importance"":""0.10"",""value"":""2982 CC""},
+{""attribute"":""max_power"",""importance"":""0.05"",""value"":""171 bhp""}
+]
+Actual Price: 1200000
+
+Correct Predictions (Only as a reference):
+Task 11:
+Prompt: System: Based on the provided attributes of a used car listed below, please predict its selling price in Indian Rupees in the Indian market. The predicted price should be expressed solely as a number followed by the currency ""INR"".
+Ensure that the output contains no additional text or characters beyond this specified format.
+Attributes:
+name: Tata Hexa XM,
+year: 2017,
+km_driven: 30000,
+fuel: Diesel,
+seller_type: Individual,
+transmission: Manual,
+owner: First Owner,
+mileage: 17.6 kmpl,
+engine: 2179 CC,
+max_power: 153.86 bhp,
+torque: 400Nm@ 1750-2500rpm,
+seats: 7.0
+
+Required Output:
+""price"": <predicted price> INR
+
+Please provide the prediction strictly adhering to the above instructions.
+Prediction: 1200000
+Explanation: [
+{""attribute"":""year"",""importance"":""0.25"",""value"":""2017""},
+{""attribute"":""km_driven"",""importance"":""0.35"",""value"":""30000""},
+{""attribute"":""fuel"",""importance"":""0.15"",""value"":""Diesel""},
+{""attribute"":""transmission"",""importance"":""0.15"",""value"":""Manual""},
+{""attribute"":""max_power"",""importance"":""0.10"",""value"":""153.86 bhp""}
+]
+Actual Price: 1200000
+Task 12:
+Prompt: System: Based on the provided attributes of a used car listed below, please predict its selling price in Indian Rupees in the Indian market. The predicted price should be expressed solely as a number followed by the currency ""INR"".
+Ensure that the output contains no additional text or characters beyond this specified format.
+Attributes:
+name: Maruti Wagon R VXI Plus,
+year: 2018,
+km_driven: 30000,
+fuel: Petrol,
+seller_type: Individual,
+transmission: Manual,
+owner: First Owner,
+mileage: 20.51 kmpl,
+engine: 998 CC,
+max_power: 67.04 bhp,
+torque: 90Nm@ 3500rpm,
+seats: 5.0
+
+Required Output:
+""price"": <predicted price> INR
+
+Please provide the prediction strictly adhering to the above instructions.
+Prediction: 400000
+Explanation: [
+{""attribute"":""year"",""importance"":""0.30"",""value"":""2018""},
+{""attribute"":""km_driven"",""importance"":""0.25"",""value"":""30000""},
+{""attribute"":""fuel"",""importance"":""0.15"",""value"":""Petrol""},
+{""attribute"":""transmission"",""importance"":""0.10"",""value"":""Manual""},
+{""attribute"":""owner"",""importance"":""0.10"",""value"":""First Owner""},
+{""attribute"":""max_power"",""importance"":""0.10"",""value"":""67.04 bhp""}
+]
+Actual Price: 465000
+
+",gpt-4-turbo-preview,structured_unstructured_zero_shot_pipeline_3.5-turbo,"Analyzing the provided false predictions, we can categorize the faults into five distinct categories based on the nature of the errors and the explanations provided. These categories are:
+
+1. **Misjudgment of Market Value Due to Vehicle Age**:
+   - This category includes predictions where the model significantly misjudged the impact of the vehicle's age on its market value.
+   - Occurrences: Task 1 (Maruti 800 Std, 1999)
+
+2. **Incorrect Weighting of Vehicle Condition and Ownership**:
+   - Predictions falling into this category did not accurately account for the vehicle's condition (e.g., km driven, number of owners) in determining its value.
+   - Occurrences: Task 3 (Chevrolet Optra Magnum, Fourth & Above Owner), Task 5 (Toyota Innova with high mileage)
+
+3. **Underestimation of Model and Specifications Impact**:
+   - Here, the model failed to properly evaluate the impact of specific car models, their engine specifications, and features on the selling price.
+   - Occurrences: Task 2 (Hyundai EON Era Plus), Task 4 (Hyundai i20 1.4 CRDi Asta), Task 6 (Toyota Yaris V BSIV), Task 7 (Ford EcoSport 1.5 Petrol Titanium Plus BSIV), Task 10 (Toyota Fortuner 3.0 Diesel)
+
+4. **Overlooking Market Trends and Demand**:
+   - Predictions in this category did not consider the current market trends and demand for certain vehicle types, leading to inaccurate price estimations.
+   - Occurrences: None explicitly mentioned, but could be inferred in cases where the model's popularity or demand might have influenced actual prices significantly (e.g., Task 10's Toyota Fortuner).
+
+5. **Misinterpretation of High Mileage Impact**:
+   - This category includes predictions where the model failed to accurately assess the negative impact of high mileage on the vehicle's selling price.
+   - Occurrences: Task 5 (Toyota Innova with 193623 km driven), Task 7 (Ford EcoSport with 90000 km driven)
+
+**Frequency of Occurrences**:
+- Misjudgment of Market Value Due to Vehicle Age: 1
+- Incorrect Weighting of Vehicle Condition and Ownership: 2
+- Underestimation of Model and Specifications Impact: 5
+- Overlooking Market Trends and Demand: 0 (inferred)
+- Misinterpretation of High Mileage Impact: 2
+
+**Summary**:
+The most common fault category is the ""Underestimation of Model and Specifications Impact,"" with five occurrences, indicating that the model often fails to recognize the significant influence of specific car models, their engine specifications, and features on their market value. The next most common faults relate to the incorrect weighting of vehicle condition and ownership, and the misinterpretation of high mileage impact, each contributing to the model's inability to accurately predict used car prices.",structured_analysis
