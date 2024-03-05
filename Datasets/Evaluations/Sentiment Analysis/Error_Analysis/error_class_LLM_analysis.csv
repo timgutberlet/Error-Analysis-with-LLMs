@@ -1,0 +1,191 @@
+Prompt_Name,Prompt,Model,Database,Answer,Context
+error_class_LLM,"In the following I will give you a few Aspect Based Sentiment Analysis tasks together with a sentiment decision, details about the decision and the sentiment towards each term.
+The Prediction was made by an LLM.
+Can you please group the wrong decisions into fault categories? Please also indicate how often each one occurs.
+There are also some correct decisions in the examples. Please just use them as a reference and don't categorize them.
+False Decisions:
+Task 1:
+Prompt: The round pizza doesn't taste as good as I recall, it's still wonderful, but the Sicilian is to die for.
+
+    What is the sentiment on 'round pizza'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
+Sentiment Decision: neutral
+Explanation: [{""adjective"":""wonderful"",""importance"":""1.0""}]
+Actual Sentiment: negative
+Task 2:
+Prompt: Bouley has done an excellent job creating this dining establishment with almost a museum sense, the artworks on the wall have a very Klimty feeling and the gold ceiling completes the rest of the experience.
+
+    What is the sentiment on 'dining establishment'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
+Sentiment Decision: positive
+Explanation: [{""adjective"":""excellent"",""importance"":""0.70""},{""adjective"":""museum sense"",""importance"":""0.20""},{""adjective"":""Klimty feeling"",""importance"":""0.10""}]
+Actual Sentiment: neutral
+Task 3:
+Prompt: Ok I got the edamame and something from the sushi chef for free, but the quality of food is more important to me than a free small dish (maybe that's why the restaurant gives it to attact new customers.
+
+    What is the sentiment on 'edamame'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
+Sentiment Decision: positive
+Explanation: []
+Actual Sentiment: neutral
+Task 4:
+Prompt: The Clinton-frequented restaurant stands handsomely on a quiet residential corner, and the modern interior includes a long dining room, a small bar and harsh lighting.
+
+    What is the sentiment on 'bar'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
+Sentiment Decision: neutral
+Explanation: []
+Actual Sentiment: negative
+Task 5:
+Prompt: Food was much better than the average Indian place in the area, and more interesting.
+
+    What is the sentiment on 'area'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
+Sentiment Decision: positive
+Explanation: [{""adjective"":""better"",""importance"":""0.7""},{""adjective"":""interesting"",""importance"":""0.3""}]
+Actual Sentiment: neutral
+Task 6:
+Prompt: While the service and setting were average, the food was excellent.
+
+    What is the sentiment on 'service'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
+Sentiment Decision: neutral
+Explanation: [{""adjective"":""average"",""importance"":""1.00""}]
+Actual Sentiment: negative
+Task 7:
+Prompt: (Though the filet won't be enough if both have hearty apitites.
+
+    What is the sentiment on 'filet'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
+Sentiment Decision: neutral
+Explanation: []
+Actual Sentiment: negative
+Task 8:
+Prompt: We were so excited since I was reading great review of this place, however we were disappointed with the taste of the food.
+
+    What is the sentiment on 'food'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
+Sentiment Decision: negative
+Explanation: [{""adjective"":""disappointed"",""importance"":""1.00""}]
+Actual Sentiment: positive
+Task 9:
+Prompt: I ordered the fried catfish, which had very little to no seasoning, the yams, and mac and cheese which were just okay.
+
+    What is the sentiment on 'mac and cheese'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
+Sentiment Decision: neutral
+Explanation: []
+Actual Sentiment: positive
+Task 10:
+Prompt: The bill came out to like $100pp, and noone touched their food, and drinks were left untouched because after the first bite/sip you want to never touch it again.
+
+    What is the sentiment on 'food'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
+Sentiment Decision: negative
+Explanation: [{""adjective"":""untouched"",""importance"":""0.40""},{""adjective"":""left"",""importance"":""0.30""},{""adjective"":""never"",""importance"":""0.30""}]
+Actual Sentiment: neutral
+Task 11:
+Prompt: The service was polite, friendly and prompt, the characters walking around entertained the kids but werent intrusive to our meal.
+
+    What is the sentiment on 'meal'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
+Sentiment Decision: positive
+Explanation: [{""adjective"":""polite"",""importance"":""0.25""},{""adjective"":""friendly"",""importance"":""0.25""},{""adjective"":""prompt"",""importance"":""0.25""},{""adjective"":""entertained"",""importance"":""0.25""}]
+Actual Sentiment: neutral
+Task 12:
+Prompt: about 10 minutes apart each, so we were all eating cold eggs by the time we got our food.
+
+    What is the sentiment on 'eggs'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
+Sentiment Decision: neutral
+Explanation: []
+Actual Sentiment: negative
+Task 13:
+Prompt: This place would be so much better served by being run by a group that actually understands customer service.
+
+    What is the sentiment on 'served'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
+Sentiment Decision: negative
+Explanation: [{""adjective"":""better"",""importance"":""0.6""},
+{""adjective"":""actually understands"",""importance"":""0.4""}]
+Actual Sentiment: positive
+Task 14:
+Prompt: We had no problems with our resevations and found the service and the meal well worth a wait, had we run into one.
+
+    What is the sentiment on 'meal'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
+Sentiment Decision: positive
+Explanation: [{""adjective"":""well worth"",""importance"":""1.00""}]
+Actual Sentiment: neutral
+Task 15:
+Prompt: We sat at the bar and were constantly bumped by the waitress flying past; had fabulously fresh raw oysters with pieces of shell in every bite; lobsters rolls were tasty but the large pieces of meat were tough; the apple crumble was excellent but the ice cream was over-frozen and the stench of frying oil was nearly unbearable.
+
+    What is the sentiment on 'rolls'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
+Sentiment Decision: negative
+Explanation: [{""adjective"":""tasty"",""importance"":""0.4""},{""adjective"":""large"",""importance"":""0.1""},{""adjective"":""tough"",""importance"":""0.5""}]
+Actual Sentiment: positive
+Task 16:
+Prompt: After all that, the waiter tried to backpedal saying its too hard to time the cooking of miso soup with the sushi bar offerings.
+
+    What is the sentiment on 'waiter'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
+Sentiment Decision: neutral
+Explanation: []
+Actual Sentiment: negative
+Task 17:
+Prompt: The food is delish, you just have to know the manners to consume, if you don't want to be frustrated with the service.
+
+    What is the sentiment on 'service'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
+Sentiment Decision: neutral
+Explanation: []
+Actual Sentiment: negative
+Task 18:
+Prompt: Had a party of 7 people for dinner here on a busy night for the restaurant, and our meal was excellent and served with extreme consistency (all appetizers and main courses were served at the right times, with none of the dishes served at the wrong temperature).
+
+    What is the sentiment on 'dinner'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
+Sentiment Decision: positive
+Explanation: [{""adjective"":""excellent"",""importance"":""0.6""},{""adjective"":""extreme consistency"",""importance"":""0.4""}]
+Actual Sentiment: neutral
+Task 19:
+Prompt: For the main course, try out the Beef Negimaki.
+
+    What is the sentiment on 'main course'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
+Sentiment Decision: positive
+Explanation: []
+Actual Sentiment: neutral
+Task 20:
+Prompt: My husband and I had dinner here last week and the food was very good.
+
+    What is the sentiment on 'dinner'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
+Sentiment Decision: positive
+Explanation: [{""adjective"":""very good"",""importance"":""1.00""}]
+Actual Sentiment: neutral
+
+Correct Decisions (Only as a reference):
+Task 21:
+Prompt: The mango salsa with fish cake was too sour, the apple suace for pork chop too sweet.
+
+    What is the sentiment on 'apple suace'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
+Sentiment Decision: negative
+Explanation: [{""adjective"":""too sweet"",""importance"":""1.0""}]
+Actual Sentiment: negative
+Task 22:
+Prompt: My only advice is: increase portion sizes; and develop a special drink list.
+
+    What is the sentiment on 'portion'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
+Sentiment Decision: positive
+Explanation: []
+Actual Sentiment: positive
+Task 23:
+Prompt: The staff was courteous and explained the menu with detail.
+
+    What is the sentiment on 'staff'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
+Sentiment Decision: positive
+Explanation: [{""adjective"":""courteous"",""importance"":""0.7""},{""adjective"":""explained"",""importance"":""0.3""}]
+Actual Sentiment: positive
+Task 24:
+Prompt: We were so excited since I was reading great review of this place, however we were disappointed with the taste of the food.
+
+    What is the sentiment on 'place'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
+Sentiment Decision: negative
+Explanation: [{""adjective"":""excited"",""importance"":""0.20""},
+{""adjective"":""great"",""importance"":""0.30""},
+{""adjective"":""disappointed"",""importance"":""0.50""}]
+Actual Sentiment: negative
+Task 25:
+Prompt: Once at the table our waitress managed on two occasions to take 15 minutes bringing drinks to our table, our plates sat uncleared on the table for just as long.
+
+    What is the sentiment on 'drinks'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
+Sentiment Decision: neutral
+Explanation: []
+Actual Sentiment: neutral
+
+",gpt-3.5-turbo,structured_unstructured_singleterm_zeroshot_3.5-turbo,"Fault Categories:
+1. Incorrect sentiment due to lack of relevant information (e.g. missing adjectives or details): Task 3, Task 4, Task 10, Task 12, Task 16, Task 17
+2. Incorrect sentiment due to misinterpretation of context: Task 1, Task 2, Task 6, Task 7, Task 8, Task 15
+3. Incorrect sentiment due to incorrect focus on irrelevant information: Task 5, Task 11, Task 13, Task 14, Task 18, Task 19, Task 20",structured_analysis

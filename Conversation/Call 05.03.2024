@@ -1,0 +1,87 @@
+
+
+Progress Report:
+    - Fehlerklassen Analyse Schema Matching fertiggestellt (mit Original Prompts von WDC Schema Benchmark)
+        - Prompt Struktur für Explanations & Fehlerklassen Analyse hat sich aufgrund der Output Struktur der LLMs als schwer herausgestellt
+        - Fehlerklassen bei GPT-4-Turbo-Preview sind umfangreich und aufschlussreich - gute Qualität
+        - Fehlerklassen bei GPT-3.5-Turbo (und kleiner Sample Size aufgrund von Kontext window) schlecht - LLM versteht nicht welche Beispiele Fehler sind und welche korrekt
+    - Fehlerklassen Analyse Sentiment Analyse fertiggestellt
+        - Fehlerklassen Ausgabe scheint hier von guter Qualität - LLM versteht die Fehler und ordnet vermeindlich korrekt zu
+
+Da der Code für die Fehlerklassenanalyse für jede Task jetzt fertiggestellt ist, würde ich in die Breite gehen und die Fehlerklassenanalse einmal für alle Abfragen (Zero-Shot, Dynamic Few-Shot, Fix-Few-Shot) und Modelle durchführen. Bisher habe ich hier immer nur einzelne herausgepickt um die Code Basis zu erstellen.
+Dafür habe ich Folgende Gliederung als Vorschlag für den Umfang der Analysen erstellt und wollte diesen abklären:
+
+Finale Gliederung der Analysen:
+    1. Regression:
+        1.1 Lösung der Task mit:
+            - Zero-Shot: GPT-3.5-Turbo, GPT-4-Turbo-Preview
+            - Fix Few-Shot: GPT-3.5-Turbo, GPT-4-Turbo-Preview
+            - Dynamic Few-Shot: GPT-3.5-Turbo, GPT-4-Turbo-Preview
+            - Lasso Regression
+            - Vergleich von MAE, MSE, RMSE, (R2) der Lösungen
+        1.2 Fehleranalyse (Alles mit GPT-4-Turbo-Preview)
+            - Confidence Analysis auf allen Lösungen aus 1.1 auf Sample von 50 Predictions (GPT-4-Turbo-Preview)
+            - Strukturierte & Unstrukturierte Explanations auf allen Lösungen aus 1.1 (GPT-4-Turbo-Preview)
+            - Erstellung von Fehlerklassen auf allen Lösungen aus 1.1 mit strukturierten & unstrukturierten Explanations
+                - Samples von 20 falschen predictions und 5 korrekten Predictions (20% Abweichung als Threshold)
+                - Models: GPT-4-Turbo-Preview, & GPT-3.5-Turbo
+            Vergleich der Fehlerklassen für Zero-Shot, Fix-Few-Shot, Dynamic Few Shot, Lasso Regression, Spezieller Fokus auf Vergleich von ML und LMM Fehlerklassen
+    2. Sentiment Analysis:
+        2.1 Lösung der Task mit:
+            - Zero-Shot: GPT-3.5-Turbo, GPT-4-Turbo-Preview
+            - Fix Few-Shot: GPT-3.5-Turbo, GPT-4-Turbo-Preview
+            - Dynamic Few-Shot: GPT-3.5-Turbo, GPT-4-Turbo-Preview
+            - Machine Learning Model?
+            - Vergleich von accuracy, precision, recall, F1 (hier auch Vergleich: Multi-Term (Alle Terms in einer Abfrage) vs. Single-Term (Immer nur ein Term pro Abfrage))
+        2.2 Fehleranalyse (Alles mit GPT-4-Turbo-Preview) - Hier nur mit Single-Term aus 1.1
+            - Confidence & Sentiment Analysis auf allen Lösungen aus 1.1 auf Sample von 50 Predictions (GPT-4-Turbo-Preview)
+            - Strukturierte & Unstrukturierte Explanations auf allen Lösungen aus 1.1 (GPT-4-Turbo-Preview) mit 25 Prediction Sample
+            - Erstellung von Fehlerklassen auf allen Lösungen aus 1.1 mit strukturierten & unstrukturierten Explanations
+                - Samples von 20 falschen predictions und 5 korrekten Predictions 
+                - Models: GPT-4-Turbo-Preview, & GPT-3.5-Turbo
+            Vergleich der Fehlerklassen für Zero-Shot, Fix-Few-Shot, Dynamic Few Shot, (ML-Methode wenn möglich), Spezieller Fokus auf Vergleich von ML und LMM Fehlerklassen
+    3. Schema Matching:
+        3.1 Lösung der Task mit:
+            - Zero-Shot: GPT-3.5-Turbo, GPT-4-Turbo-Preview
+            - Fix Few-Shot: GPT-3.5-Turbo, GPT-4-Turbo-Preview
+            - Dynamic Few-Shot: GPT-3.5-Turbo, GPT-4-Turbo-Preview
+            - Machine Learning Model?
+            - Vergleich von accuracy, precision, recall, F1 (hier auch kurzer Vergleich: Multi-Column (Alle Column-Paare in einer Abfrage) vs. Single-Column (Immer nur ein spezielles Column-Paar wird abgefragt))
+        3.2 Fehleranalyse (Alles mit GPT-4-Turbo-Preview) - Hier nur mit Multi-Column
+            - Matching Confidence & Similarity von Columns auf allen Lösungen aus 1.1 auf Sample von 50 Predictions (GPT-4-Turbo-Preview)
+            - Unstrukturierte Explanations auf allen Lösungen aus 1.1 (GPT-4-Turbo-Preview) mit 25 Prediction Sample
+                - Unsicher, wie strukturierte Explanations hier aussehen würden, habe sie daher erstmal weg gelassen
+            - Erstellung von Fehlerklassen auf allen Lösungen aus 1.1 mit unstrukturierten Explanations
+                - Samples von 20 falschen predictions und 5 korrekten predictions
+                - Models: GPT-4-Turbo-Preview (Context window zu klein für GPT-3.5-Turbo)
+            Vergleich der Fehlerklassen für Zero-Shot, Fix-Few-Shot, Dynamic Few Shot, (ML-Methode wenn möglich), Spezieller Fokus auf Vergleich von ML und LMM Fehlerklasse
+
+Next Steps:
+    - Fertigstellung der oben beschriebenen Experimente
+    - Umsetzung der ML Methoden (Bin hier in der Umsetzung immer noch unsicher, probiere gerade noch rum)
+    - Erstellung Gleiderung schriftliche Arbeit zum kurzen Abgleich
+    - Erstellung der schriftlichen Arbeit
+
+Fragen:
+    - Folgendes Problem bei Error Analysis für Schema Matching:
+        - Ausgabe ist ja in der Folgenden Form, da die Abfrage nach speziellen Column-Paaren nicht funktioniert:
+            {"column_mappings": [
+            ["Column A-0", "None"], 
+            ["Column A-1", "None"], 
+            ["Column A-2", "None"], 
+            ["Column A-3", "Column B-2"], 
+            ["Column A-4", "Column B-0"]]}
+        - Problem: 
+            Testset besteht ja aus vorgegebenen Column Paaren (Goldstandard), so dass wenn man das LLM nach Explanations für seine Ausgabe fragt, 
+            dass nicht unbedingt etwas mit den Column-Paaren aus dem Testset zu tun hat
+        - Mein Lösungsvorschlag:
+            - Man gibt LLM für Explanation als Kontext Prompt und Ausageb und zusätzlich noch das zu betrachtende Column-Paar und ob es dieses als Match/Non-Match kategorierisiert und lässt sich dafür die Explanation generieren
+            - Für die Fehlerklassen gibt man dem Modell dann zusätzlich zum vorherigen Kontext noch die Info, ob das Column-Paar wirklich ein Match ist oder nicht
+ 
+    - Ggf. eine kurze Präsentation der Ergebnisse mit Prof. Bizer?
+    - Gibt es von eurer Seite spezielle Anforderungen / Tipps für eine Bachelorarbeit
+        - Seitenanzahl
+        - Spezielle Latex-Vorlage von DWS Guidelines nutzen? (https://www.uni-mannheim.de/media/Einrichtungen/dws/Files_Teaching/Theses/thesis_template.zip)
+        - Gliederung bestätigen lassen
+        - Gibt es weitere Vorgaben, wichtige Punkte die es zu beachten gibt? 
+            - z.B. wie groß sollen Tabellen sein, sollen Tabellen und Darstellung immer oben auf Seite, wo sie zuerst erwähnt werden, Spezielle Richtlinien für Zitierung - welches Zitierungssystem=

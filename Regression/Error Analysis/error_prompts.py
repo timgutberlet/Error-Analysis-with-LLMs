@@ -6,7 +6,7 @@ confidence = ChatPromptTemplate.from_messages([
     ("human", """{user_prompt}"""),
     ("ai", """{ai_answer}"""),
     ("human", """Now provide a confidence score for your prediction as percentage values, 100%
-referring to perfect similarity or full confidence. Please provide your answer exactly in the same format as the following example output:
+referring to perfect similarity or full confidence. Please provide your output in the following format and return nothing else:
 Confidence: <value>%""")
 ])
 
@@ -51,7 +51,7 @@ error_class_LLM = PromptTemplate(
     input_variables=["examples"],
     template="""In the following I will give you a few price prediction tasks together with a prediction decision, details about the decision and the actual price.
 A wrong prediction is a prediction that deviates by more than 20 percent from the actual price. The Prediction was made by an LLM.
-Can you please group the wrong decisions into 3 fault categories? Please also indicate how often each one occurs.
+Can you please group the wrong decisions into distinct fault categories? Please also indicate how often each one occurs.
 There are also some correct decisions (deviation of less than 20 percent) in the examples. Please just use them as a reference and don't categorize them.
 {examples}
 """)
@@ -60,7 +60,7 @@ error_class_LLM_nounderover = PromptTemplate(
     input_variables=["examples"],
     template="""In the following I will give you a few price prediction tasks together with a prediction decision, details about the decision and the actual price.
 A wrong prediction is a prediction that deviates by more than 20 percent from the actual price. The Prediction was made by an LLM.
-Can you please group the wrong decisions into 3 fault categories? Please also indicate how often each one occurs.
+Can you please group the wrong decisions into distinct fault categories? Please also indicate how often each one occurs.
 There are also some correct decisions (deviation of less than 20 percent) in the examples. Please just use them as a reference and don't categorize them.
 Please go deeper with your analysis and don't use Overestimation or Underestimation as categories.
 {examples}
@@ -90,7 +90,7 @@ error_class_ML = PromptTemplate(
     input_variables=["examples"],
     template="""In the following I will give you a few price prediction tasks together with a prediction decision, details about the decision and the actual price.
 A wrong prediction is a prediction that deviates by more than 20 percent from the actual price. The prediction was made by a Machine Learning Model.
-Can you please group the wrong decisions into 3 fault categories? Please also indicate how often each one occurs.
+Can you please group the wrong decisions into distinct fault categories? Please also indicate how often each one occurs.
 There are also some correct decisions (deviation of less than 20 percent) in the examples. Please just use them as a reference and don't categorize them.
 {examples}
 """)

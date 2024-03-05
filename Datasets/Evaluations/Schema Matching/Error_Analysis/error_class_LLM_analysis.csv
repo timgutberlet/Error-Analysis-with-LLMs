@@ -1,0 +1,1587 @@
+Prompt_Name,Prompt,Model,Database,Answer,Context
+error_class_LLM,"In the following I will give you schema matching tasks together with column matching decisions. You are given additional explanation on the predicted matching decision for two specific columns and the actual answer regarding the match of the two columns.
+The decision was made by an LLM. Can you please group the wrong decisions into distinct fault categories? Please also indicate how often each one occurs.
+There are also some correct decisions in the examples. Please just use them as a reference and don't categorize them.
+Wrong Decisions:
+Task 1:
+Prompt: System: Description: Please identify the matching columns between Table A and Table B. 
+     For each column in Table A, specify the corresponding column in Table B. 
+     If a column in A has no corresponding column in Table B, you can map it to 'None'. 
+     Represent each column mapping using a pair of column headers in a list, i.e., [Table A Column, Table B column or None]. 
+     Provide the mapping for each column in Table A and return all mappings in a list. Return the final result as JSON in the format {""column_mappings"": ""<a list of column pairs>""}.
+Human: Question:
+Table A:
+|   Column A-0 | Column A-1   | Column A-2   |   Column A-3 | Column A-4           |
+|-------------:|:-------------|:-------------|-------------:|:---------------------|
+|        189   | GR           | 19.03 km     |         2578 | Forcel               |
+|        190.1 | GR/TI        | 15.44 km     |         2739 | Motton               |
+|        191.8 | GR/TI        | 15.59 km     |         2899 | Piz da Termin        |
+|        184.7 | TI/I         | 41.09 km     |         2116 | Gazzirola            |
+|        184   | TI/I         | 41.94 km     |         2076 | Prato della Bascióta |
+
+Table B:
+| Column B-0     |   Column B-1 |   Column B-2 | Column B-3                            | Column B-4                    |
+|:---------------|-------------:|-------------:|:--------------------------------------|:------------------------------|
+| Schilt         |           58 |         2299 | Glarus Alps                           | Canton of Glarus, Switzerland |
+| Scheuchzerhorn |          116 |         3456 | Bernese Alps                          | Canton of Bern, Switzerland   |
+| Punta Baretti  |          nan |         4013 | Mont Blanc massif                     | Italy, Val d'Aosta            |
+| Rocher du Midi |          240 |         2097 | Bernese Alps                          | Vaud, Switzerland             |
+| Rossbodenstock |          nan |         2836 | Saint-Gotthard Massif, Lepontine Alps | Canton of Uri, Graubünden     |
+
+Return the final result as JSON in the format {""column_mappings"": ""<a list of column pairs>""}. ONLY return the JSON and nothing else.
+Answer:
+Matching Decisions: {""column_mappings"": [[""Column A-0"", ""None""], [""Column A-1"", ""None""], [""Column A-2"", ""None""], [""Column A-3"", ""Column B-2""], [""Column A-4"", ""None""]]}
+Predicted answer for Specific Column Pair: Column A-1 and Column B-4 do not match
+Explanation: The decision to not match ""Column A-1"" from Table A with ""Column B-4"" from Table B was based on the content and context of the values within these columns. 
+
+- ""Column A-1"" contains values like ""GR"", ""GR/TI"", and ""TI/I"", which appear to represent codes or abbreviations, possibly for geographic regions or administrative divisions.
+- ""Column B-4"" contains values like ""Canton of Glarus, Switzerland"", ""Canton of Bern, Switzerland"", ""Italy, Val d'Aosta"", ""Vaud, Switzerland"", and ""Canton of Uri, Graubünden"". These are explicit geographic locations, including countries, cantons, and regions.
+
+The key influence on the decision was the nature of the data: ""Column A-1"" seems to represent a coded or abbreviated form of geographic or administrative identifiers, while ""Column B-4"" provides full, descriptive geographic names. There is no direct correlation or a clear way to map the abbreviations to the specific locations without additional context or a key to decode the abbreviations in ""Column A-1"". Therefore, without a direct match or a clear relationship between the two sets of values, the columns were not matched.
+Correct answer for Specific Column Pair: Column A-1 Column B-4 match
+
+
+Task 2:
+Prompt: System: Description: Please identify the matching columns between Table A and Table B. 
+     For each column in Table A, specify the corresponding column in Table B. 
+     If a column in A has no corresponding column in Table B, you can map it to 'None'. 
+     Represent each column mapping using a pair of column headers in a list, i.e., [Table A Column, Table B column or None]. 
+     Provide the mapping for each column in Table A and return all mappings in a list. Return the final result as JSON in the format {""column_mappings"": ""<a list of column pairs>""}.
+Human: Question:
+Table A:
+| Column A-0         | Column A-1   | Column A-2              |
+|:-------------------|:-------------|:------------------------|
+| Spotted salamander | Amphibian    | Ambystoma maculatum     |
+| Softshell turtles  | Reptile      | Trionyx spp.            |
+| Ornate box turtle  | Reptile      | Terrapene ornata ornata |
+| Caspian tern       | Bird         | Sterna caspia           |
+| Red-eyed vireo     | Bird         | Vireo olivaceus         |
+
+Table B:
+| Column B-0                 | Column B-1   | Column B-2     | Column B-3                                                                                          | Column B-4                 |
+|:---------------------------|:-------------|:---------------|:----------------------------------------------------------------------------------------------------|:---------------------------|
+| Tetramorium tonganum       | Insect       | T. tonganum    | *Tetramorium magitae (Forel, 1911)                                                                  | Tetramorium tonganum       |
+| Cylindromyrmex             | Insect       | nan            | Holcoponera (Cameron, 1891), Hypocylindromyrmex (Wheeler, 1924), Metacylindromyrmex (Wheeler, 1924) | nan                        |
+| Dysgonia erectata          | Insect       | D. erectata    | *Parallelia erectata                                                                                | Dysgonia erectata          |
+|                            |              |                | *Ophiusa erectata (Hampson, 1902)                                                                   |                            |
+| Pseudostegania yargongaria | Insect       | P. yargongaria | *Asthena yargongaria (Oberthür, 1916)                                                               | Pseudostegania yargongaria |
+| Vexillum obeliscus         | Gastropoda   | V. obeliscus   | * Costellaria obeliscus                                                                             | Vexillum  obeliscus        |
+|                            |              |                | * Mitra obeliscus Reeve, 1844                                                                       |                            |
+|                            |              |                | * Vexillum  subtruncatum Sowerby, G.B. II & III, 1874                                               |                            |
+|                            |              |                | * Vexillum andamanica Nevill, G. & H. Nevill, 1875                                                  |                            |
+|                            |              |                | * Turricula quasillus Iredale, T., 1929                                                             |                            |
+
+Return the final result as JSON in the format {""column_mappings"": ""<a list of column pairs>""}. ONLY return the JSON and nothing else.
+Answer:
+Matching Decisions: {""column_mappings"": [[""Column A-0"", ""None""], [""Column A-1"", ""Column B-1""], [""Column A-2"", ""Column B-2""]]}
+Predicted answer for Specific Column Pair: Column A-2 and Column B-4 do not match
+Explanation: The decision to not match ""Column A-2"" from Table A with ""Column B-4"" from Table B was based on the nature of the data contained within these columns. 
+
+- **Column A-2** contains scientific names of various animals (e.g., ""Ambystoma maculatum"", ""Trionyx spp."", ""Terrapene ornata ornata"", ""Sterna caspia"", ""Vireo olivaceus""), which are specific and unique identifiers for species.
+- **Column B-4**, on the other hand, also lists names (e.g., ""Tetramorium tonganum"", ""Dysgonia erectata"", ""Pseudostegania yargongaria"", ""Vexillum obeliscus""), but upon inspection, none of these names match the scientific names listed in Column A-2. 
+
+The key influence on the decision was the lack of any direct match or correlation between the specific scientific names in ""Column A-2"" and the names in ""Column B-4"". The content of ""Column A-2"" is strictly related to the species listed in Table A, which are distinct from those in Table B, indicating that these columns represent different datasets with no overlap in this context.
+Correct answer for Specific Column Pair: Column A-2 Column B-4 match
+
+
+Task 3:
+Prompt: System: Description: Please identify the matching columns between Table A and Table B. 
+     For each column in Table A, specify the corresponding column in Table B. 
+     If a column in A has no corresponding column in Table B, you can map it to 'None'. 
+     Represent each column mapping using a pair of column headers in a list, i.e., [Table A Column, Table B column or None]. 
+     Provide the mapping for each column in Table A and return all mappings in a list. Return the final result as JSON in the format {""column_mappings"": ""<a list of column pairs>""}.
+Human: Question:
+Table A:
+| Column A-0     |   Column A-1 | Column A-2   | Column A-3   |
+|:---------------|-------------:|:-------------|:-------------|
+| Lake Nipissing |          196 | 832          | 822          |
+| Lake Abitibi   |          265 | 931          | 903          |
+| Lac Seul       |          357 | 1 657        | 1 373        |
+| Lake Simcoe    |          219 | 744          | 723          |
+| Lake Nipigon   |          260 | 4 848        | 4 510        |
+
+Table B:
+| Column B-0                              |   Column B-1 |   Column B-2 | Column B-3                                                                                              |
+|:----------------------------------------|-------------:|-------------:|:--------------------------------------------------------------------------------------------------------|
+| Lake Nipigon                            |    4.848e+09 |          260 | Namewaminikan River, Whitesand River (Lake Nipigon), Gull River (Lake Nipigon)                          |
+| Trout Lake (Ontario)                    |  nan         |          202 | nan                                                                                                     |
+| Lake Muskoka                            |    1.2e+08   |          225 | Muskoka River, Indian River (Muskoka District)                                                          |
+| Pigeon Lake (Ontario)                   |    5.344e+07 |          246 | Bobcaygeon, Sturgeon Lake (Ontario)                                                                     |
+| Sand Lake (Patterson Township, Ontario) |  nan         |          230 | http://dbpedia.org/resource/Sand_Creek_(Ontario), http://dbpedia.org/resource/Beaudry_Creek_(Sand_Lake) |
+
+Return the final result as JSON in the format {""column_mappings"": ""<a list of column pairs>""}. ONLY return the JSON and nothing else.
+Answer:
+Matching Decisions: {""column_mappings"": [[""Column A-0"", ""Column B-0""], [""Column A-1"", ""None""], [""Column A-2"", ""Column B-3""], [""Column A-3"", ""None""]]}
+Predicted answer for Specific Column Pair: Column A-1 and Column B-2 do not match
+Explanation: The decision to not match Column A-1 from Table A with Column B-2 from Table B was based on the nature and values contained within these columns. Column A-1 in Table A contains numerical values that represent some form of measurement or quantity (e.g., 196, 265, 357, etc.), while Column B-2 in Table B contains numerical values that seem to represent a different measurement or quantity, given the context of the other columns (e.g., 260, 202, 225, etc.).
+
+The key influence on this decision was the lack of a clear, direct relationship or similarity in the values and potential units of measurement between Column A-1 and Column B-2. For instance, the values in Column A-1 do not match or correlate in a meaningful way with those in Column B-2, suggesting they represent different data types or categories. Without a clear, logical connection or a consistent pattern linking these columns, it was concluded that they do not correspond to each other.
+Correct answer for Specific Column Pair: Column A-1 Column B-2 match
+
+
+Task 4:
+Prompt: System: Description: Please identify the matching columns between Table A and Table B. 
+     For each column in Table A, specify the corresponding column in Table B. 
+     If a column in A has no corresponding column in Table B, you can map it to 'None'. 
+     Represent each column mapping using a pair of column headers in a list, i.e., [Table A Column, Table B column or None]. 
+     Provide the mapping for each column in Table A and return all mappings in a list. Return the final result as JSON in the format {""column_mappings"": ""<a list of column pairs>""}.
+Human: Question:
+Table A:
+| Column A-0   | Column A-1   | Column A-2   | Column A-3            |
+|:-------------|:-------------|:-------------|:----------------------|
+| EY           | Reisegepäck  | WebCheckIn   | Etihad Airways        |
+| DL           | Reisegepäck  | WebCheckIn   | Delta Air Lines       |
+| DY           | Reisegepäck  | WebCheckIn   | Norwegian Air Shuttle |
+| FL           | Reisegepäck  | WebCheckIn   | AirTran Airways       |
+| VX           | Reisegepäck  | WebCheckIn   | Virgin America        |
+
+Table B:
+| Column B-0           | Column B-1   | Column B-2                                                                                          | Column B-3   | Column B-4                                                                   |
+|:---------------------|:-------------|:----------------------------------------------------------------------------------------------------|:-------------|:-----------------------------------------------------------------------------|
+| Trans World Airlines | TWA          | Mount Kisco, New York, Fort Worth, Texas, Kansas City, Missouri, New York City, St. Louis, Missouri | TW           | nan                                                                          |
+| East African Air     | nan          | United Kingdom, London                                                                              | 5H           | Mwanza, Kilimanjaro, Mtwara, Nairobi, Johannesburg, Dubai and London Gatwick |
+| JetSmart Perú        | JAP          | Peru, Lima                                                                                          | JZ           | 10                                                                           |
+| Qantas Freight       | QFA          | Sydney                                                                                              | QF           | 130                                                                          |
+| Aviolet              | ASL          | Belgrade, Serbia                                                                                    | JU           | 26                                                                           |
+
+Return the final result as JSON in the format {""column_mappings"": ""<a list of column pairs>""}. ONLY return the JSON and nothing else.
+Answer:
+Matching Decisions: {""column_mappings"": [[""Column A-0"", ""None""], [""Column A-1"", ""Column B-1""], [""Column A-2"", ""None""], [""Column A-3"", ""None""]]}
+Predicted answer for Specific Column Pair: Column A-3 and Column B-0 do not match
+Explanation: The decision to not match ""Column A-3"" from Table A with ""Column B-0"" from Table B was based on the nature of the data contained within these columns. ""Column A-3"" lists airline names (e.g., ""Etihad Airways"", ""Delta Air Lines"", ""Norwegian Air Shuttle"", ""AirTran Airways"", ""Virgin America""), while ""Column B-0"" lists either airline names or locations associated with airlines, but none of the names in ""Column B-0"" match any of the airline names listed in ""Column A-3"". The values in ""Column B-0"" such as ""Trans World Airlines"", ""East African Air"", ""JetSmart Perú"", ""Qantas Freight"", and ""Aviolet"" do not correspond to any of the specific airline names listed in ""Column A-3"". This lack of direct correspondence or matching names between the two columns influenced the decision to not map ""Column A-3"" to ""Column B-0"".
+Correct answer for Specific Column Pair: Column A-3 Column B-0 match
+
+
+Task 5:
+Prompt: System: Description: Please identify the matching columns between Table A and Table B. 
+     For each column in Table A, specify the corresponding column in Table B. 
+     If a column in A has no corresponding column in Table B, you can map it to 'None'. 
+     Represent each column mapping using a pair of column headers in a list, i.e., [Table A Column, Table B column or None]. 
+     Provide the mapping for each column in Table A and return all mappings in a list. Return the final result as JSON in the format {""column_mappings"": ""<a list of column pairs>""}.
+Human: Question:
+Table A:
+|   Column A-0 |   Column A-1 |   Column A-2 | Column A-3   | Column A-4   |   Column A-5 | Column A-6   | Column A-7           |
+|-------------:|-------------:|-------------:|:-------------|:-------------|-------------:|:-------------|:---------------------|
+|           11 |       265.91 |        22.29 | UK           | Oil and gas  |       198.14 | 217.60       | BP                   |
+|           12 |       179.02 |        11.68 | Japan        | Automotive   |       217.69 | 243.60       | Toyota               |
+|           15 |       125.33 |         8.81 | Germany      | Insurance    |        87.22 | 1,380.88     | Allianz              |
+|            7 |       335.09 |        39.5  | USA          | Oil and gas  |       410.65 | 223.95       | ExxonMobil           |
+|            5 |        99.3  |        14.44 | USA          | Banking      |       170.97 | 1,351.52     | JPMorgan Chase & Co. |
+
+Table B:
+| Column B-0        | Column B-1   | Column B-2                         |   Column B-3 |   Column B-4 | Column B-5                                                              | Column B-6         | Column B-7   |
+|:------------------|:-------------|:-----------------------------------|-------------:|-------------:|:------------------------------------------------------------------------|:-------------------|:-------------|
+| Mallinckrodt      | MNKKQ        | nan                                |   3.162e+09  |   1.0338e+10 | Blanchardstown, Missouri, St Louis, Staines-upon-Thames, Dublin, Surrey | Pharmaceutical     | MNKKQ        |
+| PulteGroup        | 822416       | CEO, CFO, Executive Vice-President |   1.3927e+10 |   1.3353e+10 | Atlanta, Georgia                                                        | Home construction  | PHM          |
+| Crown Holdings    | 1219601      | CEO, CFO                           |   1.15e+10   |   7.5e+09    | Yardley, Pennsylvania                                                   | Packaging          | CCK          |
+| EOG Resources     | EOG          | CEO, CFO                           |   1.1032e+10 |   3.5804e+10 | Houston, United States, Heritage Plaza                                  | Petroleum industry | EOG          |
+| Denbury Resources | DEN          | President (corporate title), CFO   |   1.258e+09  |   1.902e+09  | Plano, Texas                                                            | Petroleum industry | DEN          |
+
+Return the final result as JSON in the format {""column_mappings"": ""<a list of column pairs>""}. ONLY return the JSON and nothing else.
+Answer:
+Matching Decisions: {""column_mappings"": [[""Column A-0"", ""None""], [""Column A-1"", ""None""], [""Column A-2"", ""None""], [""Column A-3"", ""None""], [""Column A-4"", ""None""], [""Column A-5"", ""None""], [""Column A-6"", ""None""], [""Column A-7"", ""None""]]}
+Predicted answer for Specific Column Pair: Column A-4 and Column B-6 do not match
+Explanation: The decision to not match ""Column A-4"" from Table A with ""Column B-6"" from Table B was based on the content and context of the data within these columns. 
+
+- **Column A-4** contains industry sectors specific to the companies listed in Table A, such as ""Oil and gas,"" ""Automotive,"" ""Insurance,"" ""Banking.""
+- **Column B-6** lists the primary industry or sector associated with the companies in Table B, including ""Pharmaceutical,"" ""Home construction,"" ""Packaging,"" ""Petroleum industry.""
+
+At first glance, it might seem reasonable to match these columns due to their thematic similarity, both describing industry sectors. However, the decision against this pairing was influenced by the following considerations:
+
+1. **Specificity and Match Quality**: While both columns describe industry sectors, the terms used in Table A are not directly matched with those in Table B. For example, ""Oil and gas"" in Table A could be considered similar to ""Petroleum industry"" in Table B, but they are not identically phrased, leading to potential mismatches in a strict data mapping scenario.
+
+2. **Contextual Alignment**: The context of Table A seems to focus on broader, perhaps more traditional naming conventions for sectors, whereas Table B includes a mix of broader and more specific industry descriptors. This slight difference in context and specificity can introduce ambiguity in direct mapping.
+
+3. **Absence of Direct Correlation**: There is no direct one-to-one correlation for all entries, such as ""Banking"" in Table A, which does not have an apparent counterpart in Table B. This inconsistency across the datasets further complicates direct mapping.
+
+Given these considerations, especially the lack of direct, unambiguous matches and the slight differences in specificity and context, it was decided that mapping ""Column A-4"" to ""Column B-6"" would not be accurate or beneficial for precise data analysis or integration purposes.
+Correct answer for Specific Column Pair: Column A-4 Column B-6 match
+
+
+Task 6:
+Prompt: System: Description: Please identify the matching columns between Table A and Table B. 
+     For each column in Table A, specify the corresponding column in Table B. 
+     If a column in A has no corresponding column in Table B, you can map it to 'None'. 
+     Represent each column mapping using a pair of column headers in a list, i.e., [Table A Column, Table B column or None]. 
+     Provide the mapping for each column in Table A and return all mappings in a list. Return the final result as JSON in the format {""column_mappings"": ""<a list of column pairs>""}.
+Human: Question:
+Table A:
+| Column A-0                        | Column A-1   |   Column A-2 | Column A-3     | Column A-4   | Column A-5         |
+|:----------------------------------|:-------------|-------------:|:---------------|:-------------|:-------------------|
+| Congo, The Democratic Republic Of | nan          |          976 | 100 centimes   | CDF          | Franc Congolais    |
+| French Southern Territories       |               |          978 | 100 euro-cents | EUR          | Euro               |
+| Cocos (Keeling) Islands           | A$           |           36 | 100 cents      | AUD          | Australian Dollar  |
+| Cook Islands                      | NZ$          |          554 | 100 cents      | NZD          | New Zealand Dollar |
+| Chile                             | Ch$          |          152 | 100 centavos   | CLP          | Chilean Peso       |
+
+Table B:
+| Column B-0        | Column B-1                                                                                                                                                                | Column B-2                                                                                                                                                       | Column B-3   | Column B-4           | Column B-5                                                      |
+|:------------------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------|:-------------|:---------------------|:----------------------------------------------------------------|
+| Swiss franc       | Campione d'Italia, Liechtenstein, Switzerland                                                                                                                             | , Campione d'Italia, Italy                                                                                                                                       | CHF          | nan                  | Schweizer Franken, franc suisse, franc svizzer, franco svizzero |
+| Czech koruna      | Czech Republic                                                                                                                                                            | nan                                                                                                                                                              | CZK          | haléřa               | koruna česká                                                    |
+| Unidad de Fomento | Chile                                                                                                                                                                     | nan                                                                                                                                                              | CLF          | nan                  | nan                                                             |
+| Maltese scudo     | Hospitaller Malta, Hospitaller Rhodes, Crown Colony of Malta, French occupation of Malta, Gozo (independent state), Malta Protectorate, Sovereign Military Order of Malta | Crown Colony of Malta, Sovereign Military Order of Malta, Hospitaller Malta, Previously:, Malta Protectorate, Hospitaller Rhodes, French Malta, Independent Gozo | none         | Tarì, piccolo, grano | Scudo maltese, Skud Malti                                       |
+| Cambodian riel    | Cambodia                                                                                                                                                                  | nan                                                                                                                                                              | KHR          | kak, sen             | រៀលកម្ពុជា/រៀលខ្មែរ                                                    |
+
+Return the final result as JSON in the format {""column_mappings"": ""<a list of column pairs>""}. ONLY return the JSON and nothing else.
+Answer:
+Matching Decisions: {""column_mappings"": [[""Column A-0"", ""None""], [""Column A-1"", ""None""], [""Column A-2"", ""None""], [""Column A-3"", ""None""], [""Column A-4"", ""None""], [""Column A-5"", ""None""]]}
+Predicted answer for Specific Column Pair: Column A-3 and Column B-4 do not match
+Explanation: The decision to not match ""Column A-3"" from Table A with ""Column B-4"" from Table B was based on the content and context of the values within these columns. 
+
+- ""Column A-3"" in Table A is titled with an unspecified header but contains values like ""100 centimes"", ""100 euro-cents"", ""100 cents"", and ""100 centavos"", which indicate units of currency subdivision.
+- ""Column B-4"" in Table B is titled with an unspecified header as well but contains values like ""nan"", ""haléřa"", ""nan"", ""Tarì, piccolo, grano"", and ""kak, sen"", which are specific names of currency subdivisions or 'nan' indicating missing data.
+
+The key influence on the decision was the specificity and the context of the values. While both columns deal with currency subdivisions, the values in ""Column A-3"" are generic terms used to describe the concept of currency subdivision (e.g., cents, centimes), applicable to many countries' currencies. In contrast, the values in ""Column B-4"" are specific names of currency subdivisions unique to particular currencies (e.g., ""haléřa"" for the Czech koruna, ""kak, sen"" for the Cambodian riel) or 'nan' indicating missing information.
+
+Given the lack of direct correspondence in the nature of the data (generic descriptions vs. specific subdivision names), it was determined that these columns do not match.
+Correct answer for Specific Column Pair: Column A-3 Column B-4 match
+
+
+Task 7:
+Prompt: System: Description: Please identify the matching columns between Table A and Table B. 
+     For each column in Table A, specify the corresponding column in Table B. 
+     If a column in A has no corresponding column in Table B, you can map it to 'None'. 
+     Represent each column mapping using a pair of column headers in a list, i.e., [Table A Column, Table B column or None]. 
+     Provide the mapping for each column in Table A and return all mappings in a list. Return the final result as JSON in the format {""column_mappings"": ""<a list of column pairs>""}.
+Human: Question:
+Table A:
+| Column A-0     | Column A-1    |   Column A-2 | Column A-3    |
+|:---------------|:--------------|-------------:|:--------------|
+| Spain          | Refer to Euro |      0.00675 | Peseta (ESP)  |
+| Taiwan         | 0.03751       |      0.02775 | Dollar (TWD)  |
+| Czech Republic | 0.05870       |      0.04714 | Koruna (CZK)  |
+| Venezuela      | nan           |    nan       | Bolivar (VEB) |
+| New Zealand    | 0.8866        |      0.7849  | Dollar (NZD)  |
+
+Table B:
+| Column B-0       | Column B-1                               |   Column B-2 | Column B-3                                                                                                        | Column B-4             | Column B-5   |
+|:-----------------|:-----------------------------------------|-------------:|:------------------------------------------------------------------------------------------------------------------|:-----------------------|:-------------|
+| Bulgaria         | National Assembly (Bulgaria)             |   8.6e+10    | nan                                                                                                               | Bulgarian lev          | decrease     |
+| Papua New Guinea | National Parliament of Papua New Guinea  |   2.1543e+10 | Related articles, UNESCO Science Report: towards 2030                                                             | Papua New Guinean kina | increase     |
+| Sudan            | Transitional Legislative Council (Sudan) |   3.0808e+10 | nan                                                                                                               | Sudanese pound         | increase     |
+| Croatia          | Sabor                                    |   6.938e+10  | nan                                                                                                               | Croatian kuna          | increase     |
+| Aruba            | nan                                      |   3.4e+09    | Geographic locale, International membership and history, Languages in Aruba, National origins, Religions of Aruba | nan                    | nan          |
+
+Return the final result as JSON in the format {""column_mappings"": ""<a list of column pairs>""}. ONLY return the JSON and nothing else.
+Answer:
+Matching Decisions: {""column_mappings"": [[""Column A-0"", ""None""], [""Column A-1"", ""Column B-1""], [""Column A-2"", ""Column B-2""], [""Column A-3"", ""None""]]}
+Predicted answer for Specific Column Pair: Column A-0 and Column B-0 do not match
+Explanation: The decision to not match ""Column A-0"" with ""Column B-0"" was based on the content and context of the values within these columns. ""Column A-0"" lists countries (e.g., Spain, Taiwan, Czech Republic, Venezuela, New Zealand), while ""Column B-0"" also lists countries but none that match those in ""Column A-0"". The absence of any common countries between these two columns indicates that there is no direct correspondence or matching element between them. The specific country names, being entirely distinct between the two tables, were the values that had a high influence on this decision.
+Correct answer for Specific Column Pair: Column A-0 Column B-0 match
+
+
+Task 8:
+Prompt: System: Description: Please identify the matching columns between Table A and Table B. 
+     For each column in Table A, specify the corresponding column in Table B. 
+     If a column in A has no corresponding column in Table B, you can map it to 'None'. 
+     Represent each column mapping using a pair of column headers in a list, i.e., [Table A Column, Table B column or None]. 
+     Provide the mapping for each column in Table A and return all mappings in a list. Return the final result as JSON in the format {""column_mappings"": ""<a list of column pairs>""}.
+Human: Question:
+Table A:
+|   Column A-0 | Column A-1         |   Column A-2 |   Column A-3 | Column A-4                   |
+|-------------:|:-------------------|-------------:|-------------:|:-----------------------------|
+|           43 | Ernst Lubitsch     |          229 |         1939 | Ninotchka                    |
+|           95 | Amy Heckerling     |          424 |         1982 | Fast Times at Ridgemont High |
+|           38 | Giuseppe Tornatore |          192 |         1988 | Cinema Paradiso              |
+|            7 | Howard Hawks       |           52 |         1938 | Bringing Up Baby             |
+|           80 | Charles Chaplin    |          369 |         1940 | The Great Dictator           |
+
+Table B:
+| Column B-0          | Column B-1             | Column B-2           | Column B-3      |
+|:--------------------|:-----------------------|:---------------------|:----------------|
+| Sands of the Desert | 1960-09-08             | John Paddy Carstairs | nan             |
+| El Sur (film)       | 1983-05-19, 1988-01-15 | Víctor Erice         | Elías Querejeta |
+| In the Last Stride  | 1915-11-22, 1916-05-01 | Martyn Keith         | nan             |
+| Meendum Vazhven     | 1971-04-23             | T. N. Balu           | nan             |
+| Prey (2009 film)    | 2009-05-05             | George T. Miller     | nan             |
+
+Return the final result as JSON in the format {""column_mappings"": ""<a list of column pairs>""}. ONLY return the JSON and nothing else.
+Answer:
+Matching Decisions: {""column_mappings"": [[""Column A-0"", ""None""], [""Column A-1"", ""None""], [""Column A-2"", ""None""], [""Column A-3"", ""None""], [""Column A-4"", ""None""]]}
+Predicted answer for Specific Column Pair: Column A-4 and Column B-0 do not match
+Explanation: The decision to not match ""Column A-4"" from Table A with ""Column B-0"" from Table B was based on the content and context of the values within these columns. ""Column A-4"" contains titles of well-known movies (e.g., ""Ninotchka,"" ""Fast Times at Ridgemont High,"" ""Cinema Paradiso,"" ""Bringing Up Baby,"" ""The Great Dictator""), which are specific and identifiable film titles. In contrast, ""Column B-0"" also lists titles (e.g., ""Sands of the Desert,"" ""El Sur (film),"" ""In the Last Stride,"" ""Meendum Vazhven,"" ""Prey (2009 film)""), but there is no direct match or correlation between the movie titles in both columns. The titles in ""Column A-4"" are distinct and do not appear in ""Column B-0,"" indicating that these columns represent different sets of movies. Therefore, without any overlapping titles or direct correlation, it was concluded that ""Column A-4"" does not have a corresponding match in ""Column B-0.""
+Correct answer for Specific Column Pair: Column A-4 Column B-0 match
+
+
+Task 9:
+Prompt: System: Description: Please identify the matching columns between Table A and Table B. 
+     For each column in Table A, specify the corresponding column in Table B. 
+     If a column in A has no corresponding column in Table B, you can map it to 'None'. 
+     Represent each column mapping using a pair of column headers in a list, i.e., [Table A Column, Table B column or None]. 
+     Provide the mapping for each column in Table A and return all mappings in a list. Return the final result as JSON in the format {""column_mappings"": ""<a list of column pairs>""}.
+Human: Question:
+Table A:
+|   Column A-0 |   Column A-1 | Column A-2                      | Column A-3                              | Column A-4   | Column A-5   |   Column A-6 |   Column A-7 |
+|-------------:|-------------:|:--------------------------------|:----------------------------------------|:-------------|:-------------|-------------:|-------------:|
+|          nan |           18 | nan                             | Medal of Honor Airborne                 | Shooter      | XBox 360     |          nan |          nan |
+|          nan |           12 | nan                             | Ghostbusters (englische Version)        | Action       | XBox 360     |          nan |          nan |
+|          nan |           18 | nan                             | Rainbow Six Vegas 2 (AT, uncut)         | Shooter      | XBox 360     |          nan |          nan |
+|          nan |           18 | nan                             | God of War Collection                   | Action       | PS3          |          nan |          nan |
+|          nan |           18 | Destruction Derby l?sst gr?ssen | Flatout - Ultimate Carnage (UK Version) | Racing       | XBox 360     |          nan |          nan |
+
+Table B:
+| Column B-0               | Column B-1              | Column B-2   | Column B-3        | Column B-4          | Column B-5                          |
+|:-------------------------|:------------------------|:-------------|:------------------|:--------------------|:------------------------------------|
+| Project Gotham Racing 4  | Project Gotham Racing 4 | 2007-10-02   | Xbox 360          | Xbox Game Studios   | Racing game                         |
+| World Rally Championship | nan                     | nan          | nan               | nan                 | nan                                 |
+| Betrayer (video game)    | Betrayer                | nan          | Microsoft Windows | nan                 | Stealth game, Action-adventure game |
+| Fable II                 | Fable II                | 2008-10-21   | Xbox 360          | Xbox Game Studios   | Action role-playing game            |
+| Pro Moves Soccer         | Pro Moves Soccer        | nan          | Sega Genesis      | ASCII Entertainment | Sports game                         |
+
+Return the final result as JSON in the format {""column_mappings"": ""<a list of column pairs>""}. ONLY return the JSON and nothing else.
+Answer:
+Matching Decisions: {""column_mappings"": [[""Column A-0"", ""None""], [""Column A-1"", ""Column B-1""], [""Column A-2"", ""None""], [""Column A-3"", ""Column B-0""], [""Column A-4"", ""None""], [""Column A-5"", ""None""], [""Column A-6"", ""None""], [""Column A-7"", ""None""]]}
+Predicted answer for Specific Column Pair: Column A-4 and Column B-5 do not match
+Explanation: The decision to not match ""Column A-4"" from Table A with ""Column B-5"" from Table B was based on the nature of the data contained within each column. 
+
+- ""Column A-4"" in Table A lists specific genres of video games such as ""Shooter"", ""Action"", and ""Racing"". These are broad categories that describe the general type of gameplay experience a player can expect.
+
+- ""Column B-5"" in Table B, on the other hand, contains more detailed descriptions or sub-genres of video games like ""Racing game"", ""Stealth game, Action-adventure game"", and ""Action role-playing game"". These descriptions not only include the broad genre but also provide additional context or sub-genre classifications that are not present in ""Column A-4"".
+
+The key values influencing this decision were the general genre terms in ""Column A-4"" (e.g., ""Shooter"", ""Action"", ""Racing"") compared to the more specific and sometimes compound genre descriptions in ""Column B-5"" (e.g., ""Racing game"", ""Stealth game, Action-adventure game""). The lack of a one-to-one correspondence in genre specificity and the inclusion of additional descriptors in ""Column B-5"" that are absent in ""Column A-4"" led to the conclusion that these columns do not directly match.
+Correct answer for Specific Column Pair: Column A-4 Column B-5 match
+
+
+Task 10:
+Prompt: System: Description: Please identify the matching columns between Table A and Table B. 
+     For each column in Table A, specify the corresponding column in Table B. 
+     If a column in A has no corresponding column in Table B, you can map it to 'None'. 
+     Represent each column mapping using a pair of column headers in a list, i.e., [Table A Column, Table B column or None]. 
+     Provide the mapping for each column in Table A and return all mappings in a list. Return the final result as JSON in the format {""column_mappings"": ""<a list of column pairs>""}.
+Human: Question:
+Table A:
+| Column A-0                        | Column A-1   |   Column A-2 | Column A-3     | Column A-4   | Column A-5         |
+|:----------------------------------|:-------------|-------------:|:---------------|:-------------|:-------------------|
+| Congo, The Democratic Republic Of | nan          |          976 | 100 centimes   | CDF          | Franc Congolais    |
+| French Southern Territories       |               |          978 | 100 euro-cents | EUR          | Euro               |
+| Cocos (Keeling) Islands           | A$           |           36 | 100 cents      | AUD          | Australian Dollar  |
+| Cook Islands                      | NZ$          |          554 | 100 cents      | NZD          | New Zealand Dollar |
+| Chile                             | Ch$          |          152 | 100 centavos   | CLP          | Chilean Peso       |
+
+Table B:
+| Column B-0        | Column B-1                                                                                                                                                                | Column B-2                                                                                                                                                       | Column B-3   | Column B-4           | Column B-5                                                      |
+|:------------------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------|:-------------|:---------------------|:----------------------------------------------------------------|
+| Swiss franc       | Campione d'Italia, Liechtenstein, Switzerland                                                                                                                             | , Campione d'Italia, Italy                                                                                                                                       | CHF          | nan                  | Schweizer Franken, franc suisse, franc svizzer, franco svizzero |
+| Czech koruna      | Czech Republic                                                                                                                                                            | nan                                                                                                                                                              | CZK          | haléřa               | koruna česká                                                    |
+| Unidad de Fomento | Chile                                                                                                                                                                     | nan                                                                                                                                                              | CLF          | nan                  | nan                                                             |
+| Maltese scudo     | Hospitaller Malta, Hospitaller Rhodes, Crown Colony of Malta, French occupation of Malta, Gozo (independent state), Malta Protectorate, Sovereign Military Order of Malta | Crown Colony of Malta, Sovereign Military Order of Malta, Hospitaller Malta, Previously:, Malta Protectorate, Hospitaller Rhodes, French Malta, Independent Gozo | none         | Tarì, piccolo, grano | Scudo maltese, Skud Malti                                       |
+| Cambodian riel    | Cambodia                                                                                                                                                                  | nan                                                                                                                                                              | KHR          | kak, sen             | រៀលកម្ពុជា/រៀលខ្មែរ                                                    |
+
+Return the final result as JSON in the format {""column_mappings"": ""<a list of column pairs>""}. ONLY return the JSON and nothing else.
+Answer:
+Matching Decisions: {""column_mappings"": [[""Column A-0"", ""None""], [""Column A-1"", ""None""], [""Column A-2"", ""None""], [""Column A-3"", ""None""], [""Column A-4"", ""None""], [""Column A-5"", ""None""]]}
+Predicted answer for Specific Column Pair: Column A-0 and Column B-1 do not match
+Explanation: The decision to not match ""Column A-0"" from Table A with ""Column B-1"" from Table B was based on the content and context of the columns. ""Column A-0"" lists countries or territories, while ""Column B-1"" details specific areas, countries, or territories associated with the currency listed in ""Column B-0"". 
+
+The key influence on this decision was the lack of direct correspondence between the specific countries or territories listed in ""Column A-0"" and those mentioned in ""Column B-1"". For example, ""Column A-0"" includes ""Chile"", which could suggest a potential match due to ""Chile"" being mentioned in ""Column B-1"" associated with the ""Unidad de Fomento"". However, the currencies do not match since ""Column A-4"" lists the currency code (e.g., ""CLP"" for Chilean Peso), which does not align with the currencies or currency codes listed in ""Column B-3"" (e.g., ""CLF"" for Unidad de Fomento). 
+
+Therefore, despite the geographical connection, the context (currency information) and the specific details provided in both columns do not align in a way that would justify a direct mapping between ""Column A-0"" and ""Column B-1"".
+Correct answer for Specific Column Pair: Column A-0 Column B-1 match
+
+
+Task 11:
+Prompt: System: Description: Please identify the matching columns between Table A and Table B. 
+     For each column in Table A, specify the corresponding column in Table B. 
+     If a column in A has no corresponding column in Table B, you can map it to 'None'. 
+     Represent each column mapping using a pair of column headers in a list, i.e., [Table A Column, Table B column or None]. 
+     Provide the mapping for each column in Table A and return all mappings in a list. Return the final result as JSON in the format {""column_mappings"": ""<a list of column pairs>""}.
+Human: Question:
+Table A:
+| Column A-0   | Column A-1              | Column A-2     |
+|:-------------|:------------------------|:---------------|
+| Maldives     | Geography of Maldives   | Male           |
+| Mongolia     | Geography of Mongolia   | Ulaanbaatar    |
+| Mexico       | Geography of Mexico     | Mexico         |
+| Martinique   | Geography of Martinique | Fort-de-France |
+| Malta        | Geography of Malta      | Valletta       |
+
+Table B:
+| Column B-0                 | Column B-1    |
+|:---------------------------|:--------------|
+| Mutasarrifate of Jerusalem | Jerusalem     |
+| Marquisate of Finale       | Finale Ligure |
+| Mughan Soviet Republic     | Lankaran      |
+| Mecklenburg-Güstrow        | Güstrow       |
+| Mamluk Sultanate           | Cairo         |
+
+Return the final result as JSON in the format {""column_mappings"": ""<a list of column pairs>""}. ONLY return the JSON and nothing else.
+Answer:
+Matching Decisions: {""column_mappings"": [[""Column A-0"", ""None""], [""Column A-1"", ""Column B-0""], [""Column A-2"", ""Column B-1""]]}
+Predicted answer for Specific Column Pair: Column A-0 and Column B-0 do not match
+Explanation: The decision to not match ""Column A-0"" with ""Column B-0"" was based on the content and context of the values within these columns. ""Column A-0"" lists countries or territories (Maldives, Mongolia, Mexico, Martinique, Malta), while ""Column B-0"" contains historical or administrative regions (Mutasarrifate of Jerusalem, Marquisate of Finale, Mughan Soviet Republic, Mecklenburg-Güstrow, Mamluk Sultanate). The key influence on this decision was the nature of the entries: ""Column A-0"" is focused on modern geopolitical entities, whereas ""Column B-0"" refers to historical or specific administrative regions, which do not directly correspond to the contemporary countries or territories listed in ""Column A-0"".
+Correct answer for Specific Column Pair: Column A-0 Column B-0 match
+
+
+Task 12:
+Prompt: System: Description: Please identify the matching columns between Table A and Table B. 
+     For each column in Table A, specify the corresponding column in Table B. 
+     If a column in A has no corresponding column in Table B, you can map it to 'None'. 
+     Represent each column mapping using a pair of column headers in a list, i.e., [Table A Column, Table B column or None]. 
+     Provide the mapping for each column in Table A and return all mappings in a list. Return the final result as JSON in the format {""column_mappings"": ""<a list of column pairs>""}.
+Human: Question:
+Table A:
+| Column A-0             | Column A-1   | Column A-2                                                              | Column A-3   | Column A-4   | Column A-5         | Column A-6   |
+|:-----------------------|:-------------|:------------------------------------------------------------------------|:-------------|:-------------|:-------------------|:-------------|
+| Romania                | 22,276,056   | democracy                                                               | $256,900     | $10,661      | No (ended in 2007) | 238,392      |
+| Luxembourg             | 480,222      | constitutional monarchy                                                 | $34,530      | $71,904.24   | No                 | 2,586        |
+| Albania                | 3,600,523    | emerging democracy                                                      | $9,306       | $2,584.63    | Yes                | 27,398       |
+| Macedonia, Republic of | 2,055,915    | parliamentary democracy                                                 | $6,225       | $3,027.85    | No                 | 24,856       |
+| Switzerland            | 7,508,700    | formally a confederation but similar in structure to a federal republic | $386,100     | $51,107.52   | Yes                | 41,285       |
+
+Table B:
+| Column B-0           | Column B-1                  | Column B-2                      |       Column B-3 |   Column B-4 |   Column B-5 | Column B-6                    |   Column B-7 |   Column B-8 | Column B-9                                                                                |
+|:---------------------|:----------------------------|:--------------------------------|-----------------:|-------------:|-------------:|:------------------------------|-------------:|-------------:|:------------------------------------------------------------------------------------------|
+| United States        | United States dollar        | Federalism in the United States |      3.31894e+08 |         46.9 |  2.5035e+13  | 9833516.638013326             |  2.5035e+13  |        75180 | John Roberts, Nancy Pelosi, Joe Biden, Kamala Harris                                      |
+| Saint Lucia          | East Caribbean dollar       | Unitary state                   | 184961           |         51.2 |  2.48e+09    | 617.0, 617.0128675253453      |  1.77e+09    |         9780 | Errol Charles, Charles III, Philip J. Pierre                                              |
+| Sudan                | Sudanese pound              | Federalism                      |      4.79589e+07 |         34.2 |  2.0304e+11  | 1886068.0, 1886068.1917683303 |  3.0808e+10  |          674 | Mohamed Hamdan Dagalo, Abdel Fattah al-Burhan, Osman Hussein                              |
+| Equatorial Guinea    | Central African CFA franc   | Unitary state                   |      1.67917e+06 |        nan   |  2.7959e+10  | 28049.57123493888, 28050.0    |  1.6012e+10  |         8462 | Francisco Pascual Obama Asue, Teodoro Nguema Obiang Mangue, Teodoro Obiang Nguema Mbasogo |
+| United Arab Emirates | United Arab Emirates dirham | Federal monarchy                |      9.28241e+06 |         26   |  7.79234e+11 | 83599.63622542542, 83600.0    |  5.01354e+11 |        50349 | Mohamed bin Zayed Al Nahyan, Mohammed bin Rashid Al Maktoum                               |
+
+Return the final result as JSON in the format {""column_mappings"": ""<a list of column pairs>""}. ONLY return the JSON and nothing else.
+Answer:
+Matching Decisions: {""column_mappings"": [[""Column A-0"", ""None""], [""Column A-1"", ""None""], [""Column A-2"", ""None""], [""Column A-3"", ""Column B-3""], [""Column A-4"", ""None""], [""Column A-5"", ""None""], [""Column A-6"", ""None""]]}
+Predicted answer for Specific Column Pair: Column A-2 and Column B-2 do not match
+Explanation: The decision to not match ""Column A-2"" from Table A with ""Column B-2"" from Table B was based on the nature of the content within these columns. 
+
+- ""Column A-2"" in Table A describes the type of government or political system in various countries (e.g., ""democracy,"" ""constitutional monarchy,"" ""emerging democracy,"" ""parliamentary democracy,"" ""formally a confederation but similar in structure to a federal republic""). 
+- ""Column B-2"" in Table B, on the other hand, describes more specific governmental structures or principles for different countries (e.g., ""Federalism in the United States,"" ""Unitary state,"" ""Federalism,"" ""Unitary state,"" ""Federal monarchy"").
+
+The key influence on the decision was the level of specificity and the nature of the descriptions. While both columns discuss governmental structures, ""Column A-2"" focuses on broad categories of governance systems, whereas ""Column B-2"" includes specific governmental principles or structures that do not directly correspond to the broad categories listed in ""Column A-2."" For example, ""democracy"" is a broad category that can encompass various forms of governance, including federalism, unitary states, or federal monarchies, but it does not directly equate to any of these specific terms. Therefore, due to the lack of direct correspondence in the nature of the content, these columns were not matched.
+Correct answer for Specific Column Pair: Column A-2 Column B-2 match
+
+
+Task 13:
+Prompt: System: Description: Please identify the matching columns between Table A and Table B. 
+     For each column in Table A, specify the corresponding column in Table B. 
+     If a column in A has no corresponding column in Table B, you can map it to 'None'. 
+     Represent each column mapping using a pair of column headers in a list, i.e., [Table A Column, Table B column or None]. 
+     Provide the mapping for each column in Table A and return all mappings in a list. Return the final result as JSON in the format {""column_mappings"": ""<a list of column pairs>""}.
+Human: Question:
+Table A:
+|   Column A-0 | Column A-1                                                                                                                                           |   Column A-2 |   Column A-3 | Column A-4           |
+|-------------:|:-----------------------------------------------------------------------------------------------------------------------------------------------------|-------------:|-------------:|:---------------------|
+|          209 | Peter Weir                                                                                                                                           |          384 |         1989 | Dead Poets Society   |
+|          423 | Sergio Leone                                                                                                                                         |          653 |         1964 | A Fistful of Dollars |
+|           26 | Joel Coen                                                                                                                                            |           49 |         1996 | Fargo                |
+|          172 | Martin Scorsese                                                                                                                                      |          488 |         1995 | Casino               |
+|          185 | James Algar, Samuel Armstrong, Ford Beebe, Norman Ferguson, Jim Handley, T. Hee, Wilfred Jackson, Hamilton Luske, Bill Roberts, and Paul Satterfield |          199 |         1940 | Fantasia             |
+
+Table B:
+| Column B-0            | Column B-1      | Column B-2   | Column B-3              | Column B-4   |
+|:----------------------|:----------------|:-------------|:------------------------|:-------------|
+| Dark City (1998 film) | Alex Proyas     | nan          | Trevor Jones (composer) | 100.0        |
+| Doctor Zhivago (film) | David Lean      | nan          | Maurice Jarre           | 193.0, 200.0 |
+| Devil on Horseback    | Cyril Frankel   | 1954-03-17   | Malcolm Arnold          | 88.0         |
+| Chariots of Fire      | Hugh Hudson     | nan          | Vangelis                | 124.0        |
+| Duty's Reward         | Bertram Bracken | 1927-06-10   | nan                     | 60.0         |
+
+Return the final result as JSON in the format {""column_mappings"": ""<a list of column pairs>""}. ONLY return the JSON and nothing else.
+Answer:
+Matching Decisions: {""column_mappings"": [[""Column A-0"", ""None""], [""Column A-1"", ""Column B-0""], [""Column A-2"", ""None""], [""Column A-3"", ""None""], [""Column A-4"", ""None""]]}
+Predicted answer for Specific Column Pair: Column A-3 and Column B-2 do not match
+Explanation: The decision to not match ""Column A-3"" from Table A with ""Column B-2"" from Table B was based on the content and format of the data within these columns. 
+
+- ""Column A-3"" contains years (e.g., 1989, 1964, 1996, 1995, 1940), representing the release years of movies.
+- ""Column B-2"" contains either the string 'nan' or dates in the format YYYY-MM-DD (e.g., 1954-03-17, 1927-06-10).
+
+The key differences influencing the decision are:
+
+1. **Data Type and Format**: ""Column A-3"" is strictly years (integer-like data), while ""Column B-2"" includes full dates where provided, indicating not just the year but also the month and day. This discrepancy in format and specificity of information indicates they do not represent the same type of data.
+
+2. **Content Consistency**: ""Column A-3"" consistently provides the year of movie releases, a singular piece of temporal information. In contrast, ""Column B-2"" is inconsistent, with some entries being 'nan' (not a number/not available) and others being full dates, which provide significantly more detail than just a year.
+
+Given these differences, matching these columns would imply a loss of information or a misinterpretation of the data's nature. Therefore, they were not matched.
+Correct answer for Specific Column Pair: Column A-3 Column B-2 match
+
+
+Task 14:
+Prompt: System: Description: Please identify the matching columns between Table A and Table B. 
+     For each column in Table A, specify the corresponding column in Table B. 
+     If a column in A has no corresponding column in Table B, you can map it to 'None'. 
+     Represent each column mapping using a pair of column headers in a list, i.e., [Table A Column, Table B column or None]. 
+     Provide the mapping for each column in Table A and return all mappings in a list. Return the final result as JSON in the format {""column_mappings"": ""<a list of column pairs>""}.
+Human: Question:
+Table A:
+|   Column A-0 |   Column A-1 | Column A-2     |   Column A-3 |   Column A-4 |   Column A-5 |   Column A-6 |   Column A-7 |   Column A-8 | Column A-9       |   Column A-10 |
+|-------------:|-------------:|:---------------|-------------:|-------------:|-------------:|-------------:|-------------:|-------------:|:-----------------|--------------:|
+|          208 |          535 | NY 15135 03447 |         1755 |          nan |          nan |          nan |          nan |          nan | Whin Rigg        |           nan |
+|           87 |          736 | NY 28180 07393 |         2415 |          nan |          nan |          nan |          nan |          nan | Harrison Stickle |           nan |
+|          156 |          792 | NY 44332 12861 |         2598 |          nan |          nan |          nan |          nan |          nan | Rampsgill Head   |           nan |
+|           46 |          753 | NY 22301 15324 |         2470 |          nan |          nan |          nan |          nan |          nan | Dale Head        |           nan |
+|          204 |          487 | NY 40370 05267 |         1598 |          nan |          nan |          nan |          nan |          nan | Wansfell         |           nan |
+
+Table B:
+| Column B-0               |   Column B-1 | Column B-2   |
+|:-------------------------|-------------:|:-------------|
+| Watch Hill (Cockermouth) |          254 | NY159318     |
+| Cold Pike                |          701 | NY262035     |
+| Gregory Chapel           |          695 | NY802003     |
+| Cringle Moor             |          434 | NZ537029     |
+| Gun (Staffordshire)      |          385 | SJ970615     |
+
+Return the final result as JSON in the format {""column_mappings"": ""<a list of column pairs>""}. ONLY return the JSON and nothing else.
+Answer:
+Matching Decisions: {""column_mappings"": [[""Column A-0"", ""None""], [""Column A-1"", ""None""], [""Column A-2"", ""None""], [""Column A-3"", ""None""], [""Column A-4"", ""None""], [""Column A-5"", ""None""], [""Column A-6"", ""None""], [""Column A-7"", ""None""], [""Column A-8"", ""None""], [""Column A-9"", ""None""], [""Column A-10"", ""None""]]}
+Predicted answer for Specific Column Pair: Column A-1 and Column B-1 do not match
+Explanation: The decision to not match ""Column A-1"" with ""Column B-1"" was based on the analysis of the values and the context provided by both columns. 
+
+In Table A, ""Column A-1"" contains values like 535, 736, 792, 753, and 487, which appear to represent some form of numerical data, but without a clear context of what these numbers signify. 
+
+In Table B, ""Column B-1"" also contains numerical values: 254, 701, 695, 434, and 385. These values, while numerical and seemingly similar in nature to those in ""Column A-1"", do not directly match or correlate to the values in ""Column A-1"". 
+
+The decision was influenced by the lack of a direct match or a clear pattern that would suggest a relationship between the two columns. Without additional context or a discernible pattern linking the numbers in ""Column A-1"" to those in ""Column B-1"", it's not appropriate to assume they represent the same type of data or have a direct correspondence. 
+
+Therefore, without explicit matching values or a defined relationship indicating that these columns represent the same data type or category, the most accurate and responsible decision was to map ""Column A-1"" to ""None"" for ""Column B-1"".
+Correct answer for Specific Column Pair: Column A-1 Column B-1 match
+
+
+Task 15:
+Prompt: System: Description: Please identify the matching columns between Table A and Table B. 
+     For each column in Table A, specify the corresponding column in Table B. 
+     If a column in A has no corresponding column in Table B, you can map it to 'None'. 
+     Represent each column mapping using a pair of column headers in a list, i.e., [Table A Column, Table B column or None]. 
+     Provide the mapping for each column in Table A and return all mappings in a list. Return the final result as JSON in the format {""column_mappings"": ""<a list of column pairs>""}.
+Human: Question:
+Table A:
+|   Column A-0 |   Column A-1 | Column A-2     |   Column A-3 |   Column A-4 |   Column A-5 |   Column A-6 |   Column A-7 |   Column A-8 | Column A-9       |   Column A-10 |
+|-------------:|-------------:|:---------------|-------------:|-------------:|-------------:|-------------:|-------------:|-------------:|:-----------------|--------------:|
+|          208 |          535 | NY 15135 03447 |         1755 |          nan |          nan |          nan |          nan |          nan | Whin Rigg        |           nan |
+|           87 |          736 | NY 28180 07393 |         2415 |          nan |          nan |          nan |          nan |          nan | Harrison Stickle |           nan |
+|          156 |          792 | NY 44332 12861 |         2598 |          nan |          nan |          nan |          nan |          nan | Rampsgill Head   |           nan |
+|           46 |          753 | NY 22301 15324 |         2470 |          nan |          nan |          nan |          nan |          nan | Dale Head        |           nan |
+|          204 |          487 | NY 40370 05267 |         1598 |          nan |          nan |          nan |          nan |          nan | Wansfell         |           nan |
+
+Table B:
+| Column B-0               |   Column B-1 | Column B-2   |
+|:-------------------------|-------------:|:-------------|
+| Watch Hill (Cockermouth) |          254 | NY159318     |
+| Cold Pike                |          701 | NY262035     |
+| Gregory Chapel           |          695 | NY802003     |
+| Cringle Moor             |          434 | NZ537029     |
+| Gun (Staffordshire)      |          385 | SJ970615     |
+
+Return the final result as JSON in the format {""column_mappings"": ""<a list of column pairs>""}. ONLY return the JSON and nothing else.
+Answer:
+Matching Decisions: {""column_mappings"": [[""Column A-0"", ""None""], [""Column A-1"", ""None""], [""Column A-2"", ""None""], [""Column A-3"", ""None""], [""Column A-4"", ""None""], [""Column A-5"", ""None""], [""Column A-6"", ""None""], [""Column A-7"", ""None""], [""Column A-8"", ""None""], [""Column A-9"", ""None""], [""Column A-10"", ""None""]]}
+Predicted answer for Specific Column Pair: Column A-2 and Column B-2 do not match
+Explanation: The decision to not match ""Column A-2"" from Table A with ""Column B-2"" from Table B was based on the format and structure of the values within these columns. 
+
+- **Column A-2** contains values that are in a format resembling ""NY 15135 03447"", which suggests a specific pattern of an alphabetical prefix followed by two numerical groups separated by a space.
+- **Column B-2**, on the other hand, contains values like ""NY159318"", which are also prefixed with letters (e.g., ""NY"") but followed by a single group of numbers without any spaces.
+
+The key differences influencing the decision are:
+1. **Presence of a space within the numerical part**: Column A-2 includes a space separating two groups of numbers, whereas Column B-2 does not.
+2. **Number of numerical groups**: Column A-2 consistently shows two separate numerical groups after the prefix, while Column B-2 presents a single continuous string of numbers.
+
+These structural and format discrepancies indicate that despite both columns containing alphanumeric codes with a similar prefix (e.g., ""NY""), the manner in which these codes are presented significantly differs, leading to the conclusion that they do not match.
+Correct answer for Specific Column Pair: Column A-2 Column B-2 match
+
+
+Task 16:
+Prompt: System: Description: Please identify the matching columns between Table A and Table B. 
+     For each column in Table A, specify the corresponding column in Table B. 
+     If a column in A has no corresponding column in Table B, you can map it to 'None'. 
+     Represent each column mapping using a pair of column headers in a list, i.e., [Table A Column, Table B column or None]. 
+     Provide the mapping for each column in Table A and return all mappings in a list. Return the final result as JSON in the format {""column_mappings"": ""<a list of column pairs>""}.
+Human: Question:
+Table A:
+| Column A-0       | Column A-1    | Column A-2   | Column A-3   |
+|:-----------------|:--------------|:-------------|:-------------|
+| Broad Peak I     | June 9, 1957  | Karakoram    | 8,047        |
+| Kamet            | June 21, 1931 | Himalayas    | 7,756        |
+| Gasherbrum I     | July 5, 1958  | Karakoram    | 8,068        |
+| Nanda Devi       | Aug 29, 1936  | Himalayas    | 7,816        |
+| Batura Muztagh I | July 30, 1976 | Karakoram    | 7,785        |
+
+Table B:
+| Column B-0             |   Column B-1 | Column B-2                                                                   | Column B-3                       |   Column B-4 |   Column B-5 |   Column B-6 |
+|:-----------------------|-------------:|:-----------------------------------------------------------------------------|:---------------------------------|-------------:|-------------:|-------------:|
+| Vordere Ölgrubenspitze |      46.9081 | Austria, Tyrol (state)                                                       | Ötztal Alps                      |          229 |         1876 |      3456    |
+| Croce Rossa            |      45.2667 | Savoie, France, Italy, Piedmont                                              | Graian Alps                      |          495 |         1857 |      3566    |
+| Calzada (mountain)     |     -15.9325 | Bolivia, La Paz Department (Bolivia), Larecaja Province, Sorata Municipality | Cordillera Real (Bolivia), Andes |          nan |            1 |      5874    |
+| Colchuck Balanced Rock |      47.4915 | Washington (U.S. state), Chelan County, Washington                           | Cascade Range, Stuart Range      |          nan |         1958 |      2499.36 |
+| Jongsong Peak          |      27.8833 | China                                                                        | Himalayas                        |         1256 |         1930 |      7462    |
+
+Return the final result as JSON in the format {""column_mappings"": ""<a list of column pairs>""}. ONLY return the JSON and nothing else.
+Answer:
+Matching Decisions: {""column_mappings"": [[""Column A-0"", ""None""], [""Column A-1"", ""None""], [""Column A-2"", ""Column B-4""], [""Column A-3"", ""None""]]}
+Predicted answer for Specific Column Pair: Column A-2 and Column B-3 do not match
+Explanation: The decision to not match ""Column A-2"" from Table A with ""Column B-3"" from Table B was based on the content and context of the values within these columns. 
+
+- ""Column A-2"" contains geographical regions or mountain ranges, specifically ""Karakoram"" and ""Himalayas"". These are names of significant mountain ranges in Asia.
+- ""Column B-3"" lists more specific locations or sub-ranges within broader geographical areas, such as ""Ötztal Alps"", ""Graian Alps"", ""Cordillera Real (Bolivia), Andes"", ""Cascade Range, Stuart Range"", and ""Himalayas"".
+
+The key influence on the decision was the specificity and type of geographical information provided in each column. While ""Column A-2"" focuses on broad, well-known mountain ranges, ""Column B-3"" includes a mix of specific mountain ranges, sub-ranges, and in one case, matches the type of geographical information in ""Column A-2"" (""Himalayas""). However, the presence of ""Himalayas"" in both columns does not justify a direct match because the overall context of ""Column B-3"" includes more specific and varied geographical details compared to the broader regional focus of ""Column A-2"". Therefore, without consistent matching across all entries, it was determined that these columns do not correspond directly to each other.
+Correct answer for Specific Column Pair: Column A-2 Column B-3 match
+
+
+Task 17:
+Prompt: System: Description: Please identify the matching columns between Table A and Table B. 
+     For each column in Table A, specify the corresponding column in Table B. 
+     If a column in A has no corresponding column in Table B, you can map it to 'None'. 
+     Represent each column mapping using a pair of column headers in a list, i.e., [Table A Column, Table B column or None]. 
+     Provide the mapping for each column in Table A and return all mappings in a list. Return the final result as JSON in the format {""column_mappings"": ""<a list of column pairs>""}.
+Human: Question:
+Table A:
+|   Column A-0 |   Column A-1 |   Column A-2 | Column A-3   | Column A-4   |   Column A-5 | Column A-6   | Column A-7           |
+|-------------:|-------------:|-------------:|:-------------|:-------------|-------------:|:-------------|:---------------------|
+|           11 |       265.91 |        22.29 | UK           | Oil and gas  |       198.14 | 217.60       | BP                   |
+|           12 |       179.02 |        11.68 | Japan        | Automotive   |       217.69 | 243.60       | Toyota               |
+|           15 |       125.33 |         8.81 | Germany      | Insurance    |        87.22 | 1,380.88     | Allianz              |
+|            7 |       335.09 |        39.5  | USA          | Oil and gas  |       410.65 | 223.95       | ExxonMobil           |
+|            5 |        99.3  |        14.44 | USA          | Banking      |       170.97 | 1,351.52     | JPMorgan Chase & Co. |
+
+Table B:
+| Column B-0        | Column B-1   | Column B-2                         |   Column B-3 |   Column B-4 | Column B-5                                                              | Column B-6         | Column B-7   |
+|:------------------|:-------------|:-----------------------------------|-------------:|-------------:|:------------------------------------------------------------------------|:-------------------|:-------------|
+| Mallinckrodt      | MNKKQ        | nan                                |   3.162e+09  |   1.0338e+10 | Blanchardstown, Missouri, St Louis, Staines-upon-Thames, Dublin, Surrey | Pharmaceutical     | MNKKQ        |
+| PulteGroup        | 822416       | CEO, CFO, Executive Vice-President |   1.3927e+10 |   1.3353e+10 | Atlanta, Georgia                                                        | Home construction  | PHM          |
+| Crown Holdings    | 1219601      | CEO, CFO                           |   1.15e+10   |   7.5e+09    | Yardley, Pennsylvania                                                   | Packaging          | CCK          |
+| EOG Resources     | EOG          | CEO, CFO                           |   1.1032e+10 |   3.5804e+10 | Houston, United States, Heritage Plaza                                  | Petroleum industry | EOG          |
+| Denbury Resources | DEN          | President (corporate title), CFO   |   1.258e+09  |   1.902e+09  | Plano, Texas                                                            | Petroleum industry | DEN          |
+
+Return the final result as JSON in the format {""column_mappings"": ""<a list of column pairs>""}. ONLY return the JSON and nothing else.
+Answer:
+Matching Decisions: {""column_mappings"": [[""Column A-0"", ""None""], [""Column A-1"", ""None""], [""Column A-2"", ""None""], [""Column A-3"", ""None""], [""Column A-4"", ""None""], [""Column A-5"", ""None""], [""Column A-6"", ""None""], [""Column A-7"", ""None""]]}
+Predicted answer for Specific Column Pair: Column A-1 and Column B-3 do not match
+Explanation: The decision to not match Column A-1 and Column B-3 was based on the nature and context of the data within each column. 
+
+Column A-1 in Table A appears to represent financial figures related to companies (possibly revenue, profit, or similar financial metrics), with values like 265.91, 179.02, etc., which seem to be in billions or millions but without explicit units provided. 
+
+Column B-3 in Table B contains large numerical values as well, such as 3.162e+09, 1.3927e+10, etc., which are explicitly in scientific notation and represent large financial figures, likely in the context of revenue, assets, or similar financial metrics.
+
+The decision not to match these columns despite both containing financial figures was influenced by the lack of explicit context that directly links them. The figures in Column A-1 are not in scientific notation and lack a clear unit of measurement or context that directly corresponds to the figures in Column B-3, which are explicitly in scientific notation and likely represent a specific financial metric given the context of Table B. Without a direct and clear correlation in the type of financial data (e.g., revenue to revenue, assets to assets) and the format of the data (standard numerical format vs. scientific notation), it's prudent not to assume they match.
+
+Furthermore, financial figures alone, without explicit labels or context indicating they represent the same type of financial metric (e.g., annual revenue, total assets), can vary widely in meaning and should not be matched solely based on the presence of numerical financial data. The absence of a direct and clear correlation in the context or type of financial metric leads to the decision not to match these columns.
+Correct answer for Specific Column Pair: Column A-1 Column B-3 match
+
+
+Task 18:
+Prompt: System: Description: Please identify the matching columns between Table A and Table B. 
+     For each column in Table A, specify the corresponding column in Table B. 
+     If a column in A has no corresponding column in Table B, you can map it to 'None'. 
+     Represent each column mapping using a pair of column headers in a list, i.e., [Table A Column, Table B column or None]. 
+     Provide the mapping for each column in Table A and return all mappings in a list. Return the final result as JSON in the format {""column_mappings"": ""<a list of column pairs>""}.
+Human: Question:
+Table A:
+|   Column A-0 | Column A-1   | Column A-2   |   Column A-3 | Column A-4             |
+|-------------:|:-------------|:-------------|-------------:|:-----------------------|
+|        175.1 | GL/UR        | 60.83 km     |         3268 | Clariden               |
+|        160.7 | ZH           | 5.00 km      |          864 | Ebnerberg              |
+|        162.5 | SZ           | 32.41 km     |         1489 | Brüschstockbügel       |
+|        170.4 | SZ           | 36.96 km     |         2069 | Turner                 |
+|        170.8 | SZ           | 44.41 km     |         2319 | Silberen Twärenen-Räui |
+
+Table B:
+| Column B-0     |   Column B-1 | Column B-2                            | Column B-3                                          | Column B-4                            |   Column B-5 |
+|:---------------|-------------:|:--------------------------------------|:----------------------------------------------------|:--------------------------------------|-------------:|
+| Zindlenspitz   |       2097   | Schwyzer Alps                         | Canton of Glarus, Canton of Schwyz, Switzerland     | Schwyzer Alps                         |      8.96    |
+| Rheinwaldhorn  |       3402   | Lepontine Alps                        | Graubünden, Ticino, Switzerland                     | Lepontine Alps                        |      9.04    |
+| Schnebelhorn   |       1291.9 | Appenzell Alps                        | Canton of St. Gallen, Canton of Zurich, Switzerland | Appenzell Alps                        |      8.97964 |
+| Rossbodenstock |       2836   | Saint-Gotthard Massif, Lepontine Alps | Canton of Uri, Graubünden                           | Saint-Gotthard Massif, Lepontine Alps |      8.65094 |
+| Bös Fulen      |       2802   | Schwyz Alps                           | Canton of Glarus, Canton of Schwyz                  | Schwyz Alps                           |      8.94583 |
+
+Return the final result as JSON in the format {""column_mappings"": ""<a list of column pairs>""}. ONLY return the JSON and nothing else.
+Answer:
+Matching Decisions: {""column_mappings"": [[""Column A-0"", ""None""], [""Column A-1"", ""Column B-2""], [""Column A-2"", ""None""], [""Column A-3"", ""Column B-1""], [""Column A-4"", ""Column B-0""]]}
+Predicted answer for Specific Column Pair: Column A-1 and Column B-2 match
+Explanation: The decision to match ""Column A-1"" from Table A with ""Column B-2"" from Table B was based on the content and context of the values within these columns. 
+
+- **Column A-1** contains values like ""GL/UR"", ""ZH"", and ""SZ"", which are abbreviations for Swiss cantons or regions.
+- **Column B-2** lists geographical regions or alpine groups, among which ""Schwyzer Alps"" and ""Lepontine Alps"" are mentioned. While these are not direct matches to the abbreviations in Column A-1, the presence of specific regional names that are associated with Switzerland suggests a geographical context.
+
+The high influence on the decision came from recognizing that both columns refer to geographical locations or regions within Switzerland, albeit at different levels of granularity. ""Column A-1"" refers to cantons or smaller regions within Switzerland through abbreviations, while ""Column B-2"" refers to broader alpine regions or mountain ranges within the country. The connection is the geographical context and the Swiss focus of both columns, making ""Column A-1"" and ""Column B-2"" the most logical pair based on the available data.
+Correct answer for Specific Column Pair: Column A-1 Column B-2 do not match
+
+
+Task 19:
+Prompt: System: Description: Please identify the matching columns between Table A and Table B. 
+     For each column in Table A, specify the corresponding column in Table B. 
+     If a column in A has no corresponding column in Table B, you can map it to 'None'. 
+     Represent each column mapping using a pair of column headers in a list, i.e., [Table A Column, Table B column or None]. 
+     Provide the mapping for each column in Table A and return all mappings in a list. Return the final result as JSON in the format {""column_mappings"": ""<a list of column pairs>""}.
+Human: Question:
+Table A:
+|   Column A-0 | Column A-1     |   Column A-2 |   Column A-3 | Column A-4               |
+|-------------:|:---------------|-------------:|-------------:|:-------------------------|
+|          nan | Cahill, Mike   |  2.00803e+07 |         2007 | King of California       |
+|          nan | Kazan, Elia    |  2.00902e+07 |         1945 | A Tree Grows in Brooklyn |
+|          nan | Scott, Ridley  |  2.01101e+07 |         2010 | Robin Hood               |
+|          nan | Dabis, Cherien |  2.01002e+07 |         2009 | Amreeka                  |
+|          nan | Atchison, Doug |  2.00908e+07 |         2006 | Akeelah and the Bee      |
+
+Table B:
+| Column B-0                   | Column B-1   | Column B-2              | Column B-3                                                 |
+|:-----------------------------|:-------------|:------------------------|:-----------------------------------------------------------|
+| Huckleberry Finn (1975 film) | 1975-03-25   | Robert Totten           | nan                                                        |
+| The White Ribbon             | nan          | Michael Haneke          | nan                                                        |
+| Upswept Hare                 | 1953-03-14   | Robert McKimson         | Edward Selzer                                              |
+| Mission: Impossible III      | nan          | J. J. Abrams            | Paula Wagner, Tom Cruise                                   |
+| Win Win (film)               | nan          | Tom McCarthy (director) | Michael London, Tom McCarthy (director), Mary Jane Skalski |
+
+Return the final result as JSON in the format {""column_mappings"": ""<a list of column pairs>""}. ONLY return the JSON and nothing else.
+Answer:
+Matching Decisions: {""column_mappings"": [[""Column A-0"", ""None""], [""Column A-1"", ""Column B-2""], [""Column A-2"", ""Column B-0""], [""Column A-3"", ""None""], [""Column A-4"", ""None""]]}
+Predicted answer for Specific Column Pair: Column A-3 and Column B-1 do not match
+Explanation: The decision to not match ""Column A-3"" from Table A with ""Column B-1"" from Table B was based on the format and content of the data in these columns. 
+
+- ""Column A-3"" contains years represented as four-digit numbers (e.g., 2007, 1945, 2010, 2009, 2006).
+- ""Column B-1"" contains dates in a year-month-day format (e.g., 1975-03-25, 1953-03-14).
+
+The key difference is that ""Column A-3"" represents only the year part of a date, while ""Column B-1"" provides full dates including year, month, and day. This fundamental difference in data representation and specificity led to the decision that these columns do not correspond to each other, despite both containing temporal information. The presence of full dates in ""Column B-1"" versus only the year in ""Column A-3"" was the influential factor in this decision.
+Correct answer for Specific Column Pair: Column A-3 Column B-1 match
+
+
+Task 20:
+Prompt: System: Description: Please identify the matching columns between Table A and Table B. 
+     For each column in Table A, specify the corresponding column in Table B. 
+     If a column in A has no corresponding column in Table B, you can map it to 'None'. 
+     Represent each column mapping using a pair of column headers in a list, i.e., [Table A Column, Table B column or None]. 
+     Provide the mapping for each column in Table A and return all mappings in a list. Return the final result as JSON in the format {""column_mappings"": ""<a list of column pairs>""}.
+Human: Question:
+Table A:
+| Column A-0     | Column A-1    |   Column A-2 | Column A-3    |
+|:---------------|:--------------|-------------:|:--------------|
+| Spain          | Refer to Euro |      0.00675 | Peseta (ESP)  |
+| Taiwan         | 0.03751       |      0.02775 | Dollar (TWD)  |
+| Czech Republic | 0.05870       |      0.04714 | Koruna (CZK)  |
+| Venezuela      | nan           |    nan       | Bolivar (VEB) |
+| New Zealand    | 0.8866        |      0.7849  | Dollar (NZD)  |
+
+Table B:
+| Column B-0       | Column B-1                               |   Column B-2 | Column B-3                                                                                                        | Column B-4             | Column B-5   |
+|:-----------------|:-----------------------------------------|-------------:|:------------------------------------------------------------------------------------------------------------------|:-----------------------|:-------------|
+| Bulgaria         | National Assembly (Bulgaria)             |   8.6e+10    | nan                                                                                                               | Bulgarian lev          | decrease     |
+| Papua New Guinea | National Parliament of Papua New Guinea  |   2.1543e+10 | Related articles, UNESCO Science Report: towards 2030                                                             | Papua New Guinean kina | increase     |
+| Sudan            | Transitional Legislative Council (Sudan) |   3.0808e+10 | nan                                                                                                               | Sudanese pound         | increase     |
+| Croatia          | Sabor                                    |   6.938e+10  | nan                                                                                                               | Croatian kuna          | increase     |
+| Aruba            | nan                                      |   3.4e+09    | Geographic locale, International membership and history, Languages in Aruba, National origins, Religions of Aruba | nan                    | nan          |
+
+Return the final result as JSON in the format {""column_mappings"": ""<a list of column pairs>""}. ONLY return the JSON and nothing else.
+Answer:
+Matching Decisions: {""column_mappings"": [[""Column A-0"", ""None""], [""Column A-1"", ""Column B-1""], [""Column A-2"", ""Column B-2""], [""Column A-3"", ""None""]]}
+Predicted answer for Specific Column Pair: Column A-3 and Column B-4 do not match
+Explanation: The decision to not match ""Column A-3"" from Table A with ""Column B-4"" from Table B was based on the content and context of the values within these columns. 
+
+- ""Column A-3"" contains values that represent the names of currencies along with their ISO currency codes in parentheses, such as ""Peseta (ESP)"", ""Dollar (TWD)"", ""Koruna (CZK)"", ""Bolivar (VEB)"", and ""Dollar (NZD)"".
+- ""Column B-4"", on the other hand, lists the names of currencies without any accompanying ISO currency codes, including ""Bulgarian lev"", ""Papua New Guinean kina"", ""Sudanese pound"", ""Croatian kuna"", and there's a 'nan' value indicating a missing or not applicable entry.
+
+The key factors influencing the decision were:
+1. **Format and Detail**: The format and level of detail between the two columns differ significantly. ""Column A-3"" includes both the name of the currency and its ISO code, providing a specific identifier for each currency, whereas ""Column B-4"" only provides the name of the currency.
+2. **Content Match**: There is no direct content match between the two columns. None of the specific currencies listed in ""Column A-3"" appear in ""Column B-4"".
+
+Given these differences in format, detail, and the absence of matching currency names, it was determined that ""Column A-3"" does not have a corresponding column in Table B, leading to the decision not to match it with ""Column B-4"" or any other column in Table B.
+Correct answer for Specific Column Pair: Column A-3 Column B-4 match
+
+
+
+Correct Decisions (Only as a reference):
+Task 21:
+Prompt: System: Description: Please identify the matching columns between Table A and Table B. 
+     For each column in Table A, specify the corresponding column in Table B. 
+     If a column in A has no corresponding column in Table B, you can map it to 'None'. 
+     Represent each column mapping using a pair of column headers in a list, i.e., [Table A Column, Table B column or None]. 
+     Provide the mapping for each column in Table A and return all mappings in a list. Return the final result as JSON in the format {""column_mappings"": ""<a list of column pairs>""}.
+Human: Question:
+Table A:
+| Column A-0         | Column A-1   | Column A-2              |
+|:-------------------|:-------------|:------------------------|
+| Spotted salamander | Amphibian    | Ambystoma maculatum     |
+| Softshell turtles  | Reptile      | Trionyx spp.            |
+| Ornate box turtle  | Reptile      | Terrapene ornata ornata |
+| Caspian tern       | Bird         | Sterna caspia           |
+| Red-eyed vireo     | Bird         | Vireo olivaceus         |
+
+Table B:
+| Column B-0                 | Column B-1   | Column B-2     | Column B-3                                                                                          | Column B-4                 |
+|:---------------------------|:-------------|:---------------|:----------------------------------------------------------------------------------------------------|:---------------------------|
+| Tetramorium tonganum       | Insect       | T. tonganum    | *Tetramorium magitae (Forel, 1911)                                                                  | Tetramorium tonganum       |
+| Cylindromyrmex             | Insect       | nan            | Holcoponera (Cameron, 1891), Hypocylindromyrmex (Wheeler, 1924), Metacylindromyrmex (Wheeler, 1924) | nan                        |
+| Dysgonia erectata          | Insect       | D. erectata    | *Parallelia erectata                                                                                | Dysgonia erectata          |
+|                            |              |                | *Ophiusa erectata (Hampson, 1902)                                                                   |                            |
+| Pseudostegania yargongaria | Insect       | P. yargongaria | *Asthena yargongaria (Oberthür, 1916)                                                               | Pseudostegania yargongaria |
+| Vexillum obeliscus         | Gastropoda   | V. obeliscus   | * Costellaria obeliscus                                                                             | Vexillum  obeliscus        |
+|                            |              |                | * Mitra obeliscus Reeve, 1844                                                                       |                            |
+|                            |              |                | * Vexillum  subtruncatum Sowerby, G.B. II & III, 1874                                               |                            |
+|                            |              |                | * Vexillum andamanica Nevill, G. & H. Nevill, 1875                                                  |                            |
+|                            |              |                | * Turricula quasillus Iredale, T., 1929                                                             |                            |
+
+Return the final result as JSON in the format {""column_mappings"": ""<a list of column pairs>""}. ONLY return the JSON and nothing else.
+Answer:
+Matching Decision Output: {""column_mappings"": [[""Column A-0"", ""None""], [""Column A-1"", ""Column B-1""], [""Column A-2"", ""Column B-2""]]}
+Predicted answer for Specific Column Pair: Column A-2 and Column B-4 do not match
+Explanation: The decision to not match ""Column A-2"" from Table A with ""Column B-1"" from Table B was based on the content and context of the data within these columns. 
+
+- ""Column A-2"" in Table A contains scientific names of various animals (e.g., ""Ambystoma maculatum"", ""Trionyx spp."", ""Terrapene ornata ornata"", ""Sterna caspia"", ""Vireo olivaceus""), which are specific and unique identifiers for species.
+- ""Column B-1"" in Table B lists broad categories of animal types or classifications (e.g., ""Insect"", ""Gastropoda"").
+
+The mismatch is clear: ""Column A-2"" provides specific species names, while ""Column B-1"" offers general classifications. The values that had a high influence on this decision were the specific scientific names in ""Column A-2"" compared to the general nature of the categories in ""Column B-1"". Matching these columns would inaccurately suggest that specific species names correspond directly to broad animal classifications, which is not the case.
+Correct answer for Specific Column Pair: Column A-1 Column B-4 do not match
+Task 22:
+Prompt: System: Description: Please identify the matching columns between Table A and Table B. 
+     For each column in Table A, specify the corresponding column in Table B. 
+     If a column in A has no corresponding column in Table B, you can map it to 'None'. 
+     Represent each column mapping using a pair of column headers in a list, i.e., [Table A Column, Table B column or None]. 
+     Provide the mapping for each column in Table A and return all mappings in a list. Return the final result as JSON in the format {""column_mappings"": ""<a list of column pairs>""}.
+Human: Question:
+Table A:
+| Column A-0                        | Column A-1   |   Column A-2 | Column A-3     | Column A-4   | Column A-5         |
+|:----------------------------------|:-------------|-------------:|:---------------|:-------------|:-------------------|
+| Congo, The Democratic Republic Of | nan          |          976 | 100 centimes   | CDF          | Franc Congolais    |
+| French Southern Territories       |               |          978 | 100 euro-cents | EUR          | Euro               |
+| Cocos (Keeling) Islands           | A$           |           36 | 100 cents      | AUD          | Australian Dollar  |
+| Cook Islands                      | NZ$          |          554 | 100 cents      | NZD          | New Zealand Dollar |
+| Chile                             | Ch$          |          152 | 100 centavos   | CLP          | Chilean Peso       |
+
+Table B:
+| Column B-0        | Column B-1                                                                                                                                                                | Column B-2                                                                                                                                                       | Column B-3   | Column B-4           | Column B-5                                                      |
+|:------------------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------|:-------------|:---------------------|:----------------------------------------------------------------|
+| Swiss franc       | Campione d'Italia, Liechtenstein, Switzerland                                                                                                                             | , Campione d'Italia, Italy                                                                                                                                       | CHF          | nan                  | Schweizer Franken, franc suisse, franc svizzer, franco svizzero |
+| Czech koruna      | Czech Republic                                                                                                                                                            | nan                                                                                                                                                              | CZK          | haléřa               | koruna česká                                                    |
+| Unidad de Fomento | Chile                                                                                                                                                                     | nan                                                                                                                                                              | CLF          | nan                  | nan                                                             |
+| Maltese scudo     | Hospitaller Malta, Hospitaller Rhodes, Crown Colony of Malta, French occupation of Malta, Gozo (independent state), Malta Protectorate, Sovereign Military Order of Malta | Crown Colony of Malta, Sovereign Military Order of Malta, Hospitaller Malta, Previously:, Malta Protectorate, Hospitaller Rhodes, French Malta, Independent Gozo | none         | Tarì, piccolo, grano | Scudo maltese, Skud Malti                                       |
+| Cambodian riel    | Cambodia                                                                                                                                                                  | nan                                                                                                                                                              | KHR          | kak, sen             | រៀលកម្ពុជា/រៀលខ្មែរ                                                    |
+
+Return the final result as JSON in the format {""column_mappings"": ""<a list of column pairs>""}. ONLY return the JSON and nothing else.
+Answer:
+Matching Decision Output: {""column_mappings"": [[""Column A-0"", ""None""], [""Column A-1"", ""None""], [""Column A-2"", ""None""], [""Column A-3"", ""None""], [""Column A-4"", ""None""], [""Column A-5"", ""None""]]}
+Predicted answer for Specific Column Pair: Column A-4 and Column B-4 do not match
+Explanation: The decision to not match ""Column A-4"" from Table A with ""Column B-0"" from Table B was based on the content and context of the columns. ""Column A-4"" lists the currency codes (e.g., ""CDF"", ""EUR"", ""AUD"", ""NZD"", ""CLP"") for various countries or territories, while ""Column B-0"" lists the names of currencies (e.g., ""Swiss franc"", ""Czech koruna"", ""Unidad de Fomento"", ""Maltese scudo"", ""Cambodian riel"") used in different regions.
+
+The key factors influencing this decision were:
+
+1. **Content Type**: ""Column A-4"" contains currency codes, which are standardized alphabetic code elements (usually three letters) used to represent currencies in a concise manner, as defined by ISO 4217. In contrast, ""Column B-0"" contains the full names of currencies, which are not standardized and can vary significantly in naming conventions across languages and regions.
+
+2. **Mismatch in Specific Entries**: There is no direct match between the specific currency codes in ""Column A-4"" and the names of currencies in ""Column B-0"". For example, ""CDF"" (Franc Congolais) from ""Column A-4"" does not have a corresponding currency name in ""Column B-0"", and similarly, ""Swiss franc"" from ""Column B-0"" does not have a corresponding currency code in ""Column A-4"".
+
+3. **Lack of Direct Correlation**: Even though both columns relate to currencies, the absence of a one-to-one correspondence or a direct correlation between the specific entries of these columns means they cannot be accurately mapped to each other.
+
+These factors led to the conclusion that ""Column A-4"" and ""Column B-0"" do not match and should not be paired.
+Correct answer for Specific Column Pair: Column A-2 Column B-4 do not match
+Task 23:
+Prompt: System: Description: Please identify the matching columns between Table A and Table B. 
+     For each column in Table A, specify the corresponding column in Table B. 
+     If a column in A has no corresponding column in Table B, you can map it to 'None'. 
+     Represent each column mapping using a pair of column headers in a list, i.e., [Table A Column, Table B column or None]. 
+     Provide the mapping for each column in Table A and return all mappings in a list. Return the final result as JSON in the format {""column_mappings"": ""<a list of column pairs>""}.
+Human: Question:
+Table A:
+| Column A-0       | Column A-1    | Column A-2   | Column A-3   |
+|:-----------------|:--------------|:-------------|:-------------|
+| Broad Peak I     | June 9, 1957  | Karakoram    | 8,047        |
+| Kamet            | June 21, 1931 | Himalayas    | 7,756        |
+| Gasherbrum I     | July 5, 1958  | Karakoram    | 8,068        |
+| Nanda Devi       | Aug 29, 1936  | Himalayas    | 7,816        |
+| Batura Muztagh I | July 30, 1976 | Karakoram    | 7,785        |
+
+Table B:
+| Column B-0         | Column B-1                  | Column B-2   |   Column B-3 | Column B-4                                                                                                      |   Column B-5 |
+|:-------------------|:----------------------------|:-------------|-------------:|:----------------------------------------------------------------------------------------------------------------|-------------:|
+| Mount Everest      | nan                         | 1953         |          nan | Province No. 1, Tibet Autonomous Region, Tingri County, China, Solukhumbu District, Nepal, Xigazê               |          nan |
+| Bojohagur Duanasir | Karakoram, Batura           | 1984         |         7329 | Hunza Valley, Gilgit-Baltistan, Pakistan                                                                        |         7329 |
+| Botzer             | Stubai Alps                 | 0016         |         3250 | Italy, South Tyrol                                                                                              |         3250 |
+| Zemu Gap Peak      | Himalayas                   | nan          |         7780 | Sikkim, India                                                                                                   |         7780 |
+| Lhotse             | Mahalangur Himal, Himalayas | 1956, 1988   |         8516 | Sagarmatha Zone, Tibet Autonomous Region, Tingri County, China, Solukhumbu District, Nepal, Shigatse Prefecture |         8516 |
+
+Return the final result as JSON in the format {""column_mappings"": ""<a list of column pairs>""}. ONLY return the JSON and nothing else.
+Answer:
+Matching Decision Output: {""column_mappings"": [[""Column A-0"", ""None""], [""Column A-1"", ""Column B-2""], [""Column A-2"", ""None""], [""Column A-3"", ""Column B-5""]]}
+Predicted answer for Specific Column Pair: Column A-1 and Column B-2 match
+Explanation: The decision to match ""Column A-1"" with ""Column B-2"" was based on the observation that both columns contain dates related to significant events, presumably the first ascents of mountains in this context. Although ""Column B-2"" has some entries with multiple years (e.g., ""1956, 1988"" for Lhotse) and one entry marked as ""nan"" indicating missing data, it aligns with the nature of ""Column A-1"", which exclusively lists single years. The presence of recognizable years (e.g., ""1953"", ""1984"", ""1956, 1988"") in ""Column B-2"" that are formatted similarly to the dates in ""Column A-1"" (e.g., ""June 9, 1957"", ""June 21, 1931"")—despite the latter including more detailed dates with day and month—suggests a thematic similarity in content, focusing on dates of significant events. This thematic alignment, despite the difference in detail level (full dates vs. years only), was the primary influence on the decision to match these columns.
+Correct answer for Specific Column Pair: Column A-1 Column B-2 match
+Task 24:
+Prompt: System: Description: Please identify the matching columns between Table A and Table B. 
+     For each column in Table A, specify the corresponding column in Table B. 
+     If a column in A has no corresponding column in Table B, you can map it to 'None'. 
+     Represent each column mapping using a pair of column headers in a list, i.e., [Table A Column, Table B column or None]. 
+     Provide the mapping for each column in Table A and return all mappings in a list. Return the final result as JSON in the format {""column_mappings"": ""<a list of column pairs>""}.
+Human: Question:
+Table A:
+| Column A-0   | Column A-1   | Column A-2   | Column A-3            |
+|:-------------|:-------------|:-------------|:----------------------|
+| EY           | Reisegepäck  | WebCheckIn   | Etihad Airways        |
+| DL           | Reisegepäck  | WebCheckIn   | Delta Air Lines       |
+| DY           | Reisegepäck  | WebCheckIn   | Norwegian Air Shuttle |
+| FL           | Reisegepäck  | WebCheckIn   | AirTran Airways       |
+| VX           | Reisegepäck  | WebCheckIn   | Virgin America        |
+
+Table B:
+| Column B-0           | Column B-1   | Column B-2                                                                                          | Column B-3   | Column B-4                                                                   |
+|:---------------------|:-------------|:----------------------------------------------------------------------------------------------------|:-------------|:-----------------------------------------------------------------------------|
+| Trans World Airlines | TWA          | Mount Kisco, New York, Fort Worth, Texas, Kansas City, Missouri, New York City, St. Louis, Missouri | TW           | nan                                                                          |
+| East African Air     | nan          | United Kingdom, London                                                                              | 5H           | Mwanza, Kilimanjaro, Mtwara, Nairobi, Johannesburg, Dubai and London Gatwick |
+| JetSmart Perú        | JAP          | Peru, Lima                                                                                          | JZ           | 10                                                                           |
+| Qantas Freight       | QFA          | Sydney                                                                                              | QF           | 130                                                                          |
+| Aviolet              | ASL          | Belgrade, Serbia                                                                                    | JU           | 26                                                                           |
+
+Return the final result as JSON in the format {""column_mappings"": ""<a list of column pairs>""}. ONLY return the JSON and nothing else.
+Answer:
+Matching Decision Output: {""column_mappings"": [[""Column A-0"", ""None""], [""Column A-1"", ""Column B-1""], [""Column A-2"", ""None""], [""Column A-3"", ""None""]]}
+Predicted answer for Specific Column Pair: Column A-1 and Column B-0 do not match
+Explanation: The decision to not match ""Column A-1"" from Table A with ""Column B-3"" from Table B was based on the content and context of the data within these columns. 
+
+- ""Column A-1"" in Table A is labeled ""Reisegepäck,"" which translates to ""Luggage"" or ""Baggage"" in English. This column does not contain unique identifiers or values but rather a repeated value that seems to indicate a category or a feature related to airline services.
+
+- ""Column B-3"" in Table B contains unique airline or operator codes (e.g., ""TW"", ""5H"", ""JZ"", ""QF"", ""JU""). These are alphanumeric codes that uniquely identify airline operators.
+
+The key factors influencing the decision were:
+1. **Content Type**: ""Column A-1"" represents a service feature (baggage), while ""Column B-3"" represents unique airline/operator codes. The nature of the data is fundamentally different.
+2. **Repetition vs. Uniqueness**: The repeated value ""Reisegepäck"" in ""Column A-1"" does not match the unique, distinct values in ""Column B-3"".
+3. **Contextual Relevance**: There is no logical or contextual relevance between a service feature (baggage) and airline/operator codes, which serve entirely different purposes within the dataset.
+
+Given these considerations, there was no basis for establishing a match between ""Column A-1"" and ""Column B-3"", leading to the decision to not pair these columns.
+Correct answer for Specific Column Pair: Column A-3 Column B-0 do not match
+Task 25:
+Prompt: System: Description: Please identify the matching columns between Table A and Table B. 
+     For each column in Table A, specify the corresponding column in Table B. 
+     If a column in A has no corresponding column in Table B, you can map it to 'None'. 
+     Represent each column mapping using a pair of column headers in a list, i.e., [Table A Column, Table B column or None]. 
+     Provide the mapping for each column in Table A and return all mappings in a list. Return the final result as JSON in the format {""column_mappings"": ""<a list of column pairs>""}.
+Human: Question:
+Table A:
+| Column A-0      | Column A-1   | Column A-2   |   Column A-3 | Column A-4   | Column A-5   |
+|:----------------|:-------------|:-------------|-------------:|:-------------|:-------------|
+| Pen yr Helgi Du | 01/06/2010   | SH698630     |          nan | 2733ft       | 833m         |
+| Yr Aran         | nan          | SH604515     |          nan | 2451ft       | 747m         |
+| Mynydd Moel     | 26/08/2007   | SH727137     |          nan | 2831ft       | 863m         |
+| Pumlumon Fawr   | nan          | SN790870     |          nan | 2467ft       | 752m         |
+| Craiglwyn       | nan          | SH730608     |          nan | 2044ft       | 623m         |
+
+Table B:
+| Column B-0     | Column B-1                          |   Column B-2 | Column B-3                                                                       | Column B-4                         |
+|:---------------|:------------------------------------|-------------:|:---------------------------------------------------------------------------------|:-----------------------------------|
+| Wether Fell    | North Yorkshire, Wensleydale        |          614 | Hawes and Wether Fell                                                            | nan                                |
+| Great Coum     | South Lakeland, Cumbria, England    |          687 | Looking north along the boundary wall towards the rocky outcrop below the summit | nan                                |
+| Grisedale Pike | Cumbria, England                    |          791 | Grisedale Pike seen from the fell, of Barrow, 3 km to the east                   | North Western Fells, Lake District |
+| Carrigvore     | Republic of Ireland, County Wicklow |          682 | Gravale  with Carrigvore  from SE                                                | Wicklow Mountains                  |
+| Wandope        | Cumbria, England                    |          772 | Whiteless Edge & Wandope from Whiteless Pike                                     | North Western Fells, Lake District |
+
+Return the final result as JSON in the format {""column_mappings"": ""<a list of column pairs>""}. ONLY return the JSON and nothing else.
+Answer:
+Matching Decision Output: {""column_mappings"": [[""Column A-0"", ""None""], [""Column A-1"", ""None""], [""Column A-2"", ""Column B-0""], [""Column A-3"", ""None""], [""Column A-4"", ""None""], [""Column A-5"", ""None""]]}
+Predicted answer for Specific Column Pair: Column A-2 and Column B-6 do not match
+Explanation: The decision to not match ""Column A-2"" from Table A with ""Column B-1"" from Table B was based on the content and context of the values within these columns. ""Column A-2"" contains grid references (e.g., ""SH698630"", ""SH604515""), which are alphanumeric codes representing specific locations on a map, typically used in the UK for geographical identification. In contrast, ""Column B-1"" contains descriptive geographical locations (e.g., ""North Yorkshire, Wensleydale"", ""South Lakeland, Cumbria, England""), which are textual descriptions of areas or regions rather than precise grid references.
+
+The key values influencing this decision were the format and nature of the data in each column:
+
+- In ""Column A-2"", values like ""SH698630"" and ""SH604515"" are clearly formatted as grid references, indicating specific points or small areas.
+- In ""Column B-1"", values such as ""North Yorkshire, Wensleydale"" and ""Cumbria, England"" describe broader geographical areas without the precision or format of grid references.
+
+Given the distinct difference in data types and the specificity of the information provided in each column, there was no logical basis for matching ""Column A-2"" with ""Column B-1"".
+Correct answer for Specific Column Pair: Column A-4 Column B-6 do not match
+
+",gpt-4-turbo-preview,structured_unstructured_zero_shot_multi_table_gpt-3.5-turbo,"Based on the provided examples and explanations, the wrong decisions can be grouped into distinct fault categories as follows:
+
+1. **Mismatch in Specificity or Detail Level**:
+   - This category includes decisions where one column contains more detailed or specific information compared to a more general or broader classification in the other column. For example, matching specific scientific names of species with broad animal classifications, or matching detailed currency codes with general currency names.
+   - Occurrences: 5
+
+2. **Format and Representation Differences**:
+   - Decisions in this category involve mismatches due to differences in data representation, such as matching full dates with only years, or matching grid references with descriptive geographical locations.
+   - Occurrences: 4
+
+3. **Mismatch in Content Type**:
+   - This category includes decisions where the columns represent fundamentally different types of information, such as matching a service feature (baggage) with airline/operator codes, or matching geographical regions with mountain ranges.
+   - Occurrences: 3
+
+4. **Direct Content Mismatch**:
+   - Decisions where there is no direct match or correlation between the specific entries of the columns, despite both columns containing related information. For example, matching currency codes with currency names without direct correspondence.
+   - Occurrences: 3
+
+5. **Mismatch Due to Absence of Direct Correlation**:
+   - This category involves decisions where, despite a thematic similarity, there is no consistent matching across all entries, leading to the conclusion that the columns do not correspond directly to each other.
+   - Occurrences: 2
+
+6. **Mismatch Due to Lack of Contextual Relevance**:
+   - Decisions where there is no logical or contextual relevance between the matched columns, even if they contain similar types of data.
+   - Occurrences: 2
+
+7. **Mismatch Due to Lack of Explicit Context**:
+   - This category includes decisions where the lack of explicit context or a discernible pattern linking the numbers or data in one column to those in another leads to a mismatch.
+   - Occurrences: 1
+
+In summary, the most common fault category is the ""Mismatch in Specificity or Detail Level,"" followed by ""Format and Representation Differences"" and ""Mismatch in Content Type."" These categories highlight the challenges in schema matching tasks, especially when dealing with varying levels of specificity, different formats of representation, and fundamentally different types of content.",unstructured_analysis
+error_class_LLM,"In the following I will give you schema matching tasks together with column matching decisions. You are given additional explanation on the predicted matching decision for two specific columns and the actual answer regarding the match of the two columns.
+The decision was made by an LLM. Can you please group the wrong decisions into distinct fault categories? Please also indicate how often each one occurs.
+There are also some correct decisions in the examples. Please just use them as a reference and don't categorize them.
+Wrong Decisions:
+Task 1:
+Prompt: System: Description: Please identify the matching columns between Table A and Table B. 
+     For each column in Table A, specify the corresponding column in Table B. 
+     If a column in A has no corresponding column in Table B, you can map it to 'None'. 
+     Represent each column mapping using a pair of column headers in a list, i.e., [Table A Column, Table B column or None]. 
+     Provide the mapping for each column in Table A and return all mappings in a list. Return the final result as JSON in the format {""column_mappings"": ""<a list of column pairs>""}.
+Human: Question:
+Table A:
+|   Column A-0 | Column A-1   | Column A-2   |   Column A-3 | Column A-4           |
+|-------------:|:-------------|:-------------|-------------:|:---------------------|
+|        189   | GR           | 19.03 km     |         2578 | Forcel               |
+|        190.1 | GR/TI        | 15.44 km     |         2739 | Motton               |
+|        191.8 | GR/TI        | 15.59 km     |         2899 | Piz da Termin        |
+|        184.7 | TI/I         | 41.09 km     |         2116 | Gazzirola            |
+|        184   | TI/I         | 41.94 km     |         2076 | Prato della Bascióta |
+
+Table B:
+| Column B-0     |   Column B-1 |   Column B-2 | Column B-3                            | Column B-4                    |
+|:---------------|-------------:|-------------:|:--------------------------------------|:------------------------------|
+| Schilt         |           58 |         2299 | Glarus Alps                           | Canton of Glarus, Switzerland |
+| Scheuchzerhorn |          116 |         3456 | Bernese Alps                          | Canton of Bern, Switzerland   |
+| Punta Baretti  |          nan |         4013 | Mont Blanc massif                     | Italy, Val d'Aosta            |
+| Rocher du Midi |          240 |         2097 | Bernese Alps                          | Vaud, Switzerland             |
+| Rossbodenstock |          nan |         2836 | Saint-Gotthard Massif, Lepontine Alps | Canton of Uri, Graubünden     |
+
+Return the final result as JSON in the format {""column_mappings"": ""<a list of column pairs>""}. ONLY return the JSON and nothing else.
+Answer:
+Matching Decisions: {""column_mappings"": [[""Column A-0"", ""None""], [""Column A-1"", ""None""], [""Column A-2"", ""None""], [""Column A-3"", ""Column B-2""], [""Column A-4"", ""None""]]}
+Predicted answer for Specific Column Pair: Column A-1 and Column B-4 do not match
+Explanation: The decision to not match ""Column A-1"" from Table A with ""Column B-4"" from Table B was based on the content and context of the values within these columns. 
+
+- ""Column A-1"" contains values like ""GR"", ""GR/TI"", and ""TI/I"", which appear to represent codes or abbreviations, possibly for geographic regions or administrative divisions.
+- ""Column B-4"" contains values like ""Canton of Glarus, Switzerland"", ""Canton of Bern, Switzerland"", ""Italy, Val d'Aosta"", ""Vaud, Switzerland"", and ""Canton of Uri, Graubünden"". These are explicit geographic locations, including countries, cantons, and regions.
+
+The key influence on the decision was the nature of the data: ""Column A-1"" seems to represent a coded or abbreviated form of geographic or administrative identifiers, while ""Column B-4"" provides full, descriptive geographic names. There is no direct correlation or a clear way to map the abbreviations to the specific locations without additional context or a key to decode the abbreviations in ""Column A-1"". Therefore, without a direct match or a clear relationship between the two sets of values, the columns were not matched.
+Correct answer for Specific Column Pair: Column A-1 Column B-4 match
+
+
+Task 2:
+Prompt: System: Description: Please identify the matching columns between Table A and Table B. 
+     For each column in Table A, specify the corresponding column in Table B. 
+     If a column in A has no corresponding column in Table B, you can map it to 'None'. 
+     Represent each column mapping using a pair of column headers in a list, i.e., [Table A Column, Table B column or None]. 
+     Provide the mapping for each column in Table A and return all mappings in a list. Return the final result as JSON in the format {""column_mappings"": ""<a list of column pairs>""}.
+Human: Question:
+Table A:
+| Column A-0         | Column A-1   | Column A-2              |
+|:-------------------|:-------------|:------------------------|
+| Spotted salamander | Amphibian    | Ambystoma maculatum     |
+| Softshell turtles  | Reptile      | Trionyx spp.            |
+| Ornate box turtle  | Reptile      | Terrapene ornata ornata |
+| Caspian tern       | Bird         | Sterna caspia           |
+| Red-eyed vireo     | Bird         | Vireo olivaceus         |
+
+Table B:
+| Column B-0                 | Column B-1   | Column B-2     | Column B-3                                                                                          | Column B-4                 |
+|:---------------------------|:-------------|:---------------|:----------------------------------------------------------------------------------------------------|:---------------------------|
+| Tetramorium tonganum       | Insect       | T. tonganum    | *Tetramorium magitae (Forel, 1911)                                                                  | Tetramorium tonganum       |
+| Cylindromyrmex             | Insect       | nan            | Holcoponera (Cameron, 1891), Hypocylindromyrmex (Wheeler, 1924), Metacylindromyrmex (Wheeler, 1924) | nan                        |
+| Dysgonia erectata          | Insect       | D. erectata    | *Parallelia erectata                                                                                | Dysgonia erectata          |
+|                            |              |                | *Ophiusa erectata (Hampson, 1902)                                                                   |                            |
+| Pseudostegania yargongaria | Insect       | P. yargongaria | *Asthena yargongaria (Oberthür, 1916)                                                               | Pseudostegania yargongaria |
+| Vexillum obeliscus         | Gastropoda   | V. obeliscus   | * Costellaria obeliscus                                                                             | Vexillum  obeliscus        |
+|                            |              |                | * Mitra obeliscus Reeve, 1844                                                                       |                            |
+|                            |              |                | * Vexillum  subtruncatum Sowerby, G.B. II & III, 1874                                               |                            |
+|                            |              |                | * Vexillum andamanica Nevill, G. & H. Nevill, 1875                                                  |                            |
+|                            |              |                | * Turricula quasillus Iredale, T., 1929                                                             |                            |
+
+Return the final result as JSON in the format {""column_mappings"": ""<a list of column pairs>""}. ONLY return the JSON and nothing else.
+Answer:
+Matching Decisions: {""column_mappings"": [[""Column A-0"", ""None""], [""Column A-1"", ""Column B-1""], [""Column A-2"", ""Column B-2""]]}
+Predicted answer for Specific Column Pair: Column A-2 and Column B-4 do not match
+Explanation: The decision to not match ""Column A-2"" from Table A with ""Column B-4"" from Table B was based on the nature of the data contained within these columns. 
+
+- **Column A-2** contains scientific names of various animals (e.g., ""Ambystoma maculatum"", ""Trionyx spp."", ""Terrapene ornata ornata"", ""Sterna caspia"", ""Vireo olivaceus""), which are specific and unique identifiers for species.
+- **Column B-4**, on the other hand, also lists names (e.g., ""Tetramorium tonganum"", ""Dysgonia erectata"", ""Pseudostegania yargongaria"", ""Vexillum obeliscus""), but upon inspection, none of these names match the scientific names listed in Column A-2. 
+
+The key influence on the decision was the lack of any direct match or correlation between the specific scientific names in ""Column A-2"" and the names in ""Column B-4"". The content of ""Column A-2"" is strictly related to the species listed in Table A, which are distinct from those in Table B, indicating that these columns represent different datasets with no overlap in this context.
+Correct answer for Specific Column Pair: Column A-2 Column B-4 match
+
+
+Task 3:
+Prompt: System: Description: Please identify the matching columns between Table A and Table B. 
+     For each column in Table A, specify the corresponding column in Table B. 
+     If a column in A has no corresponding column in Table B, you can map it to 'None'. 
+     Represent each column mapping using a pair of column headers in a list, i.e., [Table A Column, Table B column or None]. 
+     Provide the mapping for each column in Table A and return all mappings in a list. Return the final result as JSON in the format {""column_mappings"": ""<a list of column pairs>""}.
+Human: Question:
+Table A:
+| Column A-0     |   Column A-1 | Column A-2   | Column A-3   |
+|:---------------|-------------:|:-------------|:-------------|
+| Lake Nipissing |          196 | 832          | 822          |
+| Lake Abitibi   |          265 | 931          | 903          |
+| Lac Seul       |          357 | 1 657        | 1 373        |
+| Lake Simcoe    |          219 | 744          | 723          |
+| Lake Nipigon   |          260 | 4 848        | 4 510        |
+
+Table B:
+| Column B-0                              |   Column B-1 |   Column B-2 | Column B-3                                                                                              |
+|:----------------------------------------|-------------:|-------------:|:--------------------------------------------------------------------------------------------------------|
+| Lake Nipigon                            |    4.848e+09 |          260 | Namewaminikan River, Whitesand River (Lake Nipigon), Gull River (Lake Nipigon)                          |
+| Trout Lake (Ontario)                    |  nan         |          202 | nan                                                                                                     |
+| Lake Muskoka                            |    1.2e+08   |          225 | Muskoka River, Indian River (Muskoka District)                                                          |
+| Pigeon Lake (Ontario)                   |    5.344e+07 |          246 | Bobcaygeon, Sturgeon Lake (Ontario)                                                                     |
+| Sand Lake (Patterson Township, Ontario) |  nan         |          230 | http://dbpedia.org/resource/Sand_Creek_(Ontario), http://dbpedia.org/resource/Beaudry_Creek_(Sand_Lake) |
+
+Return the final result as JSON in the format {""column_mappings"": ""<a list of column pairs>""}. ONLY return the JSON and nothing else.
+Answer:
+Matching Decisions: {""column_mappings"": [[""Column A-0"", ""Column B-0""], [""Column A-1"", ""None""], [""Column A-2"", ""Column B-3""], [""Column A-3"", ""None""]]}
+Predicted answer for Specific Column Pair: Column A-1 and Column B-2 do not match
+Explanation: The decision to not match Column A-1 from Table A with Column B-2 from Table B was based on the nature and values contained within these columns. Column A-1 in Table A contains numerical values that represent some form of measurement or quantity (e.g., 196, 265, 357, etc.), while Column B-2 in Table B contains numerical values that seem to represent a different measurement or quantity, given the context of the other columns (e.g., 260, 202, 225, etc.).
+
+The key influence on this decision was the lack of a clear, direct relationship or similarity in the values and potential units of measurement between Column A-1 and Column B-2. For instance, the values in Column A-1 do not match or correlate in a meaningful way with those in Column B-2, suggesting they represent different data types or categories. Without a clear, logical connection or a consistent pattern linking these columns, it was concluded that they do not correspond to each other.
+Correct answer for Specific Column Pair: Column A-1 Column B-2 match
+
+
+Task 4:
+Prompt: System: Description: Please identify the matching columns between Table A and Table B. 
+     For each column in Table A, specify the corresponding column in Table B. 
+     If a column in A has no corresponding column in Table B, you can map it to 'None'. 
+     Represent each column mapping using a pair of column headers in a list, i.e., [Table A Column, Table B column or None]. 
+     Provide the mapping for each column in Table A and return all mappings in a list. Return the final result as JSON in the format {""column_mappings"": ""<a list of column pairs>""}.
+Human: Question:
+Table A:
+| Column A-0   | Column A-1   | Column A-2   | Column A-3            |
+|:-------------|:-------------|:-------------|:----------------------|
+| EY           | Reisegepäck  | WebCheckIn   | Etihad Airways        |
+| DL           | Reisegepäck  | WebCheckIn   | Delta Air Lines       |
+| DY           | Reisegepäck  | WebCheckIn   | Norwegian Air Shuttle |
+| FL           | Reisegepäck  | WebCheckIn   | AirTran Airways       |
+| VX           | Reisegepäck  | WebCheckIn   | Virgin America        |
+
+Table B:
+| Column B-0           | Column B-1   | Column B-2                                                                                          | Column B-3   | Column B-4                                                                   |
+|:---------------------|:-------------|:----------------------------------------------------------------------------------------------------|:-------------|:-----------------------------------------------------------------------------|
+| Trans World Airlines | TWA          | Mount Kisco, New York, Fort Worth, Texas, Kansas City, Missouri, New York City, St. Louis, Missouri | TW           | nan                                                                          |
+| East African Air     | nan          | United Kingdom, London                                                                              | 5H           | Mwanza, Kilimanjaro, Mtwara, Nairobi, Johannesburg, Dubai and London Gatwick |
+| JetSmart Perú        | JAP          | Peru, Lima                                                                                          | JZ           | 10                                                                           |
+| Qantas Freight       | QFA          | Sydney                                                                                              | QF           | 130                                                                          |
+| Aviolet              | ASL          | Belgrade, Serbia                                                                                    | JU           | 26                                                                           |
+
+Return the final result as JSON in the format {""column_mappings"": ""<a list of column pairs>""}. ONLY return the JSON and nothing else.
+Answer:
+Matching Decisions: {""column_mappings"": [[""Column A-0"", ""None""], [""Column A-1"", ""Column B-1""], [""Column A-2"", ""None""], [""Column A-3"", ""None""]]}
+Predicted answer for Specific Column Pair: Column A-3 and Column B-0 do not match
+Explanation: The decision to not match ""Column A-3"" from Table A with ""Column B-0"" from Table B was based on the nature of the data contained within these columns. ""Column A-3"" lists airline names (e.g., ""Etihad Airways"", ""Delta Air Lines"", ""Norwegian Air Shuttle"", ""AirTran Airways"", ""Virgin America""), while ""Column B-0"" lists either airline names or locations associated with airlines, but none of the names in ""Column B-0"" match any of the airline names listed in ""Column A-3"". The values in ""Column B-0"" such as ""Trans World Airlines"", ""East African Air"", ""JetSmart Perú"", ""Qantas Freight"", and ""Aviolet"" do not correspond to any of the specific airline names listed in ""Column A-3"". This lack of direct correspondence or matching names between the two columns influenced the decision to not map ""Column A-3"" to ""Column B-0"".
+Correct answer for Specific Column Pair: Column A-3 Column B-0 match
+
+
+Task 5:
+Prompt: System: Description: Please identify the matching columns between Table A and Table B. 
+     For each column in Table A, specify the corresponding column in Table B. 
+     If a column in A has no corresponding column in Table B, you can map it to 'None'. 
+     Represent each column mapping using a pair of column headers in a list, i.e., [Table A Column, Table B column or None]. 
+     Provide the mapping for each column in Table A and return all mappings in a list. Return the final result as JSON in the format {""column_mappings"": ""<a list of column pairs>""}.
+Human: Question:
+Table A:
+|   Column A-0 |   Column A-1 |   Column A-2 | Column A-3   | Column A-4   |   Column A-5 | Column A-6   | Column A-7           |
+|-------------:|-------------:|-------------:|:-------------|:-------------|-------------:|:-------------|:---------------------|
+|           11 |       265.91 |        22.29 | UK           | Oil and gas  |       198.14 | 217.60       | BP                   |
+|           12 |       179.02 |        11.68 | Japan        | Automotive   |       217.69 | 243.60       | Toyota               |
+|           15 |       125.33 |         8.81 | Germany      | Insurance    |        87.22 | 1,380.88     | Allianz              |
+|            7 |       335.09 |        39.5  | USA          | Oil and gas  |       410.65 | 223.95       | ExxonMobil           |
+|            5 |        99.3  |        14.44 | USA          | Banking      |       170.97 | 1,351.52     | JPMorgan Chase & Co. |
+
+Table B:
+| Column B-0        | Column B-1   | Column B-2                         |   Column B-3 |   Column B-4 | Column B-5                                                              | Column B-6         | Column B-7   |
+|:------------------|:-------------|:-----------------------------------|-------------:|-------------:|:------------------------------------------------------------------------|:-------------------|:-------------|
+| Mallinckrodt      | MNKKQ        | nan                                |   3.162e+09  |   1.0338e+10 | Blanchardstown, Missouri, St Louis, Staines-upon-Thames, Dublin, Surrey | Pharmaceutical     | MNKKQ        |
+| PulteGroup        | 822416       | CEO, CFO, Executive Vice-President |   1.3927e+10 |   1.3353e+10 | Atlanta, Georgia                                                        | Home construction  | PHM          |
+| Crown Holdings    | 1219601      | CEO, CFO                           |   1.15e+10   |   7.5e+09    | Yardley, Pennsylvania                                                   | Packaging          | CCK          |
+| EOG Resources     | EOG          | CEO, CFO                           |   1.1032e+10 |   3.5804e+10 | Houston, United States, Heritage Plaza                                  | Petroleum industry | EOG          |
+| Denbury Resources | DEN          | President (corporate title), CFO   |   1.258e+09  |   1.902e+09  | Plano, Texas                                                            | Petroleum industry | DEN          |
+
+Return the final result as JSON in the format {""column_mappings"": ""<a list of column pairs>""}. ONLY return the JSON and nothing else.
+Answer:
+Matching Decisions: {""column_mappings"": [[""Column A-0"", ""None""], [""Column A-1"", ""None""], [""Column A-2"", ""None""], [""Column A-3"", ""None""], [""Column A-4"", ""None""], [""Column A-5"", ""None""], [""Column A-6"", ""None""], [""Column A-7"", ""None""]]}
+Predicted answer for Specific Column Pair: Column A-4 and Column B-6 do not match
+Explanation: The decision to not match ""Column A-4"" from Table A with ""Column B-6"" from Table B was based on the content and context of the data within these columns. 
+
+- **Column A-4** contains industry sectors specific to the companies listed in Table A, such as ""Oil and gas,"" ""Automotive,"" ""Insurance,"" ""Banking.""
+- **Column B-6** lists the primary industry or sector associated with the companies in Table B, including ""Pharmaceutical,"" ""Home construction,"" ""Packaging,"" ""Petroleum industry.""
+
+At first glance, it might seem reasonable to match these columns due to their thematic similarity, both describing industry sectors. However, the decision against this pairing was influenced by the following considerations:
+
+1. **Specificity and Match Quality**: While both columns describe industry sectors, the terms used in Table A are not directly matched with those in Table B. For example, ""Oil and gas"" in Table A could be considered similar to ""Petroleum industry"" in Table B, but they are not identically phrased, leading to potential mismatches in a strict data mapping scenario.
+
+2. **Contextual Alignment**: The context of Table A seems to focus on broader, perhaps more traditional naming conventions for sectors, whereas Table B includes a mix of broader and more specific industry descriptors. This slight difference in context and specificity can introduce ambiguity in direct mapping.
+
+3. **Absence of Direct Correlation**: There is no direct one-to-one correlation for all entries, such as ""Banking"" in Table A, which does not have an apparent counterpart in Table B. This inconsistency across the datasets further complicates direct mapping.
+
+Given these considerations, especially the lack of direct, unambiguous matches and the slight differences in specificity and context, it was decided that mapping ""Column A-4"" to ""Column B-6"" would not be accurate or beneficial for precise data analysis or integration purposes.
+Correct answer for Specific Column Pair: Column A-4 Column B-6 match
+
+
+Task 6:
+Prompt: System: Description: Please identify the matching columns between Table A and Table B. 
+     For each column in Table A, specify the corresponding column in Table B. 
+     If a column in A has no corresponding column in Table B, you can map it to 'None'. 
+     Represent each column mapping using a pair of column headers in a list, i.e., [Table A Column, Table B column or None]. 
+     Provide the mapping for each column in Table A and return all mappings in a list. Return the final result as JSON in the format {""column_mappings"": ""<a list of column pairs>""}.
+Human: Question:
+Table A:
+| Column A-0                        | Column A-1   |   Column A-2 | Column A-3     | Column A-4   | Column A-5         |
+|:----------------------------------|:-------------|-------------:|:---------------|:-------------|:-------------------|
+| Congo, The Democratic Republic Of | nan          |          976 | 100 centimes   | CDF          | Franc Congolais    |
+| French Southern Territories       |               |          978 | 100 euro-cents | EUR          | Euro               |
+| Cocos (Keeling) Islands           | A$           |           36 | 100 cents      | AUD          | Australian Dollar  |
+| Cook Islands                      | NZ$          |          554 | 100 cents      | NZD          | New Zealand Dollar |
+| Chile                             | Ch$          |          152 | 100 centavos   | CLP          | Chilean Peso       |
+
+Table B:
+| Column B-0        | Column B-1                                                                                                                                                                | Column B-2                                                                                                                                                       | Column B-3   | Column B-4           | Column B-5                                                      |
+|:------------------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------|:-------------|:---------------------|:----------------------------------------------------------------|
+| Swiss franc       | Campione d'Italia, Liechtenstein, Switzerland                                                                                                                             | , Campione d'Italia, Italy                                                                                                                                       | CHF          | nan                  | Schweizer Franken, franc suisse, franc svizzer, franco svizzero |
+| Czech koruna      | Czech Republic                                                                                                                                                            | nan                                                                                                                                                              | CZK          | haléřa               | koruna česká                                                    |
+| Unidad de Fomento | Chile                                                                                                                                                                     | nan                                                                                                                                                              | CLF          | nan                  | nan                                                             |
+| Maltese scudo     | Hospitaller Malta, Hospitaller Rhodes, Crown Colony of Malta, French occupation of Malta, Gozo (independent state), Malta Protectorate, Sovereign Military Order of Malta | Crown Colony of Malta, Sovereign Military Order of Malta, Hospitaller Malta, Previously:, Malta Protectorate, Hospitaller Rhodes, French Malta, Independent Gozo | none         | Tarì, piccolo, grano | Scudo maltese, Skud Malti                                       |
+| Cambodian riel    | Cambodia                                                                                                                                                                  | nan                                                                                                                                                              | KHR          | kak, sen             | រៀលកម្ពុជា/រៀលខ្មែរ                                                    |
+
+Return the final result as JSON in the format {""column_mappings"": ""<a list of column pairs>""}. ONLY return the JSON and nothing else.
+Answer:
+Matching Decisions: {""column_mappings"": [[""Column A-0"", ""None""], [""Column A-1"", ""None""], [""Column A-2"", ""None""], [""Column A-3"", ""None""], [""Column A-4"", ""None""], [""Column A-5"", ""None""]]}
+Predicted answer for Specific Column Pair: Column A-3 and Column B-4 do not match
+Explanation: The decision to not match ""Column A-3"" from Table A with ""Column B-4"" from Table B was based on the content and context of the values within these columns. 
+
+- ""Column A-3"" in Table A is titled with an unspecified header but contains values like ""100 centimes"", ""100 euro-cents"", ""100 cents"", and ""100 centavos"", which indicate units of currency subdivision.
+- ""Column B-4"" in Table B is titled with an unspecified header as well but contains values like ""nan"", ""haléřa"", ""nan"", ""Tarì, piccolo, grano"", and ""kak, sen"", which are specific names of currency subdivisions or 'nan' indicating missing data.
+
+The key influence on the decision was the specificity and the context of the values. While both columns deal with currency subdivisions, the values in ""Column A-3"" are generic terms used to describe the concept of currency subdivision (e.g., cents, centimes), applicable to many countries' currencies. In contrast, the values in ""Column B-4"" are specific names of currency subdivisions unique to particular currencies (e.g., ""haléřa"" for the Czech koruna, ""kak, sen"" for the Cambodian riel) or 'nan' indicating missing information.
+
+Given the lack of direct correspondence in the nature of the data (generic descriptions vs. specific subdivision names), it was determined that these columns do not match.
+Correct answer for Specific Column Pair: Column A-3 Column B-4 match
+
+
+Task 7:
+Prompt: System: Description: Please identify the matching columns between Table A and Table B. 
+     For each column in Table A, specify the corresponding column in Table B. 
+     If a column in A has no corresponding column in Table B, you can map it to 'None'. 
+     Represent each column mapping using a pair of column headers in a list, i.e., [Table A Column, Table B column or None]. 
+     Provide the mapping for each column in Table A and return all mappings in a list. Return the final result as JSON in the format {""column_mappings"": ""<a list of column pairs>""}.
+Human: Question:
+Table A:
+| Column A-0     | Column A-1    |   Column A-2 | Column A-3    |
+|:---------------|:--------------|-------------:|:--------------|
+| Spain          | Refer to Euro |      0.00675 | Peseta (ESP)  |
+| Taiwan         | 0.03751       |      0.02775 | Dollar (TWD)  |
+| Czech Republic | 0.05870       |      0.04714 | Koruna (CZK)  |
+| Venezuela      | nan           |    nan       | Bolivar (VEB) |
+| New Zealand    | 0.8866        |      0.7849  | Dollar (NZD)  |
+
+Table B:
+| Column B-0       | Column B-1                               |   Column B-2 | Column B-3                                                                                                        | Column B-4             | Column B-5   |
+|:-----------------|:-----------------------------------------|-------------:|:------------------------------------------------------------------------------------------------------------------|:-----------------------|:-------------|
+| Bulgaria         | National Assembly (Bulgaria)             |   8.6e+10    | nan                                                                                                               | Bulgarian lev          | decrease     |
+| Papua New Guinea | National Parliament of Papua New Guinea  |   2.1543e+10 | Related articles, UNESCO Science Report: towards 2030                                                             | Papua New Guinean kina | increase     |
+| Sudan            | Transitional Legislative Council (Sudan) |   3.0808e+10 | nan                                                                                                               | Sudanese pound         | increase     |
+| Croatia          | Sabor                                    |   6.938e+10  | nan                                                                                                               | Croatian kuna          | increase     |
+| Aruba            | nan                                      |   3.4e+09    | Geographic locale, International membership and history, Languages in Aruba, National origins, Religions of Aruba | nan                    | nan          |
+
+Return the final result as JSON in the format {""column_mappings"": ""<a list of column pairs>""}. ONLY return the JSON and nothing else.
+Answer:
+Matching Decisions: {""column_mappings"": [[""Column A-0"", ""None""], [""Column A-1"", ""Column B-1""], [""Column A-2"", ""Column B-2""], [""Column A-3"", ""None""]]}
+Predicted answer for Specific Column Pair: Column A-0 and Column B-0 do not match
+Explanation: The decision to not match ""Column A-0"" with ""Column B-0"" was based on the content and context of the values within these columns. ""Column A-0"" lists countries (e.g., Spain, Taiwan, Czech Republic, Venezuela, New Zealand), while ""Column B-0"" also lists countries but none that match those in ""Column A-0"". The absence of any common countries between these two columns indicates that there is no direct correspondence or matching element between them. The specific country names, being entirely distinct between the two tables, were the values that had a high influence on this decision.
+Correct answer for Specific Column Pair: Column A-0 Column B-0 match
+
+
+Task 8:
+Prompt: System: Description: Please identify the matching columns between Table A and Table B. 
+     For each column in Table A, specify the corresponding column in Table B. 
+     If a column in A has no corresponding column in Table B, you can map it to 'None'. 
+     Represent each column mapping using a pair of column headers in a list, i.e., [Table A Column, Table B column or None]. 
+     Provide the mapping for each column in Table A and return all mappings in a list. Return the final result as JSON in the format {""column_mappings"": ""<a list of column pairs>""}.
+Human: Question:
+Table A:
+|   Column A-0 | Column A-1         |   Column A-2 |   Column A-3 | Column A-4                   |
+|-------------:|:-------------------|-------------:|-------------:|:-----------------------------|
+|           43 | Ernst Lubitsch     |          229 |         1939 | Ninotchka                    |
+|           95 | Amy Heckerling     |          424 |         1982 | Fast Times at Ridgemont High |
+|           38 | Giuseppe Tornatore |          192 |         1988 | Cinema Paradiso              |
+|            7 | Howard Hawks       |           52 |         1938 | Bringing Up Baby             |
+|           80 | Charles Chaplin    |          369 |         1940 | The Great Dictator           |
+
+Table B:
+| Column B-0          | Column B-1             | Column B-2           | Column B-3      |
+|:--------------------|:-----------------------|:---------------------|:----------------|
+| Sands of the Desert | 1960-09-08             | John Paddy Carstairs | nan             |
+| El Sur (film)       | 1983-05-19, 1988-01-15 | Víctor Erice         | Elías Querejeta |
+| In the Last Stride  | 1915-11-22, 1916-05-01 | Martyn Keith         | nan             |
+| Meendum Vazhven     | 1971-04-23             | T. N. Balu           | nan             |
+| Prey (2009 film)    | 2009-05-05             | George T. Miller     | nan             |
+
+Return the final result as JSON in the format {""column_mappings"": ""<a list of column pairs>""}. ONLY return the JSON and nothing else.
+Answer:
+Matching Decisions: {""column_mappings"": [[""Column A-0"", ""None""], [""Column A-1"", ""None""], [""Column A-2"", ""None""], [""Column A-3"", ""None""], [""Column A-4"", ""None""]]}
+Predicted answer for Specific Column Pair: Column A-4 and Column B-0 do not match
+Explanation: The decision to not match ""Column A-4"" from Table A with ""Column B-0"" from Table B was based on the content and context of the values within these columns. ""Column A-4"" contains titles of well-known movies (e.g., ""Ninotchka,"" ""Fast Times at Ridgemont High,"" ""Cinema Paradiso,"" ""Bringing Up Baby,"" ""The Great Dictator""), which are specific and identifiable film titles. In contrast, ""Column B-0"" also lists titles (e.g., ""Sands of the Desert,"" ""El Sur (film),"" ""In the Last Stride,"" ""Meendum Vazhven,"" ""Prey (2009 film)""), but there is no direct match or correlation between the movie titles in both columns. The titles in ""Column A-4"" are distinct and do not appear in ""Column B-0,"" indicating that these columns represent different sets of movies. Therefore, without any overlapping titles or direct correlation, it was concluded that ""Column A-4"" does not have a corresponding match in ""Column B-0.""
+Correct answer for Specific Column Pair: Column A-4 Column B-0 match
+
+
+Task 9:
+Prompt: System: Description: Please identify the matching columns between Table A and Table B. 
+     For each column in Table A, specify the corresponding column in Table B. 
+     If a column in A has no corresponding column in Table B, you can map it to 'None'. 
+     Represent each column mapping using a pair of column headers in a list, i.e., [Table A Column, Table B column or None]. 
+     Provide the mapping for each column in Table A and return all mappings in a list. Return the final result as JSON in the format {""column_mappings"": ""<a list of column pairs>""}.
+Human: Question:
+Table A:
+|   Column A-0 |   Column A-1 | Column A-2                      | Column A-3                              | Column A-4   | Column A-5   |   Column A-6 |   Column A-7 |
+|-------------:|-------------:|:--------------------------------|:----------------------------------------|:-------------|:-------------|-------------:|-------------:|
+|          nan |           18 | nan                             | Medal of Honor Airborne                 | Shooter      | XBox 360     |          nan |          nan |
+|          nan |           12 | nan                             | Ghostbusters (englische Version)        | Action       | XBox 360     |          nan |          nan |
+|          nan |           18 | nan                             | Rainbow Six Vegas 2 (AT, uncut)         | Shooter      | XBox 360     |          nan |          nan |
+|          nan |           18 | nan                             | God of War Collection                   | Action       | PS3          |          nan |          nan |
+|          nan |           18 | Destruction Derby l?sst gr?ssen | Flatout - Ultimate Carnage (UK Version) | Racing       | XBox 360     |          nan |          nan |
+
+Table B:
+| Column B-0               | Column B-1              | Column B-2   | Column B-3        | Column B-4          | Column B-5                          |
+|:-------------------------|:------------------------|:-------------|:------------------|:--------------------|:------------------------------------|
+| Project Gotham Racing 4  | Project Gotham Racing 4 | 2007-10-02   | Xbox 360          | Xbox Game Studios   | Racing game                         |
+| World Rally Championship | nan                     | nan          | nan               | nan                 | nan                                 |
+| Betrayer (video game)    | Betrayer                | nan          | Microsoft Windows | nan                 | Stealth game, Action-adventure game |
+| Fable II                 | Fable II                | 2008-10-21   | Xbox 360          | Xbox Game Studios   | Action role-playing game            |
+| Pro Moves Soccer         | Pro Moves Soccer        | nan          | Sega Genesis      | ASCII Entertainment | Sports game                         |
+
+Return the final result as JSON in the format {""column_mappings"": ""<a list of column pairs>""}. ONLY return the JSON and nothing else.
+Answer:
+Matching Decisions: {""column_mappings"": [[""Column A-0"", ""None""], [""Column A-1"", ""Column B-1""], [""Column A-2"", ""None""], [""Column A-3"", ""Column B-0""], [""Column A-4"", ""None""], [""Column A-5"", ""None""], [""Column A-6"", ""None""], [""Column A-7"", ""None""]]}
+Predicted answer for Specific Column Pair: Column A-4 and Column B-5 do not match
+Explanation: The decision to not match ""Column A-4"" from Table A with ""Column B-5"" from Table B was based on the nature of the data contained within each column. 
+
+- ""Column A-4"" in Table A lists specific genres of video games such as ""Shooter"", ""Action"", and ""Racing"". These are broad categories that describe the general type of gameplay experience a player can expect.
+
+- ""Column B-5"" in Table B, on the other hand, contains more detailed descriptions or sub-genres of video games like ""Racing game"", ""Stealth game, Action-adventure game"", and ""Action role-playing game"". These descriptions not only include the broad genre but also provide additional context or sub-genre classifications that are not present in ""Column A-4"".
+
+The key values influencing this decision were the general genre terms in ""Column A-4"" (e.g., ""Shooter"", ""Action"", ""Racing"") compared to the more specific and sometimes compound genre descriptions in ""Column B-5"" (e.g., ""Racing game"", ""Stealth game, Action-adventure game""). The lack of a one-to-one correspondence in genre specificity and the inclusion of additional descriptors in ""Column B-5"" that are absent in ""Column A-4"" led to the conclusion that these columns do not directly match.
+Correct answer for Specific Column Pair: Column A-4 Column B-5 match
+
+
+Task 10:
+Prompt: System: Description: Please identify the matching columns between Table A and Table B. 
+     For each column in Table A, specify the corresponding column in Table B. 
+     If a column in A has no corresponding column in Table B, you can map it to 'None'. 
+     Represent each column mapping using a pair of column headers in a list, i.e., [Table A Column, Table B column or None]. 
+     Provide the mapping for each column in Table A and return all mappings in a list. Return the final result as JSON in the format {""column_mappings"": ""<a list of column pairs>""}.
+Human: Question:
+Table A:
+| Column A-0                        | Column A-1   |   Column A-2 | Column A-3     | Column A-4   | Column A-5         |
+|:----------------------------------|:-------------|-------------:|:---------------|:-------------|:-------------------|
+| Congo, The Democratic Republic Of | nan          |          976 | 100 centimes   | CDF          | Franc Congolais    |
+| French Southern Territories       |               |          978 | 100 euro-cents | EUR          | Euro               |
+| Cocos (Keeling) Islands           | A$           |           36 | 100 cents      | AUD          | Australian Dollar  |
+| Cook Islands                      | NZ$          |          554 | 100 cents      | NZD          | New Zealand Dollar |
+| Chile                             | Ch$          |          152 | 100 centavos   | CLP          | Chilean Peso       |
+
+Table B:
+| Column B-0        | Column B-1                                                                                                                                                                | Column B-2                                                                                                                                                       | Column B-3   | Column B-4           | Column B-5                                                      |
+|:------------------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------|:-------------|:---------------------|:----------------------------------------------------------------|
+| Swiss franc       | Campione d'Italia, Liechtenstein, Switzerland                                                                                                                             | , Campione d'Italia, Italy                                                                                                                                       | CHF          | nan                  | Schweizer Franken, franc suisse, franc svizzer, franco svizzero |
+| Czech koruna      | Czech Republic                                                                                                                                                            | nan                                                                                                                                                              | CZK          | haléřa               | koruna česká                                                    |
+| Unidad de Fomento | Chile                                                                                                                                                                     | nan                                                                                                                                                              | CLF          | nan                  | nan                                                             |
+| Maltese scudo     | Hospitaller Malta, Hospitaller Rhodes, Crown Colony of Malta, French occupation of Malta, Gozo (independent state), Malta Protectorate, Sovereign Military Order of Malta | Crown Colony of Malta, Sovereign Military Order of Malta, Hospitaller Malta, Previously:, Malta Protectorate, Hospitaller Rhodes, French Malta, Independent Gozo | none         | Tarì, piccolo, grano | Scudo maltese, Skud Malti                                       |
+| Cambodian riel    | Cambodia                                                                                                                                                                  | nan                                                                                                                                                              | KHR          | kak, sen             | រៀលកម្ពុជា/រៀលខ្មែរ                                                    |
+
+Return the final result as JSON in the format {""column_mappings"": ""<a list of column pairs>""}. ONLY return the JSON and nothing else.
+Answer:
+Matching Decisions: {""column_mappings"": [[""Column A-0"", ""None""], [""Column A-1"", ""None""], [""Column A-2"", ""None""], [""Column A-3"", ""None""], [""Column A-4"", ""None""], [""Column A-5"", ""None""]]}
+Predicted answer for Specific Column Pair: Column A-0 and Column B-1 do not match
+Explanation: The decision to not match ""Column A-0"" from Table A with ""Column B-1"" from Table B was based on the content and context of the columns. ""Column A-0"" lists countries or territories, while ""Column B-1"" details specific areas, countries, or territories associated with the currency listed in ""Column B-0"". 
+
+The key influence on this decision was the lack of direct correspondence between the specific countries or territories listed in ""Column A-0"" and those mentioned in ""Column B-1"". For example, ""Column A-0"" includes ""Chile"", which could suggest a potential match due to ""Chile"" being mentioned in ""Column B-1"" associated with the ""Unidad de Fomento"". However, the currencies do not match since ""Column A-4"" lists the currency code (e.g., ""CLP"" for Chilean Peso), which does not align with the currencies or currency codes listed in ""Column B-3"" (e.g., ""CLF"" for Unidad de Fomento). 
+
+Therefore, despite the geographical connection, the context (currency information) and the specific details provided in both columns do not align in a way that would justify a direct mapping between ""Column A-0"" and ""Column B-1"".
+Correct answer for Specific Column Pair: Column A-0 Column B-1 match
+
+
+Task 11:
+Prompt: System: Description: Please identify the matching columns between Table A and Table B. 
+     For each column in Table A, specify the corresponding column in Table B. 
+     If a column in A has no corresponding column in Table B, you can map it to 'None'. 
+     Represent each column mapping using a pair of column headers in a list, i.e., [Table A Column, Table B column or None]. 
+     Provide the mapping for each column in Table A and return all mappings in a list. Return the final result as JSON in the format {""column_mappings"": ""<a list of column pairs>""}.
+Human: Question:
+Table A:
+| Column A-0   | Column A-1              | Column A-2     |
+|:-------------|:------------------------|:---------------|
+| Maldives     | Geography of Maldives   | Male           |
+| Mongolia     | Geography of Mongolia   | Ulaanbaatar    |
+| Mexico       | Geography of Mexico     | Mexico         |
+| Martinique   | Geography of Martinique | Fort-de-France |
+| Malta        | Geography of Malta      | Valletta       |
+
+Table B:
+| Column B-0                 | Column B-1    |
+|:---------------------------|:--------------|
+| Mutasarrifate of Jerusalem | Jerusalem     |
+| Marquisate of Finale       | Finale Ligure |
+| Mughan Soviet Republic     | Lankaran      |
+| Mecklenburg-Güstrow        | Güstrow       |
+| Mamluk Sultanate           | Cairo         |
+
+Return the final result as JSON in the format {""column_mappings"": ""<a list of column pairs>""}. ONLY return the JSON and nothing else.
+Answer:
+Matching Decisions: {""column_mappings"": [[""Column A-0"", ""None""], [""Column A-1"", ""Column B-0""], [""Column A-2"", ""Column B-1""]]}
+Predicted answer for Specific Column Pair: Column A-0 and Column B-0 do not match
+Explanation: The decision to not match ""Column A-0"" with ""Column B-0"" was based on the content and context of the values within these columns. ""Column A-0"" lists countries or territories (Maldives, Mongolia, Mexico, Martinique, Malta), while ""Column B-0"" contains historical or administrative regions (Mutasarrifate of Jerusalem, Marquisate of Finale, Mughan Soviet Republic, Mecklenburg-Güstrow, Mamluk Sultanate). The key influence on this decision was the nature of the entries: ""Column A-0"" is focused on modern geopolitical entities, whereas ""Column B-0"" refers to historical or specific administrative regions, which do not directly correspond to the contemporary countries or territories listed in ""Column A-0"".
+Correct answer for Specific Column Pair: Column A-0 Column B-0 match
+
+
+Task 12:
+Prompt: System: Description: Please identify the matching columns between Table A and Table B. 
+     For each column in Table A, specify the corresponding column in Table B. 
+     If a column in A has no corresponding column in Table B, you can map it to 'None'. 
+     Represent each column mapping using a pair of column headers in a list, i.e., [Table A Column, Table B column or None]. 
+     Provide the mapping for each column in Table A and return all mappings in a list. Return the final result as JSON in the format {""column_mappings"": ""<a list of column pairs>""}.
+Human: Question:
+Table A:
+| Column A-0             | Column A-1   | Column A-2                                                              | Column A-3   | Column A-4   | Column A-5         | Column A-6   |
+|:-----------------------|:-------------|:------------------------------------------------------------------------|:-------------|:-------------|:-------------------|:-------------|
+| Romania                | 22,276,056   | democracy                                                               | $256,900     | $10,661      | No (ended in 2007) | 238,392      |
+| Luxembourg             | 480,222      | constitutional monarchy                                                 | $34,530      | $71,904.24   | No                 | 2,586        |
+| Albania                | 3,600,523    | emerging democracy                                                      | $9,306       | $2,584.63    | Yes                | 27,398       |
+| Macedonia, Republic of | 2,055,915    | parliamentary democracy                                                 | $6,225       | $3,027.85    | No                 | 24,856       |
+| Switzerland            | 7,508,700    | formally a confederation but similar in structure to a federal republic | $386,100     | $51,107.52   | Yes                | 41,285       |
+
+Table B:
+| Column B-0           | Column B-1                  | Column B-2                      |       Column B-3 |   Column B-4 |   Column B-5 | Column B-6                    |   Column B-7 |   Column B-8 | Column B-9                                                                                |
+|:---------------------|:----------------------------|:--------------------------------|-----------------:|-------------:|-------------:|:------------------------------|-------------:|-------------:|:------------------------------------------------------------------------------------------|
+| United States        | United States dollar        | Federalism in the United States |      3.31894e+08 |         46.9 |  2.5035e+13  | 9833516.638013326             |  2.5035e+13  |        75180 | John Roberts, Nancy Pelosi, Joe Biden, Kamala Harris                                      |
+| Saint Lucia          | East Caribbean dollar       | Unitary state                   | 184961           |         51.2 |  2.48e+09    | 617.0, 617.0128675253453      |  1.77e+09    |         9780 | Errol Charles, Charles III, Philip J. Pierre                                              |
+| Sudan                | Sudanese pound              | Federalism                      |      4.79589e+07 |         34.2 |  2.0304e+11  | 1886068.0, 1886068.1917683303 |  3.0808e+10  |          674 | Mohamed Hamdan Dagalo, Abdel Fattah al-Burhan, Osman Hussein                              |
+| Equatorial Guinea    | Central African CFA franc   | Unitary state                   |      1.67917e+06 |        nan   |  2.7959e+10  | 28049.57123493888, 28050.0    |  1.6012e+10  |         8462 | Francisco Pascual Obama Asue, Teodoro Nguema Obiang Mangue, Teodoro Obiang Nguema Mbasogo |
+| United Arab Emirates | United Arab Emirates dirham | Federal monarchy                |      9.28241e+06 |         26   |  7.79234e+11 | 83599.63622542542, 83600.0    |  5.01354e+11 |        50349 | Mohamed bin Zayed Al Nahyan, Mohammed bin Rashid Al Maktoum                               |
+
+Return the final result as JSON in the format {""column_mappings"": ""<a list of column pairs>""}. ONLY return the JSON and nothing else.
+Answer:
+Matching Decisions: {""column_mappings"": [[""Column A-0"", ""None""], [""Column A-1"", ""None""], [""Column A-2"", ""None""], [""Column A-3"", ""Column B-3""], [""Column A-4"", ""None""], [""Column A-5"", ""None""], [""Column A-6"", ""None""]]}
+Predicted answer for Specific Column Pair: Column A-2 and Column B-2 do not match
+Explanation: The decision to not match ""Column A-2"" from Table A with ""Column B-2"" from Table B was based on the nature of the content within these columns. 
+
+- ""Column A-2"" in Table A describes the type of government or political system in various countries (e.g., ""democracy,"" ""constitutional monarchy,"" ""emerging democracy,"" ""parliamentary democracy,"" ""formally a confederation but similar in structure to a federal republic""). 
+- ""Column B-2"" in Table B, on the other hand, describes more specific governmental structures or principles for different countries (e.g., ""Federalism in the United States,"" ""Unitary state,"" ""Federalism,"" ""Unitary state,"" ""Federal monarchy"").
+
+The key influence on the decision was the level of specificity and the nature of the descriptions. While both columns discuss governmental structures, ""Column A-2"" focuses on broad categories of governance systems, whereas ""Column B-2"" includes specific governmental principles or structures that do not directly correspond to the broad categories listed in ""Column A-2."" For example, ""democracy"" is a broad category that can encompass various forms of governance, including federalism, unitary states, or federal monarchies, but it does not directly equate to any of these specific terms. Therefore, due to the lack of direct correspondence in the nature of the content, these columns were not matched.
+Correct answer for Specific Column Pair: Column A-2 Column B-2 match
+
+
+
+Correct Decisions (Only as a reference):
+Task 13:
+Prompt: System: Description: Please identify the matching columns between Table A and Table B. 
+     For each column in Table A, specify the corresponding column in Table B. 
+     If a column in A has no corresponding column in Table B, you can map it to 'None'. 
+     Represent each column mapping using a pair of column headers in a list, i.e., [Table A Column, Table B column or None]. 
+     Provide the mapping for each column in Table A and return all mappings in a list. Return the final result as JSON in the format {""column_mappings"": ""<a list of column pairs>""}.
+Human: Question:
+Table A:
+| Column A-0         | Column A-1   | Column A-2              |
+|:-------------------|:-------------|:------------------------|
+| Spotted salamander | Amphibian    | Ambystoma maculatum     |
+| Softshell turtles  | Reptile      | Trionyx spp.            |
+| Ornate box turtle  | Reptile      | Terrapene ornata ornata |
+| Caspian tern       | Bird         | Sterna caspia           |
+| Red-eyed vireo     | Bird         | Vireo olivaceus         |
+
+Table B:
+| Column B-0                 | Column B-1   | Column B-2     | Column B-3                                                                                          | Column B-4                 |
+|:---------------------------|:-------------|:---------------|:----------------------------------------------------------------------------------------------------|:---------------------------|
+| Tetramorium tonganum       | Insect       | T. tonganum    | *Tetramorium magitae (Forel, 1911)                                                                  | Tetramorium tonganum       |
+| Cylindromyrmex             | Insect       | nan            | Holcoponera (Cameron, 1891), Hypocylindromyrmex (Wheeler, 1924), Metacylindromyrmex (Wheeler, 1924) | nan                        |
+| Dysgonia erectata          | Insect       | D. erectata    | *Parallelia erectata                                                                                | Dysgonia erectata          |
+|                            |              |                | *Ophiusa erectata (Hampson, 1902)                                                                   |                            |
+| Pseudostegania yargongaria | Insect       | P. yargongaria | *Asthena yargongaria (Oberthür, 1916)                                                               | Pseudostegania yargongaria |
+| Vexillum obeliscus         | Gastropoda   | V. obeliscus   | * Costellaria obeliscus                                                                             | Vexillum  obeliscus        |
+|                            |              |                | * Mitra obeliscus Reeve, 1844                                                                       |                            |
+|                            |              |                | * Vexillum  subtruncatum Sowerby, G.B. II & III, 1874                                               |                            |
+|                            |              |                | * Vexillum andamanica Nevill, G. & H. Nevill, 1875                                                  |                            |
+|                            |              |                | * Turricula quasillus Iredale, T., 1929                                                             |                            |
+
+Return the final result as JSON in the format {""column_mappings"": ""<a list of column pairs>""}. ONLY return the JSON and nothing else.
+Answer:
+Matching Decision Output: {""column_mappings"": [[""Column A-0"", ""None""], [""Column A-1"", ""Column B-1""], [""Column A-2"", ""Column B-2""]]}
+Predicted answer for Specific Column Pair: Column A-2 and Column B-4 do not match
+Explanation: The decision to not match ""Column A-2"" from Table A with ""Column B-1"" from Table B was based on the content and context of the data within these columns. 
+
+- ""Column A-2"" in Table A contains scientific names of various animals (e.g., ""Ambystoma maculatum"", ""Trionyx spp."", ""Terrapene ornata ornata"", ""Sterna caspia"", ""Vireo olivaceus""), which are specific and unique identifiers for species.
+- ""Column B-1"" in Table B lists broad categories of animal types or classifications (e.g., ""Insect"", ""Gastropoda"").
+
+The mismatch is clear: ""Column A-2"" provides specific species names, while ""Column B-1"" offers general classifications. The values that had a high influence on this decision were the specific scientific names in ""Column A-2"" compared to the general nature of the categories in ""Column B-1"". Matching these columns would inaccurately suggest that specific species names correspond directly to broad animal classifications, which is not the case.
+Correct answer for Specific Column Pair: Column A-1 Column B-4 do not match
+Task 14:
+Prompt: System: Description: Please identify the matching columns between Table A and Table B. 
+     For each column in Table A, specify the corresponding column in Table B. 
+     If a column in A has no corresponding column in Table B, you can map it to 'None'. 
+     Represent each column mapping using a pair of column headers in a list, i.e., [Table A Column, Table B column or None]. 
+     Provide the mapping for each column in Table A and return all mappings in a list. Return the final result as JSON in the format {""column_mappings"": ""<a list of column pairs>""}.
+Human: Question:
+Table A:
+| Column A-0                        | Column A-1   |   Column A-2 | Column A-3     | Column A-4   | Column A-5         |
+|:----------------------------------|:-------------|-------------:|:---------------|:-------------|:-------------------|
+| Congo, The Democratic Republic Of | nan          |          976 | 100 centimes   | CDF          | Franc Congolais    |
+| French Southern Territories       |               |          978 | 100 euro-cents | EUR          | Euro               |
+| Cocos (Keeling) Islands           | A$           |           36 | 100 cents      | AUD          | Australian Dollar  |
+| Cook Islands                      | NZ$          |          554 | 100 cents      | NZD          | New Zealand Dollar |
+| Chile                             | Ch$          |          152 | 100 centavos   | CLP          | Chilean Peso       |
+
+Table B:
+| Column B-0        | Column B-1                                                                                                                                                                | Column B-2                                                                                                                                                       | Column B-3   | Column B-4           | Column B-5                                                      |
+|:------------------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------|:-------------|:---------------------|:----------------------------------------------------------------|
+| Swiss franc       | Campione d'Italia, Liechtenstein, Switzerland                                                                                                                             | , Campione d'Italia, Italy                                                                                                                                       | CHF          | nan                  | Schweizer Franken, franc suisse, franc svizzer, franco svizzero |
+| Czech koruna      | Czech Republic                                                                                                                                                            | nan                                                                                                                                                              | CZK          | haléřa               | koruna česká                                                    |
+| Unidad de Fomento | Chile                                                                                                                                                                     | nan                                                                                                                                                              | CLF          | nan                  | nan                                                             |
+| Maltese scudo     | Hospitaller Malta, Hospitaller Rhodes, Crown Colony of Malta, French occupation of Malta, Gozo (independent state), Malta Protectorate, Sovereign Military Order of Malta | Crown Colony of Malta, Sovereign Military Order of Malta, Hospitaller Malta, Previously:, Malta Protectorate, Hospitaller Rhodes, French Malta, Independent Gozo | none         | Tarì, piccolo, grano | Scudo maltese, Skud Malti                                       |
+| Cambodian riel    | Cambodia                                                                                                                                                                  | nan                                                                                                                                                              | KHR          | kak, sen             | រៀលកម្ពុជា/រៀលខ្មែរ                                                    |
+
+Return the final result as JSON in the format {""column_mappings"": ""<a list of column pairs>""}. ONLY return the JSON and nothing else.
+Answer:
+Matching Decision Output: {""column_mappings"": [[""Column A-0"", ""None""], [""Column A-1"", ""None""], [""Column A-2"", ""None""], [""Column A-3"", ""None""], [""Column A-4"", ""None""], [""Column A-5"", ""None""]]}
+Predicted answer for Specific Column Pair: Column A-4 and Column B-4 do not match
+Explanation: The decision to not match ""Column A-4"" from Table A with ""Column B-0"" from Table B was based on the content and context of the columns. ""Column A-4"" lists the currency codes (e.g., ""CDF"", ""EUR"", ""AUD"", ""NZD"", ""CLP"") for various countries or territories, while ""Column B-0"" lists the names of currencies (e.g., ""Swiss franc"", ""Czech koruna"", ""Unidad de Fomento"", ""Maltese scudo"", ""Cambodian riel"") used in different regions.
+
+The key factors influencing this decision were:
+
+1. **Content Type**: ""Column A-4"" contains currency codes, which are standardized alphabetic code elements (usually three letters) used to represent currencies in a concise manner, as defined by ISO 4217. In contrast, ""Column B-0"" contains the full names of currencies, which are not standardized and can vary significantly in naming conventions across languages and regions.
+
+2. **Mismatch in Specific Entries**: There is no direct match between the specific currency codes in ""Column A-4"" and the names of currencies in ""Column B-0"". For example, ""CDF"" (Franc Congolais) from ""Column A-4"" does not have a corresponding currency name in ""Column B-0"", and similarly, ""Swiss franc"" from ""Column B-0"" does not have a corresponding currency code in ""Column A-4"".
+
+3. **Lack of Direct Correlation**: Even though both columns relate to currencies, the absence of a one-to-one correspondence or a direct correlation between the specific entries of these columns means they cannot be accurately mapped to each other.
+
+These factors led to the conclusion that ""Column A-4"" and ""Column B-0"" do not match and should not be paired.
+Correct answer for Specific Column Pair: Column A-2 Column B-4 do not match
+Task 15:
+Prompt: System: Description: Please identify the matching columns between Table A and Table B. 
+     For each column in Table A, specify the corresponding column in Table B. 
+     If a column in A has no corresponding column in Table B, you can map it to 'None'. 
+     Represent each column mapping using a pair of column headers in a list, i.e., [Table A Column, Table B column or None]. 
+     Provide the mapping for each column in Table A and return all mappings in a list. Return the final result as JSON in the format {""column_mappings"": ""<a list of column pairs>""}.
+Human: Question:
+Table A:
+| Column A-0       | Column A-1    | Column A-2   | Column A-3   |
+|:-----------------|:--------------|:-------------|:-------------|
+| Broad Peak I     | June 9, 1957  | Karakoram    | 8,047        |
+| Kamet            | June 21, 1931 | Himalayas    | 7,756        |
+| Gasherbrum I     | July 5, 1958  | Karakoram    | 8,068        |
+| Nanda Devi       | Aug 29, 1936  | Himalayas    | 7,816        |
+| Batura Muztagh I | July 30, 1976 | Karakoram    | 7,785        |
+
+Table B:
+| Column B-0         | Column B-1                  | Column B-2   |   Column B-3 | Column B-4                                                                                                      |   Column B-5 |
+|:-------------------|:----------------------------|:-------------|-------------:|:----------------------------------------------------------------------------------------------------------------|-------------:|
+| Mount Everest      | nan                         | 1953         |          nan | Province No. 1, Tibet Autonomous Region, Tingri County, China, Solukhumbu District, Nepal, Xigazê               |          nan |
+| Bojohagur Duanasir | Karakoram, Batura           | 1984         |         7329 | Hunza Valley, Gilgit-Baltistan, Pakistan                                                                        |         7329 |
+| Botzer             | Stubai Alps                 | 0016         |         3250 | Italy, South Tyrol                                                                                              |         3250 |
+| Zemu Gap Peak      | Himalayas                   | nan          |         7780 | Sikkim, India                                                                                                   |         7780 |
+| Lhotse             | Mahalangur Himal, Himalayas | 1956, 1988   |         8516 | Sagarmatha Zone, Tibet Autonomous Region, Tingri County, China, Solukhumbu District, Nepal, Shigatse Prefecture |         8516 |
+
+Return the final result as JSON in the format {""column_mappings"": ""<a list of column pairs>""}. ONLY return the JSON and nothing else.
+Answer:
+Matching Decision Output: {""column_mappings"": [[""Column A-0"", ""None""], [""Column A-1"", ""Column B-2""], [""Column A-2"", ""None""], [""Column A-3"", ""Column B-5""]]}
+Predicted answer for Specific Column Pair: Column A-1 and Column B-2 match
+Explanation: The decision to match ""Column A-1"" with ""Column B-2"" was based on the observation that both columns contain dates related to significant events, presumably the first ascents of mountains in this context. Although ""Column B-2"" has some entries with multiple years (e.g., ""1956, 1988"" for Lhotse) and one entry marked as ""nan"" indicating missing data, it aligns with the nature of ""Column A-1"", which exclusively lists single years. The presence of recognizable years (e.g., ""1953"", ""1984"", ""1956, 1988"") in ""Column B-2"" that are formatted similarly to the dates in ""Column A-1"" (e.g., ""June 9, 1957"", ""June 21, 1931"")—despite the latter including more detailed dates with day and month—suggests a thematic similarity in content, focusing on dates of significant events. This thematic alignment, despite the difference in detail level (full dates vs. years only), was the primary influence on the decision to match these columns.
+Correct answer for Specific Column Pair: Column A-1 Column B-2 match
+
+",gpt-3.5-turbo,structured_unstructured_zero_shot_multi_table_gpt-3.5-turbo,"Fault Categories:
+1. Content Mismatch:
+   - Column A-1 and Column B-4 do not match (Task 13)
+   - Column A-4 and Column B-4 do not match (Task 14)
+   - Column A-2 and Column B-4 do not match (Task 15)
+
+2. Specificity and Context:
+   - Column A-2 and Column B-4 do not match (Task 13)
+   - Column A-4 and Column B-5 do not match (Task 14)
+
+3. Geographic vs. Historical/Administrative Regions:
+   - Column A-0 and Column B-0 do not match (Task 11)
+
+4. Currency Code vs. Currency Name:
+   - Column A-4 and Column B-0 do not match (Task 14)",unstructured_analysis
