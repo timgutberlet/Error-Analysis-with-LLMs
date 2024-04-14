@@ -1,0 +1,652 @@
+Unnamed: 0,text_id,term_id,text,term,polarity,polarity_pred,prompt_name,prompt,error,structured_analysis,unstructured_analysis
+153,60,153,"We had no problems with our resevations and found the service and the meal well worth a wait, had we run into one.",service,neutral,positive,prompt_3_zeroshot_single_term,"We had no problems with our resevations and found the service and the meal well worth a wait, had we run into one.
+
+    What is the sentiment on 'service'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",error,"[
+{""service"":""well worth a wait"",""importance"":""1.0""}
+]","I made the prediction based on the positive sentiment conveyed towards the service in the sentence. The words ""service"" and ""well worth a wait"" had a high influence on my decision."
+291,112,291,My husband and I had dinner here last week and the food was very good.,dinner,neutral,positive,prompt_3_zeroshot_single_term,"My husband and I had dinner here last week and the food was very good.
+
+    What is the sentiment on 'dinner'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",error,"[
+{""food"":""0.70""},
+{""good"":""0.30""}
+]","I made the prediction based on the words ""very good"" used to describe the food, indicating a positive sentiment towards the dinner experience."
+275,105,275,"The Scene Shun Lee Palace is popular with midtown locals, possibly because the upscale room means you can impress a client and have Chinese for lunch at the same time.",lunch,neutral,positive,prompt_3_zeroshot_single_term,"The Scene Shun Lee Palace is popular with midtown locals, possibly because the upscale room means you can impress a client and have Chinese for lunch at the same time.
+
+    What is the sentiment on 'lunch'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",error,"[
+{""upscale room"": ""0.40""},
+{""impress a client"": ""0.30""},
+{""Chinese"": ""0.30""}
+]","I made the prediction based on the positive associations with ""impress a client"" and ""upscale room"" in relation to having Chinese for lunch at Shun Lee Palace."
+55,19,55,"When I asked the waitress, she told me they couldn't afford the salmon, and had changed the dish (though not on the menu).",salmon,negative,neutral,prompt_3_zeroshot_single_term,"When I asked the waitress, she told me they couldn't afford the salmon, and had changed the dish (though not on the menu).
+
+    What is the sentiment on 'salmon'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",error,"[
+{""afford"",""importance"":""0.5""},
+{""changed"",""importance"":""0.5""}
+]","I determined the sentiment as ""neutral"" based on the lack of emotional tone or opinion expressed towards salmon in the given context. The words ""couldn't afford"" and ""changed the dish"" indicated a practical or financial reason for the change, rather than a positive or negative sentiment towards salmon itself."
+131,50,131,"Next, follow up with another Cosmo and try the chicken fingers (not your lil brothers), Hawaiian rib eye, filet mignon, or trusty burger.",Hawaiian rib,neutral,positive,prompt_3_zeroshot_single_term,"Next, follow up with another Cosmo and try the chicken fingers (not your lil brothers), Hawaiian rib eye, filet mignon, or trusty burger.
+
+    What is the sentiment on 'Hawaiian rib'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",error,"[
+{""Hawaiian rib eye"": ""0.9""},
+{""delicious"": ""0.6""},
+{""flavorful"": ""0.4""},
+{""tender"": ""0.3""},
+{""juicy"": ""0.2""}
+]","I made my prediction based on the positive connotations associated with the word ""Hawaiian"" and the popular appeal of ""rib eye"" as a menu item."
+176,68,176,"Appetizers are the safest bet, including a bountiful calamari plate or the appropriately earthy mushroom polenta.",bountiful calamari plate,neutral,positive,prompt_3_zeroshot_single_term,"Appetizers are the safest bet, including a bountiful calamari plate or the appropriately earthy mushroom polenta.
+
+    What is the sentiment on 'bountiful calamari plate'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",error,"[
+{""bountiful"": ""0.70""},
+{""calamari"": ""0.30""}
+]","I made the prediction based on the positive adjectives ""bountiful"" and the appetizing nature of calamari as a popular dish. These words suggest a positive sentiment towards the calamari plate."
+17,6,17,The eggplant parmasean was AWESOME (I don't even like eggplant) but my main course was just ok (shrimp with pasta).,main course,neutral,negative,prompt_3_zeroshot_single_term,"The eggplant parmasean was AWESOME (I don't even like eggplant) but my main course was just ok (shrimp with pasta).
+
+    What is the sentiment on 'main course'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",error,"[
+{""word"":""ok"",""importance"":""0.8""},
+{""word"":""shrimp"",""importance"":""0.2""}
+]","I made the prediction based on the user's description of the main course as ""just ok,"" indicating a neutral to slightly negative sentiment. The words ""just ok"" had a high influence on my decision."
+57,20,57,There were a lot of scensters who couldnt afford dinner hanging in the waiting area so we got bumped around a lot.,dinner,negative,neutral,prompt_3_zeroshot_single_term,"There were a lot of scensters who couldnt afford dinner hanging in the waiting area so we got bumped around a lot.
+
+    What is the sentiment on 'dinner'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",error,"[
+{""afford"":""0.50""},
+{""waiting area"":""0.50""}
+]","I made my prediction based on the context provided in the sentence. The words ""scensters,"" ""afford dinner,"" and ""waiting area"" indicated a situation where some individuals couldn't afford dinner, leading to a negative experience. However, the overall tone of the sentence was more descriptive than emotional, leading to a neutral sentiment."
+203,78,203,"The Clinton-frequented restaurant stands handsomely on a quiet residential corner, and the modern interior includes a long dining room, a small bar and harsh lighting.",bar,negative,neutral,prompt_3_zeroshot_single_term,"The Clinton-frequented restaurant stands handsomely on a quiet residential corner, and the modern interior includes a long dining room, a small bar and harsh lighting.
+
+    What is the sentiment on 'bar'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",error,"[
+{""modern"": ""0.30""},
+{""small"": ""0.20""},
+{""harsh lighting"": ""0.50""}
+]","I made the prediction based on the neutral tone of the description of the bar as ""small"" and part of the modern interior. The lack of positive or negative descriptors led me to determine the sentiment as neutral."
+258,97,258,Telly's has the best octopus ever and the fish was so good on the grill.,grill,neutral,positive,prompt_3_zeroshot_single_term,"Telly's has the best octopus ever and the fish was so good on the grill.
+
+    What is the sentiment on 'grill'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",error,"[
+{""grill"":""0.9""},
+{""good"":""0.7""}
+]","I made the prediction based on the positive words ""best"" and ""good"" used to describe the octopus and fish, as well as the positive association of grilling food."
+276,106,276,If you don't want to wait 45 minutes for a table or a long time for service then don't go @ 9pm on a Friday or Saturday night.,table,neutral,negative,prompt_3_zeroshot_single_term,"If you don't want to wait 45 minutes for a table or a long time for service then don't go @ 9pm on a Friday or Saturday night.
+
+    What is the sentiment on 'table'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",error,"[
+{""wait"":""0.40""},
+{""long time"":""0.30""},
+{""Friday"":""0.15""},
+{""Saturday"":""0.15""}
+]","I made the prediction based on the context of the sentence, which suggests that waiting for a table at 9pm on a Friday or Saturday night can be time-consuming. The words ""wait 45 minutes for a table"" and ""long time for service"" indicate a negative sentiment associated with the word ""table."""
+440,167,440,"Although when I went to eat dinner at Bombay Talkie on a crazy busy night, my waiter was extremely helpful through the menu, polite and polished.",dinner,neutral,positive,prompt_3_zeroshot_single_term,"Although when I went to eat dinner at Bombay Talkie on a crazy busy night, my waiter was extremely helpful through the menu, polite and polished.
+
+    What is the sentiment on 'dinner'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",error,"[
+{""helpful"": ""0.30""},
+{""polite"": ""0.30""},
+{""polished"": ""0.20""},
+{""busy"": ""0.20""}
+]","I identified the sentiment as positive based on the words ""extremely helpful,"" ""polite,"" and ""polished"" used to describe the waiter's behavior during dinner at Bombay Talkie. These positive descriptors indicate a favorable experience."
+231,87,231,Had a mouthwatering sardinian Stuffed Squid and a Catfish fiumarola from Rome( think was capers and anchovies sauce).,Catfish,neutral,positive,prompt_3_zeroshot_single_term,"Had a mouthwatering sardinian Stuffed Squid and a Catfish fiumarola from Rome( think was capers and anchovies sauce).
+
+    What is the sentiment on 'Catfish'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",error,"[
+{""Catfish"": ""0.8""},
+{""sauce"": ""0.2""}
+]","I made the prediction based on the positive connotations associated with the words ""mouthwatering,"" ""stuffed,"" ""Sardinian,"" and ""Rome."" These words typically evoke a positive sentiment towards food experiences."
+308,118,308,"I love Chinese food and have been looking for the alternative to the greasy stuff on every corner of New York- ya, you know, the stinky take-out joints that leave you smelling like dinner for 100 for the rest of the night!",stuff,positive,negative,prompt_3_zeroshot_single_term,"I love Chinese food and have been looking for the alternative to the greasy stuff on every corner of New York- ya, you know, the stinky take-out joints that leave you smelling like dinner for 100 for the rest of the night!
+
+    What is the sentiment on 'stuff'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",error,"[
+{""greasy"": ""0.70""},
+{""stinky"": ""0.30""}
+]","I made the prediction based on the negative connotations associated with the words ""greasy stuff,"" ""stinky take-out joints,"" and ""smelling like dinner for 100."" These phrases suggest a negative sentiment towards the subject."
+63,22,63,The Food The menu features a wide array of Hawaiian- and Asian-flavored appetizers and entrees.,appetizers,positive,neutral,prompt_3_zeroshot_single_term,"The Food The menu features a wide array of Hawaiian- and Asian-flavored appetizers and entrees.
+
+    What is the sentiment on 'appetizers'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",error,"[
+{""Hawaiian-flavored"": ""0.4""},
+{""Asian-flavored"": ""0.4""},
+{""wide array"": ""0.2""}
+]","I determined the sentiment as neutral based on the lack of specific positive or negative language used to describe the appetizers. The words ""wide array"" suggest variety, which can be seen as positive, but without further context or emotional language, the overall sentiment remains neutral."
+221,84,221,"For dessert, go with the delicate, subtle flan over the pasty rice pudding.",dessert,neutral,positive,prompt_3_zeroshot_single_term,"For dessert, go with the delicate, subtle flan over the pasty rice pudding.
+
+    What is the sentiment on 'dessert'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",error,"[
+{""delicate"": ""0.40""},
+{""subtle"": ""0.30""},
+{""flan"": ""0.20""},
+{""pasty"": ""0.10""}
+]","I made the prediction based on the positive connotations associated with the words ""delicate"" and ""subtle"" in relation to flan, as well as the negative connotations associated with the words ""pasty"" in relation to rice pudding."
+341,130,341,"Mussels in deeply aromatic lemongrass broth make an excellent starter, as do the light and spicy house samosas.",Mussels,neutral,positive,prompt_3_zeroshot_single_term,"Mussels in deeply aromatic lemongrass broth make an excellent starter, as do the light and spicy house samosas.
+
+    What is the sentiment on 'Mussels'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",error,"[
+{""aromatic"": ""0.40""},
+{""excellent"": ""0.60""}
+]","I made the prediction based on the positive adjectives ""excellent"" and ""aromatic"" used to describe the mussels, as well as the positive association with being a starter dish."
+245,92,245,Anyway we get a table and order some appetizers from one of the waitresses who was pleasently nice.,appetizers,neutral,positive,prompt_3_zeroshot_single_term,"Anyway we get a table and order some appetizers from one of the waitresses who was pleasently nice.
+
+    What is the sentiment on 'appetizers'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",error,"[
+{""waitresses"": ""0.4""},
+{""pleasantly nice"": ""0.6""}
+]","I made the prediction based on the positive words ""order"" and ""pleasantly nice"" used to describe the waitress and the act of ordering appetizers. These words indicate a positive sentiment towards the appetizers."
+8,3,8,My boyfriend and I went one Friday night to find that the place was empty except for one other table.,place,negative,neutral,prompt_3_zeroshot_single_term,"My boyfriend and I went one Friday night to find that the place was empty except for one other table.
+
+    What is the sentiment on 'place'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",error,"[
+{""empty"": ""0.5""},
+{""one other table"": ""0.5""}
+]","I determined the sentiment as neutral based on the lack of emotional cues or descriptive language in the sentence. The words ""empty"" and ""one other table"" suggest a quiet atmosphere, but do not convey a strong positive or negative sentiment."
+389,148,389,Get a pitcher of red or white sangria and choose from a large selection of tapas.,white sangria,neutral,positive,prompt_3_zeroshot_single_term,"Get a pitcher of red or white sangria and choose from a large selection of tapas.
+
+    What is the sentiment on 'white sangria'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",error,"[
+{""white sangria"":""0.70""},
+{""refreshing"":""0.30""}
+]","I made the prediction based on the context provided, which indicated a positive association with white sangria due to the request for a pitcher of either red or white sangria and a selection of tapas. The mention of a large selection of tapas suggests a positive and enjoyable dining experience, which likely extends to the choice of white sangria."
+408,156,408,"The Food The classic Italian menu gets off to a good start with Queen's famous bread basket, which is loaded with a slew of crunchy, yeasty homemade varieties.",Food,neutral,positive,prompt_3_zeroshot_single_term,"The Food The classic Italian menu gets off to a good start with Queen's famous bread basket, which is loaded with a slew of crunchy, yeasty homemade varieties.
+
+    What is the sentiment on 'Food'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",error,"[
+{""Italian"": ""0.30""},
+{""crunchy"": ""0.20""},
+{""yeasty"": ""0.20""},
+{""homemade"": ""0.30""}
+]","I made the prediction based on the positive words used to describe the food, such as ""good start,"" ""famous,"" ""crunchy,"" and ""yeasty homemade varieties."" These words indicate a positive sentiment towards the food."
+269,102,269,"about 10 minutes apart each, so we were all eating cold eggs by the time we got our food.",food,neutral,negative,prompt_3_zeroshot_single_term,"about 10 minutes apart each, so we were all eating cold eggs by the time we got our food.
+
+    What is the sentiment on 'food'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",error,"[
+{""cold eggs"",""0.60""},
+{""10 minutes apart"",""0.40""}
+]",I made the prediction based on the negative sentiment expressed towards the food being cold and the dissatisfaction of eating cold eggs.
+87,32,87,"Great value for the price-- lunch is an even better value, with entree and appetizer for between $8-10 or so.",appetizer,neutral,positive,prompt_3_zeroshot_single_term,"Great value for the price-- lunch is an even better value, with entree and appetizer for between $8-10 or so.
+
+    What is the sentiment on 'appetizer'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",error,"[
+{""value for the price"":""0.40""},
+{""better value"":""0.30""},
+{""entree"":""0.20""},
+{""appetizer"":""0.10""}
+]","I made the prediction based on the words ""great value,"" ""better value,"" and the price range of $8-10 for an entree and appetizer. These words indicate a positive sentiment towards the appetizer."
+448,169,448,"The server came by only once to pour additional wine for the table; the rest of the time, we had to fish the bottle out of the two-table communal bucket ourselves.",the table,neutral,negative,prompt_3_zeroshot_single_term,"The server came by only once to pour additional wine for the table; the rest of the time, we had to fish the bottle out of the two-table communal bucket ourselves.
+
+    What is the sentiment on 'the table'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",error,"[
+{""server"":""0.40""},
+{""pour"":""0.30""},
+{""additional"":""0.20""},
+{""fish"":""0.10""}
+]","I made the prediction based on the negative connotation associated with having to pour wine for oneself from a communal bucket, which implies a lack of attentive service and inconvenience. The words ""had to fish the bottle out of the two-table communal bucket ourselves"" had a high influence on my decision."
+283,109,283,We had reservations and when we showed up the manager told us the wait was over 45 mins.,reservations,neutral,negative,prompt_3_zeroshot_single_term,"We had reservations and when we showed up the manager told us the wait was over 45 mins.
+
+    What is the sentiment on 'reservations'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",error,"[
+{""word"":""wait"",""importance"":""0.6""},
+{""word"":""over"",""importance"":""0.4""}
+]","I made the prediction based on the context provided by the user, where they mentioned having reservations but still experiencing a long wait time. The words ""reservations"" and ""wait over 45 mins"" indicated a negative sentiment towards the reservation experience."
+239,90,239,The situation was verified by taking 3 dishes that were over an hour late off the bill and free desserts and coffee but the experience left most of us never wanting to go to the supposed hip cool 66 ever again.,dishes,neutral,negative,prompt_3_zeroshot_single_term,"The situation was verified by taking 3 dishes that were over an hour late off the bill and free desserts and coffee but the experience left most of us never wanting to go to the supposed hip cool 66 ever again.
+
+    What is the sentiment on 'dishes'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",error,"[
+{""late"":""0.70""},
+{""never wanting to go again"":""0.30""}
+]","I made the prediction based on the negative sentiment expressed towards the dishes being over an hour late, which had a high influence on my decision."
+399,152,399,THe bartendars were right on top of getting us our wine and setting up free blue cheese dip and chips for us.,wine,neutral,positive,prompt_3_zeroshot_single_term,"THe bartendars were right on top of getting us our wine and setting up free blue cheese dip and chips for us.
+
+    What is the sentiment on 'wine'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",error,"[
+{""wine"": ""0.70""},
+{""free"": ""0.20""},
+{""helpful"": ""0.10""}
+]","I made the prediction based on the positive association of ""wine"" with the prompt's mention of bartenders being attentive and providing complimentary blue cheese dip and chips. The words ""wine,"" ""bartenders,"" ""free,"" and ""blue cheese dip"" had a high influence on my decision."
+417,158,417,"For lunch, opt for an outstanding, triple-decker roast turkey club or brioche burger with skin-on fries.",skin-on fries,neutral,positive,prompt_3_zeroshot_single_term,"For lunch, opt for an outstanding, triple-decker roast turkey club or brioche burger with skin-on fries.
+
+    What is the sentiment on 'skin-on fries'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",error,"[
+{""skin-on fries"": ""0.9""},
+{""crispy"": ""0.3""},
+{""flavorful"": ""0.2""},
+{""fresh"": ""0.1""},
+{""texture"": ""0.1""}
+]","I made the prediction based on the positive connotation associated with ""skin-on fries"" as it implies a more natural and flavorful option compared to regular fries."
+247,93,247,"The round pizza doesn't taste as good as I recall, it's still wonderful, but the Sicilian is to die for.",round pizza,negative,neutral,prompt_3_zeroshot_single_term,"The round pizza doesn't taste as good as I recall, it's still wonderful, but the Sicilian is to die for.
+
+    What is the sentiment on 'round pizza'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",error,"[
+{""round pizza"",""importance"":""0.50""},
+{""wonderful"",""importance"":""0.25""},
+{""taste"",""importance"":""0.25""}
+]","I made my prediction based on the words ""doesn't taste as good as I recall"" which indicates a less positive sentiment compared to the Sicilian pizza mentioned as ""to die for,"" which conveys a very positive sentiment. The comparison between the two pizzas led me to determine a neutral sentiment for the round pizza."
+127,49,127,"we live down the street and have eaten here many times for lunch and dinner, and the food is consistently terrific.",lunch,neutral,positive,prompt_3_zeroshot_single_term,"we live down the street and have eaten here many times for lunch and dinner, and the food is consistently terrific.
+
+    What is the sentiment on 'lunch'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",error,"[
+{""consistent"": ""0.40""},
+{""terrific"": ""0.60""}
+]","I made the prediction based on the words ""eaten here many times,"" ""food is consistently terrific,"" and ""lunch and dinner."" These words indicate a positive sentiment towards the experience of dining at the restaurant for lunch."
+369,140,369,"While the staff was kind and attentive, our waiter never once broke a smile, even when I told him it was my friend's birthday, although he did bring a dessert with a candle at the end of the meal.",dessert,neutral,positive,prompt_3_zeroshot_single_term,"While the staff was kind and attentive, our waiter never once broke a smile, even when I told him it was my friend's birthday, although he did bring a dessert with a candle at the end of the meal.
+
+    What is the sentiment on 'dessert'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",error,"[{""word"":""dessert"",""importance"":""1.0""}]","I predicted a positive sentiment for ""dessert"" based on the fact that it was brought with a candle for the friend's birthday, indicating a special gesture and potentially a positive experience for the diners."
+338,129,338,"impressive balcony seating and while they forgot to give us the cold appetizers, the waiter and maitre'd more than made up for it by being most accomodating to us.",seating,neutral,positive,prompt_3_zeroshot_single_term,"impressive balcony seating and while they forgot to give us the cold appetizers, the waiter and maitre'd more than made up for it by being most accomodating to us.
+
+    What is the sentiment on 'seating'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",error,"[
+{""impressive"": ""0.70""},
+{""accommodating"": ""0.30""}
+]","I made the prediction based on the positive words ""impressive balcony seating"" and ""accommodating waiter and maitre'd."" These words indicated a positive sentiment towards the seating experience."
+163,64,163,"So are cooked plates: Marinated Kobe beef practically melts on its skewers, soy-buttered scallops collapse with sweet brine and Chawanmushi custard, quivering in eel-soy broth with black truffles and foie gras, is over the top.",plates,neutral,positive,prompt_3_zeroshot_single_term,"So are cooked plates: Marinated Kobe beef practically melts on its skewers, soy-buttered scallops collapse with sweet brine and Chawanmushi custard, quivering in eel-soy broth with black truffles and foie gras, is over the top.
+
+    What is the sentiment on 'plates'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",error,"[
+{""Kobe beef"": ""0.30""},
+{""scallops"": ""0.20""},
+{""Chawanmushi custard"": ""0.20""},
+{""eel-soy broth"": ""0.15""},
+{""black truffles"": ""0.10""},
+{""foie gras"": ""0.05""}
+]","I made the prediction based on the positive adjectives used to describe the dishes such as ""melts,"" ""sweet,"" ""quivering,"" and ""over the top."" These words indicate a positive sentiment towards the plates."
+143,56,143,"The bill came out to like $100pp, and noone touched their food, and drinks were left untouched because after the first bite/sip you want to never touch it again.",bill,neutral,negative,prompt_3_zeroshot_single_term,"The bill came out to like $100pp, and noone touched their food, and drinks were left untouched because after the first bite/sip you want to never touch it again.
+
+    What is the sentiment on 'bill'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",error,"[
+{""word"":""untouched"",""importance"":""0.4""},
+{""word"":""never touch it again"",""importance"":""0.3""},
+{""word"":""no one touched their food"",""importance"":""0.3""}
+]","I identified the sentiment as negative based on the words ""no one touched their food,"" ""drinks were left untouched,"" and ""after the first bite/sip you want to never touch it again."" These phrases indicate dissatisfaction with the food and drinks, leading to a negative sentiment towards the overall dining experience and the bill."
+449,169,449,"The server came by only once to pour additional wine for the table; the rest of the time, we had to fish the bottle out of the two-table communal bucket ourselves.",fish,neutral,negative,prompt_3_zeroshot_single_term,"The server came by only once to pour additional wine for the table; the rest of the time, we had to fish the bottle out of the two-table communal bucket ourselves.
+
+    What is the sentiment on 'fish'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",error,"[
+{""word"":""server"",""importance"":""0.3""},
+{""word"":""pour"",""importance"":""0.2""},
+{""word"":""additional"",""importance"":""0.2""},
+{""word"":""wine"",""importance"":""0.2""},
+{""word"":""communal"",""importance"":""0.1""}
+]","I made the prediction based on the word ""fish"" being used in a negative context, indicating a negative sentiment towards the action of having to retrieve the wine bottle from the communal bucket."
+110,41,110,"The Scene You won't blink twice at the restaurant's spartan decor: As the packed crowds and critics' praises wallpapering the front wall agree, this longtime local favorite is truly one of the area's most exquisite finds.",decor,positive,neutral,prompt_3_zeroshot_single_term,"The Scene You won't blink twice at the restaurant's spartan decor: As the packed crowds and critics' praises wallpapering the front wall agree, this longtime local favorite is truly one of the area's most exquisite finds.
+
+    What is the sentiment on 'decor'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",error,"[
+{""restaurant's spartan decor"":""0.5""},
+{""exquisite finds"":""0.5""}
+]","I made my prediction based on the words ""exquisite finds"" and ""longtime local favorite,"" which suggest a positive sentiment. However, the word ""spartan"" in reference to the decor indicates a more neutral sentiment."
+84,31,84,"Their bagels have the perfect softness to them, but on the outside there's a bit of crispiness to give it a bit of texture.",texture,neutral,positive,prompt_3_zeroshot_single_term,"Their bagels have the perfect softness to them, but on the outside there's a bit of crispiness to give it a bit of texture.
+
+    What is the sentiment on 'texture'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",error,"[
+{""softness"":""0.40""},
+{""crispiness"":""0.40""},
+{""perfect"":""0.20""}
+]","I made the prediction based on the words ""perfect softness,"" ""bit of crispiness,"" and ""give it a bit of texture,"" which all indicate a positive sentiment towards the texture of the bagels."
+32,10,32,"Ok I got the edamame and something from the sushi chef for free, but the quality of food is more important to me than a free small dish (maybe that's why the restaurant gives it to attact new customers.",dish,positive,neutral,prompt_3_zeroshot_single_term,"Ok I got the edamame and something from the sushi chef for free, but the quality of food is more important to me than a free small dish (maybe that's why the restaurant gives it to attact new customers.
+
+    What is the sentiment on 'dish'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",error,"[
+{""free"":""0.30""},
+{""quality"":""0.40""},
+{""attract"":""0.30""}
+]","I made the prediction based on the context provided by the user, which indicated that the free dish was not the main factor influencing their opinion of the restaurant. The user mentioned that the quality of food is more important to them, suggesting a neutral sentiment towards the free dish."
+75,27,75,"We were so excited since I was reading great review of this place, however we were disappointed with the taste of the food.",food,positive,negative,prompt_3_zeroshot_single_term,"We were so excited since I was reading great review of this place, however we were disappointed with the taste of the food.
+
+    What is the sentiment on 'food'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",error,"[
+{""taste"":""0.70""},
+{""disappointed"":""0.30""}
+]","I identified the sentiment as negative based on the words ""disappointed"" and ""taste of the food"" in the user's statement, which indicate a lack of satisfaction with the food quality."
+77,28,77,"Also, they upped their prices, so I have their old menu, and was surprised when my bill came to over $5 more than it used to (I know, not a huge deal).",menu,neutral,negative,prompt_3_zeroshot_single_term,"Also, they upped their prices, so I have their old menu, and was surprised when my bill came to over $5 more than it used to (I know, not a huge deal).
+
+    What is the sentiment on 'menu'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",error,"[
+{""price increase"":""0.70""},
+{""surprised"":""0.30""}
+]","I made the prediction based on the words ""upped their prices"" and ""surprised when my bill came to over $5 more than it used to."" These phrases indicate a negative sentiment towards the menu change."
+108,40,108,"The place was so dark, I needed the table candle to read the menu and could not properly see what I was eating.",menu,neutral,negative,prompt_3_zeroshot_single_term,"The place was so dark, I needed the table candle to read the menu and could not properly see what I was eating.
+
+    What is the sentiment on 'menu'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",error,"[
+{""dark"",""importance"":""0.40""},
+{""needed the table candle"",""importance"":""0.30""},
+{""could not properly see"",""importance"":""0.30""}
+]","I predicted a negative sentiment for ""menu"" based on the context of the sentence, which describes the difficulty in reading the menu due to the darkness of the place. The words ""dark"" and ""could not properly see"" indicate a challenging and unpleasant dining experience, leading to a negative sentiment associated with the menu."
+118,45,118,"While the service and setting were average, the food was excellent.",setting,negative,neutral,prompt_3_zeroshot_single_term,"While the service and setting were average, the food was excellent.
+
+    What is the sentiment on 'setting'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",error,"[
+{""average service"": ""0.30""},
+{""excellent food"": ""0.70""}
+]","I identified the sentiment as neutral for ""setting"" based on the lack of specific positive or negative language used to describe it in the sentence. The focus was on the food being excellent, while the service and setting were described as average."
+40,14,40,"When my brother and I we had too much pizza in New York, we would like to order something else from the menu.",pizza,positive,neutral,prompt_3_zeroshot_single_term,"When my brother and I we had too much pizza in New York, we would like to order something else from the menu.
+
+    What is the sentiment on 'pizza'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",error,"[
+{""word"":""brother"",""importance"":""0.2""},
+{""word"":""New York"",""importance"":""0.2""},
+{""word"":""order"",""importance"":""0.2""},
+{""word"":""menu"",""importance"":""0.2""},
+{""word"":""too much"",""importance"":""0.2""}
+]","I made the prediction based on the context provided, which indicated that the user and their brother had too much pizza in New York and wanted to order something else from the menu. The phrase ""too much pizza"" suggests a potential negative sentiment towards pizza, while the desire to order something else indicates a neutral sentiment."
+378,144,378,"Aside from the fact the maitre de claimed the dining room was 'full', we were seated at a great table overlooking the lobby of the hotel and ordered the 5 course tasting menu.",maitre,neutral,negative,prompt_3_zeroshot_single_term,"Aside from the fact the maitre de claimed the dining room was 'full', we were seated at a great table overlooking the lobby of the hotel and ordered the 5 course tasting menu.
+
+    What is the sentiment on 'maitre'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",error,"[
+{""word"":""full"",""importance"":""0.40""},
+{""word"":""seated"",""importance"":""0.30""},
+{""word"":""overlooking"",""importance"":""0.20""},
+{""word"":""claimed"",""importance"":""0.10""}
+]","I predicted a negative sentiment based on the phrase ""claimed the dining room was 'full',"" which suggests the maitre was not being truthful or accommodating."
+78,28,78,"Also, they upped their prices, so I have their old menu, and was surprised when my bill came to over $5 more than it used to (I know, not a huge deal).",bill,neutral,negative,prompt_3_zeroshot_single_term,"Also, they upped their prices, so I have their old menu, and was surprised when my bill came to over $5 more than it used to (I know, not a huge deal).
+
+    What is the sentiment on 'bill'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",error,"[
+{""price increase"": ""0.70""},
+{""surprised"": ""0.30""}
+]","I predicted a negative sentiment for ""bill"" based on the context provided, where the user mentioned being surprised by a higher bill amount. The words ""upped their prices"" and ""surprised"" indicated a negative sentiment towards the bill."
+181,70,181,"The trick to the tomato and onions is ask for it light on the onions, heavy on the tomatoes, order steak for one less person than you have in your party and if the steak is too rare, you can cook the individual pieces more by placing them on the platter around the edges.",tomato and onions,neutral,positive,prompt_3_zeroshot_single_term,"The trick to the tomato and onions is ask for it light on the onions, heavy on the tomatoes, order steak for one less person than you have in your party and if the steak is too rare, you can cook the individual pieces more by placing them on the platter around the edges.
+
+    What is the sentiment on 'tomato and onions'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",error,"[
+{""tomato"":""0.6""},
+{""onions"":""0.4""}
+]","I made the prediction based on the positive connotations associated with the words ""light on the onions"" and ""heavy on the tomatoes"" in the context of the food order. These phrases suggest a preference for tomatoes over onions, which indicates a positive sentiment towards tomatoes and onions."
+444,168,444,"The smoked salmon appetizer was pretty good (it comes with goat cheese, calpers and onions).",goat cheese,neutral,positive,prompt_3_zeroshot_single_term,"The smoked salmon appetizer was pretty good (it comes with goat cheese, calpers and onions).
+
+    What is the sentiment on 'goat cheese'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",error,"[
+{""goat cheese"":""0.9""},
+{""smoked salmon"":""0.1""}
+]","I made the prediction based on the positive association of ""goat cheese"" with the overall positive sentiment of the sentence describing the smoked salmon appetizer. The words ""pretty good"" and the list of ingredients (goat cheese, capers, and onions) all contributed to the positive sentiment."
+179,69,179,"the decor could be a bit better, and if there was a small bar the overall atmosphere would be a bit more inviting (especially for regulars).",bar,negative,positive,prompt_3_zeroshot_single_term,"the decor could be a bit better, and if there was a small bar the overall atmosphere would be a bit more inviting (especially for regulars).
+
+    What is the sentiment on 'bar'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",error,"[
+{""small bar"":""0.70""},
+{""inviting"":""0.30""}
+]","I made the prediction based on the context provided by the user's statement. The user mentioned that having a small bar would make the atmosphere more inviting, especially for regulars. This positive association with a bar led me to predict a positive sentiment towards it."
+2,0,2,"Amusing details distinguish desserts, from dulce de leche ice-cream profiteroles dotting a chocolate sauce tic-tac-toe board, to coconut custard surrounded by a sea of Malibu-rum gelee and poached pineapple.",chocolate sauce tic-tac-toe,neutral,positive,prompt_3_zeroshot_single_term,"Amusing details distinguish desserts, from dulce de leche ice-cream profiteroles dotting a chocolate sauce tic-tac-toe board, to coconut custard surrounded by a sea of Malibu-rum gelee and poached pineapple.
+
+    What is the sentiment on 'chocolate sauce tic-tac-toe'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",error,"[
+{""chocolate sauce"": ""0.6""},
+{""tic-tac-toe"": ""0.4""}
+]","I made the prediction based on the words ""amusing details distinguish desserts"" and ""chocolate sauce tic-tac-toe board,"" which suggest creativity and playfulness, evoking a positive sentiment."
+327,125,327,"I was surprised by the small ice cream dessert from the restaurant to the birthday girl free of charge, but if they're going to give a nice service the one ice cream scoop on a stick didn't leave a strong enough impression.",ice cream dessert,positive,neutral,prompt_3_zeroshot_single_term,"I was surprised by the small ice cream dessert from the restaurant to the birthday girl free of charge, but if they're going to give a nice service the one ice cream scoop on a stick didn't leave a strong enough impression.
+
+    What is the sentiment on 'ice cream dessert'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",error,"[
+{""ice cream dessert"":""0.50""},
+{""small"":""0.25""},
+{""free of charge"":""0.25""}
+]","I made my prediction based on the overall tone of the sentence, which seemed to convey a mix of surprise and disappointment. The phrase ""small ice cream dessert"" suggests a negative sentiment due to the small size, while the mention of it being free for the birthday girl adds a positive element. The phrase ""didn't leave a strong enough impression"" leans towards a negative sentiment. Overall, the conflicting emotions led me to determine a neutral sentiment for ""ice cream dessert."""
+305,117,305,"Our waiter brought out three main courses, but the fourth wasn't ready so we had to wait for 10 minutes for the last dish to arrive, but they were very nice and gave us free red pepper hummus while we waited.",dish,neutral,neutral,prompt_3_zeroshot_single_term,"Our waiter brought out three main courses, but the fourth wasn't ready so we had to wait for 10 minutes for the last dish to arrive, but they were very nice and gave us free red pepper hummus while we waited.
+
+    What is the sentiment on 'dish'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",correct,"[
+{""waited for"":""0.4""},
+{""free"":""0.3""},
+{""nice"":""0.3""}
+]","I made the prediction based on the overall context provided, which included a mix of positive and neutral elements. The mention of the fourth dish not being ready and the wait time had a neutral influence on the sentiment prediction for ""dish."" The positive influence came from the fact that the restaurant provided free red pepper hummus while the customers waited."
+99,37,99,Nice decor - but the place is so crowded and noisy you can't enjoy it.,place,negative,negative,prompt_3_zeroshot_single_term,"Nice decor - but the place is so crowded and noisy you can't enjoy it.
+
+    What is the sentiment on 'place'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",correct,"[
+{""crowded"": ""0.6""},
+{""noisy"": ""0.4""}
+]","I made the prediction based on the words ""crowded"" and ""noisy"" which indicate a negative experience in the place."
+257,97,257,Telly's has the best octopus ever and the fish was so good on the grill.,fish,positive,positive,prompt_3_zeroshot_single_term,"Telly's has the best octopus ever and the fish was so good on the grill.
+
+    What is the sentiment on 'fish'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",correct,"[
+{""grill"":""0.7""},
+{""good"":""0.3""}
+]","I made the prediction based on the positive adjectives ""good"" and ""best"" used to describe the fish, indicating a positive sentiment."
+205,79,205,"I like the somosas, chai, and the chole, but the dhosas and dhal were kinda dissapointing.",chai,positive,positive,prompt_3_zeroshot_single_term,"I like the somosas, chai, and the chole, but the dhosas and dhal were kinda dissapointing.
+
+    What is the sentiment on 'chai'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",correct,"[{""chai"":""0.80""},{""satisfying"":""0.20""}]","I made the prediction based on the positive words ""like"" and ""chai"" in the user's statement, indicating a favorable sentiment towards chai."
+10,4,10,"Amazing crust (and I hate pizza crust typically), great cheese, sauce isn't too sugary.",pizza crust,negative,negative,prompt_3_zeroshot_single_term,"Amazing crust (and I hate pizza crust typically), great cheese, sauce isn't too sugary.
+
+    What is the sentiment on 'pizza crust'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",correct,"[
+{""word"":""hate"",""importance"":""0.7""},
+{""word"":""crust"",""importance"":""0.3""}
+]","I made the prediction based on the user's statement ""and I hate pizza crust typically,"" which indicates a negative sentiment towards pizza crust."
+39,13,39,"We preferred to gaze at our burgers while avoiding having to look at the wait staff, but no complaints.",wait staff,negative,negative,prompt_3_zeroshot_single_term,"We preferred to gaze at our burgers while avoiding having to look at the wait staff, but no complaints.
+
+    What is the sentiment on 'wait staff'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",correct,"[
+{""wait staff"":""-0.8""},
+{""avoiding"":""0.2""}
+]","I made the prediction based on the phrase ""avoiding having to look at the wait staff,"" which suggests a negative sentiment towards the wait staff."
+41,14,41,"When my brother and I we had too much pizza in New York, we would like to order something else from the menu.",menu,neutral,neutral,prompt_3_zeroshot_single_term,"When my brother and I we had too much pizza in New York, we would like to order something else from the menu.
+
+    What is the sentiment on 'menu'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",correct,"[
+{""New York"": ""0.3""},
+{""pizza"": ""0.3""},
+{""order"": ""0.2""},
+{""brother"": ""0.2""}
+]","I made the prediction based on the context provided by the user's statement. The mention of ordering something else from the menu after having too much pizza does not convey a strong positive or negative sentiment towards the menu itself, hence the neutral classification."
+211,80,211,i got a steak special that was way overpriced ($12 more then the steak on the menu and no warning from the waitress) and it was cooked to the wrong temperature.,waitress,negative,negative,prompt_3_zeroshot_single_term,"i got a steak special that was way overpriced ($12 more then the steak on the menu and no warning from the waitress) and it was cooked to the wrong temperature.
+
+    What is the sentiment on 'waitress'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",correct,"[
+{""overpriced"":""0.60""},
+{""wrong temperature"":""0.40""}
+]","I made my prediction based on the negative context surrounding the waitress in the user's statement, specifically mentioning the lack of warning about the overpriced steak and the incorrect cooking temperature."
+7,2,7,"2 weeks ago, I decided to set up a birthday dinner in this establishment and was wary with the reviews I've read in City Search but it seems to be a perfect scene.",scene,positive,positive,prompt_3_zeroshot_single_term,"2 weeks ago, I decided to set up a birthday dinner in this establishment and was wary with the reviews I've read in City Search but it seems to be a perfect scene.
+
+    What is the sentiment on 'scene'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",correct,"[
+{""word"":""perfect"",""importance"":""0.8""},
+{""word"":""establishment"",""importance"":""0.2""}
+]","I made the prediction based on the words ""perfect scene"" which indicates a positive sentiment towards the establishment."
+124,47,124,"Not including the tip for our server, who we saw twice in an hour?",server,negative,negative,prompt_3_zeroshot_single_term,"Not including the tip for our server, who we saw twice in an hour?
+
+    What is the sentiment on 'server'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",correct,"[
+{""twice"":""0.7""},
+{""hour"":""0.3""}
+]","I made the prediction based on the context provided, which indicated that the server was seen twice in an hour. This suggests a negative sentiment as it implies rushed service or potential issues with the dining experience."
+307,118,307,"I love Chinese food and have been looking for the alternative to the greasy stuff on every corner of New York- ya, you know, the stinky take-out joints that leave you smelling like dinner for 100 for the rest of the night!",Chinese food,positive,positive,prompt_3_zeroshot_single_term,"I love Chinese food and have been looking for the alternative to the greasy stuff on every corner of New York- ya, you know, the stinky take-out joints that leave you smelling like dinner for 100 for the rest of the night!
+
+    What is the sentiment on 'Chinese food'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",correct,"[
+{""Chinese food"":""0.70""},
+{""love"":""0.30""}
+]",I made the prediction based on the user's statement expressing love for Chinese food and seeking an alternative to greasy take-out joints. The user's positive language and desire for a better dining experience influenced my decision to categorize the sentiment as positive.
+302,116,302,"From beginning appetizers, the scallops were incredible, to the delicious chocolate souffle with rasberry mint sorbet, we were delighted by the taste sensations.",chocolate souffle with rasberry mint sorbet,positive,positive,prompt_3_zeroshot_single_term,"From beginning appetizers, the scallops were incredible, to the delicious chocolate souffle with rasberry mint sorbet, we were delighted by the taste sensations.
+
+    What is the sentiment on 'chocolate souffle with rasberry mint sorbet'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",correct,"[
+{""chocolate souffle"": ""0.6""},
+{""raspberry mint sorbet"": ""0.4""}
+]","I made the prediction based on the positive adjectives ""delicious"" and ""raspberry mint sorbet"" associated with the chocolate souffle. These words indicated a positive sentiment towards the dessert."
+411,156,411,"The Food The classic Italian menu gets off to a good start with Queen's famous bread basket, which is loaded with a slew of crunchy, yeasty homemade varieties.",varieties,positive,positive,prompt_3_zeroshot_single_term,"The Food The classic Italian menu gets off to a good start with Queen's famous bread basket, which is loaded with a slew of crunchy, yeasty homemade varieties.
+
+    What is the sentiment on 'varieties'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",correct,"[
+{""yeasty homemade"": ""0.6""},
+{""crunchy"": ""0.4""}
+]","I identified the word ""homemade varieties"" as a positive indicator due to the positive connotations associated with homemade and the variety of options available."
+438,166,438,The only redeeming factor of the night was the dessert which was very good but certainly not worth the cost of an overall horible experience.,dessert,positive,positive,prompt_3_zeroshot_single_term,"The only redeeming factor of the night was the dessert which was very good but certainly not worth the cost of an overall horible experience.
+
+    What is the sentiment on 'dessert'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",correct,"[
+{""good"": ""0.70""},
+{""horrible"": ""0.30""}
+]","I made the prediction based on the positive sentiment expressed towards the dessert in the statement. The words ""very good"" specifically highlighted the positive experience with the dessert, leading to the classification of the sentiment as positive."
+90,34,90,The servers were snobby and got mad at me when I asked if they serve by the slice.,servers,negative,negative,prompt_3_zeroshot_single_term,"The servers were snobby and got mad at me when I asked if they serve by the slice.
+
+    What is the sentiment on 'servers'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",correct,"[
+{""snobby"",""0.70""},
+{""mad"",""0.30""}
+]","I made my prediction based on the words ""snobby"" and ""got mad at me"" which indicate a negative interaction with the servers."
+126,48,126,"The ravioli was the better of the two, but the serving was tiny, and the skin a bit rubbery.",serving,negative,negative,prompt_3_zeroshot_single_term,"The ravioli was the better of the two, but the serving was tiny, and the skin a bit rubbery.
+
+    What is the sentiment on 'serving'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",correct,"[
+{""tiny"": ""0.6""},
+{""rubbery"": ""0.4""}
+]","I identified the sentiment as negative based on the words ""tiny"" and ""rubbery"" used to describe the serving of ravioli. These words suggest a negative experience with the portion size and texture of the dish."
+427,161,427,"Had a party of 7 people for dinner here on a busy night for the restaurant, and our meal was excellent and served with extreme consistency (all appetizers and main courses were served at the right times, with none of the dishes served at the wrong temperature).",meal,positive,positive,prompt_3_zeroshot_single_term,"Had a party of 7 people for dinner here on a busy night for the restaurant, and our meal was excellent and served with extreme consistency (all appetizers and main courses were served at the right times, with none of the dishes served at the wrong temperature).
+
+    What is the sentiment on 'meal'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",correct,"[
+{""excellent"": ""0.40""},
+{""served with extreme consistency"": ""0.30""},
+{""right times"": ""0.20""},
+{""none of the dishes served at the wrong temperature"": ""0.10""}
+]","I made the prediction based on the words ""excellent,"" ""served with extreme consistency,"" and ""none of the dishes served at the wrong temperature,"" which all indicate a positive dining experience."
+340,129,340,"impressive balcony seating and while they forgot to give us the cold appetizers, the waiter and maitre'd more than made up for it by being most accomodating to us.",maitre,positive,positive,prompt_3_zeroshot_single_term,"impressive balcony seating and while they forgot to give us the cold appetizers, the waiter and maitre'd more than made up for it by being most accomodating to us.
+
+    What is the sentiment on 'maitre'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",correct,"[
+{""waiter"": ""0.6""},
+{""accommodating"": ""0.4""}
+]","I made the prediction based on the words ""impressive balcony seating,"" ""waiter and maitre'd more than made up for it,"" and ""most accommodating."" These words indicate a positive experience with the maitre'd."
+367,140,367,"While the staff was kind and attentive, our waiter never once broke a smile, even when I told him it was my friend's birthday, although he did bring a dessert with a candle at the end of the meal.",staff,positive,positive,prompt_3_zeroshot_single_term,"While the staff was kind and attentive, our waiter never once broke a smile, even when I told him it was my friend's birthday, although he did bring a dessert with a candle at the end of the meal.
+
+    What is the sentiment on 'staff'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",correct,"[
+{""kind and attentive"": ""0.7""},
+{""brought dessert"": ""0.3""}
+]","I predicted a positive sentiment for ""staff"" based on the words ""kind and attentive"" used to describe them."
+54,19,54,"When I asked the waitress, she told me they couldn't afford the salmon, and had changed the dish (though not on the menu).",waitress,neutral,neutral,prompt_3_zeroshot_single_term,"When I asked the waitress, she told me they couldn't afford the salmon, and had changed the dish (though not on the menu).
+
+    What is the sentiment on 'waitress'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",correct,"[
+{""waitress"":""0.50""},
+{""changed"":""0.30""},
+{""afford"":""0.20""}
+]","I determined the sentiment as neutral based on the fact that the waitress provided information about the restaurant's financial situation without displaying any positive or negative emotions. The words ""couldn't afford"" and ""changed the dish"" indicated a practical response rather than a positive or negative one."
+284,109,284,We had reservations and when we showed up the manager told us the wait was over 45 mins.,manager,negative,negative,prompt_3_zeroshot_single_term,"We had reservations and when we showed up the manager told us the wait was over 45 mins.
+
+    What is the sentiment on 'manager'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",correct,"[
+{""wait"":""0.70""},
+{""reservations"":""0.30""}
+]","I made the prediction based on the context that the manager informed the customers of a long wait time despite having reservations, which could be seen as a negative experience for the customers."
+56,19,56,"When I asked the waitress, she told me they couldn't afford the salmon, and had changed the dish (though not on the menu).",dish,neutral,neutral,prompt_3_zeroshot_single_term,"When I asked the waitress, she told me they couldn't afford the salmon, and had changed the dish (though not on the menu).
+
+    What is the sentiment on 'dish'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",correct,"[
+{""changed dish"": ""0.5""},
+{""not on menu"": ""0.5""}
+]","I determined the sentiment as ""neutral"" based on the words ""couldn't afford"" and ""changed the dish,"" which suggest a practical reason for the alteration rather than a positive or negative sentiment."
+382,145,382,"Bouley has done an excellent job creating this dining establishment with almost a museum sense, the artworks on the wall have a very Klimty feeling and the gold ceiling completes the rest of the experience.",artworks,positive,positive,prompt_3_zeroshot_single_term,"Bouley has done an excellent job creating this dining establishment with almost a museum sense, the artworks on the wall have a very Klimty feeling and the gold ceiling completes the rest of the experience.
+
+    What is the sentiment on 'artworks'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",correct,"[
+{""artworks"":""0.70""},
+{""Klimty feeling"":""0.30""}
+]","I made the prediction based on the words ""excellent job,"" ""museum sense,"" ""Klimty feeling,"" and ""artworks on the wall."" These words all convey a positive sentiment towards the artworks."
+383,145,383,"Bouley has done an excellent job creating this dining establishment with almost a museum sense, the artworks on the wall have a very Klimty feeling and the gold ceiling completes the rest of the experience.",gold ceiling,positive,positive,prompt_3_zeroshot_single_term,"Bouley has done an excellent job creating this dining establishment with almost a museum sense, the artworks on the wall have a very Klimty feeling and the gold ceiling completes the rest of the experience.
+
+    What is the sentiment on 'gold ceiling'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",correct,"[
+{""gold ceiling"":""0.9""},
+{""museum sense"":""0.1""}
+]","I made the prediction based on the positive descriptions of the dining establishment, such as ""excellent job,"" ""museum sense,"" ""artworks on the wall,"" and ""gold ceiling completes the rest of the experience."" These words and phrases indicated a positive sentiment towards the gold ceiling."
+170,66,170,"The third time, after, an hour and a half of waiting, my friend went up to the host to check the status.",waiting,negative,negative,prompt_3_zeroshot_single_term,"The third time, after, an hour and a half of waiting, my friend went up to the host to check the status.
+
+    What is the sentiment on 'waiting'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",correct,"[
+{""word"":""waiting"",""importance"":""1.0""}
+]","I predicted a negative sentiment based on the words ""waiting"" and ""an hour and a half of waiting,"" which suggest a feeling of impatience or frustration."
+294,113,294,"The nachos were very very good, but the onion bloom felt too greasy and the calamari was soggy.",onion bloom,negative,negative,prompt_3_zeroshot_single_term,"The nachos were very very good, but the onion bloom felt too greasy and the calamari was soggy.
+
+    What is the sentiment on 'onion bloom'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",correct,"[
+{""greasy"":""0.7""},
+{""onion bloom"":""0.3""}
+]","I made the prediction based on the words ""felt too greasy"" which indicated a negative sentiment towards the onion bloom."
+215,81,215,"Watch out for the overworked, stressed out waitress who dumps tapa dishes on the table and leaves w/out announcing what it is.",table,neutral,neutral,prompt_3_zeroshot_single_term,"Watch out for the overworked, stressed out waitress who dumps tapa dishes on the table and leaves w/out announcing what it is.
+
+    What is the sentiment on 'table'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",correct,"[
+{""overworked"": ""0.3""},
+{""stressed out"": ""0.3""},
+{""dumped"": ""0.2""},
+{""leaves"": ""0.2""}
+]","I made my prediction based on the words ""overworked,"" ""stressed out,"" ""dumps,"" and ""leaves without announcing,"" which suggest a negative sentiment. However, the word ""table"" itself does not inherently convey a positive or negative sentiment, so I determined it to be neutral in this context."
+172,67,172,"Right after we finished the main course (the organic chicken was dry), but before we finish drinking the wine the check was placed on the table, and the waitress came back and picked it up three times.",organic chicken,negative,negative,prompt_3_zeroshot_single_term,"Right after we finished the main course (the organic chicken was dry), but before we finish drinking the wine the check was placed on the table, and the waitress came back and picked it up three times.
+
+    What is the sentiment on 'organic chicken'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",correct,"[
+{""word"":""dry"",""importance"":""1.0""}
+]","I made the prediction based on the phrase ""the organic chicken was dry,"" which indicates a negative sentiment towards the organic chicken dish."
+103,39,103,We sat at the bar and were constantly bumped by the waitress flying past; had fabulously fresh raw oysters with pieces of shell in every bite; lobsters rolls were tasty but the large pieces of meat were tough; the apple crumble was excellent but the ice cream was over-frozen and the stench of frying oil was nearly unbearable.,waitress,negative,negative,prompt_3_zeroshot_single_term,"We sat at the bar and were constantly bumped by the waitress flying past; had fabulously fresh raw oysters with pieces of shell in every bite; lobsters rolls were tasty but the large pieces of meat were tough; the apple crumble was excellent but the ice cream was over-frozen and the stench of frying oil was nearly unbearable.
+
+    What is the sentiment on 'waitress'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",correct,"[
+{""waitress"":""bumped"",""importance"":""0.40""},
+{""waitress"":""flying past"",""importance"":""0.30""},
+{""waitress"":""constant"",""importance"":""0.30""}
+]","I identified the sentiment as negative based on the words ""constantly bumped"" and ""flying past"" in relation to the waitress. These phrases suggest a negative experience with the waitress."
+348,133,348,The waiter kept coming up and asking to take our plates while we were still eating and the manager stood and stared at us through half our meal!,waiter,negative,negative,prompt_3_zeroshot_single_term,"The waiter kept coming up and asking to take our plates while we were still eating and the manager stood and stared at us through half our meal!
+
+    What is the sentiment on 'waiter'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",correct,"[
+{""waiter"":""attentive"",""importance"":""0.20""},
+{""waiter"":""interrupted"",""importance"":""0.40""},
+{""manager"":""watching"",""importance"":""0.40""}
+]",I made the prediction based on the negative context surrounding the waiter's behavior of repeatedly asking to take plates while the customers were still eating. This behavior typically indicates impatience and can be perceived as intrusive or disruptive to the dining experience.
+249,94,249,My vegetable Napoleon was good; although i first got the veggie burger because the waitress mis-heard and stood my friend up for another 15 minutes of waiting to have it served.,vegetable Napoleon,positive,positive,prompt_3_zeroshot_single_term,"My vegetable Napoleon was good; although i first got the veggie burger because the waitress mis-heard and stood my friend up for another 15 minutes of waiting to have it served.
+
+    What is the sentiment on 'vegetable Napoleon'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",correct,"[
+{""vegetable Napoleon"":""0.70""},
+{""good"":""0.30""}
+]","I made the prediction based on the positive description of the dish ""vegetable Napoleon"" in the user's statement. The user mentioned that the dish was good, indicating a positive sentiment towards it."
+424,160,424,"The service can be lacking at times, but the desserts and overall experience certainly counter this flaw.",service,negative,negative,prompt_3_zeroshot_single_term,"The service can be lacking at times, but the desserts and overall experience certainly counter this flaw.
+
+    What is the sentiment on 'service'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",correct,"[
+{""service"":""lacking"",""importance"":""1.0""}
+]","I made the prediction based on the phrase ""service can be lacking at times,"" which indicates a negative sentiment towards the service aspect of the experience."
+360,137,360,"The food is decent, average bistro food, the decor is nice, but the service is poor, the waiters always seems to have to many tables andcant keep up with a good services.",decor,positive,positive,prompt_3_zeroshot_single_term,"The food is decent, average bistro food, the decor is nice, but the service is poor, the waiters always seems to have to many tables andcant keep up with a good services.
+
+    What is the sentiment on 'decor'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",correct,"[
+{""decor"":""nice"",""importance"":""1.0""}
+]","I identified the word ""nice"" in the sentence ""the decor is nice,"" which indicates a positive sentiment towards the decor."
+36,12,36,the service was slow took ten mins to get me a glass of water.,glass,neutral,neutral,prompt_3_zeroshot_single_term,"the service was slow took ten mins to get me a glass of water.
+
+    What is the sentiment on 'glass'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",correct,"[
+{""slow"",""importance"":""0.5""},
+{""took ten mins"",""importance"":""0.5""}
+]","I made the prediction based on the context provided, where the user mentioned that it took ten minutes to get a glass of water. The word ""glass"" itself does not inherently carry a positive or negative sentiment in this context, so I determined it to be neutral based on the lack of emotional connotation associated with the word."
+423,159,423,"I understand the area and folks you need not come here for the romantic, alluring ambiance or the five star service featuring a sommlier and a complicated maze of captain and back waiters - you come for the authentic foods, the tastes, the experiance.",foods,positive,positive,prompt_3_zeroshot_single_term,"I understand the area and folks you need not come here for the romantic, alluring ambiance or the five star service featuring a sommlier and a complicated maze of captain and back waiters - you come for the authentic foods, the tastes, the experiance.
+
+    What is the sentiment on 'foods'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",correct,"[
+{""authentic foods"": ""0.70""},
+{""tastes"": ""0.30""}
+]","I made the prediction based on the positive language used to describe the authentic foods, tastes, and experience at the restaurant. The words ""authentic foods,"" ""tastes,"" and ""experience"" all convey a positive sentiment towards the food."
+178,69,178,"the decor could be a bit better, and if there was a small bar the overall atmosphere would be a bit more inviting (especially for regulars).",decor,negative,negative,prompt_3_zeroshot_single_term,"the decor could be a bit better, and if there was a small bar the overall atmosphere would be a bit more inviting (especially for regulars).
+
+    What is the sentiment on 'decor'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",correct,"[
+{""decor"":""-0.70""},
+{""better"":""0.30""},
+{""small bar"":""0.40""},
+{""inviting"":""0.30""}
+]","I predicted a negative sentiment for ""decor"" based on the words ""could be better"" which indicate a dissatisfaction with the current decor."
+277,106,277,If you don't want to wait 45 minutes for a table or a long time for service then don't go @ 9pm on a Friday or Saturday night.,service,negative,negative,prompt_3_zeroshot_single_term,"If you don't want to wait 45 minutes for a table or a long time for service then don't go @ 9pm on a Friday or Saturday night.
+
+    What is the sentiment on 'service'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",correct,"[
+{""wait time"":""0.40""},
+{""late hour"":""0.30""},
+{""Friday night"":""0.20""},
+{""Saturday night"":""0.10""}
+]","I made the prediction based on the word ""long time for service"" which indicates a negative sentiment towards the service experience."
+272,104,272,"Food was average, the appetizers were better than the main courses.",appetizers,positive,positive,prompt_3_zeroshot_single_term,"Food was average, the appetizers were better than the main courses.
+
+    What is the sentiment on 'appetizers'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",correct,"[
+{""appetizers"": ""0.8""},
+{""main courses"": ""0.2""}
+]","I identified the sentiment as positive based on the comparison made between the appetizers and the main courses, indicating that the appetizers were better. This comparison suggests a favorable opinion of the appetizers."
+37,12,37,the service was slow took ten mins to get me a glass of water.,water,neutral,neutral,prompt_3_zeroshot_single_term,"the service was slow took ten mins to get me a glass of water.
+
+    What is the sentiment on 'water'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",correct,"[
+{""slow"": ""0.5""},
+{""ten mins"": ""0.5""}
+]","I made the prediction based on the neutral tone of the statement and the factual description of the service being slow in providing water. The words ""slow"" and ""took ten mins"" indicated a delay in service, leading to a neutral sentiment towards the water."
+409,156,409,"The Food The classic Italian menu gets off to a good start with Queen's famous bread basket, which is loaded with a slew of crunchy, yeasty homemade varieties.",Italian menu,positive,positive,prompt_3_zeroshot_single_term,"The Food The classic Italian menu gets off to a good start with Queen's famous bread basket, which is loaded with a slew of crunchy, yeasty homemade varieties.
+
+    What is the sentiment on 'Italian menu'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",correct,"[
+{""Italian"": ""0.70""},
+{""classic"": ""0.30""}
+]","I made the prediction based on the positive adjectives ""classic"" and ""famous"" used to describe the Italian menu. These words suggest a positive sentiment towards the menu."
+129,49,129,"we live down the street and have eaten here many times for lunch and dinner, and the food is consistently terrific.",food,positive,positive,prompt_3_zeroshot_single_term,"we live down the street and have eaten here many times for lunch and dinner, and the food is consistently terrific.
+
+    What is the sentiment on 'food'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",correct,"[
+{""terrific"": ""0.9""},
+{""consistently"": ""0.1""}
+]","I made the prediction based on the words ""terrific"" and ""consistently"" which indicate a positive sentiment towards the food."
+165,64,165,"So are cooked plates: Marinated Kobe beef practically melts on its skewers, soy-buttered scallops collapse with sweet brine and Chawanmushi custard, quivering in eel-soy broth with black truffles and foie gras, is over the top.",scallops collapse,positive,positive,prompt_3_zeroshot_single_term,"So are cooked plates: Marinated Kobe beef practically melts on its skewers, soy-buttered scallops collapse with sweet brine and Chawanmushi custard, quivering in eel-soy broth with black truffles and foie gras, is over the top.
+
+    What is the sentiment on 'scallops collapse'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",correct,"[
+{""word"":""collapse"",""importance"":""1.0""}
+]","I made the prediction based on the positive descriptions of the dishes such as ""practically melts,"" ""sweet brine,"" ""quivering,"" and the overall extravagant and luxurious tone of the text. These words suggest a positive sentiment towards the scallops collapsing."
+372,141,372,"Start by enjoying the atmosphere while having a glass of wine at the bar and we you are ready, go and enjoy your food!",atmosphere,positive,positive,prompt_3_zeroshot_single_term,"Start by enjoying the atmosphere while having a glass of wine at the bar and we you are ready, go and enjoy your food!
+
+    What is the sentiment on 'atmosphere'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",correct,"[
+{""atmosphere"": ""0.8""},
+{""enjoying"": ""0.2""}
+]","I made the prediction based on the positive connotations associated with the words ""enjoying,"" ""glass of wine,"" and ""bar,"" which typically evoke a pleasant and relaxing atmosphere."
+216,82,216,At 1:15 we were still waiting for our plates!,waiting,negative,negative,prompt_3_zeroshot_single_term,"At 1:15 we were still waiting for our plates!
+
+    What is the sentiment on 'waiting'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",correct,"[
+{""waiting"":""0.9""},
+{""still"":""0.1""}
+]","I predicted a negative sentiment based on the word ""waiting,"" which typically conveys a sense of impatience or frustration."
+132,50,132,"Next, follow up with another Cosmo and try the chicken fingers (not your lil brothers), Hawaiian rib eye, filet mignon, or trusty burger.",burger,positive,positive,prompt_3_zeroshot_single_term,"Next, follow up with another Cosmo and try the chicken fingers (not your lil brothers), Hawaiian rib eye, filet mignon, or trusty burger.
+
+    What is the sentiment on 'burger'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",correct,"[
+{""trusty"": ""0.7""},
+{""burger"": ""0.3""}
+]","I made the prediction based on the context provided, which mentioned the burger as a ""trusty"" option among other food choices. The word ""trusty"" indicates a positive sentiment towards the burger."
+155,60,155,"We had no problems with our resevations and found the service and the meal well worth a wait, had we run into one.",wait,positive,positive,prompt_3_zeroshot_single_term,"We had no problems with our resevations and found the service and the meal well worth a wait, had we run into one.
+
+    What is the sentiment on 'wait'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",correct,"[
+{""word"":""worth"",""importance"":""0.4""},
+{""word"":""service"",""importance"":""0.3""},
+{""word"":""meal"",""importance"":""0.3""}
+]","I made the prediction based on the context of the sentence, where the word ""wait"" is associated with the positive outcome of the service and meal being worth it. The phrase ""well worth a wait"" indicates a positive sentiment towards the wait."
+219,83,219,"The service was non-existant, the manager spent all of his time at the bar.",manager,negative,negative,prompt_3_zeroshot_single_term,"The service was non-existant, the manager spent all of his time at the bar.
+
+    What is the sentiment on 'manager'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",correct,"[
+{""service"":""0.30""},
+{""non-existant"":""0.40""},
+{""manager"":""0.30""}
+]","I made the prediction based on the negative sentiment expressed towards the manager spending all of his time at the bar instead of providing service. The words ""non-existent service"" and ""manager spent all his time at the bar"" indicated a negative perception of the manager."
+102,39,102,We sat at the bar and were constantly bumped by the waitress flying past; had fabulously fresh raw oysters with pieces of shell in every bite; lobsters rolls were tasty but the large pieces of meat were tough; the apple crumble was excellent but the ice cream was over-frozen and the stench of frying oil was nearly unbearable.,bar,neutral,neutral,prompt_3_zeroshot_single_term,"We sat at the bar and were constantly bumped by the waitress flying past; had fabulously fresh raw oysters with pieces of shell in every bite; lobsters rolls were tasty but the large pieces of meat were tough; the apple crumble was excellent but the ice cream was over-frozen and the stench of frying oil was nearly unbearable.
+
+    What is the sentiment on 'bar'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",correct,"[
+{""waitress flying past"",""importance"":""0.15""},
+{""fresh raw oysters"",""importance"":""0.10""},
+{""pieces of shell"",""importance"":""0.10""},
+{""lobsters rolls tasty"",""importance"":""0.10""},
+{""large pieces of meat tough"",""importance"":""0.10""},
+{""apple crumble excellent"",""importance"":""0.10""},
+{""ice cream over-frozen"",""importance"":""0.10""},
+{""stench of frying oil unbearable"",""importance"":""0.25""}
+]","I made the prediction based on the mixed feedback provided in the review. The negative aspects mentioned, such as being constantly bumped by the waitress, finding pieces of shell in the oysters, tough lobster meat, over-frozen ice cream, and the unbearable stench of frying oil, balanced out the positive aspects like tasty lobster rolls and excellent apple crumble. This led to an overall neutral sentiment towards the bar."
+206,79,206,"I like the somosas, chai, and the chole, but the dhosas and dhal were kinda dissapointing.",chole,positive,positive,prompt_3_zeroshot_single_term,"I like the somosas, chai, and the chole, but the dhosas and dhal were kinda dissapointing.
+
+    What is the sentiment on 'chole'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",correct,"[{""samosas"":""0.2""},
+{""chai"":""0.2""},
+{""dissapointing"":""0.2""},
+{""chole"":""0.4""}]","I made the prediction based on the positive sentiment expressed towards ""chole"" in the user's statement. The user specifically mentioned liking the ""chole,"" indicating a positive sentiment towards this dish."
+222,84,222,"For dessert, go with the delicate, subtle flan over the pasty rice pudding.",flan,positive,positive,prompt_3_zeroshot_single_term,"For dessert, go with the delicate, subtle flan over the pasty rice pudding.
+
+    What is the sentiment on 'flan'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",correct,"[
+{""delicate"": ""0.4""},
+{""subtle"": ""0.4""},
+{""dessert"": ""0.2""}
+]","I identified the positive sentiment based on the words ""delicate"" and ""subtle"" used to describe flan. These words suggest a favorable and enjoyable experience with the dessert."

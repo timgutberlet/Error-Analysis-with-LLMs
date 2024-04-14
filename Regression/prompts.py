@@ -1,5 +1,7 @@
 from langchain.prompts import PromptTemplate
+# File for all baseline analysis prompt templates
 
+# Zero Shot Prompt Template
 zero_shot = PromptTemplate(
 input_variables=[],
 template=
@@ -24,6 +26,7 @@ Required Output:
 
 Please provide the prediction strictly adhering to the above instructions.""")
 
+# Few Shot Prompt Template
 few_shot = PromptTemplate(
 input_variables=[],
 template=

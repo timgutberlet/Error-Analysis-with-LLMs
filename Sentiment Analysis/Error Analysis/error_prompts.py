@@ -5,12 +5,9 @@ confidence = ChatPromptTemplate.from_messages([
     ("system", """You are a helpful AI."""),
     ("human", """{user_prompt}"""),
     ("ai", """{ai_answer}"""),
-    ("human", """Now provide a confidence score for your decision as percentage values, 100%
-referring to full confidence. Also provide a sentiment score for your decision as percentage values, 100%% referring to a very positive sentiment and -100%% referring to a very negative sentiment towards the term.
-     
-Please provide your output in the following format and return nothing else:
-Confidence: <value>%
-Sentiment: <value>%""")
+    ("human", """Now provide a confidence score for your decision. 100% referring
+    to full confidence. Take into account all relevant apsects of your decision. Please provide your answer exactly in the following format and do not return anything else.
+Confidence: <value>%""")
 ])
 
 unstructured_analysis = ChatPromptTemplate.from_messages([
@@ -36,7 +33,7 @@ ONLY return the JSON.""")
 
 error_class_LLM = PromptTemplate(
     input_variables=["examples"],
-    template="""In the following I will give you a few Aspect Based Sentiment Analysis tasks together with a sentiment decision, details about the decision and the sentiment towards each term.
+    template="""In the following I will give you a few Aspect Based Sentiment Analysis tasks together with a sentiment decision, details about the decision and the actual sentiment towards each term.
 The Prediction was made by an LLM.
 Can you please group the wrong decisions into distinct fault categories? Please also indicate how often each one occurs.
 There are also some correct decisions in the examples. Please just use them as a reference and don't categorize them.
@@ -46,8 +43,8 @@ There are also some correct decisions in the examples. Please just use them as a
 
 error_class_ML = PromptTemplate(
     input_variables=["examples"],
-    template="""In the following I will give you a few Aspect Based Sentiment Analysis tasks together with a sentiment decision, details about the decision and the sentiment towards each term.
-The Prediction was made by a Machine Learning Model.
+    template="""In the following I will give you a few Aspect Based Sentiment Analysis tasks together with the sentiment decision towards a specific term, details about the decision and the actualsentiment towards each term.
+The decision was made by a Logistic Regression Machine Learning Model and the additional information shows the weights the model assigned to the different tokens. 
 Can you please group the wrong decisions into distinct fault categories? Please also indicate how often each one occurs.
 There are also some correct decisions in the examples. Please just use them as a reference and don't categorize them.
 {examples}

@@ -1,191 +1,3422 @@
 Prompt_Name,Prompt,Model,Database,Answer,Context
-error_class_LLM,"In the following I will give you a few Aspect Based Sentiment Analysis tasks together with a sentiment decision, details about the decision and the sentiment towards each term.
-The Prediction was made by an LLM.
-Can you please group the wrong decisions into fault categories? Please also indicate how often each one occurs.
+error_class_ML,"In the following I will give you a few Aspect Based Sentiment Analysis tasks together with the sentiment decision towards a specific term, details about the decision and the actualsentiment towards each term.
+The decision was made by a Logistic Regression Machine Learning Model and the additional information shows the weights the model assigned to the different tokens. 
+Can you please group the wrong decisions into distinct fault categories? Please also indicate how often each one occurs.
 There are also some correct decisions in the examples. Please just use them as a reference and don't categorize them.
 False Decisions:
 Task 1:
-Prompt: The round pizza doesn't taste as good as I recall, it's still wonderful, but the Sicilian is to die for.
-
-    What is the sentiment on 'round pizza'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
-Sentiment Decision: neutral
-Explanation: [{""adjective"":""wonderful"",""importance"":""1.0""}]
-Actual Sentiment: negative
+Text: I'm totally into the space-age vibe of this place, but I wish they had more tables to sit down at.
+Sentiment Decision towards the term 'tables': negative
+Explanation: totally : 0.6466147231399947, into : 0.24452865139758487, the : 0.1599567509788442, space : -0.5407900591076409, age : -0.037666791864239324, vibe : 0.529004771560355, of : -0.6721133239838706, this : 0.3789860937031017, place : 0.11506505080479565, but : 2.041756649529249, wish : -0.29932263221102606, they : 0.25283930947630323, had : 0.18830730092669362, more : 0.051931762943816365, tables : 0.23007761462199655, to : 0.06489666268372277, sit : -0.2560819469492547, down : 0.374149510220527, at : 0.38667932060354876
+Actual Sentiment: positive
 Task 2:
-Prompt: Bouley has done an excellent job creating this dining establishment with almost a museum sense, the artworks on the wall have a very Klimty feeling and the gold ceiling completes the rest of the experience.
-
-    What is the sentiment on 'dining establishment'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
-Sentiment Decision: positive
-Explanation: [{""adjective"":""excellent"",""importance"":""0.70""},{""adjective"":""museum sense"",""importance"":""0.20""},{""adjective"":""Klimty feeling"",""importance"":""0.10""}]
+Text: The bill came out to like $100pp, and noone touched their food, and drinks were left untouched because after the first bite/sip you want to never touch it again.
+Sentiment Decision towards the term 'food': negative
+Explanation: the : 0.1599567509788442, bill : 0.22652629920906217, came : 0.3629264328992799, out : 0.3215012191840598, to : 0.06489666268372277, like : 0.40025356483795693, and : -1.4714550858778395, touched : 0.18460901666251261, their : 0.07711885811693396, food : 0.7708413724540557, and : -1.4714550858778395, drinks : 0.24304548432262396, were : 1.1689934909553437, left : 0.5363649796943715, because : -0.00010587399627824544, after : 0.13354266707787985, the : 0.1599567509788442, first : 0.3239233717115285, bite : -0.043066341959204314, sip : -0.24324725593587598, you : -0.3419709413939751, want : 0.3928114454338783, to : 0.06489666268372277, never : 1.170183354302736, touch : 0.08207961339500311, it : 0.25400665821968343, again : 0.38431023348607984
 Actual Sentiment: neutral
 Task 3:
-Prompt: Ok I got the edamame and something from the sushi chef for free, but the quality of food is more important to me than a free small dish (maybe that's why the restaurant gives it to attact new customers.
-
-    What is the sentiment on 'edamame'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
-Sentiment Decision: positive
-Explanation: []
-Actual Sentiment: neutral
+Text: Aside from the fact the maitre de claimed the dining room was 'full', we were seated at a great table overlooking the lobby of the hotel and ordered the 5 course tasting menu.
+Sentiment Decision towards the term 'menu': neutral
+Explanation: aside : -0.13705889465649937, from : -0.5657247889759164, the : 0.1599567509788442, fact : 0.19151156931666066, the : 0.1599567509788442, maitre : 0.4087593747477173, de : 0.17945842872799, claimed : 0.19308604339801377, the : 0.1599567509788442, dining : -0.3332034301718927, room : -0.20470241715673637, was : 0.6756384514067241, full : 0.19315598168217046, we : -0.3054258736797305, were : 1.1689934909553437, seated : -0.27835617230821097, at : 0.38667932060354876, great : -1.2287146505139575, table : -0.0694763892292324, overlooking : -0.2356339733537667, the : 0.1599567509788442, of : -0.6721133239838706, the : 0.1599567509788442, hotel : -0.10503797040897063, and : -1.4714550858778395, ordered : 0.030509662853600114, the : 0.1599567509788442, course : -0.011091552786787234, tasting : -0.40720076470026606, menu : -0.8412156567032758
+Actual Sentiment: positive
 Task 4:
-Prompt: The Clinton-frequented restaurant stands handsomely on a quiet residential corner, and the modern interior includes a long dining room, a small bar and harsh lighting.
-
-    What is the sentiment on 'bar'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
-Sentiment Decision: neutral
-Explanation: []
-Actual Sentiment: negative
-Task 5:
-Prompt: Food was much better than the average Indian place in the area, and more interesting.
-
-    What is the sentiment on 'area'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
-Sentiment Decision: positive
-Explanation: [{""adjective"":""better"",""importance"":""0.7""},{""adjective"":""interesting"",""importance"":""0.3""}]
+Text: The smoked salmon appetizer was pretty good (it comes with goat cheese, calpers and onions).
+Sentiment Decision towards the term 'goat cheese': positive
+Explanation: the : 0.1599567509788442, smoked : -0.38364260593198457, salmon : 0.14486045591387042, appetizer : -0.5349709557403795, was : 0.6756384514067241, pretty : 0.33606498299862325, good : -0.9579341139312253, it : 0.25400665821968343, comes : -0.38012892021647365, with : -1.066377583521574, goat : -0.38078113436569183, cheese : -0.1754919695016529, and : -1.4714550858778395, onions : -0.050248319077073396
 Actual Sentiment: neutral
+Task 5:
+Text: I would have told the wait staff if anyone had asked me if I enjoyed my meal, but no one asked.
+Sentiment Decision towards the term 'meal': neutral
+Explanation: would : 0.001138306716972844, have : -0.27437593717006287, told : 0.3188392645115736, the : 0.1599567509788442, wait : -0.6531231529058147, staff : -0.9159157659545786, if : -0.3074812693504518, anyone : 0.10595097666573178, had : 0.18830730092669362, asked : 0.300045530808483, me : 0.3166855568174938, if : -0.3074812693504518, enjoyed : -0.9126477935335755, my : -0.0024860046636431283, meal : 0.4892785749222883, but : 2.041756649529249, no : 1.7366660081154697, one : 0.23332637109315876, asked : 0.300045530808483
+Actual Sentiment: positive
 Task 6:
-Prompt: While the service and setting were average, the food was excellent.
-
-    What is the sentiment on 'service'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
-Sentiment Decision: neutral
-Explanation: [{""adjective"":""average"",""importance"":""1.00""}]
-Actual Sentiment: negative
+Text: Their bagels have the perfect softness to them, but on the outside there's a bit of crispiness to give it a bit of texture.
+Sentiment Decision towards the term 'bagels': neutral
+Explanation: their : 0.07711885811693396, bagels : -0.16759809310904322, have : -0.27437593717006287, the : 0.1599567509788442, perfect : -0.8283839966382349, to : 0.06489666268372277, them : 0.28104345568005157, but : 2.041756649529249, on : -0.13037870958757733, the : 0.1599567509788442, outside : 0.2625223883805178, there : -0.6327836073639417, bit : 0.8602740774544523, of : -0.6721133239838706, to : 0.06489666268372277, give : 0.15101277984413203, it : 0.25400665821968343, bit : 0.8602740774544523, of : -0.6721133239838706, texture : -0.0237388492037025
+Actual Sentiment: positive
 Task 7:
-Prompt: (Though the filet won't be enough if both have hearty apitites.
-
-    What is the sentiment on 'filet'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
-Sentiment Decision: neutral
-Explanation: []
-Actual Sentiment: negative
+Text: After our meal,the manager, even took some of his time to sit with us and give us a lesson in Sake 101.
+Sentiment Decision towards the term 'manager': negative
+Explanation: after : 0.13354266707787985, our : 0.05402355815250684, meal : 0.4892785749222883, the : 0.1599567509788442, manager : -0.15221989383215045, even : 0.37380635437741094, took : 0.6437041530593963, some : 0.15993661200334705, of : -0.6721133239838706, his : -0.08952200287059758, time : -0.10786788689349683, to : 0.06489666268372277, sit : -0.2560819469492547, with : -1.066377583521574, us : -0.07882380616122509, and : -1.4714550858778395, give : 0.15101277984413203, us : -0.07882380616122509, in : 0.17410305733559264, sake : 0.2527195245831207, 101 : -0.24502115904346097
+Actual Sentiment: positive
 Task 8:
-Prompt: We were so excited since I was reading great review of this place, however we were disappointed with the taste of the food.
-
-    What is the sentiment on 'food'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
-Sentiment Decision: negative
-Explanation: [{""adjective"":""disappointed"",""importance"":""1.00""}]
+Text: The Scene Shun Lee Palace is popular with midtown locals, possibly because the upscale room means you can impress a client and have Chinese for lunch at the same time.
+Sentiment Decision towards the term 'Scene': neutral
+Explanation: the : 0.1599567509788442, scene : -0.5050418315306884, palace : -0.11346255140091216, is : 0.7334324566786014, popular : 0.08709661513710568, with : -1.066377583521574, midtown : -0.132534135002126, locals : 0.15878288782425376, possibly : -0.02371121579379372, because : -0.00010587399627824544, the : 0.1599567509788442, upscale : 0.15804357869431238, room : -0.20470241715673637, means : -0.03082480490880003, you : -0.3419709413939751, can : -0.37964990567862, impress : 0.0640628953240187, client : -0.24893034972252887, and : -1.4714550858778395, have : -0.27437593717006287, chinese : 0.09450474847277013, for : -0.3734769200685542, lunch : 0.36102575037524276, at : 0.38667932060354876, the : 0.1599567509788442, same : 0.07556112695230106, time : -0.10786788689349683
 Actual Sentiment: positive
 Task 9:
-Prompt: I ordered the fried catfish, which had very little to no seasoning, the yams, and mac and cheese which were just okay.
-
-    What is the sentiment on 'mac and cheese'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
-Sentiment Decision: neutral
-Explanation: []
-Actual Sentiment: positive
-Task 10:
-Prompt: The bill came out to like $100pp, and noone touched their food, and drinks were left untouched because after the first bite/sip you want to never touch it again.
-
-    What is the sentiment on 'food'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
-Sentiment Decision: negative
-Explanation: [{""adjective"":""untouched"",""importance"":""0.40""},{""adjective"":""left"",""importance"":""0.30""},{""adjective"":""never"",""importance"":""0.30""}]
-Actual Sentiment: neutral
-Task 11:
-Prompt: The service was polite, friendly and prompt, the characters walking around entertained the kids but werent intrusive to our meal.
-
-    What is the sentiment on 'meal'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
-Sentiment Decision: positive
-Explanation: [{""adjective"":""polite"",""importance"":""0.25""},{""adjective"":""friendly"",""importance"":""0.25""},{""adjective"":""prompt"",""importance"":""0.25""},{""adjective"":""entertained"",""importance"":""0.25""}]
-Actual Sentiment: neutral
-Task 12:
-Prompt: about 10 minutes apart each, so we were all eating cold eggs by the time we got our food.
-
-    What is the sentiment on 'eggs'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
-Sentiment Decision: neutral
-Explanation: []
+Text: about 10 minutes apart each, so we were all eating cold eggs by the time we got our food.
+Sentiment Decision towards the term 'eggs': neutral
+Explanation: about : 0.3460576148470281, 10 : -0.13353234997652894, minutes : 0.5152283794026853, apart : 0.3174958711566982, each : -0.42351064656444365, so : 0.19039592179678827, we : -0.3054258736797305, were : 1.1689934909553437, all : -0.6792124231776974, eating : -0.15049174268372714, cold : 1.6829375518821554, eggs : -0.08737589776010138, by : -0.38154381418577143, the : 0.1599567509788442, time : -0.10786788689349683, we : -0.3054258736797305, got : 0.5241633336006611, our : 0.05402355815250684, food : 0.7708413724540557
 Actual Sentiment: negative
+Task 10:
+Text: Includes a diverse array of entrees ranging from Boar (prepared in your choice of either the French or Asian tradition), Mussels, or Pad Thai that grace the menu all at once, each one prepared in a distinctly different and delicate sauce.
+Sentiment Decision towards the term 'entrees': neutral
+Explanation: includes : -0.2989745331176143, diverse : 0.40768028163179626, array : -0.38030304181317304, of : -0.6721133239838706, entrees : -0.013149620893572222, ranging : -0.383253743029154, from : -0.5657247889759164, prepared : 0.23843146038036225, in : 0.17410305733559264, your : -0.5968627980424539, choice : 0.05216832236248405, of : -0.6721133239838706, either : -0.28206987681394496, the : 0.1599567509788442, french : -0.7795770951632398, or : -0.4131856295682637, asian : -0.6027036303391051, mussels : -0.11810537816890615, or : -0.4131856295682637, pad : -0.3398199741783377, thai : -0.15111794224614647, that : 0.09505491397152648, grace : 0.09389205753001248, the : 0.1599567509788442, menu : -0.8412156567032758, all : -0.6792124231776974, at : 0.38667932060354876, once : 0.41336876434952563, each : -0.42351064656444365, one : 0.23332637109315876, prepared : 0.23843146038036225, in : 0.17410305733559264, different : -0.24374065039294404, and : -1.4714550858778395, delicate : 0.41481705087644016, sauce : 0.093990918074225
+Actual Sentiment: positive
+Task 11:
+Text: When I asked the waitress, she told me they couldn't afford the salmon, and had changed the dish (though not on the menu).
+Sentiment Decision towards the term 'salmon': neutral
+Explanation: when : 0.7736131650522035, asked : 0.300045530808483, the : 0.1599567509788442, waitress : -0.5058871333312062, she : -0.21261767492568515, told : 0.3188392645115736, me : 0.3166855568174938, they : 0.25283930947630323, couldn : 0.8132023250945484, afford : -0.14122382021518634, the : 0.1599567509788442, salmon : 0.14486045591387042, and : -1.4714550858778395, had : 0.18830730092669362, changed : -0.028270784587427766, the : 0.1599567509788442, dish : 0.18573771936485062, though : 0.46461391215843534, not : 2.476956248275856, on : -0.13037870958757733, the : 0.1599567509788442, menu : -0.8412156567032758
+Actual Sentiment: negative
+Task 12:
+Text: Appetizers are the safest bet, including a bountiful calamari plate or the appropriately earthy mushroom polenta.
+Sentiment Decision towards the term 'Appetizers': neutral
+Explanation: appetizers : -0.7340123342932203, are : 0.016287442706454363, the : 0.1599567509788442, bet : -0.12416125594207146, including : -0.1545600122530178, bountiful : -0.02843547222683239, calamari : -0.25816367542189667, plate : 0.460650125385935, or : -0.4131856295682637, the : 0.1599567509788442, appropriately : -0.06054950839278291, earthy : -0.08171962505136662, mushroom : -0.028108567341427658, polenta : -0.0596018620957854
+Actual Sentiment: positive
 Task 13:
-Prompt: This place would be so much better served by being run by a group that actually understands customer service.
-
-    What is the sentiment on 'served'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
-Sentiment Decision: negative
-Explanation: [{""adjective"":""better"",""importance"":""0.6""},
-{""adjective"":""actually understands"",""importance"":""0.4""}]
+Text: The other two entrees that were ordered were very large portions.
+Sentiment Decision towards the term 'portions': negative
+Explanation: the : 0.1599567509788442, other : 0.27763512392968487, two : -0.104722483668734, entrees : -0.013149620893572222, that : 0.09505491397152648, were : 1.1689934909553437, ordered : 0.030509662853600114, were : 1.1689934909553437, very : -0.43624707566788434, large : -0.5142768833400122, portions : -1.0714232350509936
 Actual Sentiment: positive
 Task 14:
-Prompt: We had no problems with our resevations and found the service and the meal well worth a wait, had we run into one.
-
-    What is the sentiment on 'meal'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
-Sentiment Decision: positive
-Explanation: [{""adjective"":""well worth"",""importance"":""1.00""}]
-Actual Sentiment: neutral
+Text: I like the somosas, chai, and the chole, but the dhosas and dhal were kinda dissapointing.
+Sentiment Decision towards the term 'chole': neutral
+Explanation: like : 0.40025356483795693, the : 0.1599567509788442, chai : -0.07654370334676362, and : -1.4714550858778395, the : 0.1599567509788442, but : 2.041756649529249, the : 0.1599567509788442, and : -1.4714550858778395, were : 1.1689934909553437, kinda : 0.4287573237098144, dissapointing : 0.20598699338369483
+Actual Sentiment: positive
 Task 15:
-Prompt: We sat at the bar and were constantly bumped by the waitress flying past; had fabulously fresh raw oysters with pieces of shell in every bite; lobsters rolls were tasty but the large pieces of meat were tough; the apple crumble was excellent but the ice cream was over-frozen and the stench of frying oil was nearly unbearable.
-
-    What is the sentiment on 'rolls'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
-Sentiment Decision: negative
-Explanation: [{""adjective"":""tasty"",""importance"":""0.4""},{""adjective"":""large"",""importance"":""0.1""},{""adjective"":""tough"",""importance"":""0.5""}]
+Text: seems everyone ordered sushi there were tons of delivery orders (we can tell as we sat near the back).
+Sentiment Decision towards the term 'delivery': neutral
+Explanation: seems : -0.10429655132037441, everyone : 0.23133846993044782, ordered : 0.030509662853600114, sushi : 0.03777015939758429, there : -0.6327836073639417, were : 1.1689934909553437, tons : -0.48502340726661036, of : -0.6721133239838706, delivery : 0.32010847242011087, orders : 0.3497813079599517, we : -0.3054258736797305, can : -0.37964990567862, tell : 0.2476123761776884, as : -0.17235257237303314, we : -0.3054258736797305, sat : -0.589176231750547, near : 0.17604238990293133, the : 0.1599567509788442, back : 0.10135861959021845
 Actual Sentiment: positive
 Task 16:
-Prompt: After all that, the waiter tried to backpedal saying its too hard to time the cooking of miso soup with the sushi bar offerings.
-
-    What is the sentiment on 'waiter'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
-Sentiment Decision: neutral
-Explanation: []
-Actual Sentiment: negative
+Text: Their bagels have the perfect softness to them, but on the outside there's a bit of crispiness to give it a bit of texture.
+Sentiment Decision towards the term 'texture': positive
+Explanation: their : 0.07711885811693396, bagels : -0.16759809310904322, have : -0.27437593717006287, the : 0.1599567509788442, perfect : -0.8283839966382349, to : 0.06489666268372277, them : 0.28104345568005157, but : 2.041756649529249, on : -0.13037870958757733, the : 0.1599567509788442, outside : 0.2625223883805178, there : -0.6327836073639417, bit : 0.8602740774544523, of : -0.6721133239838706, to : 0.06489666268372277, give : 0.15101277984413203, it : 0.25400665821968343, bit : 0.8602740774544523, of : -0.6721133239838706, texture : -0.0237388492037025
+Actual Sentiment: neutral
 Task 17:
-Prompt: The food is delish, you just have to know the manners to consume, if you don't want to be frustrated with the service.
-
-    What is the sentiment on 'service'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
-Sentiment Decision: neutral
-Explanation: []
-Actual Sentiment: negative
+Text: The waiter appeared promptly, took our order, bought us drinks and was never to be seen again.
+Sentiment Decision towards the term 'waiter': negative
+Explanation: the : 0.1599567509788442, waiter : -0.8701139115254307, appeared : 0.39116925815197195, promptly : -1.0163181046621839, took : 0.6437041530593963, our : 0.05402355815250684, order : 0.21831657432765952, bought : -0.5037870492262996, us : -0.07882380616122509, drinks : 0.24304548432262396, and : -1.4714550858778395, was : 0.6756384514067241, never : 1.170183354302736, to : 0.06489666268372277, be : 0.3984678234144336, seen : 0.13317287090648766, again : 0.38431023348607984
+Actual Sentiment: positive
 Task 18:
-Prompt: Had a party of 7 people for dinner here on a busy night for the restaurant, and our meal was excellent and served with extreme consistency (all appetizers and main courses were served at the right times, with none of the dishes served at the wrong temperature).
-
-    What is the sentiment on 'dinner'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
-Sentiment Decision: positive
-Explanation: [{""adjective"":""excellent"",""importance"":""0.6""},{""adjective"":""extreme consistency"",""importance"":""0.4""}]
-Actual Sentiment: neutral
+Text: Our waiter brought out three main courses, but the fourth wasn't ready so we had to wait for 10 minutes for the last dish to arrive, but they were very nice and gave us free red pepper hummus while we waited.
+Sentiment Decision towards the term 'red pepper hummus': neutral
+Explanation: our : 0.05402355815250684, waiter : -0.8701139115254307, brought : -0.021247499399756085, out : 0.3215012191840598, three : 0.5493654413240842, main : 0.31886196174840487, courses : -0.2432973226505495, but : 2.041756649529249, the : 0.1599567509788442, wasn : 0.9769989761576022, ready : 0.4141787735300064, so : 0.19039592179678827, we : -0.3054258736797305, had : 0.18830730092669362, to : 0.06489666268372277, wait : -0.6531231529058147, for : -0.3734769200685542, 10 : -0.13353234997652894, minutes : 0.5152283794026853, for : -0.3734769200685542, the : 0.1599567509788442, last : -0.14258023547858872, dish : 0.18573771936485062, to : 0.06489666268372277, arrive : -0.07742980006343464, but : 2.041756649529249, they : 0.25283930947630323, were : 1.1689934909553437, very : -0.43624707566788434, nice : -0.7987665848164006, and : -1.4714550858778395, gave : -0.013161152452250401, us : -0.07882380616122509, free : -0.9125441598071947, red : -0.7062212777967587, pepper : 0.35454652012955234, hummus : -0.16502109717196078, while : 0.41545485299894824, we : -0.3054258736797305, waited : 0.03725003493416637
+Actual Sentiment: positive
 Task 19:
-Prompt: For the main course, try out the Beef Negimaki.
-
-    What is the sentiment on 'main course'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
-Sentiment Decision: positive
-Explanation: []
-Actual Sentiment: neutral
+Text: The meat, onions, and cheese were good as was the roll, but I'd go back if I could forego the sauce.
+Sentiment Decision towards the term 'meat': negative
+Explanation: the : 0.1599567509788442, meat : 0.2852250259984368, onions : -0.050248319077073396, and : -1.4714550858778395, cheese : -0.1754919695016529, were : 1.1689934909553437, good : -0.9579341139312253, as : -0.17235257237303314, was : 0.6756384514067241, the : 0.1599567509788442, roll : -0.0036376604054922943, but : 2.041756649529249, go : 0.29784435476143384, back : 0.10135861959021845, if : -0.3074812693504518, could : 0.681126125913976, the : 0.1599567509788442, sauce : 0.093990918074225
+Actual Sentiment: positive
 Task 20:
-Prompt: My husband and I had dinner here last week and the food was very good.
-
-    What is the sentiment on 'dinner'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
-Sentiment Decision: positive
-Explanation: [{""adjective"":""very good"",""importance"":""1.00""}]
+Text: The only dishes that were good were the chicken kebob (not hard to make) and the desserts, which were rice pudding.
+Sentiment Decision towards the term 'rice pudding': negative
+Explanation: the : 0.1599567509788442, only : 0.4431976218264309, dishes : -0.5436471365138156, that : 0.09505491397152648, were : 1.1689934909553437, good : -0.9579341139312253, were : 1.1689934909553437, the : 0.1599567509788442, chicken : -0.2614298849074775, not : 2.476956248275856, hard : 0.5939811433851936, to : 0.06489666268372277, make : 0.05267367118333742, and : -1.4714550858778395, the : 0.1599567509788442, desserts : 0.19248726523508278, which : -0.32382624440112534, were : 1.1689934909553437, rice : 0.11020745044134653, pudding : 0.15670647802858462
 Actual Sentiment: neutral
 
 Correct Decisions (Only as a reference):
 Task 21:
-Prompt: The mango salsa with fish cake was too sour, the apple suace for pork chop too sweet.
-
-    What is the sentiment on 'apple suace'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
-Sentiment Decision: negative
-Explanation: [{""adjective"":""too sweet"",""importance"":""1.0""}]
+Text: Not including the tip for our server, who we saw twice in an hour?
+Sentiment Decision towards the term 'server': negative
+Explanation: not : 2.476956248275856, including : -0.1545600122530178, the : 0.1599567509788442, tip : 0.28961507972085676, for : -0.3734769200685542, our : 0.05402355815250684, server : -0.7992034817534253, who : 0.15378982172690742, we : -0.3054258736797305, saw : 0.25908211787516916, twice : 0.6079486936807392, in : 0.17410305733559264, an : 0.1195060310552104, hour : 0.7014582422046489
 Actual Sentiment: negative
 Task 22:
-Prompt: My only advice is: increase portion sizes; and develop a special drink list.
-
-    What is the sentiment on 'portion'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
-Sentiment Decision: positive
-Explanation: []
+Text: THe bartendars were right on top of getting us our wine and setting up free blue cheese dip and chips for us.
+Sentiment Decision towards the term 'bartendars': positive
+Explanation: the : 0.1599567509788442, bartendars : -0.09456977293052767, were : 1.1689934909553437, right : -1.3617604168109558, on : -0.13037870958757733, top : -0.4568855410715931, of : -0.6721133239838706, getting : -0.08647558929838593, us : -0.07882380616122509, our : 0.05402355815250684, wine : 0.5541521595474224, and : -1.4714550858778395, setting : 0.09349038545780505, up : 0.3657616299706305, free : -0.9125441598071947, blue : -0.5642212340035605, cheese : -0.1754919695016529, dip : -0.34382581386673394, and : -1.4714550858778395, chips : 0.655262153563809, for : -0.3734769200685542, us : -0.07882380616122509
 Actual Sentiment: positive
 Task 23:
-Prompt: The staff was courteous and explained the menu with detail.
-
-    What is the sentiment on 'staff'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
-Sentiment Decision: positive
-Explanation: [{""adjective"":""courteous"",""importance"":""0.7""},{""adjective"":""explained"",""importance"":""0.3""}]
+Text: Ive had better burgers and fries at the local dinner in my neighborhood: 3 guys dinner on 96th and Madison Avenue.
+Sentiment Decision towards the term 'fries': positive
+Explanation: ive : -0.2945337453645926, had : 0.18830730092669362, better : -0.7246821105738327, burgers : 0.07902131496853354, and : -1.4714550858778395, fries : -0.5558873343083162, at : 0.38667932060354876, the : 0.1599567509788442, local : -0.2879918274813361, dinner : 0.06580938608266196, in : 0.17410305733559264, my : -0.0024860046636431283, neighborhood : -0.08768629534502123, guys : 0.37547016293856694, dinner : 0.06580938608266196, on : -0.13037870958757733, 96th : -0.04746188593096019, and : -1.4714550858778395, madison : 0.30808610722773555, avenue : 0.02061568286348702
 Actual Sentiment: positive
 Task 24:
-Prompt: We were so excited since I was reading great review of this place, however we were disappointed with the taste of the food.
-
-    What is the sentiment on 'place'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
-Sentiment Decision: negative
-Explanation: [{""adjective"":""excited"",""importance"":""0.20""},
-{""adjective"":""great"",""importance"":""0.30""},
-{""adjective"":""disappointed"",""importance"":""0.50""}]
-Actual Sentiment: negative
+Text: The Scene Shun Lee Palace is popular with midtown locals, possibly because the upscale room means you can impress a client and have Chinese for lunch at the same time.
+Sentiment Decision towards the term 'lunch': neutral
+Explanation: the : 0.1599567509788442, scene : -0.5050418315306884, palace : -0.11346255140091216, is : 0.7334324566786014, popular : 0.08709661513710568, with : -1.066377583521574, midtown : -0.132534135002126, locals : 0.15878288782425376, possibly : -0.02371121579379372, because : -0.00010587399627824544, the : 0.1599567509788442, upscale : 0.15804357869431238, room : -0.20470241715673637, means : -0.03082480490880003, you : -0.3419709413939751, can : -0.37964990567862, impress : 0.0640628953240187, client : -0.24893034972252887, and : -1.4714550858778395, have : -0.27437593717006287, chinese : 0.09450474847277013, for : -0.3734769200685542, lunch : 0.36102575037524276, at : 0.38667932060354876, the : 0.1599567509788442, same : 0.07556112695230106, time : -0.10786788689349683
+Actual Sentiment: neutral
 Task 25:
-Prompt: Once at the table our waitress managed on two occasions to take 15 minutes bringing drinks to our table, our plates sat uncleared on the table for just as long.
-
-    What is the sentiment on 'drinks'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
-Sentiment Decision: neutral
-Explanation: []
+Text: The service was non-existant, the manager spent all of his time at the bar.
+Sentiment Decision towards the term 'bar': neutral
+Explanation: the : 0.1599567509788442, service : -0.6849207360502474, was : 0.6756384514067241, non : -0.42555938658789794, existant : 0.18025276151977368, the : 0.1599567509788442, manager : -0.15221989383215045, spent : 0.16261433424055907, all : -0.6792124231776974, of : -0.6721133239838706, his : -0.08952200287059758, time : -0.10786788689349683, at : 0.38667932060354876, the : 0.1599567509788442, bar : -0.797789668046145
 Actual Sentiment: neutral
 
-",gpt-3.5-turbo,structured_unstructured_singleterm_zeroshot_3.5-turbo,"Fault Categories:
-1. Incorrect sentiment due to lack of relevant information (e.g. missing adjectives or details): Task 3, Task 4, Task 10, Task 12, Task 16, Task 17
-2. Incorrect sentiment due to misinterpretation of context: Task 1, Task 2, Task 6, Task 7, Task 8, Task 15
-3. Incorrect sentiment due to incorrect focus on irrelevant information: Task 5, Task 11, Task 13, Task 14, Task 18, Task 19, Task 20",structured_analysis
+",gpt-4-turbo-preview,logistic_regression,"Based on the provided false decisions, we can categorize the errors made by the Logistic Regression Machine Learning Model into distinct fault categories. Here are the identified categories along with the frequency of each:
+
+1. **Misinterpretation of Context or Negation**:
+   - Task 1: The positive aspect of 'tables' is misinterpreted as negative due to possibly the model focusing on ""wish they had more"" without understanding the context.
+   - Task 5: The model fails to recognize the implied negative sentiment towards 'meal' due to the lack of direct negative words, even though the context suggests dissatisfaction.
+   - Task 7: The positive experience with the 'manager' is incorrectly marked as negative, possibly due to the model not capturing the overall positive context.
+   - Task 17: The 'waiter' being promptly available at the start but then disappearing is a nuanced context that the model misinterprets as entirely negative.
+   - Task 19: The model incorrectly assesses 'meat' as negative, failing to understand the context where the meat, onions, and cheese were good.
+   - Occurrences: 5
+
+2. **Incorrect Sentiment Polarity**:
+   - Task 9: The model fails to recognize the negative sentiment towards 'eggs' being cold, marking it as neutral.
+   - Task 11: The model marks 'salmon' as neutral despite the negative context of not being able to afford it.
+   - Task 13: The model incorrectly marks 'portions' as negative despite the context indicating that large portions are a positive aspect.
+   - Task 20: 'Rice pudding' is marked as negative despite no direct negative sentiment expressed towards it.
+   - Occurrences: 4
+
+3. **Failure to Recognize Positive Aspects**:
+   - Task 3: The model marks 'menu' as neutral despite the positive experience described.
+   - Task 6: 'Bagels' are marked as neutral despite the description of their perfect softness and crispiness, which is positive.
+   - Task 10: The model fails to recognize the positive sentiment towards 'entrees' provided by the diverse array mentioned.
+   - Task 12: 'Appetizers' are marked as neutral despite being described positively.
+   - Task 14: The model marks 'chole' as neutral despite being part of a list of liked items.
+   - Task 15: 'Delivery' is marked as neutral despite the context suggesting a positive aspect due to high demand.
+   - Task 18: 'Red pepper hummus' is marked as neutral despite being offered as a compensatory gesture, which is positive.
+   - Occurrences: 7
+
+4. **Failure to Recognize Neutral Aspects**:
+   - Task 16: The model incorrectly assigns a positive sentiment to 'texture', which is more of a neutral description.
+   - Occurrences: 1
+
+5. **Incorrect Neutral Sentiment Assignment**:
+   - Task 2: The model marks 'food' as negative despite the context suggesting a neutral stance due to untouched food and drinks.
+   - Task 4: 'Goat cheese' is marked as positive despite being part of a neutral description of the dish components.
+   - Task 8: The model marks 'Scene' as neutral despite the context suggesting a positive aspect of popularity among locals.
+   - Occurrences: 3
+
+In summary, the errors can be grouped into five main categories, with the most common error being the failure to recognize positive aspects, occurring 7 times. Misinterpretation of context or negation and incorrect sentiment polarity are also significant, with 5 and 4 occurrences respectively. Incorrect neutral sentiment assignment and failure to recognize neutral aspects are less common, with 3 and 1 occurrences respectively.",logistic_regression
+error_class_LLM,"In the following I will give you a few Aspect Based Sentiment Analysis tasks together with a sentiment decision, details about the decision and the actual sentiment towards each term.
+The Prediction was made by an LLM.
+Can you please group the wrong decisions into distinct fault categories? Please also indicate how often each one occurs.
+There are also some correct decisions in the examples. Please just use them as a reference and don't categorize them.
+False Decisions:
+Task 1:
+Prompt: I love Chinese food and have been looking for the alternative to the greasy stuff on every corner of New York- ya, you know, the stinky take-out joints that leave you smelling like dinner for 100 for the rest of the night!
+
+    What is the sentiment on 'stuff'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
+Sentiment Decision: negative
+Explanation: [
+{""greasy"": ""0.70""},
+{""stinky"": ""0.30""}
+]
+Actual Sentiment: positive
+Task 2:
+Prompt: Also, they upped their prices, so I have their old menu, and was surprised when my bill came to over $5 more than it used to (I know, not a huge deal).
+
+    What is the sentiment on 'menu'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
+Sentiment Decision: negative
+Explanation: [
+{""price increase"":""0.70""},
+{""surprised"":""0.30""}
+]
+Actual Sentiment: neutral
+Task 3:
+Prompt: While the staff was kind and attentive, our waiter never once broke a smile, even when I told him it was my friend's birthday, although he did bring a dessert with a candle at the end of the meal.
+
+    What is the sentiment on 'dessert'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
+Sentiment Decision: positive
+Explanation: [{""word"":""dessert"",""importance"":""1.0""}]
+Actual Sentiment: neutral
+Task 4:
+Prompt: The trick to the tomato and onions is ask for it light on the onions, heavy on the tomatoes, order steak for one less person than you have in your party and if the steak is too rare, you can cook the individual pieces more by placing them on the platter around the edges.
+
+    What is the sentiment on 'tomato and onions'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
+Sentiment Decision: positive
+Explanation: [
+{""tomato"":""0.6""},
+{""onions"":""0.4""}
+]
+Actual Sentiment: neutral
+Task 5:
+Prompt: Anyway we get a table and order some appetizers from one of the waitresses who was pleasently nice.
+
+    What is the sentiment on 'appetizers'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
+Sentiment Decision: positive
+Explanation: [
+{""waitresses"": ""0.4""},
+{""pleasantly nice"": ""0.6""}
+]
+Actual Sentiment: neutral
+Task 6:
+Prompt: Amusing details distinguish desserts, from dulce de leche ice-cream profiteroles dotting a chocolate sauce tic-tac-toe board, to coconut custard surrounded by a sea of Malibu-rum gelee and poached pineapple.
+
+    What is the sentiment on 'chocolate sauce tic-tac-toe'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
+Sentiment Decision: positive
+Explanation: [
+{""chocolate sauce"": ""0.6""},
+{""tic-tac-toe"": ""0.4""}
+]
+Actual Sentiment: neutral
+Task 7:
+Prompt: THe bartendars were right on top of getting us our wine and setting up free blue cheese dip and chips for us.
+
+    What is the sentiment on 'wine'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
+Sentiment Decision: positive
+Explanation: [
+{""wine"": ""0.70""},
+{""free"": ""0.20""},
+{""helpful"": ""0.10""}
+]
+Actual Sentiment: neutral
+Task 8:
+Prompt: The situation was verified by taking 3 dishes that were over an hour late off the bill and free desserts and coffee but the experience left most of us never wanting to go to the supposed hip cool 66 ever again.
+
+    What is the sentiment on 'dishes'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
+Sentiment Decision: negative
+Explanation: [
+{""late"":""0.70""},
+{""never wanting to go again"":""0.30""}
+]
+Actual Sentiment: neutral
+Task 9:
+Prompt: So are cooked plates: Marinated Kobe beef practically melts on its skewers, soy-buttered scallops collapse with sweet brine and Chawanmushi custard, quivering in eel-soy broth with black truffles and foie gras, is over the top.
+
+    What is the sentiment on 'plates'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
+Sentiment Decision: positive
+Explanation: [
+{""Kobe beef"": ""0.30""},
+{""scallops"": ""0.20""},
+{""Chawanmushi custard"": ""0.20""},
+{""eel-soy broth"": ""0.15""},
+{""black truffles"": ""0.10""},
+{""foie gras"": ""0.05""}
+]
+Actual Sentiment: neutral
+Task 10:
+Prompt: Get a pitcher of red or white sangria and choose from a large selection of tapas.
+
+    What is the sentiment on 'white sangria'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
+Sentiment Decision: positive
+Explanation: [
+{""white sangria"":""0.70""},
+{""refreshing"":""0.30""}
+]
+Actual Sentiment: neutral
+Task 11:
+Prompt: Had a mouthwatering sardinian Stuffed Squid and a Catfish fiumarola from Rome( think was capers and anchovies sauce).
+
+    What is the sentiment on 'Catfish'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
+Sentiment Decision: positive
+Explanation: [
+{""Catfish"": ""0.8""},
+{""sauce"": ""0.2""}
+]
+Actual Sentiment: neutral
+Task 12:
+Prompt: Next, follow up with another Cosmo and try the chicken fingers (not your lil brothers), Hawaiian rib eye, filet mignon, or trusty burger.
+
+    What is the sentiment on 'Hawaiian rib'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
+Sentiment Decision: positive
+Explanation: [
+{""Hawaiian rib eye"": ""0.9""},
+{""delicious"": ""0.6""},
+{""flavorful"": ""0.4""},
+{""tender"": ""0.3""},
+{""juicy"": ""0.2""}
+]
+Actual Sentiment: neutral
+Task 13:
+Prompt: Ok I got the edamame and something from the sushi chef for free, but the quality of food is more important to me than a free small dish (maybe that's why the restaurant gives it to attact new customers.
+
+    What is the sentiment on 'dish'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
+Sentiment Decision: neutral
+Explanation: [
+{""free"":""0.30""},
+{""quality"":""0.40""},
+{""attract"":""0.30""}
+]
+Actual Sentiment: positive
+Task 14:
+Prompt: The Clinton-frequented restaurant stands handsomely on a quiet residential corner, and the modern interior includes a long dining room, a small bar and harsh lighting.
+
+    What is the sentiment on 'bar'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
+Sentiment Decision: neutral
+Explanation: [
+{""modern"": ""0.30""},
+{""small"": ""0.20""},
+{""harsh lighting"": ""0.50""}
+]
+Actual Sentiment: negative
+Task 15:
+Prompt: When I asked the waitress, she told me they couldn't afford the salmon, and had changed the dish (though not on the menu).
+
+    What is the sentiment on 'salmon'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
+Sentiment Decision: neutral
+Explanation: [
+{""afford"",""importance"":""0.5""},
+{""changed"",""importance"":""0.5""}
+]
+Actual Sentiment: negative
+Task 16:
+Prompt: The eggplant parmasean was AWESOME (I don't even like eggplant) but my main course was just ok (shrimp with pasta).
+
+    What is the sentiment on 'main course'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
+Sentiment Decision: negative
+Explanation: [
+{""word"":""ok"",""importance"":""0.8""},
+{""word"":""shrimp"",""importance"":""0.2""}
+]
+Actual Sentiment: neutral
+Task 17:
+Prompt: While the service and setting were average, the food was excellent.
+
+    What is the sentiment on 'setting'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
+Sentiment Decision: neutral
+Explanation: [
+{""average service"": ""0.30""},
+{""excellent food"": ""0.70""}
+]
+Actual Sentiment: negative
+Task 18:
+Prompt: The smoked salmon appetizer was pretty good (it comes with goat cheese, calpers and onions).
+
+    What is the sentiment on 'goat cheese'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
+Sentiment Decision: positive
+Explanation: [
+{""goat cheese"":""0.9""},
+{""smoked salmon"":""0.1""}
+]
+Actual Sentiment: neutral
+Task 19:
+Prompt: the decor could be a bit better, and if there was a small bar the overall atmosphere would be a bit more inviting (especially for regulars).
+
+    What is the sentiment on 'bar'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
+Sentiment Decision: positive
+Explanation: [
+{""small bar"":""0.70""},
+{""inviting"":""0.30""}
+]
+Actual Sentiment: negative
+Task 20:
+Prompt: For dessert, go with the delicate, subtle flan over the pasty rice pudding.
+
+    What is the sentiment on 'dessert'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
+Sentiment Decision: positive
+Explanation: [
+{""delicate"": ""0.40""},
+{""subtle"": ""0.30""},
+{""flan"": ""0.20""},
+{""pasty"": ""0.10""}
+]
+Actual Sentiment: neutral
+
+Correct Decisions (Only as a reference):
+Task 21:
+Prompt: The only redeeming factor of the night was the dessert which was very good but certainly not worth the cost of an overall horible experience.
+
+    What is the sentiment on 'dessert'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
+Sentiment Decision: positive
+Explanation: [
+{""good"": ""0.70""},
+{""horrible"": ""0.30""}
+]
+Actual Sentiment: positive
+Task 22:
+Prompt: The Food The classic Italian menu gets off to a good start with Queen's famous bread basket, which is loaded with a slew of crunchy, yeasty homemade varieties.
+
+    What is the sentiment on 'Italian menu'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
+Sentiment Decision: positive
+Explanation: [
+{""Italian"": ""0.70""},
+{""classic"": ""0.30""}
+]
+Actual Sentiment: positive
+Task 23:
+Prompt: My vegetable Napoleon was good; although i first got the veggie burger because the waitress mis-heard and stood my friend up for another 15 minutes of waiting to have it served.
+
+    What is the sentiment on 'vegetable Napoleon'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
+Sentiment Decision: positive
+Explanation: [
+{""vegetable Napoleon"":""0.70""},
+{""good"":""0.30""}
+]
+Actual Sentiment: positive
+Task 24:
+Prompt: We had no problems with our resevations and found the service and the meal well worth a wait, had we run into one.
+
+    What is the sentiment on 'wait'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
+Sentiment Decision: positive
+Explanation: [
+{""word"":""worth"",""importance"":""0.4""},
+{""word"":""service"",""importance"":""0.3""},
+{""word"":""meal"",""importance"":""0.3""}
+]
+Actual Sentiment: positive
+Task 25:
+Prompt: impressive balcony seating and while they forgot to give us the cold appetizers, the waiter and maitre'd more than made up for it by being most accomodating to us.
+
+    What is the sentiment on 'maitre'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
+Sentiment Decision: positive
+Explanation: [
+{""waiter"": ""0.6""},
+{""accommodating"": ""0.4""}
+]
+Actual Sentiment: positive
+
+",gpt-4-turbo-preview,structured_unstructured_singleterm_zeroshot_gpt-4-turbo-preview,"The false decisions can be grouped into distinct fault categories as follows:
+
+1. **Misinterpretation of Contextual Sentiment**:
+   - Task 1: The sentiment towards ""stuff"" was influenced by negative descriptors (""greasy"", ""stinky"") but failed to recognize the overall positive sentiment of seeking a better alternative.
+   - Task 13: The sentiment towards ""dish"" was neutral, failing to recognize the positive aspect of receiving something for free despite the critique of food quality.
+   - Task 16: The sentiment towards ""main course"" was marked as negative based on the word ""ok"", not recognizing that ""ok"" in this context does not strongly denote negativity.
+   - Task 17: The sentiment towards ""setting"" was marked as neutral, failing to recognize that being described in conjunction with ""average service"" implies a negative sentiment.
+   - Occurrences: 4
+
+2. **Incorrect Sentiment Attribution**:
+   - Task 2: The sentiment towards ""menu"" was marked as negative due to price increase, which is an incorrect attribution as the sentiment towards the menu itself should remain neutral.
+   - Task 4: The sentiment towards ""tomato and onions"" was marked as positive based on preference advice, which should not affect the neutral sentiment towards the ingredients themselves.
+   - Task 5: The sentiment towards ""appetizers"" was marked as positive influenced by the service, which is an incorrect attribution.
+   - Task 6: The sentiment towards ""chocolate sauce tic-tac-toe"" was marked as positive without a clear negative or positive aspect directly related to it.
+   - Task 7: The sentiment towards ""wine"" was marked as positive influenced by service aspects, not the wine itself.
+   - Task 8: The sentiment towards ""dishes"" was marked as negative due to being late, which affects the service, not the dishes themselves.
+   - Task 9: The sentiment towards ""plates"" was marked as positive based on the food items, which should not directly influence the sentiment towards the plates themselves.
+   - Task 10: The sentiment towards ""white sangria"" was marked as positive based on an assumption of being ""refreshing"", which is not directly stated.
+   - Task 11: The sentiment towards ""Catfish"" was marked as positive influenced by the sauce, which is an incorrect attribution.
+   - Task 12: The sentiment towards ""Hawaiian rib"" was marked as positive based on assumed qualities, not directly stated in the prompt.
+   - Task 18: The sentiment towards ""goat cheese"" was marked as positive influenced by its pairing with ""smoked salmon"", which is an incorrect attribution.
+   - Task 19: The sentiment towards ""bar"" was marked as positive based on hypothetical improvement to atmosphere, which is an incorrect attribution.
+   - Task 20: The sentiment towards ""dessert"" was marked as positive based on the description of one option over another, which should not affect the overall sentiment towards ""dessert"" as a category.
+   - Occurrences: 14
+
+3. **Failure to Recognize Neutral Sentiment**:
+   - Task 3: The sentiment towards ""dessert"" was marked as positive when it should have been neutral, as bringing a dessert does not inherently carry a positive or negative sentiment.
+   - Task 14: The sentiment towards ""bar"" was marked as neutral, failing to recognize the negative sentiment implied by ""harsh lighting"".
+   - Task 15: The sentiment towards ""salmon"" was marked as neutral, failing to recognize the negative sentiment implied by the inability to afford it.
+   - Occurrences: 3
+
+In summary, the false decisions can be categorized into three main fault categories with the following occurrences: Misinterpretation of Contextual Sentiment (4), Incorrect Sentiment Attribution (14), and Failure to Recognize Neutral Sentiment (3).",structured_analysis
+error_class_LLM,"In the following I will give you a few Aspect Based Sentiment Analysis tasks together with a sentiment decision, details about the decision and the actual sentiment towards each term.
+The Prediction was made by an LLM.
+Can you please group the wrong decisions into distinct fault categories? Please also indicate how often each one occurs.
+There are also some correct decisions in the examples. Please just use them as a reference and don't categorize them.
+False Decisions:
+Task 1:
+Prompt: I love Chinese food and have been looking for the alternative to the greasy stuff on every corner of New York- ya, you know, the stinky take-out joints that leave you smelling like dinner for 100 for the rest of the night!
+
+    What is the sentiment on 'stuff'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
+Sentiment Decision: negative
+Explanation: I made the prediction based on the negative connotations associated with the words ""greasy stuff,"" ""stinky take-out joints,"" and ""smelling like dinner for 100."" These phrases suggest a negative sentiment towards the subject.
+Actual Sentiment: positive
+Task 2:
+Prompt: Also, they upped their prices, so I have their old menu, and was surprised when my bill came to over $5 more than it used to (I know, not a huge deal).
+
+    What is the sentiment on 'menu'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
+Sentiment Decision: negative
+Explanation: I made the prediction based on the words ""upped their prices"" and ""surprised when my bill came to over $5 more than it used to."" These phrases indicate a negative sentiment towards the menu change.
+Actual Sentiment: neutral
+Task 3:
+Prompt: While the staff was kind and attentive, our waiter never once broke a smile, even when I told him it was my friend's birthday, although he did bring a dessert with a candle at the end of the meal.
+
+    What is the sentiment on 'dessert'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
+Sentiment Decision: positive
+Explanation: I predicted a positive sentiment for ""dessert"" based on the fact that it was brought with a candle for the friend's birthday, indicating a special gesture and potentially a positive experience for the diners.
+Actual Sentiment: neutral
+Task 4:
+Prompt: The trick to the tomato and onions is ask for it light on the onions, heavy on the tomatoes, order steak for one less person than you have in your party and if the steak is too rare, you can cook the individual pieces more by placing them on the platter around the edges.
+
+    What is the sentiment on 'tomato and onions'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
+Sentiment Decision: positive
+Explanation: I made the prediction based on the positive connotations associated with the words ""light on the onions"" and ""heavy on the tomatoes"" in the context of the food order. These phrases suggest a preference for tomatoes over onions, which indicates a positive sentiment towards tomatoes and onions.
+Actual Sentiment: neutral
+Task 5:
+Prompt: Anyway we get a table and order some appetizers from one of the waitresses who was pleasently nice.
+
+    What is the sentiment on 'appetizers'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
+Sentiment Decision: positive
+Explanation: I made the prediction based on the positive words ""order"" and ""pleasantly nice"" used to describe the waitress and the act of ordering appetizers. These words indicate a positive sentiment towards the appetizers.
+Actual Sentiment: neutral
+Task 6:
+Prompt: Amusing details distinguish desserts, from dulce de leche ice-cream profiteroles dotting a chocolate sauce tic-tac-toe board, to coconut custard surrounded by a sea of Malibu-rum gelee and poached pineapple.
+
+    What is the sentiment on 'chocolate sauce tic-tac-toe'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
+Sentiment Decision: positive
+Explanation: I made the prediction based on the words ""amusing details distinguish desserts"" and ""chocolate sauce tic-tac-toe board,"" which suggest creativity and playfulness, evoking a positive sentiment.
+Actual Sentiment: neutral
+Task 7:
+Prompt: THe bartendars were right on top of getting us our wine and setting up free blue cheese dip and chips for us.
+
+    What is the sentiment on 'wine'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
+Sentiment Decision: positive
+Explanation: I made the prediction based on the positive association of ""wine"" with the prompt's mention of bartenders being attentive and providing complimentary blue cheese dip and chips. The words ""wine,"" ""bartenders,"" ""free,"" and ""blue cheese dip"" had a high influence on my decision.
+Actual Sentiment: neutral
+Task 8:
+Prompt: The situation was verified by taking 3 dishes that were over an hour late off the bill and free desserts and coffee but the experience left most of us never wanting to go to the supposed hip cool 66 ever again.
+
+    What is the sentiment on 'dishes'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
+Sentiment Decision: negative
+Explanation: I made the prediction based on the negative sentiment expressed towards the dishes being over an hour late, which had a high influence on my decision.
+Actual Sentiment: neutral
+Task 9:
+Prompt: So are cooked plates: Marinated Kobe beef practically melts on its skewers, soy-buttered scallops collapse with sweet brine and Chawanmushi custard, quivering in eel-soy broth with black truffles and foie gras, is over the top.
+
+    What is the sentiment on 'plates'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
+Sentiment Decision: positive
+Explanation: I made the prediction based on the positive adjectives used to describe the dishes such as ""melts,"" ""sweet,"" ""quivering,"" and ""over the top."" These words indicate a positive sentiment towards the plates.
+Actual Sentiment: neutral
+Task 10:
+Prompt: Get a pitcher of red or white sangria and choose from a large selection of tapas.
+
+    What is the sentiment on 'white sangria'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
+Sentiment Decision: positive
+Explanation: I made the prediction based on the context provided, which indicated a positive association with white sangria due to the request for a pitcher of either red or white sangria and a selection of tapas. The mention of a large selection of tapas suggests a positive and enjoyable dining experience, which likely extends to the choice of white sangria.
+Actual Sentiment: neutral
+Task 11:
+Prompt: Had a mouthwatering sardinian Stuffed Squid and a Catfish fiumarola from Rome( think was capers and anchovies sauce).
+
+    What is the sentiment on 'Catfish'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
+Sentiment Decision: positive
+Explanation: I made the prediction based on the positive connotations associated with the words ""mouthwatering,"" ""stuffed,"" ""Sardinian,"" and ""Rome."" These words typically evoke a positive sentiment towards food experiences.
+Actual Sentiment: neutral
+Task 12:
+Prompt: Next, follow up with another Cosmo and try the chicken fingers (not your lil brothers), Hawaiian rib eye, filet mignon, or trusty burger.
+
+    What is the sentiment on 'Hawaiian rib'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
+Sentiment Decision: positive
+Explanation: I made my prediction based on the positive connotations associated with the word ""Hawaiian"" and the popular appeal of ""rib eye"" as a menu item.
+Actual Sentiment: neutral
+Task 13:
+Prompt: Ok I got the edamame and something from the sushi chef for free, but the quality of food is more important to me than a free small dish (maybe that's why the restaurant gives it to attact new customers.
+
+    What is the sentiment on 'dish'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
+Sentiment Decision: neutral
+Explanation: I made the prediction based on the context provided by the user, which indicated that the free dish was not the main factor influencing their opinion of the restaurant. The user mentioned that the quality of food is more important to them, suggesting a neutral sentiment towards the free dish.
+Actual Sentiment: positive
+Task 14:
+Prompt: The Clinton-frequented restaurant stands handsomely on a quiet residential corner, and the modern interior includes a long dining room, a small bar and harsh lighting.
+
+    What is the sentiment on 'bar'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
+Sentiment Decision: neutral
+Explanation: I made the prediction based on the neutral tone of the description of the bar as ""small"" and part of the modern interior. The lack of positive or negative descriptors led me to determine the sentiment as neutral.
+Actual Sentiment: negative
+Task 15:
+Prompt: When I asked the waitress, she told me they couldn't afford the salmon, and had changed the dish (though not on the menu).
+
+    What is the sentiment on 'salmon'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
+Sentiment Decision: neutral
+Explanation: I determined the sentiment as ""neutral"" based on the lack of emotional tone or opinion expressed towards salmon in the given context. The words ""couldn't afford"" and ""changed the dish"" indicated a practical or financial reason for the change, rather than a positive or negative sentiment towards salmon itself.
+Actual Sentiment: negative
+Task 16:
+Prompt: The eggplant parmasean was AWESOME (I don't even like eggplant) but my main course was just ok (shrimp with pasta).
+
+    What is the sentiment on 'main course'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
+Sentiment Decision: negative
+Explanation: I made the prediction based on the user's description of the main course as ""just ok,"" indicating a neutral to slightly negative sentiment. The words ""just ok"" had a high influence on my decision.
+Actual Sentiment: neutral
+Task 17:
+Prompt: While the service and setting were average, the food was excellent.
+
+    What is the sentiment on 'setting'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
+Sentiment Decision: neutral
+Explanation: I identified the sentiment as neutral for ""setting"" based on the lack of specific positive or negative language used to describe it in the sentence. The focus was on the food being excellent, while the service and setting were described as average.
+Actual Sentiment: negative
+Task 18:
+Prompt: The smoked salmon appetizer was pretty good (it comes with goat cheese, calpers and onions).
+
+    What is the sentiment on 'goat cheese'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
+Sentiment Decision: positive
+Explanation: I made the prediction based on the positive association of ""goat cheese"" with the overall positive sentiment of the sentence describing the smoked salmon appetizer. The words ""pretty good"" and the list of ingredients (goat cheese, capers, and onions) all contributed to the positive sentiment.
+Actual Sentiment: neutral
+Task 19:
+Prompt: the decor could be a bit better, and if there was a small bar the overall atmosphere would be a bit more inviting (especially for regulars).
+
+    What is the sentiment on 'bar'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
+Sentiment Decision: positive
+Explanation: I made the prediction based on the context provided by the user's statement. The user mentioned that having a small bar would make the atmosphere more inviting, especially for regulars. This positive association with a bar led me to predict a positive sentiment towards it.
+Actual Sentiment: negative
+Task 20:
+Prompt: For dessert, go with the delicate, subtle flan over the pasty rice pudding.
+
+    What is the sentiment on 'dessert'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
+Sentiment Decision: positive
+Explanation: I made the prediction based on the positive connotations associated with the words ""delicate"" and ""subtle"" in relation to flan, as well as the negative connotations associated with the words ""pasty"" in relation to rice pudding.
+Actual Sentiment: neutral
+
+Correct Decisions (Only as a reference):
+Task 21:
+Prompt: The only redeeming factor of the night was the dessert which was very good but certainly not worth the cost of an overall horible experience.
+
+    What is the sentiment on 'dessert'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
+Sentiment Decision: positive
+Explanation: I made the prediction based on the positive sentiment expressed towards the dessert in the statement. The words ""very good"" specifically highlighted the positive experience with the dessert, leading to the classification of the sentiment as positive.
+Actual Sentiment: positive
+Task 22:
+Prompt: The Food The classic Italian menu gets off to a good start with Queen's famous bread basket, which is loaded with a slew of crunchy, yeasty homemade varieties.
+
+    What is the sentiment on 'Italian menu'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
+Sentiment Decision: positive
+Explanation: I made the prediction based on the positive adjectives ""classic"" and ""famous"" used to describe the Italian menu. These words suggest a positive sentiment towards the menu.
+Actual Sentiment: positive
+Task 23:
+Prompt: My vegetable Napoleon was good; although i first got the veggie burger because the waitress mis-heard and stood my friend up for another 15 minutes of waiting to have it served.
+
+    What is the sentiment on 'vegetable Napoleon'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
+Sentiment Decision: positive
+Explanation: I made the prediction based on the positive description of the dish ""vegetable Napoleon"" in the user's statement. The user mentioned that the dish was good, indicating a positive sentiment towards it.
+Actual Sentiment: positive
+Task 24:
+Prompt: We had no problems with our resevations and found the service and the meal well worth a wait, had we run into one.
+
+    What is the sentiment on 'wait'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
+Sentiment Decision: positive
+Explanation: I made the prediction based on the context of the sentence, where the word ""wait"" is associated with the positive outcome of the service and meal being worth it. The phrase ""well worth a wait"" indicates a positive sentiment towards the wait.
+Actual Sentiment: positive
+Task 25:
+Prompt: impressive balcony seating and while they forgot to give us the cold appetizers, the waiter and maitre'd more than made up for it by being most accomodating to us.
+
+    What is the sentiment on 'maitre'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
+Sentiment Decision: positive
+Explanation: I made the prediction based on the words ""impressive balcony seating,"" ""waiter and maitre'd more than made up for it,"" and ""most accommodating."" These words indicate a positive experience with the maitre'd.
+Actual Sentiment: positive
+
+",gpt-4-turbo-preview,structured_unstructured_singleterm_zeroshot_gpt-4-turbo-preview,"Based on the provided false decisions, we can categorize the errors into distinct fault categories as follows:
+
+1. **Misinterpretation of Contextual Sentiment**:
+   - This occurs when the sentiment towards a specific aspect is incorrectly inferred due to a misunderstanding of the overall context or the influence of nearby negative or positive words that do not directly relate to the aspect in question.
+   - Occurrences: Task 1, Task 2, Task 3, Task 4, Task 5, Task 6, Task 7, Task 8, Task 9, Task 10, Task 11, Task 12, Task 18, Task 20
+
+2. **Neutral Misclassification**:
+   - This error type involves incorrectly classifying a neutral sentiment as either positive or negative (or vice versa) due to overemphasis on certain words or phrases that do not actually convey a strong sentiment towards the aspect.
+   - Occurrences: Task 13 (positive to neutral), Task 16 (negative to neutral), Task 17 (neutral to negative), Task 19 (positive to negative)
+
+3. **Overgeneralization of Sentiment**:
+   - This fault occurs when the sentiment towards one aspect of a prompt is overgeneralized to another aspect, even when the sentiment towards the second aspect is not explicitly stated or is neutral.
+   - Occurrences: Task 14, Task 15
+
+Summary of Fault Categories and Frequencies:
+- **Misinterpretation of Contextual Sentiment**: 14 occurrences
+- **Neutral Misclassification**: 4 occurrences
+- **Overgeneralization of Sentiment**: 2 occurrences
+
+These categories highlight the challenges in accurately interpreting sentiment in aspect-based sentiment analysis, especially when dealing with nuanced or complex expressions of sentiment that require a deep understanding of context and the specific aspect being evaluated.",unstructured_analysis
+error_class_LLM,"In the following I will give you a few Aspect Based Sentiment Analysis tasks together with a sentiment decision, details about the decision and the actual sentiment towards each term.
+The Prediction was made by an LLM.
+Can you please group the wrong decisions into distinct fault categories? Please also indicate how often each one occurs.
+There are also some correct decisions in the examples. Please just use them as a reference and don't categorize them.
+False Decisions:
+Task 1:
+Prompt: Example 1:
+Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+
+
+Example 2:
+Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+
+
+Example 3
+Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+
+    
+Task:
+Input: For dessert, go with the delicate, subtle flan over the pasty rice pudding.
+Prompt: What is the sentiment in the text towards 'rice pudding'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
+Sentiment Decision: negative
+Explanation: I made the prediction based on the comparison between ""delicate, subtle flan"" and ""pasty rice pudding"", where the term ""pasty"" has a negative connotation implying a less desirable texture for the rice pudding. This influenced my decision to classify the sentiment towards ""rice pudding"" as negative.
+Actual Sentiment: positive
+Task 2:
+Prompt: Example 1:
+Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+
+
+Example 2:
+Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+
+
+Example 3
+Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+
+    
+Task:
+Input: The Food This isn't for those on a budget, but portions are generous.
+Prompt: What is the sentiment in the text towards 'Food'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
+Sentiment Decision: positive
+Explanation: I made the prediction based on the positive sentiment conveyed towards the food in the text. The words ""generous portions"" indicate a positive sentiment towards the food, leading to the classification of the sentiment as positive.
+Actual Sentiment: negative
+Task 3:
+Prompt: Example 1:
+Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+
+
+Example 2:
+Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+
+
+Example 3
+Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+
+    
+Task:
+Input: While the staff was kind and attentive, our waiter never once broke a smile, even when I told him it was my friend's birthday, although he did bring a dessert with a candle at the end of the meal.
+Prompt: What is the sentiment in the text towards 'candle'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
+Sentiment Decision: positive
+Explanation: I made the prediction based on the positive sentiment expressed towards the waiter bringing a dessert with a candle at the end of the meal. The phrase ""bring a dessert with a candle"" indicates a positive gesture, leading to the overall sentiment towards ""candle"" being positive.
+Actual Sentiment: neutral
+Task 4:
+Prompt: Example 1:
+Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+
+
+Example 2:
+Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+
+
+Example 3
+Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+
+    
+Task:
+Input: The mango salsa with fish cake was too sour, the apple suace for pork chop too sweet.
+Prompt: What is the sentiment in the text towards 'pork chop'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
+Sentiment Decision: negative
+Explanation: I made the prediction based on the negative descriptions of the food items in the text (""too sour"" and ""too sweet""). These descriptions indicate a negative sentiment towards the food, including the pork chop.
+Actual Sentiment: neutral
+Task 5:
+Prompt: Example 1:
+Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+
+
+Example 2:
+Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+
+
+Example 3
+Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+
+    
+Task:
+Input: About 10 of us came here for drinks last friday, the atmosphere was good for chatting and hanging out, but not enough lounge or bar space, they should open up the back area w/ more loungable chairs or booths if they want to catch any after dinner sort of bar crowd.
+Prompt: What is the sentiment in the text towards 'lounge'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
+Sentiment Decision: negative
+Explanation: I made the prediction based on the mention of ""not enough lounge or bar space"" and the suggestion to ""open up the back area w/ more loungable chairs or booths."" These phrases indicate a negative sentiment towards the lounge in the text.
+Actual Sentiment: neutral
+Task 6:
+Prompt: Example 1:
+Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+
+
+Example 2:
+Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+
+
+Example 3
+Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+
+    
+Task:
+Input: If you don't want to wait 45 minutes for a table or a long time for service then don't go @ 9pm on a Friday or Saturday night.
+Prompt: What is the sentiment in the text towards 'table'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
+Sentiment Decision: negative
+Explanation: I made the prediction based on the negative sentiment expressed towards waiting for a table for 45 minutes and a long time for service. The words ""wait 45 minutes for a table"" and ""long time for service"" indicated a negative sentiment towards tables in the text.
+Actual Sentiment: neutral
+Task 7:
+Prompt: Example 1:
+Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+
+
+Example 2:
+Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+
+
+Example 3
+Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+
+    
+Task:
+Input: The Scene Hunky waiters dub diners darling and it sounds like they mean it.
+Prompt: What is the sentiment in the text towards 'waiters'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
+Sentiment Decision: positive
+Explanation: I made the prediction based on the positive language used in the text, such as ""Hunky waiters,"" ""dub diners darling,"" and ""sounds like they mean it."" These phrases indicate a positive sentiment towards the waiters.
+Actual Sentiment: negative
+Task 8:
+Prompt: Example 1:
+Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+
+
+Example 2:
+Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+
+
+Example 3
+Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+
+    
+Task:
+Input: From beginning appetizers, the scallops were incredible, to the delicious chocolate souffle with rasberry mint sorbet, we were delighted by the taste sensations.
+Prompt: What is the sentiment in the text towards 'beginning appetizers'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
+Sentiment Decision: positive
+Explanation: I made my prediction based on the positive words used to describe the appetizers, such as ""incredible"" and ""delighted."" These words indicate a positive sentiment towards the beginning appetizers in the text.
+Actual Sentiment: neutral
+Task 9:
+Prompt: Example 1:
+Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+
+
+Example 2:
+Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+
+
+Example 3
+Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+
+    
+Task:
+Input: While dining on a delicate lamb carpaccio, and grilled skate wing, the owner explained that due to low lunch-time patronage, they may be discontinuing lunch altogether.
+Prompt: What is the sentiment in the text towards 'dining'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
+Sentiment Decision: positive
+Explanation: I made the prediction based on the positive words used in the text such as ""delicate,"" ""explained,"" and ""owner."" These words convey a positive sentiment towards the dining experience mentioned in the text.
+Actual Sentiment: neutral
+Task 10:
+Prompt: Example 1:
+Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+
+
+Example 2:
+Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+
+
+Example 3
+Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+
+    
+Task:
+Input: Our waiter seemed to really care about getting us to the show on time, and made some good reccomendations on the menu for doing it.
+Prompt: What is the sentiment in the text towards 'menu'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
+Sentiment Decision: positive
+Explanation: I made the prediction based on the positive sentiment expressed towards the waiter caring about getting the customers to the show on time and making good recommendations on the menu. The words ""really care,"" ""good recommendations,"" and ""menu"" had a high influence on my decision.
+Actual Sentiment: neutral
+Task 11:
+Prompt: Example 1:
+Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+
+
+Example 2:
+Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+
+
+Example 3
+Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+
+    
+Task:
+Input: The Scene You won't blink twice at the restaurant's spartan decor: As the packed crowds and critics' praises wallpapering the front wall agree, this longtime local favorite is truly one of the area's most exquisite finds.
+Prompt: What is the sentiment in the text towards 'decor'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
+Sentiment Decision: neutral
+Explanation: I made the prediction based on the words ""spartan decor"" and ""critics' praises."" The term ""spartan decor"" suggests a simple or plain decor, which could be seen as negative. However, the phrase ""critics' praises"" indicates positive feedback, balancing out the sentiment and leading to a neutral classification.
+Actual Sentiment: positive
+Task 12:
+Prompt: Example 1:
+Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+
+
+Example 2:
+Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+
+
+Example 3
+Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+
+    
+Task:
+Input: Ok I got the edamame and something from the sushi chef for free, but the quality of food is more important to me than a free small dish (maybe that's why the restaurant gives it to attact new customers.
+Prompt: What is the sentiment in the text towards 'edamame'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
+Sentiment Decision: positive
+Explanation: I made the prediction based on the positive sentiment expressed towards receiving the edamame for free and the emphasis on the importance of food quality over a complimentary dish. The phrase ""I got the edamame and something from the sushi chef for free"" indicates a positive association with the term ""edamame.""
+Actual Sentiment: neutral
+Task 13:
+Prompt: Example 1:
+Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+
+
+Example 2:
+Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+
+
+Example 3
+Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+
+    
+Task:
+Input: Food was average, the appetizers were better than the main courses.
+Prompt: What is the sentiment in the text towards 'main courses'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
+Sentiment Decision: negative
+Explanation: I made the prediction based on the comparison between the main courses and the appetizers, where the appetizers were described as better. This comparison indicates a negative sentiment towards the main courses.
+Actual Sentiment: neutral
+Task 14:
+Prompt: Example 1:
+Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+
+
+Example 2:
+Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+
+
+Example 3
+Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+
+    
+Task:
+Input: The atmosphere was warm, sexy, and very romantic but the lighting wasn't good for reading the menu.
+Prompt: What is the sentiment in the text towards 'menu'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
+Sentiment Decision: negative
+Explanation: I made the prediction based on the phrase ""lighting wasn't good for reading the menu,"" which indicates a negative sentiment towards the menu due to the poor lighting.
+Actual Sentiment: neutral
+Task 15:
+Prompt: Example 1:
+Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+
+
+Example 2:
+Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+
+
+Example 3
+Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+
+    
+Task:
+Input: The server came by only once to pour additional wine for the table; the rest of the time, we had to fish the bottle out of the two-table communal bucket ourselves.
+Prompt: What is the sentiment in the text towards 'fish'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
+Sentiment Decision: negative
+Explanation: I made the prediction based on the negative connotation associated with the phrase ""had to fish the bottle out."" The word ""fish"" in this context implies a negative sentiment as it suggests an inconvenient or unpleasant action.
+Actual Sentiment: neutral
+Task 16:
+Prompt: Example 1:
+Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+
+
+Example 2:
+Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+
+
+Example 3
+Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+
+    
+Task:
+Input: (Though the filet won't be enough if both have hearty apitites.
+Prompt: What is the sentiment in the text towards 'apitites'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
+Sentiment Decision: negative
+Explanation: I made the prediction based on the word ""won't be enough"" which indicates a negative sentiment towards ""appetites."" The phrase ""both have hearty appetites"" suggests a desire for more food, further supporting the negative sentiment.
+Actual Sentiment: positive
+Task 17:
+Prompt: Example 1:
+Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+
+
+Example 2:
+Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+
+
+Example 3
+Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+
+    
+Task:
+Input: People will literally spend their entire lunch break waiting and for what - an average fastfood burger.
+Prompt: What is the sentiment in the text towards 'lunch'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
+Sentiment Decision: negative
+Explanation: I made the prediction based on the negative sentiment expressed towards the fastfood burger, which implies a negative association with the overall lunch experience. The words ""entire lunch break waiting"" and ""average fastfood burger"" had a high influence on my decision.
+Actual Sentiment: neutral
+Task 18:
+Prompt: Example 1:
+Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+
+
+Example 2:
+Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+
+
+Example 3
+Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+
+    
+Task:
+Input: Ive had better burgers and fries at the local dinner in my neighborhood: 3 guys dinner on 96th and Madison Avenue.
+Prompt: What is the sentiment in the text towards 'fries'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
+Sentiment Decision: negative
+Explanation: I made the prediction based on the phrase ""I've had better burgers and fries at the local dinner in my neighborhood."" The comparison to having better fries elsewhere indicates a negative sentiment towards the fries mentioned in the text.
+Actual Sentiment: positive
+Task 19:
+Prompt: Example 1:
+Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+
+
+Example 2:
+Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+
+
+Example 3
+Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+
+    
+Task:
+Input: I love the shrimp summer role, chicken kabob's, and all the chicken and shrimp dishes.
+Prompt: What is the sentiment in the text towards 'shrimp dishes'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
+Sentiment Decision: positive
+Explanation: I made the prediction based on the positive sentiment expressed towards ""shrimp summer role"" and ""shrimp dishes"" in the input text. The mention of loving these dishes indicates a positive sentiment towards shrimp dishes.
+Actual Sentiment: neutral
+Task 20:
+Prompt: Example 1:
+Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+
+
+Example 2:
+Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+
+
+Example 3
+Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+
+    
+Task:
+Input: Try the olive cream cheese or the lox spread on a whole wheat everything bagel.
+Prompt: What is the sentiment in the text towards 'bagel'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
+Sentiment Decision: positive
+Explanation: I made the prediction based on the positive words ""try"", ""olive cream cheese"", ""lox spread"", ""whole wheat"", and ""everything bagel"" in the text. These words indicate a positive sentiment towards the bagel.
+Actual Sentiment: neutral
+
+Correct Decisions (Only as a reference):
+Task 21:
+Prompt: Example 1:
+Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+
+
+Example 2:
+Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+
+
+Example 3
+Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+
+    
+Task:
+Input: There is nothing else on the menu except for exotic teas and cold beverages, but with a meal this cheap and delightful, who would care?
+Prompt: What is the sentiment in the text towards 'exotic teas'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
+Sentiment Decision: neutral
+Explanation: I made the prediction based on the context provided in the input text. The phrase ""There is nothing else on the menu except for exotic teas and cold beverages"" indicates a limited menu selection, which could be seen as a neutral statement. The following phrase ""but with a meal this cheap and delightful, who would care?"" expresses a positive sentiment towards the meal, but does not directly convey a sentiment towards the exotic teas. Therefore, the overall sentiment towards ""exotic teas"" is neutral.
+Actual Sentiment: neutral
+Task 22:
+Prompt: Example 1:
+Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+
+
+Example 2:
+Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+
+
+Example 3
+Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+
+    
+Task:
+Input: My husband and I had dinner here last week and the food was very good.
+Prompt: What is the sentiment in the text towards 'food'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
+Sentiment Decision: positive
+Explanation: I made the prediction based on the positive sentiment expressed towards the food in the text. The words ""very good"" indicate a positive opinion towards the food, leading to the classification of the sentiment as positive.
+Actual Sentiment: positive
+Task 23:
+Prompt: Example 1:
+Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+
+
+Example 2:
+Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+
+
+Example 3
+Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+
+    
+Task:
+Input: Ok I got the edamame and something from the sushi chef for free, but the quality of food is more important to me than a free small dish (maybe that's why the restaurant gives it to attact new customers.
+Prompt: What is the sentiment in the text towards 'sushi chef'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
+Sentiment Decision: positive
+Explanation: I made the prediction based on the positive sentiment expressed towards the sushi chef by mentioning receiving something for free from them. The words ""got the edamame and something from the sushi chef for free"" indicate a positive interaction with the sushi chef, leading to the overall positive sentiment towards them.
+Actual Sentiment: positive
+Task 24:
+Prompt: Example 1:
+Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+
+
+Example 2:
+Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+
+
+Example 3
+Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+
+    
+Task:
+Input: The only redeeming factor of the night was the dessert which was very good but certainly not worth the cost of an overall horible experience.
+Prompt: What is the sentiment in the text towards 'dessert'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
+Sentiment Decision: positive
+Explanation: I made the prediction based on the words ""very good"" used to describe the dessert, indicating a positive sentiment towards it. The phrase ""only redeeming factor"" also suggests that the dessert was the highlight of the experience.
+Actual Sentiment: positive
+Task 25:
+Prompt: Example 1:
+Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+
+
+Example 2:
+Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+
+
+Example 3
+Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+
+    
+Task:
+Input: We politely asked our server for the regular menu, but were told that for large parties they could only offer us the banquet menu (would have gone elsewhere had we known).
+Prompt: What is the sentiment in the text towards 'server'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
+Sentiment Decision: negative
+Explanation: I made the prediction based on the negative sentiment expressed towards the server due to the disappointment of not being able to order from the regular menu. The phrases ""told that for large parties they could only offer us the banquet menu"" and ""would have gone elsewhere had we known"" indicate a negative sentiment towards the server.
+Actual Sentiment: negative
+
+",gpt-4-turbo-preview,structured_unstructured_singleterm_fix_fewshot_4-turbo-preview,"The false decisions can be grouped into distinct fault categories as follows:
+
+1. **Misinterpretation of Context or Detail**:
+   - Task 1 (rice pudding): The negative sentiment was based on a comparison, but the actual sentiment was positive.
+   - Task 2 (Food): Positive sentiment was inferred from ""generous portions,"" ignoring the negative context of being expensive.
+   - Task 3 (candle): Positive sentiment was inferred from the action of bringing a dessert with a candle, but the actual sentiment towards the candle itself was neutral.
+   - Task 4 (pork chop): Negative sentiment was inferred from the description of accompanying sauces, but the actual sentiment towards the pork chop was neutral.
+   - Task 5 (lounge): Negative sentiment was inferred from the lack of space, but the actual sentiment towards the lounge was neutral.
+   - Task 6 (table): Negative sentiment was inferred from the waiting time, but the actual sentiment towards the table was neutral.
+   - Task 7 (waiters): Positive sentiment was inferred from descriptive words, but the actual sentiment was negative.
+   - Task 8 (beginning appetizers): Positive sentiment was inferred from the description of other items, but the actual sentiment towards the beginning appetizers was neutral.
+   - Task 9 (dining): Positive sentiment was inferred from the description of the food, but the actual sentiment towards dining was neutral.
+   - Task 10 (menu): Positive sentiment was inferred from the waiter's actions, but the actual sentiment towards the menu was neutral.
+   - Task 11 (decor): Neutral sentiment was inferred from mixed descriptions, but the actual sentiment was positive.
+   - Task 12 (edamame): Positive sentiment was inferred from receiving it for free, but the actual sentiment was neutral.
+   - Task 13 (main courses): Negative sentiment was inferred from comparison with appetizers, but the actual sentiment was neutral.
+   - Task 14 (menu): Negative sentiment was inferred from poor lighting affecting menu readability, but the actual sentiment was neutral.
+   - Task 15 (fish): Negative sentiment was inferred from the action of having to ""fish out"" a bottle, but the actual sentiment was neutral.
+   - Task 16 (appetites): Negative sentiment was inferred from the phrase ""won't be enough,"" but the actual sentiment was positive.
+   - Task 17 (lunch): Negative sentiment was inferred from the context of waiting for an average burger, but the actual sentiment towards lunch was neutral.
+   - Task 18 (fries): Negative sentiment was inferred from a comparison, but the actual sentiment was positive.
+   - Task 19 (shrimp dishes): Positive sentiment was inferred from the mention of loving shrimp roles, but the actual sentiment was neutral.
+   - Task 20 (bagel): Positive sentiment was inferred from the suggestion to try it with spreads, but the actual sentiment was neutral.
+
+Occurrences: 20
+
+2. **Incorrect Sentiment Polarity**:
+   - No clear cases where the sentiment polarity was simply reversed without context misinterpretation or detail oversight.
+
+3. **Overgeneralization**:
+   - Tasks where the sentiment towards a specific aspect was inferred based on the general sentiment of the sentence or another aspect, leading to incorrect predictions. This can be seen in tasks like Task 10 (menu), Task 14 (menu), and Task 15 (fish), where the sentiment towards the specific aspect was neutral, but the decision was influenced by the sentiment towards another aspect or the general situation.
+
+Occurrences: Could be argued for several tasks, but the primary issue lies in misinterpretation or overlooking details.
+
+In summary, the most common fault category is the **Misinterpretation of Context or Detail**, occurring in all 20 false decisions. There's no clear case of Incorrect Sentiment Polarity as a distinct category, and Overgeneralization is a potential sub-issue within the misinterpretation category, affecting the accurate understanding of the sentiment towards specific aspects.",unstructured_analysis
+error_class_LLM,"In the following I will give you a few Aspect Based Sentiment Analysis tasks together with a sentiment decision, details about the decision and the actual sentiment towards each term.
+The Prediction was made by an LLM.
+Can you please group the wrong decisions into distinct fault categories? Please also indicate how often each one occurs.
+There are also some correct decisions in the examples. Please just use them as a reference and don't categorize them.
+False Decisions:
+Task 1:
+Prompt: Example 1:
+Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+
+
+Example 2:
+Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+
+
+Example 3
+Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+
+    
+Task:
+Input: For dessert, go with the delicate, subtle flan over the pasty rice pudding.
+Prompt: What is the sentiment in the text towards 'rice pudding'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
+Sentiment Decision: negative
+Explanation: [{""delicate"":""0.30""},
+{""subtle"":""0.30""},
+{""pasty"":""0.40""}]
+Actual Sentiment: positive
+Task 2:
+Prompt: Example 1:
+Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+
+
+Example 2:
+Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+
+
+Example 3
+Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+
+    
+Task:
+Input: The Food This isn't for those on a budget, but portions are generous.
+Prompt: What is the sentiment in the text towards 'Food'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
+Sentiment Decision: positive
+Explanation: [{""generous"":""1.0""}]
+Actual Sentiment: negative
+Task 3:
+Prompt: Example 1:
+Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+
+
+Example 2:
+Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+
+
+Example 3
+Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+
+    
+Task:
+Input: While the staff was kind and attentive, our waiter never once broke a smile, even when I told him it was my friend's birthday, although he did bring a dessert with a candle at the end of the meal.
+Prompt: What is the sentiment in the text towards 'candle'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
+Sentiment Decision: positive
+Explanation: [
+{""kind and attentive"":""0.30""},
+{""never broke a smile"":""0.20""},
+{""brought a dessert with a candle"":""0.50""}
+]
+Actual Sentiment: neutral
+Task 4:
+Prompt: Example 1:
+Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+
+
+Example 2:
+Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+
+
+Example 3
+Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+
+    
+Task:
+Input: The mango salsa with fish cake was too sour, the apple suace for pork chop too sweet.
+Prompt: What is the sentiment in the text towards 'pork chop'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
+Sentiment Decision: negative
+Explanation: [
+{""sour"",""importance"":""0.40""},
+{""sweet"",""importance"":""0.40""},
+{""too"",""importance"":""0.20""}
+]
+Actual Sentiment: neutral
+Task 5:
+Prompt: Example 1:
+Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+
+
+Example 2:
+Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+
+
+Example 3
+Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+
+    
+Task:
+Input: About 10 of us came here for drinks last friday, the atmosphere was good for chatting and hanging out, but not enough lounge or bar space, they should open up the back area w/ more loungable chairs or booths if they want to catch any after dinner sort of bar crowd.
+Prompt: What is the sentiment in the text towards 'lounge'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
+Sentiment Decision: negative
+Explanation: [
+{""word"":""not enough"",""importance"":""0.40""},
+{""word"":""more loungable chairs or booths"",""importance"":""0.60""}
+]
+Actual Sentiment: neutral
+Task 6:
+Prompt: Example 1:
+Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+
+
+Example 2:
+Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+
+
+Example 3
+Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+
+    
+Task:
+Input: If you don't want to wait 45 minutes for a table or a long time for service then don't go @ 9pm on a Friday or Saturday night.
+Prompt: What is the sentiment in the text towards 'table'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
+Sentiment Decision: negative
+Explanation: [
+{""wait"":""0.30""},
+{""long time"":""0.30""},
+{""9pm on a Friday or Saturday night"":""0.40""}
+]
+Actual Sentiment: neutral
+Task 7:
+Prompt: Example 1:
+Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+
+
+Example 2:
+Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+
+
+Example 3
+Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+
+    
+Task:
+Input: The Scene Hunky waiters dub diners darling and it sounds like they mean it.
+Prompt: What is the sentiment in the text towards 'waiters'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
+Sentiment Decision: positive
+Explanation: [
+{""waiters"": ""0.70""},
+{""diners darling"": ""0.30""}
+]
+Actual Sentiment: negative
+Task 8:
+Prompt: Example 1:
+Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+
+
+Example 2:
+Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+
+
+Example 3
+Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+
+    
+Task:
+Input: From beginning appetizers, the scallops were incredible, to the delicious chocolate souffle with rasberry mint sorbet, we were delighted by the taste sensations.
+Prompt: What is the sentiment in the text towards 'beginning appetizers'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
+Sentiment Decision: positive
+Explanation: [
+{""word"":""incredible"",""importance"":""0.50""},
+{""word"":""delighted"",""importance"":""0.50""}
+]
+Actual Sentiment: neutral
+Task 9:
+Prompt: Example 1:
+Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+
+
+Example 2:
+Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+
+
+Example 3
+Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+
+    
+Task:
+Input: While dining on a delicate lamb carpaccio, and grilled skate wing, the owner explained that due to low lunch-time patronage, they may be discontinuing lunch altogether.
+Prompt: What is the sentiment in the text towards 'dining'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
+Sentiment Decision: positive
+Explanation: [
+{""delicate lamb carpaccio"": ""0.40""},
+{""grilled skate wing"": ""0.40""},
+{""explained"": ""0.20""}
+]
+Actual Sentiment: neutral
+Task 10:
+Prompt: Example 1:
+Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+
+
+Example 2:
+Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+
+
+Example 3
+Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+
+    
+Task:
+Input: Our waiter seemed to really care about getting us to the show on time, and made some good reccomendations on the menu for doing it.
+Prompt: What is the sentiment in the text towards 'menu'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
+Sentiment Decision: positive
+Explanation: [
+{""waiter"": ""0.30""},
+{""care"": ""0.20""},
+{""recommendations"": ""0.20""},
+{""good"": ""0.15""},
+{""show on time"": ""0.15""}
+]
+Actual Sentiment: neutral
+Task 11:
+Prompt: Example 1:
+Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+
+
+Example 2:
+Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+
+
+Example 3
+Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+
+    
+Task:
+Input: The Scene You won't blink twice at the restaurant's spartan decor: As the packed crowds and critics' praises wallpapering the front wall agree, this longtime local favorite is truly one of the area's most exquisite finds.
+Prompt: What is the sentiment in the text towards 'decor'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
+Sentiment Decision: neutral
+Explanation: [
+{""word"":""exquisite"",""importance"":""0.50""},
+{""word"":""spartan"",""importance"":""0.50""}
+]
+Actual Sentiment: positive
+Task 12:
+Prompt: Example 1:
+Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+
+
+Example 2:
+Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+
+
+Example 3
+Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+
+    
+Task:
+Input: Ok I got the edamame and something from the sushi chef for free, but the quality of food is more important to me than a free small dish (maybe that's why the restaurant gives it to attact new customers.
+Prompt: What is the sentiment in the text towards 'edamame'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
+Sentiment Decision: positive
+Explanation: [{""free"": ""0.30""}, {""quality"": ""0.70""}]
+Actual Sentiment: neutral
+Task 13:
+Prompt: Example 1:
+Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+
+
+Example 2:
+Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+
+
+Example 3
+Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+
+    
+Task:
+Input: Food was average, the appetizers were better than the main courses.
+Prompt: What is the sentiment in the text towards 'main courses'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
+Sentiment Decision: negative
+Explanation: [
+{""word"":""average"",""importance"":""0.6""},
+{""word"":""better"",""importance"":""0.4""}
+]
+Actual Sentiment: neutral
+Task 14:
+Prompt: Example 1:
+Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+
+
+Example 2:
+Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+
+
+Example 3
+Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+
+    
+Task:
+Input: The atmosphere was warm, sexy, and very romantic but the lighting wasn't good for reading the menu.
+Prompt: What is the sentiment in the text towards 'menu'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
+Sentiment Decision: negative
+Explanation: [
+{""warm"",""importance"":""0.20""},
+{""sexy"",""importance"":""0.20""},
+{""romantic"",""importance"":""0.20""},
+{""lighting wasn't good"",""importance"":""0.40""}
+]
+Actual Sentiment: neutral
+Task 15:
+Prompt: Example 1:
+Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+
+
+Example 2:
+Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+
+
+Example 3
+Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+
+    
+Task:
+Input: The server came by only once to pour additional wine for the table; the rest of the time, we had to fish the bottle out of the two-table communal bucket ourselves.
+Prompt: What is the sentiment in the text towards 'fish'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
+Sentiment Decision: negative
+Explanation: [{""fish the bottle out of the two-table communal bucket ourselves"",""importance"":""1.0""}]
+Actual Sentiment: neutral
+Task 16:
+Prompt: Example 1:
+Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+
+
+Example 2:
+Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+
+
+Example 3
+Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+
+    
+Task:
+Input: (Though the filet won't be enough if both have hearty apitites.
+Prompt: What is the sentiment in the text towards 'apitites'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
+Sentiment Decision: negative
+Explanation: [
+{""word"":""won't be enough"",""importance"":""0.6""},
+{""word"":""hearty"",""importance"":""0.4""}
+]
+Actual Sentiment: positive
+Task 17:
+Prompt: Example 1:
+Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+
+
+Example 2:
+Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+
+
+Example 3
+Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+
+    
+Task:
+Input: People will literally spend their entire lunch break waiting and for what - an average fastfood burger.
+Prompt: What is the sentiment in the text towards 'lunch'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
+Sentiment Decision: negative
+Explanation: [
+{""lunch"":""0.70""},
+{""average"":""0.30""}
+]
+Actual Sentiment: neutral
+Task 18:
+Prompt: Example 1:
+Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+
+
+Example 2:
+Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+
+
+Example 3
+Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+
+    
+Task:
+Input: Ive had better burgers and fries at the local dinner in my neighborhood: 3 guys dinner on 96th and Madison Avenue.
+Prompt: What is the sentiment in the text towards 'fries'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
+Sentiment Decision: negative
+Explanation: [{""burgers"":""0.70""},
+{""fries"":""0.30""}]
+Actual Sentiment: positive
+Task 19:
+Prompt: Example 1:
+Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+
+
+Example 2:
+Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+
+
+Example 3
+Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+
+    
+Task:
+Input: I love the shrimp summer role, chicken kabob's, and all the chicken and shrimp dishes.
+Prompt: What is the sentiment in the text towards 'shrimp dishes'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
+Sentiment Decision: positive
+Explanation: [
+{""shrimp summer role"",""importance"":""0.30""},
+{""chicken kabob's"",""importance"":""0.20""},
+{""chicken"",""importance"":""0.20""},
+{""shrimp dishes"",""importance"":""0.30""}
+]
+Actual Sentiment: neutral
+Task 20:
+Prompt: Example 1:
+Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+
+
+Example 2:
+Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+
+
+Example 3
+Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+
+    
+Task:
+Input: Try the olive cream cheese or the lox spread on a whole wheat everything bagel.
+Prompt: What is the sentiment in the text towards 'bagel'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
+Sentiment Decision: positive
+Explanation: [{""whole wheat"": ""0.4""}, {""positive"": ""0.6""}]
+Actual Sentiment: neutral
+
+Correct Decisions (Only as a reference):
+Task 21:
+Prompt: Example 1:
+Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+
+
+Example 2:
+Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+
+
+Example 3
+Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+
+    
+Task:
+Input: There is nothing else on the menu except for exotic teas and cold beverages, but with a meal this cheap and delightful, who would care?
+Prompt: What is the sentiment in the text towards 'exotic teas'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
+Sentiment Decision: neutral
+Explanation: [
+{""exotic teas"":""0.50""},
+{""cheap and delightful"":""0.50""}
+]
+Actual Sentiment: neutral
+Task 22:
+Prompt: Example 1:
+Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+
+
+Example 2:
+Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+
+
+Example 3
+Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+
+    
+Task:
+Input: My husband and I had dinner here last week and the food was very good.
+Prompt: What is the sentiment in the text towards 'food'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
+Sentiment Decision: positive
+Explanation: [
+{""good"",""importance"":""1.0""}
+]
+Actual Sentiment: positive
+Task 23:
+Prompt: Example 1:
+Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+
+
+Example 2:
+Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+
+
+Example 3
+Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+
+    
+Task:
+Input: Ok I got the edamame and something from the sushi chef for free, but the quality of food is more important to me than a free small dish (maybe that's why the restaurant gives it to attact new customers.
+Prompt: What is the sentiment in the text towards 'sushi chef'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
+Sentiment Decision: positive
+Explanation: [{""free"": ""0.30""}, {""quality"": ""0.70""}]
+Actual Sentiment: positive
+Task 24:
+Prompt: Example 1:
+Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+
+
+Example 2:
+Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+
+
+Example 3
+Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+
+    
+Task:
+Input: The only redeeming factor of the night was the dessert which was very good but certainly not worth the cost of an overall horible experience.
+Prompt: What is the sentiment in the text towards 'dessert'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
+Sentiment Decision: positive
+Explanation: [
+{""good"": ""0.50""},
+{""very good"": ""0.30""},
+{""not worth"": ""0.20""}
+]
+Actual Sentiment: positive
+Task 25:
+Prompt: Example 1:
+Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+
+
+Example 2:
+Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+
+
+Example 3
+Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+
+    
+Task:
+Input: We politely asked our server for the regular menu, but were told that for large parties they could only offer us the banquet menu (would have gone elsewhere had we known).
+Prompt: What is the sentiment in the text towards 'server'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
+Sentiment Decision: negative
+Explanation: [
+{""word"":""told"",""importance"":""0.40""},
+{""word"":""could only offer"",""importance"":""0.30""},
+{""word"":""large parties"",""importance"":""0.20""},
+{""word"":""polite"",""importance"":""0.10""}
+]
+Actual Sentiment: negative
+
+",gpt-4-turbo-preview,structured_unstructured_singleterm_fix_fewshot_4-turbo-preview,"Based on the provided false decisions, we can categorize the errors into distinct fault categories as follows:
+
+1. **Misinterpretation of Context or Negation**:
+   - Task 2 (Food): The sentiment was marked as positive due to ""generous"" portions, ignoring the negative context of not being for those on a budget.
+   - Task 4 (Pork chop): The sentiment was marked as negative due to the descriptors ""too sour"" and ""too sweet"" for accompanying items, not directly related to the pork chop itself.
+   - Task 10 (Menu): The sentiment was marked as positive based on the waiter's actions and recommendations, not directly reflecting the sentiment towards the menu itself.
+   - Task 16 (Apitites): The sentiment was marked as negative due to ""won't be enough,"" ignoring the positive aspect of ""hearty appetites.""
+   - Task 17 (Lunch): The sentiment was marked as negative based on the context of waiting, not the lunch itself.
+   - Task 18 (Fries): The sentiment was marked as negative based on the comparison with better options elsewhere, not directly on the fries.
+   - Occurrences: 7
+
+2. **Incorrect Sentiment Attribution**:
+   - Task 1 (Rice pudding): The sentiment was marked as negative based on the comparison with flan, ignoring the positive aspects mentioned for flan.
+   - Task 3 (Candle): The sentiment was marked as positive based on the overall positive actions of the staff, not the candle itself.
+   - Task 5 (Lounge): The sentiment was marked as negative based on the lack of space, not the lounge area itself.
+   - Task 6 (Table): The sentiment was marked as negative based on the wait time, not the table itself.
+   - Task 7 (Waiters): The sentiment was marked as positive based on the friendly address, ignoring the negative context.
+   - Task 8 (Beginning appetizers): The sentiment was marked as positive based on the quality of other dishes, not the appetizers themselves.
+   - Task 9 (Dining): The sentiment was marked as positive based on the quality of dishes, ignoring the negative context of discontinuing lunch.
+   - Task 11 (Decor): The sentiment was marked as neutral despite positive aspects highlighted by the packed crowds and critics' praises.
+   - Task 13 (Edamame): The sentiment was marked as positive based on being free, ignoring the neutral context.
+   - Task 14 (Main courses): The sentiment was marked as negative based on being compared to appetizers, not directly on their own quality.
+   - Task 15 (Fish): The sentiment was marked as negative based on the effort to get the wine, not the fish itself.
+   - Task 19 (Shrimp dishes): The sentiment was marked as positive based on other dishes, not directly on the shrimp dishes.
+   - Task 20 (Bagel): The sentiment was marked as positive based on the spreads, not the bagel itself.
+   - Occurrences: 14
+
+3. **Overlooking Specific Details or Misjudging Importance**:
+   - Task 12 (Edamame): The sentiment was marked as positive based on the aspect of being free, overlooking the neutral sentiment towards the edamame itself.
+   - Occurrences: 1
+
+In summary, the primary fault categories and their occurrences are:
+- Misinterpretation of Context or Negation: 7 occurrences
+- Incorrect Sentiment Attribution: 14 occurrences
+- Overlooking Specific Details or Misjudging Importance: 1 occurrence
+
+These categories highlight challenges in accurately interpreting nuanced sentiment, especially when context or comparative language is involved.",structured_analysis
+error_class_LLM,"In the following I will give you a few Aspect Based Sentiment Analysis tasks together with a sentiment decision, details about the decision and the actual sentiment towards each term.
+The Prediction was made by an LLM.
+Can you please group the wrong decisions into distinct fault categories? Please also indicate how often each one occurs.
+There are also some correct decisions in the examples. Please just use them as a reference and don't categorize them.
+False Decisions:
+Task 1:
+Prompt: Example 1:
+Input: ""If you are looking for service and all the frills $$$ - Il Mulino is the best for both - if you are looking for a fabulous dinner in/out - this restaurant is it!""
+Term: service
+Output: neutral
+
+
+Example 2:
+Input: ""Don't know about the rest of the food, but the burgers are one of New York's hidden treats.""
+Term: burgers
+Output: positive
+
+
+Example 3
+Input: ""The rest of the meal was good, but a little over priced for Chinese take out style food.""
+Term: priced
+Output: negative
+
+    
+Task:
+Input: I love Chinese food and have been looking for the alternative to the greasy stuff on every corner of New York- ya, you know, the stinky take-out joints that leave you smelling like dinner for 100 for the rest of the night!
+Prompt: What is the sentiment in the text towards 'dinner'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
+Sentiment Decision: negative
+Explanation: [{""adjective"":""greasy"",""importance"":""0.40""},{""adjective"":""stinky"",""importance"":""0.40""},{""adjective"":""leave you smelling like dinner for 100 for the rest of the night"",""importance"":""0.20""}]
+Actual Sentiment: neutral
+Task 2:
+Prompt: Example 1:
+Input: ""If I went back, I'd have dinner in the bar--better service and even better atmosphere.""
+Term: dinner
+Output: neutral
+
+
+Example 2:
+Input: ""a friend was taking me to dinner for my birthday and said he recalled this place around 96th bway that had great chicken.""
+Term: dinner
+Output: neutral
+
+
+Example 3
+Input: ""The food was average; I could have had a better meal at the local pizza place.""
+Term: meal
+Output: positive
+
+    
+Task:
+Input: Ive had better burgers and fries at the local dinner in my neighborhood: 3 guys dinner on 96th and Madison Avenue.
+Prompt: What is the sentiment in the text towards 'fries'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
+Sentiment Decision: negative
+Explanation: [{""adjective"":""better burgers and fries"",""importance"":""1.00""}]
+Actual Sentiment: positive
+Task 3:
+Prompt: Example 1:
+Input: ""The prices did not reflect the quality of the meal.""
+Term: prices
+Output: negative
+
+
+Example 2:
+Input: ""We did not get asked how I meal was nor did we get to our refill on waters until pretty much after the steak was finished.""
+Term: meal
+Output: neutral
+
+
+Example 3
+Input: ""The food came out wrong, the waiter was no where to be found and the wine showed up at the end of the meal.""
+Term: waiter
+Output: negative
+
+    
+Task:
+Input: The waitress was no where to be found at all throughout the course of the meal, did not refill a single drink nor did she bother to inquire about my satisfaction with the food or even bring the check at the conclusion of the meal.
+Prompt: What is the sentiment in the text towards 'single drink'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
+Sentiment Decision: negative
+Explanation: [{""adjective"":""no where to be found"",""importance"":""0.40""},{""adjective"":""did not refill"",""importance"":""0.40""},{""adjective"":""nor did she bother to inquire"",""importance"":""0.20""}]
+Actual Sentiment: neutral
+Task 4:
+Prompt: Example 1:
+Input: ""I have a litany of complaints -- being over-charged for wine that I didn't order, shady waiters, so-so food that arrived at the table luke warm, main course portion sizes barely large enough to be appetizer sizes, lack of fabulosity that Mr.""
+Term: wine
+Output: neutral
+
+
+Example 2:
+Input: ""I just think the prices are high for the type of food the kitchen turns out as well as the portion sizes.""
+Term: prices
+Output: negative
+
+
+Example 3
+Input: ""Some advice: have the prime rib if it is a special, try a price fix lunch or dinner because it is an exceptional value.""
+Term: prime rib
+Output: positive
+
+    
+Task:
+Input: My only advice is: increase portion sizes; and develop a special drink list.
+Prompt: What is the sentiment in the text towards 'drink list'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
+Sentiment Decision: positive
+Explanation: [{""adjective"":""develop"",""importance"":""0.5""},{""adjective"":""special"",""importance"":""0.5""}]
+Actual Sentiment: neutral
+Task 5:
+Prompt: Example 1:
+Input: ""A lot of energy and I loved the actors who came to our table.""
+Term: actors
+Output: positive
+
+
+Example 2:
+Input: ""The bar downstairs is a lot of fun, so if you get stuck waiting, just have drink.""
+Term: waiting
+Output: negative
+
+
+Example 3
+Input: ""Their dumplings have a LOT of chicken in them.""
+Term: dumplings
+Output: neutral
+
+    
+Task:
+Input: There were a lot of scensters who couldnt afford dinner hanging in the waiting area so we got bumped around a lot.
+Prompt: What is the sentiment in the text towards 'dinner'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
+Sentiment Decision: neutral
+Explanation: []
+Actual Sentiment: negative
+Task 6:
+Prompt: Example 1:
+Input: ""I had six different items on the menu (yes, I am a trencherman) and three were simply OUTSTANDING: the steak, the sweetbreads (best I've ever had), and the monkfish liver (also the best I've ever had).""
+Term: menu
+Output: neutral
+
+
+Example 2:
+Input: ""Appetizers were OK, steak was not as good as what I would have prepared at home on the grill.""
+Term: Appetizers
+Output: positive
+
+
+Example 3
+Input: ""If you want to have fresh grill fish served just with virgin olive oil and lemon Telly's Taverna is the place for you.""
+Term: grill fish served
+Output: positive
+
+    
+Task:
+Input: Telly's has the best octopus ever and the fish was so good on the grill.
+Prompt: What is the sentiment in the text towards 'grill'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
+Sentiment Decision: positive
+Explanation: [{""adjective"":""best"",""importance"":""0.5""},
+{""adjective"":""so good"",""importance"":""0.5""}]
+Actual Sentiment: neutral
+Task 7:
+Prompt: Example 1:
+Input: ""The food was ok, good bread.""
+Term: food
+Output: neutral
+
+
+Example 2:
+Input: ""I ordered their famous buffalo steak which originally would come with homemade potatoe gnocchi but I chose the sauteed spinach with garlic instead, which turned out to be exceptional.""
+Term: buffalo steak
+Output: positive
+
+
+Example 3
+Input: ""No bread basket for the table, the server came around with a basket and we each got 1 piece of bread.""
+Term: table
+Output: neutral
+
+    
+Task:
+Input: The Food The classic Italian menu gets off to a good start with Queen's famous bread basket, which is loaded with a slew of crunchy, yeasty homemade varieties.
+Prompt: What is the sentiment in the text towards 'Food'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
+Sentiment Decision: positive
+Explanation: [{""adjective"":""good start"",""importance"":""0.4""},{""adjective"":""famous"",""importance"":""0.3""},{""adjective"":""loaded"",""importance"":""0.2""},{""adjective"":""crunchy, yeasty homemade"",""importance"":""0.1""}]
+Actual Sentiment: neutral
+Task 8:
+Prompt: Example 1:
+Input: ""The waiters didn't clean it up until they brought our dessert.""
+Term: waiters
+Output: negative
+
+
+Example 2:
+Input: ""i mean the place was empty and it seemed to take for ever to get food, drink or the check.""
+Term: place
+Output: positive
+
+
+Example 3
+Input: ""The menu reads well, and it sounds like the chef knows whats up.""
+Term: menu
+Output: neutral
+
+    
+Task:
+Input: The Scene Hunky waiters dub diners darling and it sounds like they mean it.
+Prompt: What is the sentiment in the text towards 'Scene'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
+Sentiment Decision: positive
+Explanation: [{""adjective"":""Hunky waiters"",""importance"":""0.6""},{""adjective"":""dub diners darling"",""importance"":""0.4""}]
+Actual Sentiment: neutral
+Task 9:
+Prompt: Example 1:
+Input: ""The food came cold and a sauce that came with one of the dishes had developed a skin.""
+Term: food
+Output: negative
+
+
+Example 2:
+Input: ""Sure, the wait was a bit long for a table, but the service was good and the food was pretty good too.""
+Term: wait
+Output: negative
+
+
+Example 3
+Input: ""The best out of the three entree's we had was the goat cheese ravioli.""
+Term: entree
+Output: neutral
+
+    
+Task:
+Input: The ravioli was the better of the two, but the serving was tiny, and the skin a bit rubbery.
+Prompt: What is the sentiment in the text towards 'ravioli'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
+Sentiment Decision: negative
+Explanation: [{""adjective"":""better"",""importance"":""0.25""},{""adjective"":""tiny"",""importance"":""0.35""},{""adjective"":""rubbery"",""importance"":""0.40""}]
+Actual Sentiment: positive
+Task 10:
+Prompt: Example 1:
+Input: ""Thin crust, lots of sauce and very little cheese, it's not your typical Sicilian slice of pizza, but can't explain why I have a hard time eating less than 4 of those babies!""
+Term: crust
+Output: positive
+
+
+Example 2:
+Input: ""Pizza - the only pizza in NYC that should not have additional toppings - the crust tastes like the best, freshly baked bread!""
+Term: toppings
+Output: neutral
+
+
+Example 3
+Input: ""Really great thin crust pizza - hot and fresh and fast, though you'll probably have to wait for a table.""
+Term: crust pizza
+Output: positive
+
+    
+Task:
+Input: Amazing crust (and I hate pizza crust typically), great cheese, sauce isn't too sugary.
+Prompt: What is the sentiment in the text towards 'sauce'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
+Sentiment Decision: neutral
+Explanation: [{""adjective"":""isn't too sugary"",""importance"":""1.00""}]
+Actual Sentiment: positive
+Task 11:
+Prompt: Example 1:
+Input: ""Our waiter, though he was charming,was too busy to truly take care of us properly and the food was over priced.""
+Term: waiter
+Output: positive
+
+
+Example 2:
+Input: ""The chef insisted that the meat was cooked properly!?""
+Term: chef
+Output: negative
+
+
+Example 3
+Input: ""I had read good reviews about the value and food quality at this restaurant, so I was not surprised to see a decently priced menu (pasta under $10 and entrees approx $12 to $15).""
+Term: value
+Output: neutral
+
+    
+Task:
+Input: The place was so dark, I needed the table candle to read the menu and could not properly see what I was eating.
+Prompt: What is the sentiment in the text towards 'menu'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
+Sentiment Decision: negative
+Explanation: [{""adjective"":""so dark"",""importance"":""0.6""},
+{""adjective"":""needed the table candle to read"",""importance"":""0.4""}]
+Actual Sentiment: neutral
+Task 12:
+Prompt: Example 1:
+Input: ""staff is still working out their kinks and learning about the menu but no real complaints.""
+Term: staff
+Output: positive
+
+
+Example 2:
+Input: ""Ten minutes later: no burgers and no sign of our waiter.""
+Term: burgers
+Output: neutral
+
+
+Example 3
+Input: ""We had to ask for water even after we were asked what type we preferred, and then the busboy spilled it while he was pouring it out.""
+Term: water
+Output: neutral
+
+    
+Task:
+Input: We preferred to gaze at our burgers while avoiding having to look at the wait staff, but no complaints.
+Prompt: What is the sentiment in the text towards 'burgers'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
+Sentiment Decision: positive
+Explanation: [{""adjective"":""preferred to gaze at"",""importance"":""1.0""}]
+Actual Sentiment: neutral
+Task 13:
+Prompt: Example 1:
+Input: ""While there are now a few appetizers, the traditional thali (sampling platter) is often your best bet; fixed nightly menu changes daily.""
+Term: appetizers
+Output: neutral
+
+
+Example 2:
+Input: ""We shared three appetizers, (bruschetta's a good bet) a salad, a pasta dish, a quatro (about 3 glasses?)""
+Term: appetizers
+Output: neutral
+
+
+Example 3
+Input: ""We then split some appetizers as the portions are large - the calamari salad was fantastic.""
+Term: appetizers
+Output: neutral
+
+    
+Task:
+Input: Appetizers are the safest bet, including a bountiful calamari plate or the appropriately earthy mushroom polenta.
+Prompt: What is the sentiment in the text towards 'appropriately earthy mushroom polenta'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
+Sentiment Decision: positive
+Explanation: [{""adjective"":""safest bet"",""importance"":""0.40""},{""adjective"":""bountiful"",""importance"":""0.30""},{""adjective"":""appropriately earthy"",""importance"":""0.30""}]
+Actual Sentiment: neutral
+Task 14:
+Prompt: Example 1:
+Input: ""I did not like the place because: -it took the waiter over 20 min to take our order and then over an hour until we got our food.""
+Term: waiter
+Output: negative
+
+
+Example 2:
+Input: ""The waitress took forever to take our order, we waited almost an hour for our appetizers, and then she asked us whether she even put the order in -- as if we would even know.""
+Term: waitress
+Output: negative
+
+
+Example 3
+Input: ""not only did we not get our 'bombay' fries until after the entire meal, but we then had to wait nearly an hour for our inattentive waiter to bring our check, and only after we flagged him down.""
+Term: meal
+Output: neutral
+
+    
+Task:
+Input: Our waitress did not take our drink order until I finally flagged her down and even then she seemed disinterested in our meal.
+Prompt: What is the sentiment in the text towards 'meal'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
+Sentiment Decision: neutral
+Explanation: []
+Actual Sentiment: negative
+Task 15:
+Prompt: Example 1:
+Input: ""We had the tasting menu -- which was not a meal!!!""
+Term: menu
+Output: positive
+
+
+Example 2:
+Input: ""Then we were led downstairs to the main room, and were seated at the huge communal dining room table.""
+Term: seated
+Output: neutral
+
+
+Example 3
+Input: ""5 hour meal (we ordered the tasting menu).""
+Term: hour meal
+Output: neutral
+
+    
+Task:
+Input: Aside from the fact the maitre de claimed the dining room was 'full', we were seated at a great table overlooking the lobby of the hotel and ordered the 5 course tasting menu.
+Prompt: What is the sentiment in the text towards 'maitre'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
+Sentiment Decision: negative
+Explanation: [{""adjective"":""claimed the dining room was 'full'"",""importance"":""1.00""}]
+Actual Sentiment: neutral
+Task 16:
+Prompt: Example 1:
+Input: ""I have to say that I've been there only during brunch time but the service even though slow, it was good.""
+Term: brunch
+Output: neutral
+
+
+Example 2:
+Input: ""We get treated very well and before we sit down to our steaks and fried green tomatoes that we love there - we have a few beers at the bar.""
+Term: steaks
+Output: positive
+
+
+Example 3
+Input: ""We recently went for dinner with two kids and the staff were very accomodating even without reservations.""
+Term: dinner
+Output: neutral
+
+    
+Task:
+Input: We recently had brunch at this establishment with two other couples and I have to say I was majorly dissapointed with the service and how we were treated.
+Prompt: What is the sentiment in the text towards 'brunch'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
+Sentiment Decision: negative
+Explanation: [{""adjective"":""majorly dissapointed"",""importance"":""0.70""},
+{""adjective"":""dissapointed"",""importance"":""0.20""},
+{""adjective"":""how we were treated"",""importance"":""0.10""}]
+Actual Sentiment: neutral
+Task 17:
+Prompt: Example 1:
+Input: ""The manager then told us we could order from whatever menu we wanted but by that time we were so annoyed with the waiter and the resturant that we let and went some place else.""
+Term: manager
+Output: neutral
+
+
+Example 2:
+Input: ""Since we had to wait, we decided to get a drink but the bartender ignored us even when we made it known that we would like to order a drinks.""
+Term: bartender
+Output: negative
+
+
+Example 3
+Input: ""When there is so much GREAT food in New York, why go for the high-priced mediocre meal?""
+Term: food
+Output: positive
+
+    
+Task:
+Input: When my brother and I we had too much pizza in New York, we would like to order something else from the menu.
+Prompt: What is the sentiment in the text towards 'pizza'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
+Sentiment Decision: negative
+Explanation: [{""adjective"":""too much"",""importance"":""1.00""}]
+Actual Sentiment: positive
+Task 18:
+Prompt: Example 1:
+Input: ""We went here for lunch a couple of weeks ago on a Saturday, and I was thoroughly impressed with the food.""
+Term: lunch
+Output: neutral
+
+
+Example 2:
+Input: ""When I read some of the reviews in this section, I am not sure if they had diner in the same restaurant and also I would not be suprise if they decided to have their Branzino well done with butter on the side.""
+Term: diner
+Output: neutral
+
+
+Example 3
+Input: ""The hostess had us wait in the bar while our table was set up and we ordered what had to be the best mojitos in the city.""
+Term: hostess
+Output: neutral
+
+    
+Task:
+Input: 2 weeks ago, I decided to set up a birthday dinner in this establishment and was wary with the reviews I've read in City Search but it seems to be a perfect scene.
+Prompt: What is the sentiment in the text towards 'dinner'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
+Sentiment Decision: positive
+Explanation: [{""adjective"":""perfect scene"",""importance"":""1.00""}]
+Actual Sentiment: neutral
+Task 19:
+Prompt: Example 1:
+Input: ""Came recommended to us, but we found the food to be so-so, the service good, but we were told we could not order desert since the table we were at had a reservation waiting.""
+Term: food
+Output: negative
+
+
+Example 2:
+Input: ""Since we had to wait, we decided to get a drink but the bartender ignored us even when we made it known that we would like to order a drinks.""
+Term: bartender
+Output: negative
+
+
+Example 3
+Input: ""We were told by the front door hostess since we didn't have a reservation, it would be about 45mins for a table, but we could wait at the lounge and they would get us when our table was ready.""
+Term: front door hostess
+Output: negative
+
+    
+Task:
+Input: We politely asked our server for the regular menu, but were told that for large parties they could only offer us the banquet menu (would have gone elsewhere had we known).
+Prompt: What is the sentiment in the text towards 'banquet menu'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
+Sentiment Decision: negative
+Explanation: [{""adjective"":""politely asked"",""importance"":""0.10""},
+{""adjective"":""only offer"",""importance"":""0.30""},
+{""adjective"":""would have gone elsewhere"",""importance"":""0.60""}]
+Actual Sentiment: neutral
+Task 20:
+Prompt: Example 1:
+Input: ""The food and decor is above average, but it is clear the restaurant has bad management and service.""
+Term: food
+Output: positive
+
+
+Example 2:
+Input: ""The food is average and the service is insulting.""
+Term: food
+Output: neutral
+
+
+Example 3
+Input: ""Nice decor poor food poor service.""
+Term: decor
+Output: positive
+
+    
+Task:
+Input: The food is decent, average bistro food, the decor is nice, but the service is poor, the waiters always seems to have to many tables andcant keep up with a good services.
+Prompt: What is the sentiment in the text towards 'waiters'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
+Sentiment Decision: negative
+Explanation: [{""adjective"":""poor"",""importance"":""0.7""},
+{""adjective"":""always seems to have too many tables"",""importance"":""0.2""},
+{""adjective"":""can't keep up with a good service"",""importance"":""0.1""}]
+Actual Sentiment: positive
+
+Correct Decisions (Only as a reference):
+Task 21:
+Prompt: Example 1:
+Input: ""At our table we didn't get any bread until 30 minutes into the seating, which may I emphasize the waiter took really long to come to our table, about 20 minutes.""
+Term: seating
+Output: neutral
+
+
+Example 2:
+Input: ""The waitress only stopped at our table to take our order and pick up the check.""
+Term: waitress
+Output: negative
+
+
+Example 3
+Input: ""I only saw one waitress for the entire place, and small as it is, she only came to our table to take our order and take away plates, not once asking us if our food was to our liking.""
+Term: waitress
+Output: negative
+
+    
+Task:
+Input: Once at the table our waitress managed on two occasions to take 15 minutes bringing drinks to our table, our plates sat uncleared on the table for just as long.
+Prompt: What is the sentiment in the text towards 'waitress'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
+Sentiment Decision: negative
+Explanation: [{""adjective"":""15 minutes bringing drinks"",""importance"":""0.40""},
+{""adjective"":""plates sat uncleared"",""importance"":""0.40""},
+{""adjective"":""just as long"",""importance"":""0.20""}]
+Actual Sentiment: negative
+Task 22:
+Prompt: Example 1:
+Input: ""Theme and actors are kinda cool but you are charged some entertainment fee on top of the expensive food and drinks.""
+Term: actors
+Output: positive
+
+
+Example 2:
+Input: ""Desserts include a sweet masala chai and keer, and cardamom- and saffron-flavored rice pudding.""
+Term: Desserts
+Output: neutral
+
+
+Example 3
+Input: ""The wait for brunch is kinda long (what can you say?""
+Term: wait
+Output: negative
+
+    
+Task:
+Input: I like the somosas, chai, and the chole, but the dhosas and dhal were kinda dissapointing.
+Prompt: What is the sentiment in the text towards 'chai'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
+Sentiment Decision: positive
+Explanation: [{""adjective"":""like"",""importance"":""1.00""}]
+Actual Sentiment: positive
+Task 23:
+Prompt: Example 1:
+Input: ""Costs could be better - expect to be upsold by the hovering wait staff - and come for the authentic tastes, not the interior decor (looked a littel like Cheers!""
+Term: hovering wait staff
+Output: positive
+
+
+Example 2:
+Input: ""The food is not five star but the prices reflect that.""
+Term: food
+Output: negative
+
+
+Example 3
+Input: ""Come here to drink, but don't come here for a meal.""
+Term: drink
+Output: negative
+
+    
+Task:
+Input: I understand the area and folks you need not come here for the romantic, alluring ambiance or the five star service featuring a sommlier and a complicated maze of captain and back waiters - you come for the authentic foods, the tastes, the experiance.
+Prompt: What is the sentiment in the text towards 'foods'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
+Sentiment Decision: positive
+Explanation: [{""adjective"":""authentic"",""importance"":""0.50""},
+{""adjective"":""tastes"",""importance"":""0.30""},
+{""adjective"":""experience"",""importance"":""0.20""}]
+Actual Sentiment: positive
+Task 24:
+Prompt: Example 1:
+Input: ""There was a ten minute wait with a reservation, but the bar kept us entertained.""
+Term: wait
+Output: neutral
+
+
+Example 2:
+Input: ""I went there for lunch with co-workers and found the service to be prompt and very friendly.""
+Term: lunch
+Output: neutral
+
+
+Example 3
+Input: ""The kids really enjoyed their food and the value on the kids menu is good.""
+Term: food
+Output: positive
+
+    
+Task:
+Input: The service was polite, friendly and prompt, the characters walking around entertained the kids but werent intrusive to our meal.
+Prompt: What is the sentiment in the text towards 'service'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
+Sentiment Decision: positive
+Explanation: [{""adjective"":""polite"",""importance"":""0.33""},{""adjective"":""friendly"",""importance"":""0.33""},{""adjective"":""prompt"",""importance"":""0.34""}]
+Actual Sentiment: positive
+Task 25:
+Prompt: Example 1:
+Input: ""The food and decor is above average, but it is clear the restaurant has bad management and service.""
+Term: food
+Output: positive
+
+
+Example 2:
+Input: ""The food is average and the service is insulting.""
+Term: food
+Output: neutral
+
+
+Example 3
+Input: ""Nice decor poor food poor service.""
+Term: decor
+Output: positive
+
+    
+Task:
+Input: The food is decent, average bistro food, the decor is nice, but the service is poor, the waiters always seems to have to many tables andcant keep up with a good services.
+Prompt: What is the sentiment in the text towards 'bistro food'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
+Sentiment Decision: neutral
+Explanation: [{""adjective"":""decent"",""importance"":""1.0""}]
+Actual Sentiment: neutral
+
+",gpt-4-turbo-preview,structured_unstructured_singleterm_dynamic_fewshot_4-turbo-preview,"Based on the provided examples, we can categorize the incorrect sentiment analysis decisions into distinct fault categories. Here are the identified categories along with the frequency of their occurrence:
+
+1. **Misinterpretation of Context or Modifier**:
+   - Task 1 (service: neutral instead of positive)
+   - Task 3 (single drink: negative instead of neutral)
+   - Task 4 (drink list: positive instead of neutral)
+   - Task 5 (dinner: neutral instead of negative)
+   - Task 6 (grill: positive instead of neutral)
+   - Task 7 (Food: positive instead of neutral)
+   - Task 8 (Scene: positive instead of neutral)
+   - Task 9 (ravioli: negative instead of positive)
+   - Task 10 (sauce: neutral instead of positive)
+   - Task 11 (menu: negative instead of neutral)
+   - Task 12 (burgers: positive instead of neutral)
+   - Task 13 (appropriately earthy mushroom polenta: positive instead of neutral)
+   - Task 14 (meal: neutral instead of negative)
+   - Task 15 (maitre: negative instead of neutral)
+   - Task 16 (brunch: negative instead of neutral)
+   - Task 17 (pizza: negative instead of positive)
+   - Task 18 (dinner: positive instead of neutral)
+   - Task 19 (banquet menu: negative instead of neutral)
+   - Task 20 (waiters: negative instead of positive)
+
+   **Frequency**: 20 occurrences
+
+2. **Incorrect Sentiment Polarity**:
+   - Task 2 (fries: negative instead of positive)
+
+   **Frequency**: 1 occurrence
+
+These categories encompass the primary types of errors made in the sentiment analysis tasks. The most common fault category is the misinterpretation of context or modifier, where the sentiment towards a term is incorrectly identified due to misunderstanding the context or the impact of modifiers in the sentence. This category includes errors where a positive or negative sentiment is assigned when it should be neutral, or vice versa, and also includes cases where the sentiment is completely opposite to what the context suggests. The incorrect sentiment polarity category is less frequent and involves cases where the sentiment is identified correctly as either positive or negative but is assigned the wrong polarity.",structured_analysis
+error_class_LLM,"In the following I will give you a few Aspect Based Sentiment Analysis tasks together with a sentiment decision, details about the decision and the actual sentiment towards each term.
+The Prediction was made by an LLM.
+Can you please group the wrong decisions into distinct fault categories? Please also indicate how often each one occurs.
+There are also some correct decisions in the examples. Please just use them as a reference and don't categorize them.
+False Decisions:
+Task 1:
+Prompt: Example 1:
+Input: ""If you are looking for service and all the frills $$$ - Il Mulino is the best for both - if you are looking for a fabulous dinner in/out - this restaurant is it!""
+Term: service
+Output: neutral
+
+
+Example 2:
+Input: ""Don't know about the rest of the food, but the burgers are one of New York's hidden treats.""
+Term: burgers
+Output: positive
+
+
+Example 3
+Input: ""The rest of the meal was good, but a little over priced for Chinese take out style food.""
+Term: priced
+Output: negative
+
+    
+Task:
+Input: I love Chinese food and have been looking for the alternative to the greasy stuff on every corner of New York- ya, you know, the stinky take-out joints that leave you smelling like dinner for 100 for the rest of the night!
+Prompt: What is the sentiment in the text towards 'dinner'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
+Sentiment Decision: negative
+Explanation: The prediction was made based on the context in which ""dinner"" was mentioned. The phrase ""stinky take-out joints that leave you smelling like dinner for 100 for the rest of the night"" carries a negative connotation. Words such as ""greasy,"" ""stinky,"" and the description of being left ""smelling like dinner for 100 for the rest of the night"" suggest a negative sentiment towards the concept of ""dinner"" in this context, as they imply unpleasant experiences associated with it. These word groups directly influence the sentiment to be negative.
+Actual Sentiment: neutral
+Task 2:
+Prompt: Example 1:
+Input: ""If I went back, I'd have dinner in the bar--better service and even better atmosphere.""
+Term: dinner
+Output: neutral
+
+
+Example 2:
+Input: ""a friend was taking me to dinner for my birthday and said he recalled this place around 96th bway that had great chicken.""
+Term: dinner
+Output: neutral
+
+
+Example 3
+Input: ""The food was average; I could have had a better meal at the local pizza place.""
+Term: meal
+Output: positive
+
+    
+Task:
+Input: Ive had better burgers and fries at the local dinner in my neighborhood: 3 guys dinner on 96th and Madison Avenue.
+Prompt: What is the sentiment in the text towards 'fries'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
+Sentiment Decision: negative
+Explanation: The prediction was made based on the phrase ""I've had better burgers and fries at the local diner."" This indicates a comparison where the subject implies that the burgers and fries mentioned are inferior to those available at another specified location (""3 guys diner on 96th and Madison Avenue""). The key phrase influencing the decision is ""I've had better,"" which directly suggests a negative sentiment towards the quality of the fries discussed.
+Actual Sentiment: positive
+Task 3:
+Prompt: Example 1:
+Input: ""The prices did not reflect the quality of the meal.""
+Term: prices
+Output: negative
+
+
+Example 2:
+Input: ""We did not get asked how I meal was nor did we get to our refill on waters until pretty much after the steak was finished.""
+Term: meal
+Output: neutral
+
+
+Example 3
+Input: ""The food came out wrong, the waiter was no where to be found and the wine showed up at the end of the meal.""
+Term: waiter
+Output: negative
+
+    
+Task:
+Input: The waitress was no where to be found at all throughout the course of the meal, did not refill a single drink nor did she bother to inquire about my satisfaction with the food or even bring the check at the conclusion of the meal.
+Prompt: What is the sentiment in the text towards 'single drink'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
+Sentiment Decision: negative
+Explanation: The prediction of ""negative"" sentiment towards the term ""single drink"" was influenced by the context in which it was mentioned. The phrases ""did not refill a single drink"" and ""nowhere to be found at all throughout the course of the meal"" indicate a lack of service and attention, specifically highlighting the failure to refill any drinks. These expressions directly relate to the service associated with the ""single drink,"" portraying it in a negative light due to the absence of expected service actions.
+Actual Sentiment: neutral
+Task 4:
+Prompt: Example 1:
+Input: ""I have a litany of complaints -- being over-charged for wine that I didn't order, shady waiters, so-so food that arrived at the table luke warm, main course portion sizes barely large enough to be appetizer sizes, lack of fabulosity that Mr.""
+Term: wine
+Output: neutral
+
+
+Example 2:
+Input: ""I just think the prices are high for the type of food the kitchen turns out as well as the portion sizes.""
+Term: prices
+Output: negative
+
+
+Example 3
+Input: ""Some advice: have the prime rib if it is a special, try a price fix lunch or dinner because it is an exceptional value.""
+Term: prime rib
+Output: positive
+
+    
+Task:
+Input: My only advice is: increase portion sizes; and develop a special drink list.
+Prompt: What is the sentiment in the text towards 'drink list'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
+Sentiment Decision: positive
+Explanation: The prediction was made based on the context in which the term ""drink list"" was mentioned. The phrase ""develop a special drink list"" suggests a constructive or positive action, indicating an improvement or enhancement. The word ""special"" carries a positive connotation, implying that the drink list would be a beneficial addition or upgrade. Therefore, the sentiment towards the ""drink list"" is interpreted as positive.
+Actual Sentiment: neutral
+Task 5:
+Prompt: Example 1:
+Input: ""A lot of energy and I loved the actors who came to our table.""
+Term: actors
+Output: positive
+
+
+Example 2:
+Input: ""The bar downstairs is a lot of fun, so if you get stuck waiting, just have drink.""
+Term: waiting
+Output: negative
+
+
+Example 3
+Input: ""Their dumplings have a LOT of chicken in them.""
+Term: dumplings
+Output: neutral
+
+    
+Task:
+Input: There were a lot of scensters who couldnt afford dinner hanging in the waiting area so we got bumped around a lot.
+Prompt: What is the sentiment in the text towards 'dinner'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
+Sentiment Decision: neutral
+Explanation: The prediction was made by analyzing the sentiment of the text in relation to the term ""dinner."" The text does not directly express any sentiment towards the quality, enjoyment, or experience of ""dinner"" itself. Instead, it focuses on the presence of ""scensters who couldn't afford dinner"" and the inconvenience caused by being ""bumped around"" in the waiting area. The words directly associated with ""dinner"" (""couldnt afford"") do not inherently carry a positive or negative sentiment towards the dinner experience or quality. Therefore, the sentiment towards ""dinner"" is determined as ""neutral"" because the text neither praises nor criticizes dinner itself, but rather discusses external factors related to the dining environment.
+Actual Sentiment: negative
+Task 6:
+Prompt: Example 1:
+Input: ""I had six different items on the menu (yes, I am a trencherman) and three were simply OUTSTANDING: the steak, the sweetbreads (best I've ever had), and the monkfish liver (also the best I've ever had).""
+Term: menu
+Output: neutral
+
+
+Example 2:
+Input: ""Appetizers were OK, steak was not as good as what I would have prepared at home on the grill.""
+Term: Appetizers
+Output: positive
+
+
+Example 3
+Input: ""If you want to have fresh grill fish served just with virgin olive oil and lemon Telly's Taverna is the place for you.""
+Term: grill fish served
+Output: positive
+
+    
+Task:
+Input: Telly's has the best octopus ever and the fish was so good on the grill.
+Prompt: What is the sentiment in the text towards 'grill'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
+Sentiment Decision: positive
+Explanation: The prediction of ""positive"" sentiment towards the term ""grill"" was influenced by the phrase ""the fish was so good on the grill."" This phrase directly associates the quality of the fish with being cooked on the grill, implying a positive experience and outcome due to the grilling process. The use of ""so good"" as a descriptor for the fish prepared on the grill strongly suggests a positive sentiment towards the method of cooking, hence influencing the decision towards a positive sentiment for the term ""grill.""
+Actual Sentiment: neutral
+Task 7:
+Prompt: Example 1:
+Input: ""The food was ok, good bread.""
+Term: food
+Output: neutral
+
+
+Example 2:
+Input: ""I ordered their famous buffalo steak which originally would come with homemade potatoe gnocchi but I chose the sauteed spinach with garlic instead, which turned out to be exceptional.""
+Term: buffalo steak
+Output: positive
+
+
+Example 3
+Input: ""No bread basket for the table, the server came around with a basket and we each got 1 piece of bread.""
+Term: table
+Output: neutral
+
+    
+Task:
+Input: The Food The classic Italian menu gets off to a good start with Queen's famous bread basket, which is loaded with a slew of crunchy, yeasty homemade varieties.
+Prompt: What is the sentiment in the text towards 'Food'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
+Sentiment Decision: positive
+Explanation: The prediction of ""positive"" towards the term ""Food"" was influenced by the description of the ""classic Italian menu"" getting off to a ""good start"" with a ""famous bread basket,"" which is described as ""loaded with a slew of crunchy, yeasty homemade varieties."" These phrases suggest a positive experience with the food, emphasizing quality and enjoyment. Words like ""good start,"" ""famous,"" ""loaded,"" ""crunchy,"" ""yeasty,"" and ""homemade"" carry positive connotations that directly contribute to the sentiment.
+Actual Sentiment: neutral
+Task 8:
+Prompt: Example 1:
+Input: ""The waiters didn't clean it up until they brought our dessert.""
+Term: waiters
+Output: negative
+
+
+Example 2:
+Input: ""i mean the place was empty and it seemed to take for ever to get food, drink or the check.""
+Term: place
+Output: positive
+
+
+Example 3
+Input: ""The menu reads well, and it sounds like the chef knows whats up.""
+Term: menu
+Output: neutral
+
+    
+Task:
+Input: The Scene Hunky waiters dub diners darling and it sounds like they mean it.
+Prompt: What is the sentiment in the text towards 'Scene'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
+Sentiment Decision: positive
+Explanation: The prediction of ""positive"" sentiment towards the term ""Scene"" was influenced by the description of the environment, specifically through the phrases ""Hunky waiters"" and ""dub diners darling,"" which carry positive connotations. The phrase ""it sounds like they mean it"" further supports a genuine, positive atmosphere. These elements together suggest a favorable and appealing scene, leading to the positive sentiment classification.
+Actual Sentiment: neutral
+Task 9:
+Prompt: Example 1:
+Input: ""The food came cold and a sauce that came with one of the dishes had developed a skin.""
+Term: food
+Output: negative
+
+
+Example 2:
+Input: ""Sure, the wait was a bit long for a table, but the service was good and the food was pretty good too.""
+Term: wait
+Output: negative
+
+
+Example 3
+Input: ""The best out of the three entree's we had was the goat cheese ravioli.""
+Term: entree
+Output: neutral
+
+    
+Task:
+Input: The ravioli was the better of the two, but the serving was tiny, and the skin a bit rubbery.
+Prompt: What is the sentiment in the text towards 'ravioli'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
+Sentiment Decision: negative
+Explanation: The prediction was made based on the description of the ravioli, which included both a positive aspect (""the better of the two"") and negative aspects (""serving was tiny, and the skin a bit rubbery""). The negative aspects, especially the criticism about the serving size and the texture of the ravioli (""tiny"" and ""rubbery""), had a higher influence on the decision, leading to a negative sentiment towards the ravioli.
+Actual Sentiment: positive
+Task 10:
+Prompt: Example 1:
+Input: ""Thin crust, lots of sauce and very little cheese, it's not your typical Sicilian slice of pizza, but can't explain why I have a hard time eating less than 4 of those babies!""
+Term: crust
+Output: positive
+
+
+Example 2:
+Input: ""Pizza - the only pizza in NYC that should not have additional toppings - the crust tastes like the best, freshly baked bread!""
+Term: toppings
+Output: neutral
+
+
+Example 3
+Input: ""Really great thin crust pizza - hot and fresh and fast, though you'll probably have to wait for a table.""
+Term: crust pizza
+Output: positive
+
+    
+Task:
+Input: Amazing crust (and I hate pizza crust typically), great cheese, sauce isn't too sugary.
+Prompt: What is the sentiment in the text towards 'sauce'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
+Sentiment Decision: neutral
+Explanation: The prediction was based on the specific mention of ""sauce isn't too sugary."" This phrase indicates a preference or a positive aspect of the sauce by highlighting what it is not, rather than criticizing or expressing dislike for its qualities. The absence of a negative descriptor and the implication that the sauce's sweetness level is appropriate or desirable led to the classification as ""neutral."" The decision was influenced by the lack of explicit positive enthusiasm or negative criticism towards the sauce, suggesting a more neutral stance.
+Actual Sentiment: positive
+Task 11:
+Prompt: Example 1:
+Input: ""Our waiter, though he was charming,was too busy to truly take care of us properly and the food was over priced.""
+Term: waiter
+Output: positive
+
+
+Example 2:
+Input: ""The chef insisted that the meat was cooked properly!?""
+Term: chef
+Output: negative
+
+
+Example 3
+Input: ""I had read good reviews about the value and food quality at this restaurant, so I was not surprised to see a decently priced menu (pasta under $10 and entrees approx $12 to $15).""
+Term: value
+Output: neutral
+
+    
+Task:
+Input: The place was so dark, I needed the table candle to read the menu and could not properly see what I was eating.
+Prompt: What is the sentiment in the text towards 'menu'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
+Sentiment Decision: negative
+Explanation: The sentiment towards ""menu"" was determined to be negative based on the context provided in the input. The phrase ""so dark, I needed the table candle to read the menu"" implies a negative experience directly related to the menu, as the darkness hindered the ability to read it comfortably. This difficulty in reading the menu due to poor lighting conditions directly affects the user's experience with the menu in a negative way, leading to the negative sentiment classification.
+Actual Sentiment: neutral
+Task 12:
+Prompt: Example 1:
+Input: ""staff is still working out their kinks and learning about the menu but no real complaints.""
+Term: staff
+Output: positive
+
+
+Example 2:
+Input: ""Ten minutes later: no burgers and no sign of our waiter.""
+Term: burgers
+Output: neutral
+
+
+Example 3
+Input: ""We had to ask for water even after we were asked what type we preferred, and then the busboy spilled it while he was pouring it out.""
+Term: water
+Output: neutral
+
+    
+Task:
+Input: We preferred to gaze at our burgers while avoiding having to look at the wait staff, but no complaints.
+Prompt: What is the sentiment in the text towards 'burgers'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
+Sentiment Decision: positive
+Explanation: The prediction was made based on the phrase ""preferred to gaze at our burgers,"" which implies a positive sentiment towards the burgers. The act of gazing, especially in the context of preference, suggests admiration or enjoyment, leading to the classification of the sentiment as positive.
+Actual Sentiment: neutral
+Task 13:
+Prompt: Example 1:
+Input: ""While there are now a few appetizers, the traditional thali (sampling platter) is often your best bet; fixed nightly menu changes daily.""
+Term: appetizers
+Output: neutral
+
+
+Example 2:
+Input: ""We shared three appetizers, (bruschetta's a good bet) a salad, a pasta dish, a quatro (about 3 glasses?)""
+Term: appetizers
+Output: neutral
+
+
+Example 3
+Input: ""We then split some appetizers as the portions are large - the calamari salad was fantastic.""
+Term: appetizers
+Output: neutral
+
+    
+Task:
+Input: Appetizers are the safest bet, including a bountiful calamari plate or the appropriately earthy mushroom polenta.
+Prompt: What is the sentiment in the text towards 'appropriately earthy mushroom polenta'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
+Sentiment Decision: positive
+Explanation: The prediction of ""positive"" sentiment towards the ""appropriately earthy mushroom polenta"" was influenced by the use of the word ""appropriately"" and the overall positive context of the sentence. The term ""appropriately"" suggests that the mushroom polenta is well-suited or fitting in its earthiness, indicating a positive evaluation. Additionally, the sentence is part of a context that suggests good choices (""safest bet""), further supporting a positive sentiment. The absence of any negative words or phrases related to the mushroom polenta also contributes to the positive sentiment determination.
+Actual Sentiment: neutral
+Task 14:
+Prompt: Example 1:
+Input: ""I did not like the place because: -it took the waiter over 20 min to take our order and then over an hour until we got our food.""
+Term: waiter
+Output: negative
+
+
+Example 2:
+Input: ""The waitress took forever to take our order, we waited almost an hour for our appetizers, and then she asked us whether she even put the order in -- as if we would even know.""
+Term: waitress
+Output: negative
+
+
+Example 3
+Input: ""not only did we not get our 'bombay' fries until after the entire meal, but we then had to wait nearly an hour for our inattentive waiter to bring our check, and only after we flagged him down.""
+Term: meal
+Output: neutral
+
+    
+Task:
+Input: Our waitress did not take our drink order until I finally flagged her down and even then she seemed disinterested in our meal.
+Prompt: What is the sentiment in the text towards 'meal'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
+Sentiment Decision: neutral
+Explanation: The prediction was made based on the context provided in the input text, focusing specifically on the term ""meal."" The sentiment expressed in the text primarily targets the service aspect, particularly the waitress's behavior and responsiveness. The term ""meal"" itself is mentioned in a neutral context, without any direct negative or positive qualifiers or experiences related to the quality, taste, or enjoyment of the meal. The negative sentiment is directed towards the service (""did not take our drink order,"" ""flagged her down,"" ""seemed disinterested""), not the meal itself. Therefore, the decision was influenced by the absence of specific positive or negative descriptions or experiences directly related to the ""meal,"" leading to a classification of ""neutral"" sentiment towards the term ""meal.""
+Actual Sentiment: negative
+Task 15:
+Prompt: Example 1:
+Input: ""We had the tasting menu -- which was not a meal!!!""
+Term: menu
+Output: positive
+
+
+Example 2:
+Input: ""Then we were led downstairs to the main room, and were seated at the huge communal dining room table.""
+Term: seated
+Output: neutral
+
+
+Example 3
+Input: ""5 hour meal (we ordered the tasting menu).""
+Term: hour meal
+Output: neutral
+
+    
+Task:
+Input: Aside from the fact the maitre de claimed the dining room was 'full', we were seated at a great table overlooking the lobby of the hotel and ordered the 5 course tasting menu.
+Prompt: What is the sentiment in the text towards 'maitre'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
+Sentiment Decision: negative
+Explanation: The prediction was made based on the phrase ""claimed the dining room was 'full'."" This phrase suggests a negative sentiment towards the 'maitre de' because it implies doubt or dissatisfaction with the maitre de's assertion about the dining room's availability. The use of the word ""claimed"" can be interpreted as questioning the truthfulness or validity of the maitre de's statement, which influenced the decision towards a negative sentiment.
+Actual Sentiment: neutral
+Task 16:
+Prompt: Example 1:
+Input: ""I have to say that I've been there only during brunch time but the service even though slow, it was good.""
+Term: brunch
+Output: neutral
+
+
+Example 2:
+Input: ""We get treated very well and before we sit down to our steaks and fried green tomatoes that we love there - we have a few beers at the bar.""
+Term: steaks
+Output: positive
+
+
+Example 3
+Input: ""We recently went for dinner with two kids and the staff were very accomodating even without reservations.""
+Term: dinner
+Output: neutral
+
+    
+Task:
+Input: We recently had brunch at this establishment with two other couples and I have to say I was majorly dissapointed with the service and how we were treated.
+Prompt: What is the sentiment in the text towards 'brunch'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
+Sentiment Decision: negative
+Explanation: The prediction of ""negative"" sentiment towards 'brunch' was based on the phrases ""majorly dissapointed with the service"" and ""how we were treated."" These phrases indicate a strong negative experience associated with the brunch, directly influencing the sentiment analysis.
+Actual Sentiment: neutral
+Task 17:
+Prompt: Example 1:
+Input: ""The manager then told us we could order from whatever menu we wanted but by that time we were so annoyed with the waiter and the resturant that we let and went some place else.""
+Term: manager
+Output: neutral
+
+
+Example 2:
+Input: ""Since we had to wait, we decided to get a drink but the bartender ignored us even when we made it known that we would like to order a drinks.""
+Term: bartender
+Output: negative
+
+
+Example 3
+Input: ""When there is so much GREAT food in New York, why go for the high-priced mediocre meal?""
+Term: food
+Output: positive
+
+    
+Task:
+Input: When my brother and I we had too much pizza in New York, we would like to order something else from the menu.
+Prompt: What is the sentiment in the text towards 'pizza'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
+Sentiment Decision: negative
+Explanation: The sentiment towards ""pizza"" was determined to be negative based on the phrase ""had too much pizza."" This phrase suggests an excess or overindulgence that led to a desire for something different, indicating a negative sentiment towards continuing to consume pizza.
+Actual Sentiment: positive
+Task 18:
+Prompt: Example 1:
+Input: ""We went here for lunch a couple of weeks ago on a Saturday, and I was thoroughly impressed with the food.""
+Term: lunch
+Output: neutral
+
+
+Example 2:
+Input: ""When I read some of the reviews in this section, I am not sure if they had diner in the same restaurant and also I would not be suprise if they decided to have their Branzino well done with butter on the side.""
+Term: diner
+Output: neutral
+
+
+Example 3
+Input: ""The hostess had us wait in the bar while our table was set up and we ordered what had to be the best mojitos in the city.""
+Term: hostess
+Output: neutral
+
+    
+Task:
+Input: 2 weeks ago, I decided to set up a birthday dinner in this establishment and was wary with the reviews I've read in City Search but it seems to be a perfect scene.
+Prompt: What is the sentiment in the text towards 'dinner'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
+Sentiment Decision: positive
+Explanation: The prediction of ""positive"" sentiment towards ""dinner"" was influenced by the phrase ""it seems to be a perfect scene."" This phrase suggests a positive experience or expectation related to the dinner setup, indicating a favorable sentiment towards the dinner event mentioned in the input.
+Actual Sentiment: neutral
+Task 19:
+Prompt: Example 1:
+Input: ""Came recommended to us, but we found the food to be so-so, the service good, but we were told we could not order desert since the table we were at had a reservation waiting.""
+Term: food
+Output: negative
+
+
+Example 2:
+Input: ""Since we had to wait, we decided to get a drink but the bartender ignored us even when we made it known that we would like to order a drinks.""
+Term: bartender
+Output: negative
+
+
+Example 3
+Input: ""We were told by the front door hostess since we didn't have a reservation, it would be about 45mins for a table, but we could wait at the lounge and they would get us when our table was ready.""
+Term: front door hostess
+Output: negative
+
+    
+Task:
+Input: We politely asked our server for the regular menu, but were told that for large parties they could only offer us the banquet menu (would have gone elsewhere had we known).
+Prompt: What is the sentiment in the text towards 'banquet menu'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
+Sentiment Decision: negative
+Explanation: The prediction was made based on the phrase ""would have gone elsewhere had we known,"" which indicates dissatisfaction or disappointment with being limited to the banquet menu for large parties. This phrase directly expresses a negative sentiment towards the restriction to the banquet menu, suggesting that if the party had been aware of this limitation beforehand, they would have preferred to choose a different dining option.
+Actual Sentiment: neutral
+Task 20:
+Prompt: Example 1:
+Input: ""The food and decor is above average, but it is clear the restaurant has bad management and service.""
+Term: food
+Output: positive
+
+
+Example 2:
+Input: ""The food is average and the service is insulting.""
+Term: food
+Output: neutral
+
+
+Example 3
+Input: ""Nice decor poor food poor service.""
+Term: decor
+Output: positive
+
+    
+Task:
+Input: The food is decent, average bistro food, the decor is nice, but the service is poor, the waiters always seems to have to many tables andcant keep up with a good services.
+Prompt: What is the sentiment in the text towards 'waiters'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
+Sentiment Decision: negative
+Explanation: The prediction was made based on the description of the waiters' performance, specifically the phrases ""the service is poor"" and ""waiters always seems to have too many tables and can't keep up with a good service."" These phrases directly relate to the waiters and convey a negative sentiment, indicating that they are unable to provide satisfactory service due to being overwhelmed. The use of ""poor"" to describe the service and the inability to ""keep up with a good service"" were the key factors influencing the decision towards a negative sentiment.
+Actual Sentiment: positive
+
+Correct Decisions (Only as a reference):
+Task 21:
+Prompt: Example 1:
+Input: ""At our table we didn't get any bread until 30 minutes into the seating, which may I emphasize the waiter took really long to come to our table, about 20 minutes.""
+Term: seating
+Output: neutral
+
+
+Example 2:
+Input: ""The waitress only stopped at our table to take our order and pick up the check.""
+Term: waitress
+Output: negative
+
+
+Example 3
+Input: ""I only saw one waitress for the entire place, and small as it is, she only came to our table to take our order and take away plates, not once asking us if our food was to our liking.""
+Term: waitress
+Output: negative
+
+    
+Task:
+Input: Once at the table our waitress managed on two occasions to take 15 minutes bringing drinks to our table, our plates sat uncleared on the table for just as long.
+Prompt: What is the sentiment in the text towards 'waitress'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
+Sentiment Decision: negative
+Explanation: The prediction of ""negative"" sentiment towards the term ""waitress"" was influenced by the phrases ""managed on two occasions to take 15 minutes bringing drinks to our table"" and ""our plates sat uncleared on the table for just as long."" These phrases indicate dissatisfaction with the service provided by the waitress, specifically highlighting delays in service and inattention to clearing the table, which are typically viewed unfavorably in the context of dining experiences.
+Actual Sentiment: negative
+Task 22:
+Prompt: Example 1:
+Input: ""Theme and actors are kinda cool but you are charged some entertainment fee on top of the expensive food and drinks.""
+Term: actors
+Output: positive
+
+
+Example 2:
+Input: ""Desserts include a sweet masala chai and keer, and cardamom- and saffron-flavored rice pudding.""
+Term: Desserts
+Output: neutral
+
+
+Example 3
+Input: ""The wait for brunch is kinda long (what can you say?""
+Term: wait
+Output: negative
+
+    
+Task:
+Input: I like the somosas, chai, and the chole, but the dhosas and dhal were kinda dissapointing.
+Prompt: What is the sentiment in the text towards 'chai'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
+Sentiment Decision: positive
+Explanation: The prediction was made based on the inclusion of ""chai"" in a list of items the speaker likes, as indicated by the phrase ""I like the somosas, chai, and the chole."" The explicit mention of liking something directly influences the sentiment to be positive, as it indicates enjoyment or satisfaction with that item. The word ""like"" directly preceding ""chai"" was the key influencer in determining the sentiment as positive.
+Actual Sentiment: positive
+Task 23:
+Prompt: Example 1:
+Input: ""Costs could be better - expect to be upsold by the hovering wait staff - and come for the authentic tastes, not the interior decor (looked a littel like Cheers!""
+Term: hovering wait staff
+Output: positive
+
+
+Example 2:
+Input: ""The food is not five star but the prices reflect that.""
+Term: food
+Output: negative
+
+
+Example 3
+Input: ""Come here to drink, but don't come here for a meal.""
+Term: drink
+Output: negative
+
+    
+Task:
+Input: I understand the area and folks you need not come here for the romantic, alluring ambiance or the five star service featuring a sommlier and a complicated maze of captain and back waiters - you come for the authentic foods, the tastes, the experiance.
+Prompt: What is the sentiment in the text towards 'foods'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
+Sentiment Decision: positive
+Explanation: The prediction was made based on the positive sentiment expressed towards the ""authentic foods, the tastes, the experience."" The words ""authentic,"" ""tastes,"" and ""experience"" are associated with positive experiences and appreciation, indicating a positive sentiment towards the 'foods.' These words suggest that the quality and authenticity of the food are the main reasons for visiting, overshadowing other aspects like ambiance or service.
+Actual Sentiment: positive
+Task 24:
+Prompt: Example 1:
+Input: ""There was a ten minute wait with a reservation, but the bar kept us entertained.""
+Term: wait
+Output: neutral
+
+
+Example 2:
+Input: ""I went there for lunch with co-workers and found the service to be prompt and very friendly.""
+Term: lunch
+Output: neutral
+
+
+Example 3
+Input: ""The kids really enjoyed their food and the value on the kids menu is good.""
+Term: food
+Output: positive
+
+    
+Task:
+Input: The service was polite, friendly and prompt, the characters walking around entertained the kids but werent intrusive to our meal.
+Prompt: What is the sentiment in the text towards 'service'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
+Sentiment Decision: positive
+Explanation: The prediction of ""positive"" towards the term 'service' was influenced by the words ""polite,"" ""friendly,"" and ""prompt."" These adjectives directly describe the service in a favorable light, indicating a positive sentiment.
+Actual Sentiment: positive
+Task 25:
+Prompt: Example 1:
+Input: ""The food and decor is above average, but it is clear the restaurant has bad management and service.""
+Term: food
+Output: positive
+
+
+Example 2:
+Input: ""The food is average and the service is insulting.""
+Term: food
+Output: neutral
+
+
+Example 3
+Input: ""Nice decor poor food poor service.""
+Term: decor
+Output: positive
+
+    
+Task:
+Input: The food is decent, average bistro food, the decor is nice, but the service is poor, the waiters always seems to have to many tables andcant keep up with a good services.
+Prompt: What is the sentiment in the text towards 'bistro food'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.
+Sentiment Decision: neutral
+Explanation: The prediction was based on the specific mention of ""bistro food"" being described as ""decent, average."" The words ""decent"" and ""average"" indicate a neutral sentiment, as they suggest the food is neither particularly good nor bad. These words directly influenced the decision to classify the sentiment towards 'bistro food' as neutral.
+Actual Sentiment: neutral
+
+",gpt-4-turbo-preview,structured_unstructured_singleterm_dynamic_fewshot_4-turbo-preview,"The false decisions can be grouped into distinct fault categories as follows:
+
+1. **Misinterpretation of Contextual Sentiment**:
+   - Task 1 (service): The positive sentiment was misinterpreted as neutral due to overlooking the overall positive context.
+   - Task 3 (single drink): The neutral sentiment was misinterpreted as negative due to focusing on service issues rather than the item itself.
+   - Task 4 (drink list): The neutral sentiment was misinterpreted as positive due to misinterpreting a suggestion for improvement as positive sentiment.
+   - Task 5 (dinner): The negative sentiment was misinterpreted as neutral due to focusing on external factors rather than the sentiment towards the term itself.
+   - Task 7 (Food): The neutral sentiment was misinterpreted as positive due to overemphasis on descriptive adjectives without negative context.
+   - Task 8 (Scene): The neutral sentiment was misinterpreted as positive due to misinterpreting descriptive elements as positive sentiment.
+   - Task 9 (ravioli): The positive sentiment was misinterpreted as negative due to focusing on negative aspects without considering the overall sentiment.
+   - Task 10 (sauce): The positive sentiment was misinterpreted as neutral due to not recognizing implicit positive sentiment.
+   - Task 11 (menu): The neutral sentiment was misinterpreted as negative due to associating environmental factors with the term itself.
+   - Task 12 (burgers): The neutral sentiment was misinterpreted as positive due to misinterpreting admiration as positive sentiment.
+   - Task 13 (appropriately earthy mushroom polenta): The neutral sentiment was misinterpreted as positive due to misinterpreting descriptive accuracy as positive sentiment.
+   - Task 14 (meal): The negative sentiment was misinterpreted as neutral due to focusing on service issues rather than the item itself.
+   - Task 15 (maitre): The neutral sentiment was misinterpreted as negative due to misinterpreting a factual statement as negative sentiment.
+   - Task 16 (brunch): The neutral sentiment was misinterpreted as negative due to associating service issues with the term itself.
+   - Task 17 (pizza): The positive sentiment was misinterpreted as negative due to misinterpreting a desire for variety as negative sentiment.
+   - Task 18 (dinner): The neutral sentiment was misinterpreted as positive due to misinterpreting expectations as positive sentiment.
+   - Task 19 (banquet menu): The neutral sentiment was misinterpreted as negative due to associating disappointment with the term itself.
+   - Task 20 (waiters): The positive sentiment was misinterpreted as negative due to focusing on service capacity issues.
+
+Occurrences: 19
+
+2. **Incorrect Sentiment Polarity**:
+   - Task 2 (fries): The positive sentiment was incorrectly identified as negative due to misinterpreting comparative language.
+   
+Occurrences: 1
+
+In summary, the majority of the incorrect decisions fall under the category of ""Misinterpretation of Contextual Sentiment"" with 19 occurrences, where the LLM failed to accurately interpret the overall sentiment context or misattributed sentiment based on surrounding text. There was only 1 occurrence of ""Incorrect Sentiment Polarity,"" where the sentiment was directly opposite to the actual sentiment.",unstructured_analysis

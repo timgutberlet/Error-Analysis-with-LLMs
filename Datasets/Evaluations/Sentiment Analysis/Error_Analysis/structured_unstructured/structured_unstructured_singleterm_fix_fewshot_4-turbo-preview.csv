@@ -1,0 +1,3279 @@
+Unnamed: 0.1,Unnamed: 0,text_id,term_id,text,term,polarity,example1_term_id,example1_prompt,example2_term_id,example2_prompt,example3_term_id,example3_prompt,polarity_pred,prompt_name,prompt,error,structured_analysis,unstructured_analysis
+40,40,14,40,"When my brother and I we had too much pizza in New York, we would like to order something else from the menu.",pizza,positive,0,"Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+",3,"Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+",9,"Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+",neutral,prompt_single_term_fewshot,"Example 1:
+Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+
+
+Example 2:
+Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+
+
+Example 3
+Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+
+    
+Task:
+Input: When my brother and I we had too much pizza in New York, we would like to order something else from the menu.
+Prompt: What is the sentiment in the text towards 'pizza'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",error,"[{""brother and I"": ""0.5""}, {""too much"": ""0.5""}]","I made my prediction based on the context provided in the input text. The phrase ""had too much pizza"" suggests a potential negative sentiment towards pizza, but the intention to order something else from the menu indicates a neutral sentiment. Therefore, considering both positive and negative cues, the overall sentiment towards ""pizza"" is neutral."
+196,196,76,196,"dinner on 1st floor (street level) a bit noisy, 2nd floor has bed-style seating that is good for dessert drinks (do not attempt to have entree on the bed, what a mess it will be trying to eat rice dishes with sauce while half-lying down).",dinner,neutral,0,"Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+",3,"Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+",9,"Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+",negative,prompt_single_term_fewshot,"Example 1:
+Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+
+
+Example 2:
+Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+
+
+Example 3
+Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+
+    
+Task:
+Input: dinner on 1st floor (street level) a bit noisy, 2nd floor has bed-style seating that is good for dessert drinks (do not attempt to have entree on the bed, what a mess it will be trying to eat rice dishes with sauce while half-lying down).
+Prompt: What is the sentiment in the text towards 'dinner'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",error,"[
+{""word"":""noisy"",""importance"":""0.40""},
+{""word"":""mess"",""importance"":""0.30""},
+{""word"":""trying to eat"",""importance"":""0.30""}
+]","I made the prediction based on the negative connotations associated with the words ""noisy"" and the messy scenario described when attempting to eat rice dishes on the bed-style seating. These words suggest a negative sentiment towards the term ""dinner"" in the text."
+436,436,165,436,This place would be so much better served by being run by a group that actually understands customer service.,served,positive,0,"Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+",3,"Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+",9,"Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+",negative,prompt_single_term_fewshot,"Example 1:
+Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+
+
+Example 2:
+Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+
+
+Example 3
+Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+
+    
+Task:
+Input: This place would be so much better served by being run by a group that actually understands customer service.
+Prompt: What is the sentiment in the text towards 'served'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",error,"[{""group"":""run by a group that actually understands customer service"",""importance"":""1.0""}]","I made the prediction based on the negative sentiment expressed towards the concept of ""being served"" in the text. The words ""so much better served"" and ""actually understands customer service"" indicate a negative sentiment towards the term ""served."""
+449,449,169,449,"The server came by only once to pour additional wine for the table; the rest of the time, we had to fish the bottle out of the two-table communal bucket ourselves.",fish,neutral,0,"Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+",3,"Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+",9,"Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+",negative,prompt_single_term_fewshot,"Example 1:
+Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+
+
+Example 2:
+Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+
+
+Example 3
+Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+
+    
+Task:
+Input: The server came by only once to pour additional wine for the table; the rest of the time, we had to fish the bottle out of the two-table communal bucket ourselves.
+Prompt: What is the sentiment in the text towards 'fish'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",error,"[{""fish the bottle out of the two-table communal bucket ourselves"",""importance"":""1.0""}]","I made the prediction based on the negative connotation associated with the phrase ""had to fish the bottle out."" The word ""fish"" in this context implies a negative sentiment as it suggests an inconvenient or unpleasant action."
+29,29,10,29,"Ok I got the edamame and something from the sushi chef for free, but the quality of food is more important to me than a free small dish (maybe that's why the restaurant gives it to attact new customers.",edamame,neutral,0,"Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+",3,"Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+",9,"Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+",positive,prompt_single_term_fewshot,"Example 1:
+Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+
+
+Example 2:
+Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+
+
+Example 3
+Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+
+    
+Task:
+Input: Ok I got the edamame and something from the sushi chef for free, but the quality of food is more important to me than a free small dish (maybe that's why the restaurant gives it to attact new customers.
+Prompt: What is the sentiment in the text towards 'edamame'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",error,"[{""free"": ""0.30""}, {""quality"": ""0.70""}]","I made the prediction based on the positive sentiment expressed towards receiving the edamame for free and the emphasis on the importance of food quality over a complimentary dish. The phrase ""I got the edamame and something from the sushi chef for free"" indicates a positive association with the term ""edamame."""
+351,351,133,351,The waiter kept coming up and asking to take our plates while we were still eating and the manager stood and stared at us through half our meal!,meal,neutral,0,"Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+",3,"Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+",9,"Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+",negative,prompt_single_term_fewshot,"Example 1:
+Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+
+
+Example 2:
+Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+
+
+Example 3
+Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+
+    
+Task:
+Input: The waiter kept coming up and asking to take our plates while we were still eating and the manager stood and stared at us through half our meal!
+Prompt: What is the sentiment in the text towards 'meal'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",error,"[{""waiter kept coming up"": ""0.40""},
+{""stared at us"": ""0.30""},
+{""still eating"": ""0.30""}]","I made the prediction based on the negative descriptions of the waiter's behavior (""kept coming up and asking to take our plates while we were still eating"") and the manager's behavior (""stood and stared at us through half our meal""). These negative interactions influenced my decision to classify the sentiment towards the 'meal' as negative."
+358,358,136,358,(Though the filet won't be enough if both have hearty apitites.,apitites,positive,0,"Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+",3,"Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+",9,"Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+",negative,prompt_single_term_fewshot,"Example 1:
+Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+
+
+Example 2:
+Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+
+
+Example 3
+Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+
+    
+Task:
+Input: (Though the filet won't be enough if both have hearty apitites.
+Prompt: What is the sentiment in the text towards 'apitites'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",error,"[
+{""word"":""won't be enough"",""importance"":""0.6""},
+{""word"":""hearty"",""importance"":""0.4""}
+]","I made the prediction based on the word ""won't be enough"" which indicates a negative sentiment towards ""appetites."" The phrase ""both have hearty appetites"" suggests a desire for more food, further supporting the negative sentiment."
+233,233,88,233,The waiter recommended I choose a bottle for the entire meal.,waiter,negative,0,"Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+",3,"Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+",9,"Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+",positive,prompt_single_term_fewshot,"Example 1:
+Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+
+
+Example 2:
+Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+
+
+Example 3
+Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+
+    
+Task:
+Input: The waiter recommended I choose a bottle for the entire meal.
+Prompt: What is the sentiment in the text towards 'waiter'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",error,"[{""waiter"":""0.9""}, {""recommended"":""0.1""}]","I made the prediction based on the positive sentiment expressed towards the waiter through the phrase ""waiter recommended"" indicating helpfulness and attentiveness."
+226,226,85,226,"The atmosphere was warm, sexy, and very romantic but the lighting wasn't good for reading the menu.",menu,neutral,0,"Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+",3,"Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+",9,"Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+",negative,prompt_single_term_fewshot,"Example 1:
+Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+
+
+Example 2:
+Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+
+
+Example 3
+Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+
+    
+Task:
+Input: The atmosphere was warm, sexy, and very romantic but the lighting wasn't good for reading the menu.
+Prompt: What is the sentiment in the text towards 'menu'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",error,"[
+{""warm"",""importance"":""0.20""},
+{""sexy"",""importance"":""0.20""},
+{""romantic"",""importance"":""0.20""},
+{""lighting wasn't good"",""importance"":""0.40""}
+]","I made the prediction based on the phrase ""lighting wasn't good for reading the menu,"" which indicates a negative sentiment towards the menu due to the poor lighting."
+72,72,26,72,Ive had better burgers and fries at the local dinner in my neighborhood: 3 guys dinner on 96th and Madison Avenue.,local dinner,neutral,0,"Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+",3,"Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+",9,"Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+",negative,prompt_single_term_fewshot,"Example 1:
+Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+
+
+Example 2:
+Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+
+
+Example 3
+Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+
+    
+Task:
+Input: Ive had better burgers and fries at the local dinner in my neighborhood: 3 guys dinner on 96th and Madison Avenue.
+Prompt: What is the sentiment in the text towards 'local dinner'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",error,"[
+{""word"":""better"",""importance"":""0.6""},
+{""word"":""local"",""importance"":""0.4""}
+]","I made the prediction based on the comparison made between the local dinner and a specific restaurant, indicating that the local dinner was not as good. The words ""Ive had better burgers and fries"" and ""local dinner"" were key in determining the negative sentiment towards the local dinner."
+397,397,151,397,"There is nothing else on the menu except for exotic teas and cold beverages, but with a meal this cheap and delightful, who would care?",beverages,negative,0,"Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+",3,"Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+",9,"Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+",neutral,prompt_single_term_fewshot,"Example 1:
+Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+
+
+Example 2:
+Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+
+
+Example 3
+Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+
+    
+Task:
+Input: There is nothing else on the menu except for exotic teas and cold beverages, but with a meal this cheap and delightful, who would care?
+Prompt: What is the sentiment in the text towards 'beverages'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",error,"[{""exotic teas"":""0.30""},
+{""cold beverages"":""0.30""},
+{""cheap and delightful"":""0.40""}]","I made the prediction based on the overall positive sentiment towards the meal and the affordability mentioned in the text. The words ""cheap"" and ""delightful"" indicated a positive sentiment, while the lack of emphasis on the beverages specifically led to a neutral classification."
+263,263,99,263,"The meat, onions, and cheese were good as was the roll, but I'd go back if I could forego the sauce.",sauce,neutral,0,"Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+",3,"Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+",9,"Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+",negative,prompt_single_term_fewshot,"Example 1:
+Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+
+
+Example 2:
+Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+
+
+Example 3
+Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+
+    
+Task:
+Input: The meat, onions, and cheese were good as was the roll, but I'd go back if I could forego the sauce.
+Prompt: What is the sentiment in the text towards 'sauce'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",error,"[{""forego"":""0.7""}, {""good"":""0.3""}]","I made the prediction based on the phrase ""forego the sauce,"" which indicates a negative sentiment towards the sauce. The word ""forego"" suggests a preference to do without the sauce, leading to the conclusion that the sentiment towards the sauce is negative."
+110,110,41,110,"The Scene You won't blink twice at the restaurant's spartan decor: As the packed crowds and critics' praises wallpapering the front wall agree, this longtime local favorite is truly one of the area's most exquisite finds.",decor,positive,0,"Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+",3,"Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+",9,"Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+",neutral,prompt_single_term_fewshot,"Example 1:
+Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+
+
+Example 2:
+Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+
+
+Example 3
+Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+
+    
+Task:
+Input: The Scene You won't blink twice at the restaurant's spartan decor: As the packed crowds and critics' praises wallpapering the front wall agree, this longtime local favorite is truly one of the area's most exquisite finds.
+Prompt: What is the sentiment in the text towards 'decor'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",error,"[
+{""word"":""exquisite"",""importance"":""0.50""},
+{""word"":""spartan"",""importance"":""0.50""}
+]","I made the prediction based on the words ""spartan decor"" and ""critics' praises."" The term ""spartan decor"" suggests a simple or plain decor, which could be seen as negative. However, the phrase ""critics' praises"" indicates positive feedback, balancing out the sentiment and leading to a neutral classification."
+223,223,84,223,"For dessert, go with the delicate, subtle flan over the pasty rice pudding.",rice pudding,positive,0,"Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+",3,"Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+",9,"Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+",negative,prompt_single_term_fewshot,"Example 1:
+Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+
+
+Example 2:
+Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+
+
+Example 3
+Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+
+    
+Task:
+Input: For dessert, go with the delicate, subtle flan over the pasty rice pudding.
+Prompt: What is the sentiment in the text towards 'rice pudding'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",error,"[{""delicate"":""0.30""},
+{""subtle"":""0.30""},
+{""pasty"":""0.40""}]","I made the prediction based on the comparison between ""delicate, subtle flan"" and ""pasty rice pudding"", where the term ""pasty"" has a negative connotation implying a less desirable texture for the rice pudding. This influenced my decision to classify the sentiment towards ""rice pudding"" as negative."
+235,235,89,235,The Scene Hunky waiters dub diners darling and it sounds like they mean it.,Scene,neutral,0,"Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+",3,"Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+",9,"Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+",positive,prompt_single_term_fewshot,"Example 1:
+Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+
+
+Example 2:
+Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+
+
+Example 3
+Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+
+    
+Task:
+Input: The Scene Hunky waiters dub diners darling and it sounds like they mean it.
+Prompt: What is the sentiment in the text towards 'Scene'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",error,"[
+{""Hunky waiters"": ""0.40""},
+{""darling"": ""0.30""},
+{""mean it"": ""0.30""}
+]","I made the prediction based on the positive words used in the text, such as ""Hunky waiters,"" ""darling,"" and ""sounds like they mean it."" These words indicate a positive sentiment towards the ""Scene."""
+53,53,18,53,Try the olive cream cheese or the lox spread on a whole wheat everything bagel.,bagel,neutral,0,"Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+",3,"Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+",9,"Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+",positive,prompt_single_term_fewshot,"Example 1:
+Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+
+
+Example 2:
+Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+
+
+Example 3
+Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+
+    
+Task:
+Input: Try the olive cream cheese or the lox spread on a whole wheat everything bagel.
+Prompt: What is the sentiment in the text towards 'bagel'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",error,"[{""whole wheat"": ""0.4""}, {""positive"": ""0.6""}]","I made the prediction based on the positive words ""try"", ""olive cream cheese"", ""lox spread"", ""whole wheat"", and ""everything bagel"" in the text. These words indicate a positive sentiment towards the bagel."
+189,189,73,189,Went here with my husband on a Saturday night for dinner since the place looked like it had great atmosphere.,place,neutral,0,"Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+",3,"Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+",9,"Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+",positive,prompt_single_term_fewshot,"Example 1:
+Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+
+
+Example 2:
+Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+
+
+Example 3
+Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+
+    
+Task:
+Input: Went here with my husband on a Saturday night for dinner since the place looked like it had great atmosphere.
+Prompt: What is the sentiment in the text towards 'place'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",error,"[
+{""word"":""great"",""importance"":""0.50""},
+{""word"":""atmosphere"",""importance"":""0.50""}
+]","I made the prediction based on the positive sentiment expressed towards the ""place"" in the text. The words ""great atmosphere"" indicate a positive feeling towards the place, leading to the classification of the sentiment as positive."
+44,44,15,44,"About 10 of us came here for drinks last friday, the atmosphere was good for chatting and hanging out, but not enough lounge or bar space, they should open up the back area w/ more loungable chairs or booths if they want to catch any after dinner sort of bar crowd.",lounge,neutral,0,"Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+",3,"Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+",9,"Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+",negative,prompt_single_term_fewshot,"Example 1:
+Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+
+
+Example 2:
+Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+
+
+Example 3
+Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+
+    
+Task:
+Input: About 10 of us came here for drinks last friday, the atmosphere was good for chatting and hanging out, but not enough lounge or bar space, they should open up the back area w/ more loungable chairs or booths if they want to catch any after dinner sort of bar crowd.
+Prompt: What is the sentiment in the text towards 'lounge'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",error,"[
+{""word"":""not enough"",""importance"":""0.40""},
+{""word"":""more loungable chairs or booths"",""importance"":""0.60""}
+]","I made the prediction based on the mention of ""not enough lounge or bar space"" and the suggestion to ""open up the back area w/ more loungable chairs or booths."" These phrases indicate a negative sentiment towards the lounge in the text."
+92,92,35,92,The manager claimed that he could not compensate us for anything on the bill which just shows the lack of sophistication from the entire group.,manager,neutral,0,"Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+",3,"Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+",9,"Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+",negative,prompt_single_term_fewshot,"Example 1:
+Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+
+
+Example 2:
+Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+
+
+Example 3
+Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+
+    
+Task:
+Input: The manager claimed that he could not compensate us for anything on the bill which just shows the lack of sophistication from the entire group.
+Prompt: What is the sentiment in the text towards 'manager'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",error,"[
+{""compensate"": ""0.4""},
+{""lack of sophistication"": ""0.6""}
+]","I made the prediction based on the phrase ""lack of sophistication from the entire group,"" which indicates a negative sentiment towards the manager."
+134,134,51,134,"Our waiter seemed to really care about getting us to the show on time, and made some good reccomendations on the menu for doing it.",menu,neutral,0,"Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+",3,"Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+",9,"Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+",positive,prompt_single_term_fewshot,"Example 1:
+Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+
+
+Example 2:
+Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+
+
+Example 3
+Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+
+    
+Task:
+Input: Our waiter seemed to really care about getting us to the show on time, and made some good reccomendations on the menu for doing it.
+Prompt: What is the sentiment in the text towards 'menu'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",error,"[
+{""waiter"": ""0.30""},
+{""care"": ""0.20""},
+{""recommendations"": ""0.20""},
+{""good"": ""0.15""},
+{""show on time"": ""0.15""}
+]","I made the prediction based on the positive sentiment expressed towards the waiter caring about getting the customers to the show on time and making good recommendations on the menu. The words ""really care,"" ""good recommendations,"" and ""menu"" had a high influence on my decision."
+402,402,153,402,"Includes a diverse array of entrees ranging from Boar (prepared in your choice of either the French or Asian tradition), Mussels, or Pad Thai that grace the menu all at once, each one prepared in a distinctly different and delicate sauce.",Mussels,neutral,0,"Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+",3,"Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+",9,"Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+",positive,prompt_single_term_fewshot,"Example 1:
+Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+
+
+Example 2:
+Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+
+
+Example 3
+Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+
+    
+Task:
+Input: Includes a diverse array of entrees ranging from Boar (prepared in your choice of either the French or Asian tradition), Mussels, or Pad Thai that grace the menu all at once, each one prepared in a distinctly different and delicate sauce.
+Prompt: What is the sentiment in the text towards 'Mussels'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",error,"[
+{""Mussels"": ""0.70""},
+{""sauce"": ""0.30""}
+]","I made the prediction based on the positive language used to describe the diverse array of entrees, including Mussels, in the text. The words ""grace the menu,"" ""distinctly different,"" and ""delicate sauce"" all convey a positive sentiment towards the Mussels."
+75,75,27,75,"We were so excited since I was reading great review of this place, however we were disappointed with the taste of the food.",food,positive,0,"Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+",3,"Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+",9,"Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+",negative,prompt_single_term_fewshot,"Example 1:
+Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+
+
+Example 2:
+Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+
+
+Example 3
+Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+
+    
+Task:
+Input: We were so excited since I was reading great review of this place, however we were disappointed with the taste of the food.
+Prompt: What is the sentiment in the text towards 'food'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",error,"[{""disappointed"":""0.7""}, {""taste"":""0.3""}]","I made the prediction based on the word ""disappointed"" which indicates a negative sentiment towards the food."
+154,154,60,154,"We had no problems with our resevations and found the service and the meal well worth a wait, had we run into one.",meal,neutral,0,"Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+",3,"Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+",9,"Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+",positive,prompt_single_term_fewshot,"Example 1:
+Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+
+
+Example 2:
+Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+
+
+Example 3
+Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+
+    
+Task:
+Input: We had no problems with our resevations and found the service and the meal well worth a wait, had we run into one.
+Prompt: What is the sentiment in the text towards 'meal'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",error,"[
+{""word"":""worth a wait"",""importance"":""0.7""},
+{""word"":""well"",""importance"":""0.3""}
+]","I made the prediction based on the positive sentiment expressed towards the service and the overall experience in the text. The words ""no problems,"" ""well worth a wait,"" and ""found the service and the meal"" indicate a positive sentiment towards the meal."
+96,96,36,96,"While waiting for a table, tried to get a drink from a bartender who seemed more interested in arguing with his waiters.",drink,neutral,0,"Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+",3,"Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+",9,"Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+",negative,prompt_single_term_fewshot,"Example 1:
+Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+
+
+Example 2:
+Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+
+
+Example 3
+Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+
+    
+Task:
+Input: While waiting for a table, tried to get a drink from a bartender who seemed more interested in arguing with his waiters.
+Prompt: What is the sentiment in the text towards 'drink'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",error,"[
+{""bartender"": ""0.6""},
+{""arguing"": ""0.4""}
+]","I made the prediction based on the negative sentiment expressed towards the bartender in the text. The words ""arguing with his waiters"" indicate a negative interaction, suggesting a negative sentiment towards getting a drink from the bartender."
+407,407,155,407,"Anyway, I went down on a Wednesday night to see if they had a long wait and the hostess said they had a table to accomodate my party.",table,neutral,0,"Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+",3,"Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+",9,"Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+",positive,prompt_single_term_fewshot,"Example 1:
+Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+
+
+Example 2:
+Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+
+
+Example 3
+Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+
+    
+Task:
+Input: Anyway, I went down on a Wednesday night to see if they had a long wait and the hostess said they had a table to accomodate my party.
+Prompt: What is the sentiment in the text towards 'table'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",error,"[{""Wednesday night"": ""0.40""}, {""accommodate"": ""0.60""}]","I made the prediction based on the positive sentiment expressed towards the availability of a table to accommodate the party on a Wednesday night. The words ""had a table to accommodate my party"" indicate a positive sentiment towards the table."
+300,300,116,300,"From beginning appetizers, the scallops were incredible, to the delicious chocolate souffle with rasberry mint sorbet, we were delighted by the taste sensations.",beginning appetizers,neutral,0,"Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+",3,"Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+",9,"Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+",positive,prompt_single_term_fewshot,"Example 1:
+Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+
+
+Example 2:
+Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+
+
+Example 3
+Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+
+    
+Task:
+Input: From beginning appetizers, the scallops were incredible, to the delicious chocolate souffle with rasberry mint sorbet, we were delighted by the taste sensations.
+Prompt: What is the sentiment in the text towards 'beginning appetizers'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",error,"[
+{""word"":""incredible"",""importance"":""0.50""},
+{""word"":""delighted"",""importance"":""0.50""}
+]","I made my prediction based on the positive words used to describe the appetizers, such as ""incredible"" and ""delighted."" These words indicate a positive sentiment towards the beginning appetizers in the text."
+236,236,89,236,The Scene Hunky waiters dub diners darling and it sounds like they mean it.,waiters,negative,0,"Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+",3,"Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+",9,"Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+",positive,prompt_single_term_fewshot,"Example 1:
+Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+
+
+Example 2:
+Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+
+
+Example 3
+Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+
+    
+Task:
+Input: The Scene Hunky waiters dub diners darling and it sounds like they mean it.
+Prompt: What is the sentiment in the text towards 'waiters'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",error,"[
+{""waiters"": ""0.70""},
+{""diners darling"": ""0.30""}
+]","I made the prediction based on the positive language used in the text, such as ""Hunky waiters,"" ""dub diners darling,"" and ""sounds like they mean it."" These phrases indicate a positive sentiment towards the waiters."
+200,200,77,200,"The only dishes that were good were the chicken kebob (not hard to make) and the desserts, which were rice pudding.",desserts,negative,0,"Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+",3,"Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+",9,"Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+",positive,prompt_single_term_fewshot,"Example 1:
+Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+
+
+Example 2:
+Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+
+
+Example 3
+Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+
+    
+Task:
+Input: The only dishes that were good were the chicken kebob (not hard to make) and the desserts, which were rice pudding.
+Prompt: What is the sentiment in the text towards 'desserts'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",error,"[
+{""good"": ""0.50""},
+{""desserts"": ""0.50""}
+]","I made the prediction based on the positive sentiment expressed towards the desserts in the text. The phrase ""the desserts, which were rice pudding"" indicates a positive sentiment towards the desserts, leading to the classification of the sentiment as positive."
+14,14,5,14,"After being seated took our waiter 10 mintues to get us a menu, 15 minutes to come back for our order, by the time we finally got our food it was almost 1 1/2 hour since getting there.",menu,neutral,0,"Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+",3,"Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+",9,"Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+",negative,prompt_single_term_fewshot,"Example 1:
+Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+
+
+Example 2:
+Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+
+
+Example 3
+Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+
+    
+Task:
+Input: After being seated took our waiter 10 mintues to get us a menu, 15 minutes to come back for our order, by the time we finally got our food it was almost 1 1/2 hour since getting there.
+Prompt: What is the sentiment in the text towards 'menu'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",error,"[
+{""waiter"": ""0.40""},
+{""menu"": ""0.60""}
+]","I made the prediction based on the delays in service mentioned in the text, such as ""took our waiter 10 minutes to get us a menu"" and ""15 minutes to come back for our order."" These delays indicate a negative sentiment towards the term 'menu.'"
+355,355,135,355,"The waitress was no where to be found at all throughout the course of the meal, did not refill a single drink nor did she bother to inquire about my satisfaction with the food or even bring the check at the conclusion of the meal.",single drink,neutral,0,"Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+",3,"Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+",9,"Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+",negative,prompt_single_term_fewshot,"Example 1:
+Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+
+
+Example 2:
+Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+
+
+Example 3
+Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+
+    
+Task:
+Input: The waitress was no where to be found at all throughout the course of the meal, did not refill a single drink nor did she bother to inquire about my satisfaction with the food or even bring the check at the conclusion of the meal.
+Prompt: What is the sentiment in the text towards 'single drink'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",error,"[
+{""word"":""nowhere to be found"",""importance"":""0.30""},
+{""word"":""did not refill"",""importance"":""0.30""},
+{""word"":""did not inquire"",""importance"":""0.20""},
+{""word"":""did not bring"",""importance"":""0.20""}
+]","I made the prediction based on the negative sentiment expressed towards the waitress in the text. The phrases ""no where to be found,"" ""did not refill a single drink,"" and ""nor did she bother to inquire about my satisfaction"" all convey a negative tone towards the service related to the term ""single drink."""
+370,370,140,370,"While the staff was kind and attentive, our waiter never once broke a smile, even when I told him it was my friend's birthday, although he did bring a dessert with a candle at the end of the meal.",candle,neutral,0,"Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+",3,"Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+",9,"Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+",positive,prompt_single_term_fewshot,"Example 1:
+Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+
+
+Example 2:
+Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+
+
+Example 3
+Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+
+    
+Task:
+Input: While the staff was kind and attentive, our waiter never once broke a smile, even when I told him it was my friend's birthday, although he did bring a dessert with a candle at the end of the meal.
+Prompt: What is the sentiment in the text towards 'candle'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",error,"[
+{""kind and attentive"":""0.30""},
+{""never broke a smile"":""0.20""},
+{""brought a dessert with a candle"":""0.50""}
+]","I made the prediction based on the positive sentiment expressed towards the waiter bringing a dessert with a candle at the end of the meal. The phrase ""bring a dessert with a candle"" indicates a positive gesture, leading to the overall sentiment towards ""candle"" being positive."
+392,392,149,392,They also have a great deal of 2 cheese slices and a drink for $3.,drink,neutral,0,"Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+",3,"Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+",9,"Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+",positive,prompt_single_term_fewshot,"Example 1:
+Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+
+
+Example 2:
+Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+
+
+Example 3
+Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+
+    
+Task:
+Input: They also have a great deal of 2 cheese slices and a drink for $3.
+Prompt: What is the sentiment in the text towards 'drink'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",error,"[{""great"": ""0.50""}, {""deal"": ""0.30""}, {""drink"": ""0.20""}]","I made the prediction based on the positive sentiment conveyed towards the deal in the text, indicating a positive association with the 'drink'. The phrase ""great deal"" and the mention of the price being $3 were key factors influencing the decision."
+33,33,11,33,"While dining on a delicate lamb carpaccio, and grilled skate wing, the owner explained that due to low lunch-time patronage, they may be discontinuing lunch altogether.",dining,neutral,0,"Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+",3,"Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+",9,"Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+",positive,prompt_single_term_fewshot,"Example 1:
+Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+
+
+Example 2:
+Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+
+
+Example 3
+Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+
+    
+Task:
+Input: While dining on a delicate lamb carpaccio, and grilled skate wing, the owner explained that due to low lunch-time patronage, they may be discontinuing lunch altogether.
+Prompt: What is the sentiment in the text towards 'dining'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",error,"[
+{""delicate lamb carpaccio"": ""0.40""},
+{""grilled skate wing"": ""0.40""},
+{""explained"": ""0.20""}
+]","I made the prediction based on the positive words used in the text such as ""delicate,"" ""explained,"" and ""owner."" These words convey a positive sentiment towards the dining experience mentioned in the text."
+116,116,44,116,"We politely asked our server for the regular menu, but were told that for large parties they could only offer us the banquet menu (would have gone elsewhere had we known).",banquet menu,neutral,0,"Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+",3,"Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+",9,"Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+",negative,prompt_single_term_fewshot,"Example 1:
+Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+
+
+Example 2:
+Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+
+
+Example 3
+Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+
+    
+Task:
+Input: We politely asked our server for the regular menu, but were told that for large parties they could only offer us the banquet menu (would have gone elsewhere had we known).
+Prompt: What is the sentiment in the text towards 'banquet menu'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",error,"[
+{""banquet menu"": ""0.70""},
+{""large parties"": ""0.30""}
+]","I made the prediction based on the negative sentiment expressed towards the banquet menu due to the disappointment of not being able to order from the regular menu as desired. The words ""told,"" ""large parties,"" ""only offer,"" and ""had we known"" indicated a sense of dissatisfaction and frustration, leading to the negative sentiment prediction."
+308,308,118,308,"I love Chinese food and have been looking for the alternative to the greasy stuff on every corner of New York- ya, you know, the stinky take-out joints that leave you smelling like dinner for 100 for the rest of the night!",stuff,positive,0,"Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+",3,"Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+",9,"Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+",negative,prompt_single_term_fewshot,"Example 1:
+Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+
+
+Example 2:
+Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+
+
+Example 3
+Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+
+    
+Task:
+Input: I love Chinese food and have been looking for the alternative to the greasy stuff on every corner of New York- ya, you know, the stinky take-out joints that leave you smelling like dinner for 100 for the rest of the night!
+Prompt: What is the sentiment in the text towards 'stuff'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",error,"[
+{""greasy"": ""0.40""},
+{""stinky"": ""0.30""},
+{""smelling like dinner for 100"": ""0.30""}
+]","I made the prediction based on the negative connotations associated with the words ""greasy stuff"" and ""stinky take-out joints"" in the text. These words imply a negative sentiment towards the term ""stuff."""
+361,361,137,361,"The food is decent, average bistro food, the decor is nice, but the service is poor, the waiters always seems to have to many tables andcant keep up with a good services.",waiters,positive,0,"Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+",3,"Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+",9,"Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+",negative,prompt_single_term_fewshot,"Example 1:
+Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+
+
+Example 2:
+Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+
+
+Example 3
+Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+
+    
+Task:
+Input: The food is decent, average bistro food, the decor is nice, but the service is poor, the waiters always seems to have to many tables andcant keep up with a good services.
+Prompt: What is the sentiment in the text towards 'waiters'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",error,"[
+{""word"":""poor"",""importance"":""0.4""},
+{""word"":""too many tables"",""importance"":""0.3""},
+{""word"":""can't keep up"",""importance"":""0.3""}
+]","I made the prediction based on the negative sentiment expressed towards the waiters in the text. The phrases ""poor service,"" ""waiters always seem to have too many tables,"" and ""can't keep up with good service"" indicate dissatisfaction with the waiters' performance, leading to a negative sentiment."
+58,58,20,58,There were a lot of scensters who couldnt afford dinner hanging in the waiting area so we got bumped around a lot.,waiting area,neutral,0,"Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+",3,"Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+",9,"Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+",negative,prompt_single_term_fewshot,"Example 1:
+Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+
+
+Example 2:
+Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+
+
+Example 3
+Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+
+    
+Task:
+Input: There were a lot of scensters who couldnt afford dinner hanging in the waiting area so we got bumped around a lot.
+Prompt: What is the sentiment in the text towards 'waiting area'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",error,"[{""waiting area"":""0.70""}, {""scensters"":""0.30""}]","I made the prediction based on the negative sentiment expressed towards the waiting area in the text. The words ""scensters who couldn't afford dinner,"" ""hanging in the waiting area,"" and ""got bumped around a lot"" indicated a negative experience associated with the waiting area."
+273,273,104,273,"Food was average, the appetizers were better than the main courses.",main courses,neutral,0,"Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+",3,"Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+",9,"Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+",negative,prompt_single_term_fewshot,"Example 1:
+Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+
+
+Example 2:
+Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+
+
+Example 3
+Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+
+    
+Task:
+Input: Food was average, the appetizers were better than the main courses.
+Prompt: What is the sentiment in the text towards 'main courses'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",error,"[
+{""word"":""average"",""importance"":""0.6""},
+{""word"":""better"",""importance"":""0.4""}
+]","I made the prediction based on the comparison between the main courses and the appetizers, where the appetizers were described as better. This comparison indicates a negative sentiment towards the main courses."
+201,201,77,201,"The only dishes that were good were the chicken kebob (not hard to make) and the desserts, which were rice pudding.",rice pudding,neutral,0,"Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+",3,"Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+",9,"Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+",positive,prompt_single_term_fewshot,"Example 1:
+Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+
+
+Example 2:
+Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+
+
+Example 3
+Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+
+    
+Task:
+Input: The only dishes that were good were the chicken kebob (not hard to make) and the desserts, which were rice pudding.
+Prompt: What is the sentiment in the text towards 'rice pudding'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",error,"[{""good"": ""0.50""}, {""desserts"": ""0.30""}, {""rice pudding"": ""0.20""}]","I made the prediction based on the positive sentiment expressed towards the desserts in the text, specifically mentioning that the desserts, including rice pudding, were good. This positive sentiment towards rice pudding influenced my decision to classify it as ""positive."""
+376,376,143,376,"The Food This isn't for those on a budget, but portions are generous.",Food,negative,0,"Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+",3,"Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+",9,"Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+",positive,prompt_single_term_fewshot,"Example 1:
+Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+
+
+Example 2:
+Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+
+
+Example 3
+Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+
+    
+Task:
+Input: The Food This isn't for those on a budget, but portions are generous.
+Prompt: What is the sentiment in the text towards 'Food'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",error,"[{""generous"":""1.0""}]","I made the prediction based on the positive sentiment conveyed towards the food in the text. The words ""generous portions"" indicate a positive sentiment towards the food, leading to the classification of the sentiment as positive."
+3,3,0,3,"Amusing details distinguish desserts, from dulce de leche ice-cream profiteroles dotting a chocolate sauce tic-tac-toe board, to coconut custard surrounded by a sea of Malibu-rum gelee and poached pineapple.",poached pineapple,neutral,0,"Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+",3,"Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+",9,"Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+",positive,prompt_single_term_fewshot,"Example 1:
+Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+
+
+Example 2:
+Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+
+
+Example 3
+Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+
+    
+Task:
+Input: Amusing details distinguish desserts, from dulce de leche ice-cream profiteroles dotting a chocolate sauce tic-tac-toe board, to coconut custard surrounded by a sea of Malibu-rum gelee and poached pineapple.
+Prompt: What is the sentiment in the text towards 'poached pineapple'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",error,"[
+{""dulce de leche ice-cream profiteroles"": ""0.30""},
+{""coconut custard"": ""0.30""},
+{""Malibu-rum gelee"": ""0.30""},
+{""poached pineapple"": ""0.10""}
+]","I made my prediction based on the positive descriptions used for the desserts, such as ""amusing details distinguish,"" ""dulce de leche ice-cream profiteroles,"" ""coconut custard surrounded by a sea of Malibu-rum gelee,"" and ""poached pineapple."" These positive and elaborate descriptions indicate a favorable sentiment towards the ""poached pineapple."""
+431,431,163,431,People will literally spend their entire lunch break waiting and for what - an average fastfood burger.,lunch,neutral,0,"Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+",3,"Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+",9,"Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+",negative,prompt_single_term_fewshot,"Example 1:
+Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+
+
+Example 2:
+Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+
+
+Example 3
+Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+
+    
+Task:
+Input: People will literally spend their entire lunch break waiting and for what - an average fastfood burger.
+Prompt: What is the sentiment in the text towards 'lunch'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",error,"[
+{""lunch"":""0.70""},
+{""average"":""0.30""}
+]","I made the prediction based on the negative sentiment expressed towards the fastfood burger, which implies a negative association with the overall lunch experience. The words ""entire lunch break waiting"" and ""average fastfood burger"" had a high influence on my decision."
+17,17,6,17,The eggplant parmasean was AWESOME (I don't even like eggplant) but my main course was just ok (shrimp with pasta).,main course,neutral,0,"Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+",3,"Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+",9,"Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+",negative,prompt_single_term_fewshot,"Example 1:
+Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+
+
+Example 2:
+Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+
+
+Example 3
+Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+
+    
+Task:
+Input: The eggplant parmasean was AWESOME (I don't even like eggplant) but my main course was just ok (shrimp with pasta).
+Prompt: What is the sentiment in the text towards 'main course'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",error,"[{""awesome"":""0.30""},
+{""just ok"":""0.70""}]","I made the prediction based on the phrase ""just ok"" used to describe the main course, indicating a neutral to slightly negative sentiment towards it."
+388,388,147,388,"Mac cheese is nothing to write home about; the beet salad is boring, mostly lettuce; tuna sandwhich - boring, mostly mayo; the french fries looked re-fried and were cold; the excellent pork sandwich came on one of those supermarket hot-dog buns.",tuna sandwhich,neutral,0,"Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+",3,"Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+",9,"Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+",negative,prompt_single_term_fewshot,"Example 1:
+Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+
+
+Example 2:
+Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+
+
+Example 3
+Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+
+    
+Task:
+Input: Mac cheese is nothing to write home about; the beet salad is boring, mostly lettuce; tuna sandwhich - boring, mostly mayo; the french fries looked re-fried and were cold; the excellent pork sandwich came on one of those supermarket hot-dog buns.
+Prompt: What is the sentiment in the text towards 'tuna sandwhich'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",error,"[
+{""word"":""boring"",""importance"":""0.40""},
+{""word"":""mostly mayo"",""importance"":""0.30""},
+{""word"":""tuna sandwich"",""importance"":""0.30""}
+]","I made the prediction based on the negative descriptions associated with the ""tuna sandwich"" in the text, such as ""boring, mostly mayo."" These words indicate a negative sentiment towards the tuna sandwich."
+414,414,158,414,"For lunch, opt for an outstanding, triple-decker roast turkey club or brioche burger with skin-on fries.",lunch,neutral,0,"Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+",3,"Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+",9,"Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+",positive,prompt_single_term_fewshot,"Example 1:
+Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+
+
+Example 2:
+Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+
+
+Example 3
+Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+
+    
+Task:
+Input: For lunch, opt for an outstanding, triple-decker roast turkey club or brioche burger with skin-on fries.
+Prompt: What is the sentiment in the text towards 'lunch'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",error,"[
+{""outstanding"": ""0.30""},
+{""triple-decker"": ""0.20""},
+{""roast turkey club"": ""0.20""},
+{""brioche burger"": ""0.15""},
+{""skin-on fries"": ""0.15""}
+]","I made the prediction based on the positive adjectives ""outstanding"" and ""triple-decker"" used to describe the roast turkey club and brioche burger. These words indicate a positive sentiment towards the term ""lunch"" in the text."
+229,229,86,229,"The mango salsa with fish cake was too sour, the apple suace for pork chop too sweet.",pork chop,neutral,0,"Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+",3,"Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+",9,"Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+",negative,prompt_single_term_fewshot,"Example 1:
+Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+
+
+Example 2:
+Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+
+
+Example 3
+Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+
+    
+Task:
+Input: The mango salsa with fish cake was too sour, the apple suace for pork chop too sweet.
+Prompt: What is the sentiment in the text towards 'pork chop'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",error,"[
+{""sour"",""importance"":""0.40""},
+{""sweet"",""importance"":""0.40""},
+{""too"",""importance"":""0.20""}
+]","I made the prediction based on the negative descriptions of the food items in the text (""too sour"" and ""too sweet""). These descriptions indicate a negative sentiment towards the food, including the pork chop."
+71,71,26,71,Ive had better burgers and fries at the local dinner in my neighborhood: 3 guys dinner on 96th and Madison Avenue.,fries,positive,0,"Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+",3,"Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+",9,"Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+",negative,prompt_single_term_fewshot,"Example 1:
+Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+
+
+Example 2:
+Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+
+
+Example 3
+Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+
+    
+Task:
+Input: Ive had better burgers and fries at the local dinner in my neighborhood: 3 guys dinner on 96th and Madison Avenue.
+Prompt: What is the sentiment in the text towards 'fries'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",error,"[{""burgers"":""0.70""},
+{""fries"":""0.30""}]","I made the prediction based on the phrase ""I've had better burgers and fries at the local dinner in my neighborhood."" The comparison to having better fries elsewhere indicates a negative sentiment towards the fries mentioned in the text."
+299,299,115,299,"I love the shrimp summer role, chicken kabob's, and all the chicken and shrimp dishes.",shrimp dishes,neutral,0,"Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+",3,"Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+",9,"Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+",positive,prompt_single_term_fewshot,"Example 1:
+Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+
+
+Example 2:
+Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+
+
+Example 3
+Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+
+    
+Task:
+Input: I love the shrimp summer role, chicken kabob's, and all the chicken and shrimp dishes.
+Prompt: What is the sentiment in the text towards 'shrimp dishes'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",error,"[
+{""shrimp summer role"",""importance"":""0.30""},
+{""chicken kabob's"",""importance"":""0.20""},
+{""chicken"",""importance"":""0.20""},
+{""shrimp dishes"",""importance"":""0.30""}
+]","I made the prediction based on the positive sentiment expressed towards ""shrimp summer role"" and ""shrimp dishes"" in the input text. The mention of loving these dishes indicates a positive sentiment towards shrimp dishes."
+276,276,106,276,If you don't want to wait 45 minutes for a table or a long time for service then don't go @ 9pm on a Friday or Saturday night.,table,neutral,0,"Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+",3,"Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+",9,"Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+",negative,prompt_single_term_fewshot,"Example 1:
+Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+
+
+Example 2:
+Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+
+
+Example 3
+Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+
+    
+Task:
+Input: If you don't want to wait 45 minutes for a table or a long time for service then don't go @ 9pm on a Friday or Saturday night.
+Prompt: What is the sentiment in the text towards 'table'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",error,"[
+{""wait"":""0.30""},
+{""long time"":""0.30""},
+{""9pm on a Friday or Saturday night"":""0.40""}
+]","I made the prediction based on the negative sentiment expressed towards waiting for a table for 45 minutes and a long time for service. The words ""wait 45 minutes for a table"" and ""long time for service"" indicated a negative sentiment towards tables in the text."
+333,333,127,333,The service was less than spectacular (two waiters fought in front of us over which one got our table) and the bread put out as an appetizer was sub-par.,bread,neutral,0,"Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+",3,"Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+",9,"Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+",negative,prompt_single_term_fewshot,"Example 1:
+Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+
+
+Example 2:
+Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+
+
+Example 3
+Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+
+    
+Task:
+Input: The service was less than spectacular (two waiters fought in front of us over which one got our table) and the bread put out as an appetizer was sub-par.
+Prompt: What is the sentiment in the text towards 'bread'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",error,"[
+{""less than spectacular"",""importance"":""0.70""},
+{""sub-par"",""importance"":""0.30""}
+]","I made the prediction based on the negative descriptions of the service (""less than spectacular,"" ""waiters fought in front of us"") and the negative evaluation of the bread (""sub-par""). These negative descriptions influenced my decision to classify the sentiment towards 'bread' as negative."
+255,255,96,255,"I would have told the wait staff if anyone had asked me if I enjoyed my meal, but no one asked.",wait staff,negative,0,"Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+",3,"Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+",9,"Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+",negative,prompt_single_term_fewshot,"Example 1:
+Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+
+
+Example 2:
+Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+
+
+Example 3
+Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+
+    
+Task:
+Input: I would have told the wait staff if anyone had asked me if I enjoyed my meal, but no one asked.
+Prompt: What is the sentiment in the text towards 'wait staff'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",correct,"[
+{""wait staff"":""0.70""},
+{""no one asked"":""0.30""}
+]","I made the prediction based on the absence of any positive feedback towards the wait staff in the text. The phrase ""no one asked"" indicates a lack of engagement or attention from the wait staff, leading to a negative sentiment."
+230,230,87,230,Had a mouthwatering sardinian Stuffed Squid and a Catfish fiumarola from Rome( think was capers and anchovies sauce).,sardinian Stuffed Squid,positive,0,"Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+",3,"Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+",9,"Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+",positive,prompt_single_term_fewshot,"Example 1:
+Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+
+
+Example 2:
+Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+
+
+Example 3
+Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+
+    
+Task:
+Input: Had a mouthwatering sardinian Stuffed Squid and a Catfish fiumarola from Rome( think was capers and anchovies sauce).
+Prompt: What is the sentiment in the text towards 'sardinian Stuffed Squid'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",correct,"[
+{""word"":""mouthwatering"",""importance"":""0.40""},
+{""word"":""Stuffed Squid"",""importance"":""0.30""},
+{""word"":""sardinian"",""importance"":""0.30""}
+]","I made the prediction based on the positive words used to describe the ""sardinian Stuffed Squid"" such as ""mouthwatering"" and the mention of the specific dish being from Sardinia. These positive descriptors indicate a favorable sentiment towards the dish."
+139,139,54,139,"The waitstaff are surprisingly uninformed and unintelligent, and I say this even though I liked my waiter.",waitstaff,negative,0,"Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+",3,"Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+",9,"Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+",negative,prompt_single_term_fewshot,"Example 1:
+Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+
+
+Example 2:
+Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+
+
+Example 3
+Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+
+    
+Task:
+Input: The waitstaff are surprisingly uninformed and unintelligent, and I say this even though I liked my waiter.
+Prompt: What is the sentiment in the text towards 'waitstaff'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",correct,"[
+{""word"":""uninformed"",""importance"":""0.40""},
+{""word"":""unintelligent"",""importance"":""0.40""},
+{""word"":""liked"",""importance"":""0.20""}
+]","I made the prediction based on the negative descriptors ""uninformed"" and ""unintelligent"" used to describe the waitstaff. These words strongly indicate a negative sentiment towards the waitstaff in the text."
+52,52,18,52,Try the olive cream cheese or the lox spread on a whole wheat everything bagel.,lox spread,positive,0,"Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+",3,"Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+",9,"Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+",positive,prompt_single_term_fewshot,"Example 1:
+Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+
+
+Example 2:
+Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+
+
+Example 3
+Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+
+    
+Task:
+Input: Try the olive cream cheese or the lox spread on a whole wheat everything bagel.
+Prompt: What is the sentiment in the text towards 'lox spread'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",correct,"[
+{""word"":""try"",""importance"":""0.2""},
+{""word"":""olive cream cheese"",""importance"":""0.2""},
+{""word"":""lox spread"",""importance"":""0.6""}
+]","I made the prediction based on the positive sentiment conveyed towards the ""lox spread"" in the text. The words ""try,"" ""olive cream cheese,"" and ""whole wheat everything bagel"" suggest a positive attitude towards the food item, indicating a favorable sentiment."
+310,310,119,310,We recently had brunch at this establishment with two other couples and I have to say I was majorly dissapointed with the service and how we were treated.,brunch,neutral,0,"Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+",3,"Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+",9,"Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+",neutral,prompt_single_term_fewshot,"Example 1:
+Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+
+
+Example 2:
+Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+
+
+Example 3
+Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+
+    
+Task:
+Input: We recently had brunch at this establishment with two other couples and I have to say I was majorly dissapointed with the service and how we were treated.
+Prompt: What is the sentiment in the text towards 'brunch'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",correct,"[
+{""brunch"":""0.50""},
+{""service"":""0.30""},
+{""treated"":""0.20""}
+]","I made the prediction based on the words ""majorly disappointed"" and ""service"" in the text. The negative sentiment expressed towards the service and how they were treated likely influenced the overall sentiment towards the brunch to be neutral."
+317,317,121,317,"Once at the table our waitress managed on two occasions to take 15 minutes bringing drinks to our table, our plates sat uncleared on the table for just as long.",waitress,negative,0,"Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+",3,"Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+",9,"Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+",negative,prompt_single_term_fewshot,"Example 1:
+Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+
+
+Example 2:
+Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+
+
+Example 3
+Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+
+    
+Task:
+Input: Once at the table our waitress managed on two occasions to take 15 minutes bringing drinks to our table, our plates sat uncleared on the table for just as long.
+Prompt: What is the sentiment in the text towards 'waitress'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",correct,"[
+{""word"":""waitress"",""importance"":""1.0""}
+]","I made the prediction based on the negative descriptions of the waitress's actions, such as ""took 15 minutes bringing drinks"" and ""plates sat uncleared on the table."" These specific instances of poor service towards the waitress influenced my decision to classify the sentiment as negative."
+228,228,86,228,"The mango salsa with fish cake was too sour, the apple suace for pork chop too sweet.",apple suace,negative,0,"Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+",3,"Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+",9,"Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+",negative,prompt_single_term_fewshot,"Example 1:
+Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+
+
+Example 2:
+Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+
+
+Example 3
+Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+
+    
+Task:
+Input: The mango salsa with fish cake was too sour, the apple suace for pork chop too sweet.
+Prompt: What is the sentiment in the text towards 'apple suace'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",correct,"[
+{""word"":""too sweet"",""importance"":""0.7""},
+{""word"":""pork chop"",""importance"":""0.3""}
+]","I made the prediction based on the words ""too sweet"" in the text, which indicates a negative sentiment towards the apple sauce. The phrase ""too sweet"" suggests that the sweetness level of the apple sauce was excessive, leading to a negative perception."
+443,443,168,443,"The smoked salmon appetizer was pretty good (it comes with goat cheese, calpers and onions).",smoked salmon appetizer,positive,0,"Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+",3,"Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+",9,"Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+",positive,prompt_single_term_fewshot,"Example 1:
+Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+
+
+Example 2:
+Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+
+
+Example 3
+Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+
+    
+Task:
+Input: The smoked salmon appetizer was pretty good (it comes with goat cheese, calpers and onions).
+Prompt: What is the sentiment in the text towards 'smoked salmon appetizer'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",correct,"[
+{""smoked salmon appetizer"":""0.70""},
+{""good"":""0.30""}
+]","I made the prediction based on the positive sentiment conveyed towards the ""smoked salmon appetizer"" in the text. The words ""pretty good"" and the description of the ingredients such as ""goat cheese, capers, and onions"" indicated a positive sentiment towards the appetizer."
+422,422,159,422,"I understand the area and folks you need not come here for the romantic, alluring ambiance or the five star service featuring a sommlier and a complicated maze of captain and back waiters - you come for the authentic foods, the tastes, the experiance.",back waiters,neutral,0,"Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+",3,"Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+",9,"Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+",neutral,prompt_single_term_fewshot,"Example 1:
+Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+
+
+Example 2:
+Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+
+
+Example 3
+Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+
+    
+Task:
+Input: I understand the area and folks you need not come here for the romantic, alluring ambiance or the five star service featuring a sommlier and a complicated maze of captain and back waiters - you come for the authentic foods, the tastes, the experiance.
+Prompt: What is the sentiment in the text towards 'back waiters'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",correct,"[
+{""back waiters"":""0.50""},
+{""authentic foods"":""0.30""},
+{""tastes"":""0.20""}
+]","I made my prediction based on the overall tone of the text, which focuses on the importance of authentic foods and the experience rather than the service aspects. The phrase ""back waiters"" is mentioned in the context of describing a five-star service setup, but the emphasis of the text is on the food and experience, so the sentiment towards ""back waiters"" is neutral."
+428,428,161,428,"Had a party of 7 people for dinner here on a busy night for the restaurant, and our meal was excellent and served with extreme consistency (all appetizers and main courses were served at the right times, with none of the dishes served at the wrong temperature).",dishes served,positive,0,"Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+",3,"Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+",9,"Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+",positive,prompt_single_term_fewshot,"Example 1:
+Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+
+
+Example 2:
+Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+
+
+Example 3
+Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+
+    
+Task:
+Input: Had a party of 7 people for dinner here on a busy night for the restaurant, and our meal was excellent and served with extreme consistency (all appetizers and main courses were served at the right times, with none of the dishes served at the wrong temperature).
+Prompt: What is the sentiment in the text towards 'dishes served'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",correct,"[
+{""word"":""excellent"",""importance"":""0.40""},
+{""word"":""served with extreme consistency"",""importance"":""0.30""},
+{""word"":""right times"",""importance"":""0.20""},
+{""word"":""none of the dishes served at the wrong temperature"",""importance"":""0.10""}
+]","I made the prediction based on the positive descriptions of the meal being excellent, served with extreme consistency, and all dishes being served at the right times and temperatures. These words and phrases indicated a positive sentiment towards the dishes served."
+219,219,83,219,"The service was non-existant, the manager spent all of his time at the bar.",manager,negative,0,"Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+",3,"Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+",9,"Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+",negative,prompt_single_term_fewshot,"Example 1:
+Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+
+
+Example 2:
+Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+
+
+Example 3
+Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+
+    
+Task:
+Input: The service was non-existant, the manager spent all of his time at the bar.
+Prompt: What is the sentiment in the text towards 'manager'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",correct,"[
+{""word"":""non-existant"",""importance"":""0.70""},
+{""word"":""spent all of his time at the bar"",""importance"":""0.30""}
+]","I made the prediction based on the negative sentiment expressed towards the manager in the text. The words ""non-existent"" and ""spent all of his time at the bar"" indicate a negative perception of the manager's behavior and performance."
+280,280,107,280,"But on a recent Sunday brunch excursion, I was greeted by a uniformly unfriendly staff - starting with the hostess and extending to foul faced wait staff.",wait staff,negative,0,"Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+",3,"Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+",9,"Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+",negative,prompt_single_term_fewshot,"Example 1:
+Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+
+
+Example 2:
+Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+
+
+Example 3
+Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+
+    
+Task:
+Input: But on a recent Sunday brunch excursion, I was greeted by a uniformly unfriendly staff - starting with the hostess and extending to foul faced wait staff.
+Prompt: What is the sentiment in the text towards 'wait staff'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",correct,"[
+{""unfriendly staff"":""0.70""},
+{""foul faced"":""0.30""}
+]","I made the prediction based on the words ""unfriendly staff"", ""foul faced wait staff"", and the overall negative tone of the text towards the staff members. These words and phrases indicated a negative sentiment towards the wait staff."
+146,146,57,146,We hunted the waitress to at least pay for the drinks.,waitress,negative,0,"Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+",3,"Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+",9,"Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+",negative,prompt_single_term_fewshot,"Example 1:
+Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+
+
+Example 2:
+Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+
+
+Example 3
+Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+
+    
+Task:
+Input: We hunted the waitress to at least pay for the drinks.
+Prompt: What is the sentiment in the text towards 'waitress'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",correct,"[{""waitress"":""-0.70""}, {""hunted"":""0.30""}]","I made the prediction based on the word ""hunted"" which implies a negative and aggressive tone towards the waitress. This word strongly suggests a negative sentiment towards the waitress in the text."
+396,396,151,396,"There is nothing else on the menu except for exotic teas and cold beverages, but with a meal this cheap and delightful, who would care?",exotic teas,neutral,0,"Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+",3,"Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+",9,"Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+",neutral,prompt_single_term_fewshot,"Example 1:
+Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+
+
+Example 2:
+Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+
+
+Example 3
+Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+
+    
+Task:
+Input: There is nothing else on the menu except for exotic teas and cold beverages, but with a meal this cheap and delightful, who would care?
+Prompt: What is the sentiment in the text towards 'exotic teas'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",correct,"[
+{""exotic teas"":""0.50""},
+{""cheap and delightful"":""0.50""}
+]","I made the prediction based on the context provided in the input text. The phrase ""There is nothing else on the menu except for exotic teas and cold beverages"" indicates a limited menu selection, which could be seen as a neutral statement. The following phrase ""but with a meal this cheap and delightful, who would care?"" expresses a positive sentiment towards the meal, but does not directly convey a sentiment towards the exotic teas. Therefore, the overall sentiment towards ""exotic teas"" is neutral."
+182,182,70,182,"The trick to the tomato and onions is ask for it light on the onions, heavy on the tomatoes, order steak for one less person than you have in your party and if the steak is too rare, you can cook the individual pieces more by placing them on the platter around the edges.",tomatoes,positive,0,"Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+",3,"Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+",9,"Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+",positive,prompt_single_term_fewshot,"Example 1:
+Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+
+
+Example 2:
+Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+
+
+Example 3
+Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+
+    
+Task:
+Input: The trick to the tomato and onions is ask for it light on the onions, heavy on the tomatoes, order steak for one less person than you have in your party and if the steak is too rare, you can cook the individual pieces more by placing them on the platter around the edges.
+Prompt: What is the sentiment in the text towards 'tomatoes'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",correct,"[
+{""word"":""good"",""importance"":""0.4""},
+{""word"":""bit in your face"",""importance"":""0.3""},
+{""word"":""better"",""importance"":""0.3""}
+]","I made my prediction based on the positive sentiment expressed towards tomatoes in the input text. The phrase ""heavy on the tomatoes"" indicates a preference for a larger quantity of tomatoes, suggesting a positive sentiment towards them."
+245,245,92,245,Anyway we get a table and order some appetizers from one of the waitresses who was pleasently nice.,appetizers,neutral,0,"Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+",3,"Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+",9,"Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+",neutral,prompt_single_term_fewshot,"Example 1:
+Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+
+
+Example 2:
+Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+
+
+Example 3
+Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+
+    
+Task:
+Input: Anyway we get a table and order some appetizers from one of the waitresses who was pleasently nice.
+Prompt: What is the sentiment in the text towards 'appetizers'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",correct,"[{""waitresses"": ""0.5""}, {""nice"": ""0.5""}]","I made the prediction based on the words ""order,"" ""appetizers,"" and ""waitresses who was pleasantly nice."" The overall tone of the sentence is positive, indicating a neutral sentiment towards the term ""appetizers."""
+312,312,120,312,My bass was even worse - smothered in some kind of tomato sauce that just did not go with fish and the spinach that accompanied the dish was extremely dry and flavorless.,bass,negative,0,"Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+",3,"Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+",9,"Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+",negative,prompt_single_term_fewshot,"Example 1:
+Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+
+
+Example 2:
+Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+
+
+Example 3
+Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+
+    
+Task:
+Input: My bass was even worse - smothered in some kind of tomato sauce that just did not go with fish and the spinach that accompanied the dish was extremely dry and flavorless.
+Prompt: What is the sentiment in the text towards 'bass'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",correct,"[
+{""bass"": ""0.70""},
+{""tomato sauce"": ""0.20""},
+{""dry"": ""0.10""}
+]","I made the prediction based on the negative descriptions associated with the bass, such as ""even worse,"" ""smothered in some kind of tomato sauce that just did not go with fish,"" and ""extremely dry and flavorless."" These words and phrases indicate a negative sentiment towards the bass in the text."
+115,115,44,115,"We politely asked our server for the regular menu, but were told that for large parties they could only offer us the banquet menu (would have gone elsewhere had we known).",server,negative,0,"Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+",3,"Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+",9,"Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+",negative,prompt_single_term_fewshot,"Example 1:
+Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+
+
+Example 2:
+Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+
+
+Example 3
+Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+
+    
+Task:
+Input: We politely asked our server for the regular menu, but were told that for large parties they could only offer us the banquet menu (would have gone elsewhere had we known).
+Prompt: What is the sentiment in the text towards 'server'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",correct,"[
+{""word"":""told"",""importance"":""0.40""},
+{""word"":""could only offer"",""importance"":""0.30""},
+{""word"":""large parties"",""importance"":""0.20""},
+{""word"":""polite"",""importance"":""0.10""}
+]","I made the prediction based on the negative sentiment expressed towards the server due to the disappointment of not being able to order from the regular menu. The phrases ""told that for large parties they could only offer us the banquet menu"" and ""would have gone elsewhere had we known"" indicate a negative sentiment towards the server."
+37,37,12,37,the service was slow took ten mins to get me a glass of water.,water,neutral,0,"Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+",3,"Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+",9,"Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+",neutral,prompt_single_term_fewshot,"Example 1:
+Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+
+
+Example 2:
+Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+
+
+Example 3
+Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+
+    
+Task:
+Input: the service was slow took ten mins to get me a glass of water.
+Prompt: What is the sentiment in the text towards 'water'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",correct,"[{""slow"": ""0.6""}, {""took ten mins"": ""0.4""}]","I made the prediction based on the context provided in the input text. The phrase ""took ten mins to get me a glass of water"" indicates a delay in service, which could be perceived as negative. However, the sentiment towards 'water' itself is not explicitly negative or positive in the text, leading to a neutral classification."
+202,202,78,202,"The Clinton-frequented restaurant stands handsomely on a quiet residential corner, and the modern interior includes a long dining room, a small bar and harsh lighting.",interior,positive,0,"Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+",3,"Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+",9,"Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+",positive,prompt_single_term_fewshot,"Example 1:
+Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+
+
+Example 2:
+Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+
+
+Example 3
+Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+
+    
+Task:
+Input: The Clinton-frequented restaurant stands handsomely on a quiet residential corner, and the modern interior includes a long dining room, a small bar and harsh lighting.
+Prompt: What is the sentiment in the text towards 'interior'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",correct,"[
+{""modern"": ""0.4""},
+{""long dining room"": ""0.3""},
+{""small bar"": ""0.2""},
+{""harsh lighting"": ""0.1""}
+]","I made the prediction based on the positive descriptors used for the interior, such as ""modern,"" ""handsomely,"" and ""long dining room."" These words indicate a favorable sentiment towards the interior, leading to the classification of ""positive."""
+222,222,84,222,"For dessert, go with the delicate, subtle flan over the pasty rice pudding.",flan,positive,0,"Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+",3,"Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+",9,"Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+",positive,prompt_single_term_fewshot,"Example 1:
+Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+
+
+Example 2:
+Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+
+
+Example 3
+Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+
+    
+Task:
+Input: For dessert, go with the delicate, subtle flan over the pasty rice pudding.
+Prompt: What is the sentiment in the text towards 'flan'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",correct,"[
+{""delicate"":""0.4""},
+{""subtle"":""0.4""},
+{""pasty"":""0.2""}
+]","I made the prediction based on the words ""delicate"" and ""subtle"" used to describe the flan, which indicate a positive sentiment towards it."
+375,375,142,375,My only advice is: increase portion sizes; and develop a special drink list.,drink list,neutral,0,"Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+",3,"Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+",9,"Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+",neutral,prompt_single_term_fewshot,"Example 1:
+Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+
+
+Example 2:
+Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+
+
+Example 3
+Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+
+    
+Task:
+Input: My only advice is: increase portion sizes; and develop a special drink list.
+Prompt: What is the sentiment in the text towards 'drink list'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",correct,"[{""special"": ""0.5""}, {""develop"": ""0.5""}]","I made my prediction based on the overall tone of the text, which did not express strong positive or negative sentiment towards the ""drink list."" The words ""special drink list"" were mentioned, indicating a potential positive aspect, but the lack of further details or emotional language led me to determine the sentiment as neutral."
+9,9,3,9,My boyfriend and I went one Friday night to find that the place was empty except for one other table.,table,neutral,0,"Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+",3,"Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+",9,"Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+",neutral,prompt_single_term_fewshot,"Example 1:
+Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+
+
+Example 2:
+Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+
+
+Example 3
+Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+
+    
+Task:
+Input: My boyfriend and I went one Friday night to find that the place was empty except for one other table.
+Prompt: What is the sentiment in the text towards 'table'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",correct,"[
+{""empty"": ""0.5""},
+{""other table"": ""0.5""}
+]","I made the prediction based on the phrase ""empty except for one other table,"" which indicates a neutral sentiment towards the table. The word ""empty"" suggests a lack of customers, but the presence of another table implies a neutral stance rather than a negative one."
+11,11,4,11,"Amazing crust (and I hate pizza crust typically), great cheese, sauce isn't too sugary.",cheese,positive,0,"Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+",3,"Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+",9,"Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+",positive,prompt_single_term_fewshot,"Example 1:
+Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+
+
+Example 2:
+Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+
+
+Example 3
+Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+
+    
+Task:
+Input: Amazing crust (and I hate pizza crust typically), great cheese, sauce isn't too sugary.
+Prompt: What is the sentiment in the text towards 'cheese'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",correct,"[
+{""word"":""great"",""importance"":""0.50""},
+{""word"":""hate"",""importance"":""0.50""}
+]","I made the prediction based on the positive sentiment expressed towards the cheese in the text. The phrases ""great cheese"" and ""amazing crust"" indicate a positive sentiment towards the cheese, influencing my decision to classify it as positive."
+101,101,38,101,"So inexcpensive that you'd wonder about the sanity of the owners, if they weren't such good cooks.",cooks,positive,0,"Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+",3,"Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+",9,"Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+",positive,prompt_single_term_fewshot,"Example 1:
+Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+
+
+Example 2:
+Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+
+
+Example 3
+Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+
+    
+Task:
+Input: So inexcpensive that you'd wonder about the sanity of the owners, if they weren't such good cooks.
+Prompt: What is the sentiment in the text towards 'cooks'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",correct,"[
+{""good"": ""0.5""},
+{""cooks"": ""0.5""}
+]","I made the prediction based on the positive sentiment expressed towards the cooks in the text. The words ""good cooks"" indicate a positive sentiment towards them, leading to the classification of the sentiment as positive."
+4,4,1,4,The server was so busy the night we visited that she forgot to put in our food order.,server,negative,0,"Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+",3,"Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+",9,"Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+",negative,prompt_single_term_fewshot,"Example 1:
+Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+
+
+Example 2:
+Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+
+
+Example 3
+Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+
+    
+Task:
+Input: The server was so busy the night we visited that she forgot to put in our food order.
+Prompt: What is the sentiment in the text towards 'server'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",correct,"[
+{""busy"",""importance"":""0.70""},
+{""forgot"",""importance"":""0.30""}
+]","I made the prediction based on the negative sentiment expressed towards the server in the text. The phrase ""forgot to put in our food order"" indicates a mistake made by the server, leading to a negative perception of their performance."
+398,398,151,398,"There is nothing else on the menu except for exotic teas and cold beverages, but with a meal this cheap and delightful, who would care?",meal,positive,0,"Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+",3,"Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+",9,"Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+",positive,prompt_single_term_fewshot,"Example 1:
+Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+
+
+Example 2:
+Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+
+
+Example 3
+Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+
+    
+Task:
+Input: There is nothing else on the menu except for exotic teas and cold beverages, but with a meal this cheap and delightful, who would care?
+Prompt: What is the sentiment in the text towards 'meal'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",correct,"[
+{""cheap"": ""0.30""},
+{""delightful"": ""0.30""},
+{""meal"": ""0.40""}
+]","I made the prediction based on the words ""cheap"" and ""delightful"" used to describe the meal, indicating a positive sentiment towards it. These positive descriptors strongly influenced my decision."
+343,343,131,343,"the service is pushy and the food looks good but is completely average (chewy steak, tasteless rice and beans).",service,negative,0,"Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+",3,"Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+",9,"Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+",negative,prompt_single_term_fewshot,"Example 1:
+Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+
+
+Example 2:
+Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+
+
+Example 3
+Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+
+    
+Task:
+Input: the service is pushy and the food looks good but is completely average (chewy steak, tasteless rice and beans).
+Prompt: What is the sentiment in the text towards 'service'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",correct,"[
+{""word"":""pushy"",""importance"":""0.70""},
+{""word"":""good"",""importance"":""0.30""}
+]","I made the prediction based on the negative descriptors ""pushy"" and ""in your face"" used to describe the service. These words indicate a negative sentiment towards the service in the text."
+410,410,156,410,"The Food The classic Italian menu gets off to a good start with Queen's famous bread basket, which is loaded with a slew of crunchy, yeasty homemade varieties.",bread,positive,0,"Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+",3,"Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+",9,"Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+",positive,prompt_single_term_fewshot,"Example 1:
+Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+
+
+Example 2:
+Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+
+
+Example 3
+Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+
+    
+Task:
+Input: The Food The classic Italian menu gets off to a good start with Queen's famous bread basket, which is loaded with a slew of crunchy, yeasty homemade varieties.
+Prompt: What is the sentiment in the text towards 'bread'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",correct,"[
+{""bread"": ""0.70""},
+{""homemade"": ""0.30""}
+]","I made the prediction based on the positive words used to describe the bread, such as ""famous,"" ""crunchy,"" and ""yeasty."" These words indicate a positive sentiment towards the bread in the text."
+437,437,165,437,This place would be so much better served by being run by a group that actually understands customer service.,service,negative,0,"Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+",3,"Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+",9,"Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+",negative,prompt_single_term_fewshot,"Example 1:
+Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+
+
+Example 2:
+Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+
+
+Example 3
+Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+
+    
+Task:
+Input: This place would be so much better served by being run by a group that actually understands customer service.
+Prompt: What is the sentiment in the text towards 'service'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",correct,"[
+{""group"":""run by a group that actually understands customer service"",""importance"":""1.0""}
+]","I made the prediction based on the negative sentiment expressed towards the service in the text. The phrase ""being run by a group that actually understands customer service"" indicates dissatisfaction with the current service and a desire for improvement, leading to a negative sentiment towards the service."
+30,30,10,30,"Ok I got the edamame and something from the sushi chef for free, but the quality of food is more important to me than a free small dish (maybe that's why the restaurant gives it to attact new customers.",sushi chef,positive,0,"Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+",3,"Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+",9,"Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+",positive,prompt_single_term_fewshot,"Example 1:
+Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+
+
+Example 2:
+Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+
+
+Example 3
+Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+
+    
+Task:
+Input: Ok I got the edamame and something from the sushi chef for free, but the quality of food is more important to me than a free small dish (maybe that's why the restaurant gives it to attact new customers.
+Prompt: What is the sentiment in the text towards 'sushi chef'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",correct,"[{""free"": ""0.30""}, {""quality"": ""0.70""}]","I made the prediction based on the positive sentiment expressed towards the sushi chef by mentioning receiving something for free from them. The words ""got the edamame and something from the sushi chef for free"" indicate a positive interaction with the sushi chef, leading to the overall positive sentiment towards them."
+307,307,118,307,"I love Chinese food and have been looking for the alternative to the greasy stuff on every corner of New York- ya, you know, the stinky take-out joints that leave you smelling like dinner for 100 for the rest of the night!",Chinese food,positive,0,"Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+",3,"Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+",9,"Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+",positive,prompt_single_term_fewshot,"Example 1:
+Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+
+
+Example 2:
+Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+
+
+Example 3
+Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+
+    
+Task:
+Input: I love Chinese food and have been looking for the alternative to the greasy stuff on every corner of New York- ya, you know, the stinky take-out joints that leave you smelling like dinner for 100 for the rest of the night!
+Prompt: What is the sentiment in the text towards 'Chinese food'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",correct,"[
+{""Chinese food"": ""0.70""},
+{""looking for alternative"": ""0.20""},
+{""greasy stuff"": ""0.10""}
+]","I made the prediction based on the positive language used to describe Chinese food, such as ""I love Chinese food"" and ""looking for the alternative to the greasy stuff."" These phrases indicate a positive sentiment towards Chinese food. Additionally, the mention of wanting an alternative to greasy take-out joints suggests a desire for a higher quality dining experience, further supporting a positive sentiment."
+48,48,16,48,"When we went to dinner here, the place was empty, which should have been a clue.",place,negative,0,"Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+",3,"Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+",9,"Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+",negative,prompt_single_term_fewshot,"Example 1:
+Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+
+
+Example 2:
+Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+
+
+Example 3
+Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+
+    
+Task:
+Input: When we went to dinner here, the place was empty, which should have been a clue.
+Prompt: What is the sentiment in the text towards 'place'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",correct,"[
+{""word"":""empty"",""importance"":""1.0""}
+]","I made the prediction based on the word ""empty"" in the context of the place being empty, which typically conveys a negative sentiment as it implies a lack of customers or popularity."
+103,103,39,103,We sat at the bar and were constantly bumped by the waitress flying past; had fabulously fresh raw oysters with pieces of shell in every bite; lobsters rolls were tasty but the large pieces of meat were tough; the apple crumble was excellent but the ice cream was over-frozen and the stench of frying oil was nearly unbearable.,waitress,negative,0,"Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+",3,"Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+",9,"Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+",negative,prompt_single_term_fewshot,"Example 1:
+Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+
+
+Example 2:
+Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+
+
+Example 3
+Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+
+    
+Task:
+Input: We sat at the bar and were constantly bumped by the waitress flying past; had fabulously fresh raw oysters with pieces of shell in every bite; lobsters rolls were tasty but the large pieces of meat were tough; the apple crumble was excellent but the ice cream was over-frozen and the stench of frying oil was nearly unbearable.
+Prompt: What is the sentiment in the text towards 'waitress'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",correct,"[
+{""word"":""bumped"",""importance"":""0.20""},
+{""word"":""flying past"",""importance"":""0.20""},
+{""word"":""fabulously fresh"",""importance"":""0.10""},
+{""word"":""pieces of shell"",""importance"":""0.10""},
+{""word"":""tough"",""importance"":""0.10""},
+{""word"":""over-frozen"",""importance"":""0.10""},
+{""word"":""stench of frying oil"",""importance"":""0.20""}
+]","I made the prediction based on the negative descriptions associated with the waitress, such as ""constantly bumped,"" ""flying past,"" and ""pieces of shell in every bite."" These negative experiences influenced my decision to classify the sentiment towards the waitress as negative."
+440,440,167,440,"Although when I went to eat dinner at Bombay Talkie on a crazy busy night, my waiter was extremely helpful through the menu, polite and polished.",dinner,neutral,0,"Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+",3,"Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+",9,"Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+",neutral,prompt_single_term_fewshot,"Example 1:
+Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+
+
+Example 2:
+Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+
+
+Example 3
+Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+
+    
+Task:
+Input: Although when I went to eat dinner at Bombay Talkie on a crazy busy night, my waiter was extremely helpful through the menu, polite and polished.
+Prompt: What is the sentiment in the text towards 'dinner'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",correct,"[
+{""busy night"": ""0.3""},
+{""helpful"": ""0.3""},
+{""polite"": ""0.2""},
+{""polished"": ""0.2""}
+]","I made the prediction based on the overall positive sentiment expressed towards the waiter in the text. The words ""extremely helpful,"" ""polite,"" and ""polished"" used to describe the waiter indicate a positive experience, but the focus was on the waiter rather than the dinner itself, leading to a neutral sentiment towards ""dinner."""
+348,348,133,348,The waiter kept coming up and asking to take our plates while we were still eating and the manager stood and stared at us through half our meal!,waiter,negative,0,"Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+",3,"Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+",9,"Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+",negative,prompt_single_term_fewshot,"Example 1:
+Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+
+
+Example 2:
+Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+
+
+Example 3
+Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+
+    
+Task:
+Input: The waiter kept coming up and asking to take our plates while we were still eating and the manager stood and stared at us through half our meal!
+Prompt: What is the sentiment in the text towards 'waiter'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",correct,"[
+{""word"":""kept coming up"",""importance"":""0.40""},
+{""word"":""asking to take our plates while we were still eating"",""importance"":""0.40""},
+{""word"":""stared at us through half our meal"",""importance"":""0.20""}
+]","I made the prediction based on the negative descriptions of the waiter's behavior, such as ""kept coming up and asking to take our plates while we were still eating"" and ""the manager stood and stared at us through half our meal."" These phrases indicate a negative sentiment towards the waiter, leading to the classification of the sentiment as ""negative."""
+251,251,94,251,My vegetable Napoleon was good; although i first got the veggie burger because the waitress mis-heard and stood my friend up for another 15 minutes of waiting to have it served.,waiting,negative,0,"Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+",3,"Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+",9,"Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+",negative,prompt_single_term_fewshot,"Example 1:
+Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+
+
+Example 2:
+Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+
+
+Example 3
+Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+
+    
+Task:
+Input: My vegetable Napoleon was good; although i first got the veggie burger because the waitress mis-heard and stood my friend up for another 15 minutes of waiting to have it served.
+Prompt: What is the sentiment in the text towards 'waiting'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",correct,"[
+{""word"":""stood my friend up"",""importance"":""0.70""},
+{""word"":""waiting"",""importance"":""0.30""}
+]","I made the prediction based on the negative sentiment expressed towards the waiting experience in the text. The phrases ""stood my friend up for another 15 minutes of waiting"" and ""mis-heard"" indicate a negative experience related to waiting."
+225,225,85,225,"The atmosphere was warm, sexy, and very romantic but the lighting wasn't good for reading the menu.",lighting,negative,0,"Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+",3,"Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+",9,"Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+",negative,prompt_single_term_fewshot,"Example 1:
+Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+
+
+Example 2:
+Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+
+
+Example 3
+Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+
+    
+Task:
+Input: The atmosphere was warm, sexy, and very romantic but the lighting wasn't good for reading the menu.
+Prompt: What is the sentiment in the text towards 'lighting'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",correct,"[
+{""word"":""wasn't good"",""importance"":""0.7""},
+{""word"":""romantic"",""importance"":""0.3""}
+]","I made the prediction based on the phrase ""the lighting wasn't good for reading the menu,"" which indicates a negative sentiment towards the lighting. This specific phrase directly expresses dissatisfaction with the lighting, leading to the classification of the sentiment as negative."
+265,265,100,265,"My party felt like we got put in a dining room for tourist, which must have been the penalty box area for the disgruntled wait staff on duty.",wait staff,negative,0,"Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+",3,"Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+",9,"Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+",negative,prompt_single_term_fewshot,"Example 1:
+Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+
+
+Example 2:
+Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+
+
+Example 3
+Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+
+    
+Task:
+Input: My party felt like we got put in a dining room for tourist, which must have been the penalty box area for the disgruntled wait staff on duty.
+Prompt: What is the sentiment in the text towards 'wait staff'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",correct,"[
+{""disgruntled wait staff"":""0.8""},
+{""penalty box area"":""0.2""}
+]","I made the prediction based on the negative sentiment expressed towards the wait staff in the phrase ""disgruntled wait staff."" This phrase indicates a negative perception of the wait staff, leading to the overall sentiment being negative."
+292,292,112,292,My husband and I had dinner here last week and the food was very good.,food,positive,0,"Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+",3,"Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+",9,"Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+",positive,prompt_single_term_fewshot,"Example 1:
+Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+
+
+Example 2:
+Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+
+
+Example 3
+Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+
+    
+Task:
+Input: My husband and I had dinner here last week and the food was very good.
+Prompt: What is the sentiment in the text towards 'food'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",correct,"[
+{""good"",""importance"":""1.0""}
+]","I made the prediction based on the positive sentiment expressed towards the food in the text. The words ""very good"" indicate a positive opinion towards the food, leading to the classification of the sentiment as positive."
+325,325,124,325,Been here a few times and food has always been good but service really suffers when it gets crowded.,food,positive,0,"Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+",3,"Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+",9,"Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+",positive,prompt_single_term_fewshot,"Example 1:
+Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+
+
+Example 2:
+Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+
+
+Example 3
+Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+
+    
+Task:
+Input: Been here a few times and food has always been good but service really suffers when it gets crowded.
+Prompt: What is the sentiment in the text towards 'food'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",correct,"[
+{""good"": ""0.70""},
+{""always been good"": ""0.30""}
+]","I made the prediction based on the words ""food has always been good"" which indicates a positive sentiment towards the food. The phrase ""food has always been good"" strongly influenced my decision to categorize the sentiment as positive."
+350,350,133,350,The waiter kept coming up and asking to take our plates while we were still eating and the manager stood and stared at us through half our meal!,manager,negative,0,"Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+",3,"Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+",9,"Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+",negative,prompt_single_term_fewshot,"Example 1:
+Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+
+
+Example 2:
+Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+
+
+Example 3
+Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+
+    
+Task:
+Input: The waiter kept coming up and asking to take our plates while we were still eating and the manager stood and stared at us through half our meal!
+Prompt: What is the sentiment in the text towards 'manager'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",correct,"[
+{""word"":""stared at us"",""importance"":""0.7""},
+{""word"":""still eating"",""importance"":""0.3""}
+]","I made the prediction based on the negative descriptions of the manager's behavior in the text, such as ""stared at us through half our meal."" These words indicate a negative sentiment towards the manager."
+248,248,93,248,"The round pizza doesn't taste as good as I recall, it's still wonderful, but the Sicilian is to die for.",Sicilian,positive,0,"Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+",3,"Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+",9,"Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+",positive,prompt_single_term_fewshot,"Example 1:
+Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+
+
+Example 2:
+Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+
+
+Example 3
+Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+
+    
+Task:
+Input: The round pizza doesn't taste as good as I recall, it's still wonderful, but the Sicilian is to die for.
+Prompt: What is the sentiment in the text towards 'Sicilian'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",correct,"[
+{""wonderful"",""importance"":""0.5""},
+{""to die for"",""importance"":""0.5""}
+]","I made the prediction based on the positive sentiment expressed towards the Sicilian pizza in the text. The phrase ""to die for"" indicates a strong positive sentiment towards the Sicilian pizza, leading to the classification of the sentiment as positive."
+152,152,59,152,"The atmosphere's a bit grungy, yes, but the music and the coffee are good.",coffee,positive,0,"Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+",3,"Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+",9,"Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+",positive,prompt_single_term_fewshot,"Example 1:
+Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+
+
+Example 2:
+Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+
+
+Example 3
+Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+
+    
+Task:
+Input: The atmosphere's a bit grungy, yes, but the music and the coffee are good.
+Prompt: What is the sentiment in the text towards 'coffee'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",correct,"[
+{""grungy"":""0.30""},
+{""good"":""0.70""}
+]","I made the prediction based on the positive sentiment expressed towards the coffee in the text. The words ""good"" used to describe the coffee had a high influence on my decision, indicating a positive sentiment towards it."
+54,54,19,54,"When I asked the waitress, she told me they couldn't afford the salmon, and had changed the dish (though not on the menu).",waitress,neutral,0,"Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+",3,"Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+",9,"Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+",neutral,prompt_single_term_fewshot,"Example 1:
+Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+
+
+Example 2:
+Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+
+
+Example 3
+Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+
+    
+Task:
+Input: When I asked the waitress, she told me they couldn't afford the salmon, and had changed the dish (though not on the menu).
+Prompt: What is the sentiment in the text towards 'waitress'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",correct,"[{""waitress"":""0.50""},
+{""changed the dish"":""0.30""},
+{""couldn't afford"":""0.20""}]","I made the prediction based on the neutral tone of the text towards the waitress. The words ""asked"" and ""told"" indicate a neutral interaction without any strong positive or negative sentiment."
+438,438,166,438,The only redeeming factor of the night was the dessert which was very good but certainly not worth the cost of an overall horible experience.,dessert,positive,0,"Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+",3,"Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+",9,"Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+",positive,prompt_single_term_fewshot,"Example 1:
+Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+
+
+Example 2:
+Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+
+
+Example 3
+Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+
+    
+Task:
+Input: The only redeeming factor of the night was the dessert which was very good but certainly not worth the cost of an overall horible experience.
+Prompt: What is the sentiment in the text towards 'dessert'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",correct,"[
+{""good"": ""0.50""},
+{""very good"": ""0.30""},
+{""not worth"": ""0.20""}
+]","I made the prediction based on the words ""very good"" used to describe the dessert, indicating a positive sentiment towards it. The phrase ""only redeeming factor"" also suggests that the dessert was the highlight of the experience."
+254,254,95,254,Our waitress did not take our drink order until I finally flagged her down and even then she seemed disinterested in our meal.,meal,negative,0,"Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+",3,"Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+",9,"Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+",negative,prompt_single_term_fewshot,"Example 1:
+Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+
+
+Example 2:
+Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+
+
+Example 3
+Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+
+    
+Task:
+Input: Our waitress did not take our drink order until I finally flagged her down and even then she seemed disinterested in our meal.
+Prompt: What is the sentiment in the text towards 'meal'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",correct,"[
+{""waitress did not take our drink order until I finally flagged her down and even then she seemed disinterested in our meal"":""0.7""},
+{""disinterested"":""0.3""}
+]","I made the prediction based on the negative sentiment expressed towards the waitress and her disinterest in the meal. The words ""did not take our drink order,"" ""seemed disinterested,"" and ""finally flagged her down"" indicate a negative sentiment towards the meal."
+113,113,43,113,The staff was courteous and explained the menu with detail.,staff,positive,0,"Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+",3,"Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+",9,"Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+",positive,prompt_single_term_fewshot,"Example 1:
+Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+
+
+Example 2:
+Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+
+
+Example 3
+Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+
+    
+Task:
+Input: The staff was courteous and explained the menu with detail.
+Prompt: What is the sentiment in the text towards 'staff'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",correct,"[{""courteous"":""0.7""}, {""explained with detail"":""0.3""}]","I made the prediction based on the positive words used to describe the staff, such as ""courteous"" and ""explained the menu with detail."" These words indicate a positive sentiment towards the staff in the text."
+76,76,28,76,"Also, they upped their prices, so I have their old menu, and was surprised when my bill came to over $5 more than it used to (I know, not a huge deal).",prices,negative,0,"Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+",3,"Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+",9,"Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+",negative,prompt_single_term_fewshot,"Example 1:
+Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+
+
+Example 2:
+Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+
+
+Example 3
+Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+
+    
+Task:
+Input: Also, they upped their prices, so I have their old menu, and was surprised when my bill came to over $5 more than it used to (I know, not a huge deal).
+Prompt: What is the sentiment in the text towards 'prices'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",correct,"[
+{""word"":""upped their prices"",""importance"":""0.70""},
+{""word"":""surprised"",""importance"":""0.30""}
+]","I made the prediction based on the words ""upped their prices"" and ""surprised when my bill came to over $5 more than it used to"". These phrases indicate a negative sentiment towards the prices."
+304,304,117,304,"Our waiter brought out three main courses, but the fourth wasn't ready so we had to wait for 10 minutes for the last dish to arrive, but they were very nice and gave us free red pepper hummus while we waited.",main courses,neutral,0,"Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+",3,"Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+",9,"Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+",neutral,prompt_single_term_fewshot,"Example 1:
+Input: ""The decor is not special at all but their food and amazing prices make up for it.""
+Term: decor
+Output: negative
+
+
+Example 2:
+Input: ""when tables opened up, the manager sat another party before us.""
+Term: tables
+Output: neutral
+
+
+Example 3
+Input: ""service is good although a bit in your face, we were asked every five mins if food was ok, but better that than being ignored.""
+Term: service
+Output: positive
+
+    
+Task:
+Input: Our waiter brought out three main courses, but the fourth wasn't ready so we had to wait for 10 minutes for the last dish to arrive, but they were very nice and gave us free red pepper hummus while we waited.
+Prompt: What is the sentiment in the text towards 'main courses'? Only respond with ""positive"", ""negative"" or ""neutral"" as one word.",correct,"[{""waited"":""0.40""},
+{""nice"":""0.30""},
+{""free"":""0.30""}]","I made the prediction based on the overall tone of the text, which was neutral. The words ""waiter,"" ""main courses,"" ""waited,"" and ""free red pepper hummus"" were influential in determining the sentiment. The mention of the delay in receiving the fourth main course balanced out by the gesture of offering free red pepper hummus contributed to the neutral sentiment."
