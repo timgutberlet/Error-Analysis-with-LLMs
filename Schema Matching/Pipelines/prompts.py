@@ -3,7 +3,7 @@ from langchain.prompts.chat import ChatPromptTemplate
 
 
 
-#TODO: Quelle!! - https://webdatacommons.org/structureddata/smb/
+#Quelle - https://webdatacommons.org/structureddata/smb/
 dynamic_fewshot_multi_table= ChatPromptTemplate.from_messages([
     ("user", """Example 1: 
 {example_1}
@@ -27,7 +27,7 @@ Return the final result as JSON in the format {{"column_mappings": "<a list of c
 Answer:"""),
 ])
 
-#TODO: Quelle!! - https://webdatacommons.org/structureddata/smb/
+#Quelle - https://webdatacommons.org/structureddata/smb/
 fix_fewshot_multi_table= ChatPromptTemplate.from_messages([
     ("user", """Example 1: 
 {example_1}
